@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 00fdce3fef70bc54fb18fc2caf02f2aa
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - button1: {instanceID: 0}
+  - button2: {instanceID: 0}
+  - musicVolumeText: {instanceID: 0}
+  - effectsVolumeText: {instanceID: 0}
+  - menuButton: {fileID: 8300000, guid: ff12a87a922e9bb488789fa8050b265b, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
