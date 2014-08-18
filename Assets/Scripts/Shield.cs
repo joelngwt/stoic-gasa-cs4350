@@ -27,7 +27,12 @@ public class Shield : MonoBehaviour {
 		if(Time.timeScale > 0){ // can only shoot if not paused
 			
 			// Shield usage
+			#if UNITY_ANDROID
 			if(Input.GetMouseButton(0) && useShieldButton.HitTest(Input.mousePosition)){
+			#endif
+			#if UNITY_STANDALONE || UNITY_WEBPLAYER
+			if(Input.GetKey("space")){
+			#endif
 				if(shieldIsUp == false){
 					if(useShieldButton.name == "UseShield"){
 						shieldIsUp = true;
@@ -49,7 +54,7 @@ public class Shield : MonoBehaviour {
 					}
 				}
 			}
-			else if(Input.GetMouseButtonUp(0)){
+			else {
 				if(shieldIsUp == true){
 					shieldIsUp = false;
 					PlayerPrefs.SetInt ( "shieldUp", 0);

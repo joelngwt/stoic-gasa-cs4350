@@ -69,7 +69,9 @@ public class LifeCounter : MonoBehaviour {
 			if(playedTakeDamage == 0 && loadedHealth != 3){
 				StartCoroutine(PlayOuch());
 				playedTakeDamage = 2;
+				#if UNITY_ANDROID
 				Handheld.Vibrate();
+				#endif
 			}
 		}
 		// If player has 2 lives
@@ -82,7 +84,9 @@ public class LifeCounter : MonoBehaviour {
 			if(playedTakeDamage <= 2 && loadedHealth != 2){
 				StartCoroutine(PlayOuch());
 				playedTakeDamage = 3;
+				#if UNITY_ANDROID
 				Handheld.Vibrate();
+				#endif
 			}
 		}
 		// Else if player has 1 lives
@@ -95,7 +99,9 @@ public class LifeCounter : MonoBehaviour {
 			if(playedTakeDamage <= 3 && loadedHealth != 1){
 				StartCoroutine(PlayOuch());
 				playedTakeDamage = 4;
+				#if UNITY_ANDROID
 				Handheld.Vibrate();
+				#endif
 			}
 			if(playedHeartBeat == false){
 				audio.PlayOneShot(heartBeat);
@@ -111,7 +117,9 @@ public class LifeCounter : MonoBehaviour {
 			life1.enabled = false;
 			if(playedDie == false){
 				playedDie = true;
+				#if UNITY_ANDROID
 				Handheld.Vibrate();
+				#endif
 				StartCoroutine(PlayDie ());
 			}
 
