@@ -23,7 +23,9 @@ public class SystemControls : MonoBehaviour {
 	void Start () {
 		// prevent the device from sleeping/dimming
 		Screen.sleepTimeout = SleepTimeout.NeverSleep;
-		backAgainMessage.enabled = false;
+		if(Application.loadedLevelName == "mainMenu"){
+			backAgainMessage.enabled = false;
+		}
 	}
 	
 	// Update is called once per frame

@@ -34,9 +34,9 @@ public class Enemy : MonoBehaviour {
 			positionOriginal = transform.position.y;
 		else
 			positionOriginal = transform.position.x;
-
-		animation.Play ("Cover_Down_out");
-
+		if(gameObject.tag == "Enemy"){
+			animation.Play ("Cover_Down_out");
+		}
 	}
 
 	// Update is called once per frame
@@ -60,8 +60,10 @@ public class Enemy : MonoBehaviour {
 			Vector3 temp = transform.position;
 			if(coverType == 0 && first == true) // move down to take cover
 			{
-				animation.Stop ("Run"); // stop running animation
-				animation.Play ("Cover_Down_in"); // take cover down
+				if(gameObject.tag == "Enemy"){
+					animation.Stop ("Run"); // stop running animation
+					animation.Play ("Cover_Down_in"); // take cover down
+				}
 				//if(temp.y >= positionOriginal - 2.0f)
 				//	temp.y -= 0.1f;
 				//else 
@@ -69,8 +71,10 @@ public class Enemy : MonoBehaviour {
 			}
 			else if(coverType == 1) //move right to take cover
 			{
-				animation.Stop ("Run"); // stop running animation
-				animation.Play ("Cover_SideL_in"); // take cover
+				if(gameObject.tag == "Enemy"){
+					animation.Stop ("Run"); // stop running animation
+					animation.Play ("Cover_SideL_in"); // take cover
+				}
 				//if(temp.x <= positionOriginal + 1.0f)
 				//	temp.x += 0.1f;
 				//else
@@ -78,8 +82,10 @@ public class Enemy : MonoBehaviour {
 			}
 			else if(coverType == 2) //move left to take cover
 			{
-				animation.Stop ("Run"); // stop running animation
-				animation.Play ("Cover_SideR_in"); // take cover
+				if(gameObject.tag == "Enemy"){
+					animation.Stop ("Run"); // stop running animation
+					animation.Play ("Cover_SideR_in"); // take cover
+				}
 				//if(temp.x >= positionOriginal - 1.0f)
 				//	temp.x -= 0.1f;
 				//else
@@ -105,7 +111,9 @@ public class Enemy : MonoBehaviour {
 			Vector3 temp = transform.position;
 			if(coverType == 0 && first == true)
 			{
-				animation.Play ("Cover_Down_out");
+				if(gameObject.tag == "Enemy"){
+					animation.Play ("Cover_Down_out");
+				}
 				//if(temp.y <= positionOriginal)
 				//	temp.y += 0.2f;
 				//else 
@@ -113,7 +121,9 @@ public class Enemy : MonoBehaviour {
 			}			
 			else if(coverType == 1)
 			{
-				animation.Play ("Cover_SideL_out");
+				if(gameObject.tag == "Enemy"){
+					animation.Play ("Cover_SideL_out");
+				}
 				//if(temp.x >= positionOriginal)
 				//	temp.x -= 0.2f;
 				//else 
@@ -121,7 +131,9 @@ public class Enemy : MonoBehaviour {
 			}
 			else if(coverType == 2)
 			{
-				animation.Play ("Cover_SideR_out");
+				if(gameObject.tag == "Enemy"){
+					animation.Play ("Cover_SideR_out");
+				}
 				//if(temp.x <= positionOriginal)
 				//	temp.x += 0.2f;
 				//else
