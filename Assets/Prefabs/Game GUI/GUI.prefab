@@ -80,6 +80,7 @@ GameObject:
   - 114: {fileID: 11400006}
   - 114: {fileID: 11400014}
   - 82: {fileID: 8200004}
+  - 114: {fileID: 11400020}
   m_Layer: 0
   m_Name: Pause Button
   m_TagString: Untagged
@@ -115,6 +116,7 @@ GameObject:
   - 4: {fileID: 400012}
   - 132: {fileID: 13200002}
   - 114: {fileID: 11400010}
+  - 114: {fileID: 11400024}
   m_Layer: 0
   m_Name: Timer
   m_TagString: Untagged
@@ -182,6 +184,7 @@ GameObject:
   - 4: {fileID: 400020}
   - 132: {fileID: 13200008}
   - 114: {fileID: 11400018}
+  - 114: {fileID: 11400026}
   m_Layer: 0
   m_Name: TotalAmmoCount
   m_TagString: Untagged
@@ -358,8 +361,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
   m_LocalRotation: {x: -1.80066628e-08, y: -1, z: 6.52862582e-08, w: 3.47574598e-07}
-  m_LocalPosition: {x: 23.9474449, y: 1.79026914, z: .509323597}
-  m_LocalScale: {x: .0666666701, y: .100000001, z: 1}
+  m_LocalPosition: {x: 23.4759998, y: 2.24499989, z: .509323597}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400004}
   m_RootOrder: 4
@@ -382,7 +385,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100012}
   m_LocalRotation: {x: -1.80066628e-08, y: -1, z: 6.52862582e-08, w: 3.47574598e-07}
-  m_LocalPosition: {x: 23.6401119, y: 1.78026915, z: .509323955}
+  m_LocalPosition: {x: 23.6401119, y: 1.75999999, z: .509323955}
   m_LocalScale: {x: .666666687, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400004}
@@ -430,7 +433,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100020}
   m_LocalRotation: {x: -1.80066628e-08, y: -1, z: 6.52862582e-08, w: 3.47574598e-07}
-  m_LocalPosition: {x: 23.9599991, y: .850000024, z: 263.509308}
+  m_LocalPosition: {x: 23.9619999, y: .800000012, z: 263.509308}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400004}
@@ -962,6 +965,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunDisplayScript: {fileID: 11400012}
+--- !u!114 &11400020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a564e5c96acbb1b48ab9ba7bb67d5d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitsHeight: -18.2000008
+  unitsLength: -28.7000008
+  pixelHeight: -629.720032
+  pixelLength: -1984.6051
+  fontNumber: 0
+  middleScreenWidth: 0
+  rightOfScreen: 0
+  leftOfScreen: 0
+  editable: 0
 --- !u!114 &11400022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -983,6 +1006,46 @@ MonoBehaviour:
   takeDamage: {fileID: 8300000, guid: 9afdc981efb32d94bae71f6cda11e129, type: 3}
   playedTakeDamage: 0
   die: {fileID: 8300000, guid: f3293a27a226fe5479d20225f6ab82b7, type: 3}
+--- !u!114 &11400024
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a564e5c96acbb1b48ab9ba7bb67d5d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitsHeight: 1.74000001
+  unitsLength: 13.6999998
+  pixelHeight: 60.2039986
+  pixelLength: 947.35498
+  fontNumber: 100
+  middleScreenWidth: 0
+  rightOfScreen: 0
+  leftOfScreen: 0
+  editable: 0
+--- !u!114 &11400026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a564e5c96acbb1b48ab9ba7bb67d5d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitsHeight: 1
+  unitsLength: 10.1800003
+  pixelHeight: 34.5999985
+  pixelLength: 553.200012
+  fontNumber: 135
+  middleScreenWidth: 0
+  rightOfScreen: 0
+  leftOfScreen: 0
+  editable: 0
 --- !u!131 &13100000
 GUITexture:
   m_ObjectHideFlags: 1
@@ -1034,8 +1097,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0
-    height: 0
+    width: -1984.6051
+    height: -629.720032
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -1243,7 +1306,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: e188325fe39a31b45befd6376face71b, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 200
+  m_FontSize: 135
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2

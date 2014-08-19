@@ -78,6 +78,7 @@
      <Compile Include="Assets\Scripts\TimerForIngress.cs" />
      <Compile Include="Assets\Scripts\TimerScript.cs" />
      <Compile Include="Assets\Scripts\TotalAmmoText.cs" />
+     <Compile Include="Assets\Scripts\UIScaling.cs" />
      <Compile Include="Assets\Scripts\VerticeBehavior.cs" />
      <Compile Include="Assets\Scripts\VolumeButtons.cs" />
      <Compile Include="Assets\Scripts\playIngressGlyph.cs" />

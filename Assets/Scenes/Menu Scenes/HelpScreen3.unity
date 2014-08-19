@@ -793,6 +793,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2010005009}
   - 132: {fileID: 2010005008}
+  - 114: {fileID: 2010005010}
   m_Layer: 0
   m_Name: Line1
   m_TagString: Untagged
@@ -816,7 +817,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: e188325fe39a31b45befd6376face71b, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 200
+  m_FontSize: 83
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -835,6 +836,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &2010005010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2010005007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a564e5c96acbb1b48ab9ba7bb67d5d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitsHeight: 1
+  unitsLength: 16.5
+  pixelHeight: 34.6500015
+  pixelLength: 1140.97498
+  fontNumber: 83
+  middleScreenWidth: 0
+  rightOfScreen: 0
+  leftOfScreen: 0
+  editable: 0
 --- !u!1 &2034886755
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,6 +912,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2107829893}
   - 132: {fileID: 2107829892}
+  - 114: {fileID: 2107829894}
   m_Layer: 0
   m_Name: Line2
   m_TagString: Untagged
@@ -914,7 +936,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: e188325fe39a31b45befd6376face71b, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 200
+  m_FontSize: 102
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -933,3 +955,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!114 &2107829894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2107829891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a564e5c96acbb1b48ab9ba7bb67d5d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitsHeight: 1
+  unitsLength: 13.46
+  pixelHeight: 34.6500015
+  pixelLength: 930.758972
+  fontNumber: 102
+  middleScreenWidth: 0
+  rightOfScreen: 0
+  leftOfScreen: 0
+  editable: 0
