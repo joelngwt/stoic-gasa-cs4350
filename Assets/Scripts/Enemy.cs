@@ -162,7 +162,9 @@ public class Enemy : MonoBehaviour {
 
 	public void StartAnim()
 	{
+		#if UNITY_EDITOR
 		Debug.Log ("startAnim in bear");
+		#endif
 		
 		float audioToPlay = Random.Range(0.0F, 1.0F);
 		if(audioToPlay < 0.5){

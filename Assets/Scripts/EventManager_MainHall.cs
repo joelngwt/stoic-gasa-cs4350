@@ -50,7 +50,9 @@ public class EventManager_MainHall : MonoBehaviour {
 
 		// Position 1, wave 1
 		if(count <= 5){
+			#if UNITY_EDITOR
 			Debug.Log("Wave 1");
+			#endif
 			spawnBear (new Vector3( -60f, 0f, 246f ), 1); // target1
 			spawnBear (new Vector3( -47f, 0f, 218f ), 2); // target2
 			spawnBear (new Vector3( 48f, 0f, 218f ), 1); // target3
@@ -60,7 +62,9 @@ public class EventManager_MainHall : MonoBehaviour {
 		}
 		// Position 1, wave 2
 		else if(count > 5 && count <= 10 && !(GameObject.Find ("Target1") || GameObject.Find ("Target2") || GameObject.Find ("Target3") || GameObject.Find ("Target4") || GameObject.Find ("Target5"))){
+			#if UNITY_EDITOR
 			Debug.Log("Wave 2");
+			#endif
 			spawnBear (new Vector3( -60f, 0f, 246f ), 1); // target6
 			spawnBear (new Vector3( 48f, 0f, 218f ), 1); // target7
 			spawnBear (new Vector3( -16f, 0f, 173f ), 0); // target8
@@ -69,7 +73,9 @@ public class EventManager_MainHall : MonoBehaviour {
 		}
 		// Position 1, wave 3
 		else if(count > 10 && count <= 12 && !(GameObject.Find ("Target6") || GameObject.Find ("Target7") || GameObject.Find ("Target8") || GameObject.Find ("Target9") || GameObject.Find ("Target10"))){
+			#if UNITY_EDITOR
 			Debug.Log("Wave 3");
+			#endif
 			spawnBear (new Vector3( -47f, 0f, 218f ), 2); // target11
 			spawnBear (new Vector3( 48f, 0f, 218f ), 1); // target12
 		}
@@ -86,7 +92,9 @@ public class EventManager_MainHall : MonoBehaviour {
 				num = LookAt( new Vector3 (-46f, 12f, 202.5f), num);
 				
 			if(count > 12 && count <= 16 && reached == true){
+				#if UNITY_EDITOR
 				Debug.Log ("Wave 4");
+				#endif
 				spawnBear (new Vector3( 13f, 0f, 173f ), 0); // target13
 				spawnBear (new Vector3( -34f, 21f, 154f ), 0); // target14
 				spawnBear (new Vector3( -73f, 21f, 154f ), 0); // target15
@@ -94,7 +102,9 @@ public class EventManager_MainHall : MonoBehaviour {
 				reached = false;
 			}
 			else if(count > 16 && count <= 20 && !(GameObject.Find ("Target13") || GameObject.Find ("Target14") || GameObject.Find ("Target15") || GameObject.Find ("Target16"))){
+				#if UNITY_EDITOR
 				Debug.Log ("Wave 5");
+				#endif
 				spawnBear (new Vector3( -34f, 21f, 154f ), 0);// target17
 				spawnBear (new Vector3( -55f, 21f, 154f ), 0); // target18
 				spawnBear (new Vector3( -73f, 21f, 154f ), 0);// target19
@@ -102,7 +112,9 @@ public class EventManager_MainHall : MonoBehaviour {
 			}
 			
 			else if(count > 20 && count <= 23 && !(GameObject.Find ("Target17") || GameObject.Find ("Target18") || GameObject.Find ("Target19") || GameObject.Find ("Target20"))){
+				#if UNITY_EDITOR
 				Debug.Log ("Wave 6");
+				#endif
 				spawnBear (new Vector3( 34f, 21f, 154f ), 0); // target21
 				spawnBear (new Vector3( -18f, 0f, 156f ), 1); // target22
 				spawnLollipop( new Vector3 ( -50f, 35f, 36f )); // target23
@@ -118,7 +130,9 @@ public class EventManager_MainHall : MonoBehaviour {
 			//theCamera.transform.LookAt( new Vector3 (-10f, 152.6f, 0f));
 			
 			if(count > 23 && count <= 28 && reached == true){
+				#if UNITY_EDITOR
 				Debug.Log ("Wave 7");
+				#endif
 				spawnBear (new Vector3( -23f, 0f, 93f ), 2); // target24
 				spawnBear (new Vector3( 34f, 21f, 138f ), 0);// target25
 				spawnBear (new Vector3( 49f, 21f, 61f ), 0); // target26
@@ -127,7 +141,9 @@ public class EventManager_MainHall : MonoBehaviour {
 				reached = false;
 			}
 			else if(count > 28 && count <= 32 && !(GameObject.Find ("Target24") || GameObject.Find ("Target25") || GameObject.Find ("Target26") || GameObject.Find ("Target27") || GameObject.Find ("Target28"))){
+				#if UNITY_EDITOR
 				Debug.Log ("Wave 8");
+				#endif
 				spawnBear (new Vector3( -23f, 0f, 93f ), 2); // target29
 				spawnBear (new Vector3( 34f, 21f, 138f ), 0); // target30
 				spawnBear (new Vector3( 49f, 21f, 61f ), 0); // target31
@@ -135,7 +151,9 @@ public class EventManager_MainHall : MonoBehaviour {
 			}
 			
 			else if(count > 32 && count <= 36 && !(GameObject.Find ("Target29") || GameObject.Find ("Target30") || GameObject.Find ("Target31") || GameObject.Find ("Target32"))){
+				#if UNITY_EDITOR
 				Debug.Log ("Wave 9");
+				#endif
 				spawnBear (new Vector3( 34f, 21f, 138f ), 0); // target33
 				spawnBear (new Vector3( 15f, 21f, 61f ), 0); // target34
 				spawnBear (new Vector3( -15f, 21f, 61f ), 0); // target35
@@ -151,7 +169,9 @@ public class EventManager_MainHall : MonoBehaviour {
 				num = LookAt( new Vector3 (33.8f, 25f, 140.5f), num);
 			
 			if(count > 36  && count <= 42 && reached == true){
+				#if UNITY_EDITOR
 				Debug.Log ("Wave 10");
+				#endif
 				spawnBear (new Vector3( 64f, 21f, 130f ), 0); // target37
 				//spawnBear (new Vector3( 64f, 21f, 80f ), 0); // target38
 				count++;
@@ -162,7 +182,9 @@ public class EventManager_MainHall : MonoBehaviour {
 				reached = false;
 			}
 			else if(count > 42 && count <= 46 && !(GameObject.Find ("Target37") || GameObject.Find ("Target38") || GameObject.Find ("Target39") || GameObject.Find ("Target40") || GameObject.Find ("Target41") || GameObject.Find ("Target42"))){
+				#if UNITY_EDITOR
 				Debug.Log ("Wave 11");
+				#endif
 				spawnBear (new Vector3( 34f, 21f, 138f ), 0); // target43
 				spawnBear (new Vector3( 64f, 21f, 105f ), 0); // target44
 				spawnBear (new Vector3( 23f, 0f, 169f ), 2); // target45
@@ -182,7 +204,9 @@ public class EventManager_MainHall : MonoBehaviour {
 				num = LookAt( new Vector3 (30f, 32f, 170f), num);
 			
 			if(count > 46 && count <= 50 && reached == true){
+				#if UNITY_EDITOR
 				Debug.Log ("Wave 12");
+				#endif
 				spawnBear (new Vector3( -60f, 0f, 234f ), 2); // target47
 				spawnBear (new Vector3( 38f, 0f, 260f ), 2); // target48
 				//spawnBear (new Vector3( 53f, 0f, 260f ), 1); // target49
@@ -191,7 +215,9 @@ public class EventManager_MainHall : MonoBehaviour {
 				reached = false;
 			}
 			else if(count > 50 && count <= 54 && !(GameObject.Find ("Target47") || GameObject.Find ("Target48") || GameObject.Find ("Target49") || GameObject.Find ("Target50"))){
+				#if UNITY_EDITOR
 				Debug.Log ("Wave 13");
+				#endif
 				spawnBear (new Vector3( -60f, 0f, 234f ), 2); // target51
 				spawnBear (new Vector3( 38f, 0f, 260f ), 2); // target52
 				//spawnBear (new Vector3( 53f, 0f, 260f ), 1); // target53
@@ -212,12 +238,16 @@ public class EventManager_MainHall : MonoBehaviour {
 			}
 			else if (num == 15){
 				num = LookAt( new Vector3 (31.5f, 33f, 81f), num);
+				#if UNITY_EDITOR
 				Debug.Log ("count = " + count);
 				Debug.Log ("reached = " + reached);
+				#endif
 			}
 			
 			if(count > 54 && count <= 61 && reached == true){
+				#if UNITY_EDITOR
 				Debug.Log ("Wave 14");
+				#endif
 				spawnBear (new Vector3( 34f, 21f, 154f ), 0); // target55
 				spawnBear (new Vector3( -23f, 0f, 169f ), 1); // target56
 				spawnBear (new Vector3( -66f, 0f, 107f ), 2); // target57
@@ -228,7 +258,9 @@ public class EventManager_MainHall : MonoBehaviour {
 				reached = false;
 			}
 			else if(count > 61 && count <= 68 && !(GameObject.Find ("Target55") || GameObject.Find ("Target56") || GameObject.Find ("Target57") || GameObject.Find ("Target58") || GameObject.Find ("Target59") || GameObject.Find ("Target60") || GameObject.Find ("Target61"))){
+				#if UNITY_EDITOR
 				Debug.Log ("Wave 15");
+				#endif
 				spawnBear (new Vector3( -34f, 21f, 154f ), 0); // target62
 				spawnBear (new Vector3( 34f, 21f, 154f ), 0); // target63
 				spawnBear (new Vector3( -66f, 0f, 107f ), 2); // target64
@@ -241,9 +273,13 @@ public class EventManager_MainHall : MonoBehaviour {
 		
 		// Move to next zone
 		else if(count > 68 && !(GameObject.Find ("Target62") || GameObject.Find ("Target63") || GameObject.Find ("Target64") || GameObject.Find ("Target65") || GameObject.Find ("Target66") || GameObject.Find ("Target67") || GameObject.Find ("Target68"))){
+			#if UNITY_EDITOR
 			Debug.Log("no 6 " + num);
+			#endif
 			if (num == 15){
+				#if UNITY_EDITOR
 				Debug.Log ("here");
+				#endif
 				num = TranslateTo( new Vector3(0f, 35.8f, 60f), num);	
 			}else if (num == 16)
 				num = LookAt( new Vector3(0f, 35.8f, 42f), num);
@@ -325,7 +361,9 @@ public class EventManager_MainHall : MonoBehaviour {
 		
 			audio.Stop ();
 			num += 1;
+			#if UNITY_EDITOR
 			Debug.Log (num);
+			#endif
 			
 		}
 		return num;
@@ -368,6 +406,8 @@ public class EventManager_MainHall : MonoBehaviour {
 		PlayerPrefs.SetInt("playedTakeDamage", (int)lifeScript.playedTakeDamage);
 		PlayerPrefs.SetInt("timeLeft", (int)timeScript.seconds);
 		PlayerPrefs.SetInt("playerLoadedHealth", (int)lifeScript.playerHealth);
+		#if UNITY_EDITOR
 		Debug.Log ("Game saved");
+		#endif
 	}
 }

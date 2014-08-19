@@ -69,7 +69,9 @@ public class EnemyShoot : MonoBehaviour
 				
 				Vector3 randomOffset;
 				if(hitOrNot < 0.08F){ // hit
+					#if UNITY_EDITOR
 					Debug.Log ("Hit");
+					#endif
 					if(Application.loadedLevelName == "DiningHall"){
 						randomOffset = new Vector3(0.8F,-3.5F,1F);
 					}

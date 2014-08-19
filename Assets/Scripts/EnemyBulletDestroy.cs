@@ -33,7 +33,9 @@ public class EnemyBulletDestroy : MonoBehaviour {
 			else{ // shield is up and the player gets hit by a bullet
 				AudioSource.PlayClipAtPoint(shieldBlock, transform.position);
 			}
+			#if UNITY_EDITOR
 			Debug.Log ("Health1 = " + playerHealth);
+			#endif
 			PlayerPrefs.SetInt ("playerHealth", (int)playerHealth);
 
 			// Destroy the bullet
@@ -52,7 +54,9 @@ public class EnemyBulletDestroy : MonoBehaviour {
 				else{ // shield is up and the player gets hit by a bullet
 					AudioSource.PlayClipAtPoint(shieldBlock, transform.position);
 				}
+				#if UNITY_EDITOR
 				Debug.Log ("Health2 = " + playerHealth);
+				#endif
 				PlayerPrefs.SetInt ("playerHealth", (int)playerHealth);
 				
 				// Destroy the bullet
