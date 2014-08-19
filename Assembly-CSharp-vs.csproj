@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\EventManager_DiningHall.cs" />
      <Compile Include="Assets\Scripts\EventManager_MainHall.cs" />
      <Compile Include="Assets\Scripts\FPSIndicator.cs" />
+     <Compile Include="Assets\Scripts\FloatingScore.cs" />
      <Compile Include="Assets\Scripts\GunDisplay.cs" />
      <Compile Include="Assets\Scripts\InGameScoreScript.cs" />
      <Compile Include="Assets\Scripts\IngressGlyphSets.cs" />
@@ -79,6 +80,7 @@
      <Compile Include="Assets\Scripts\TimerScript.cs" />
      <Compile Include="Assets\Scripts\TotalAmmoText.cs" />
      <Compile Include="Assets\Scripts\UIScaling.cs" />
+     <Compile Include="Assets\Scripts\UIScalingTextMesh.cs" />
      <Compile Include="Assets\Scripts\VerticeBehavior.cs" />
      <Compile Include="Assets\Scripts\VolumeButtons.cs" />
      <Compile Include="Assets\Scripts\playIngressGlyph.cs" />

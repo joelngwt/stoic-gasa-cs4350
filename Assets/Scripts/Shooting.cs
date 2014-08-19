@@ -26,9 +26,9 @@ public class Shooting : MonoBehaviour {
 	// Score variables
 	// -------------
 	public InGameScoreScript scoreScript;
-	public GUIText plus10;
-	public GUIText plus20;
-	public GUIText plus30;
+	public GameObject plus10;
+	public GameObject plus20;
+	public GameObject plus30;
 	// -------------
 	
 	// Sound variables
@@ -38,12 +38,6 @@ public class Shooting : MonoBehaviour {
 	public AudioClip shotgunShoot;
 	// -------------
 	
-	void Start(){
-		plus10.enabled = false;
-		plus20.enabled = false;
-		plus30.enabled = false;
-	}
-
 	// Update is called once per frame
 	void Update () {
 	
@@ -178,52 +172,51 @@ public class Shooting : MonoBehaviour {
 		yield break;
 	}
 	
-	IEnumerator Plus10(){
-		plus10.enabled = true;
+	IEnumerator Plus10(GameObject thingHit){
+		if(thingHit.tag == "Enemy" && Application.loadedLevelName == "mainHall"){
+			Instantiate(plus10, new Vector3(thingHit.transform.position.x,thingHit.transform.position.y+15f,thingHit.transform.position.z), thingHit.transform.rotation); 
+		}
+		else{
+			Instantiate(plus10, new Vector3(thingHit.transform.position.x,thingHit.transform.position.y+5f,thingHit.transform.position.z), thingHit.transform.rotation); 
+		}
 		scoreScript.currentScore += 10;
-		yield return new WaitForSeconds(0.75F);
-		plus10.enabled = false;
 		yield break;
 	}
 	
-	IEnumerator Plus20(){
-		plus20.enabled = true;
+	IEnumerator Plus20(GameObject thingHit){
+		Instantiate(plus20, thingHit.transform.position, thingHit.transform.rotation); 
 		scoreScript.currentScore += 20;
-		yield return new WaitForSeconds(0.75F);
-		plus20.enabled = false;
 		yield break;
 	}
 	
-	IEnumerator Plus30(){
-		plus30.enabled = true;
+	IEnumerator Plus30(GameObject thingHit){
+		Instantiate(plus30, thingHit.transform.position, thingHit.transform.rotation); 
 		scoreScript.currentScore += 30;
-		yield return new WaitForSeconds(0.75F);
-		plus30.enabled = false;
 		yield break;
 	}
 	
 	void hitDetection(RaycastHit theHit){
 		if(theHit.transform.gameObject.tag == "Enemy") {
 			GameObject target = theHit.collider.gameObject;
-			StartCoroutine(Plus10());
+			StartCoroutine(Plus10(target));
 			Enemy script = target.GetComponent<Enemy>();
 			script.StartAnim();
 		}
 		else if(theHit.transform.gameObject.tag == "EnemyHead") {
 			GameObject target = theHit.collider.gameObject;
-			StartCoroutine(Plus20());
+			StartCoroutine(Plus20(target));
 			Enemy script = target.GetComponent<Enemy>();
 			script.StartAnim();
 		}
 		else if(theHit.transform.gameObject.tag == "EnemyLollipop") {
 			GameObject target = theHit.collider.gameObject;
-			StartCoroutine(Plus20());
+			StartCoroutine(Plus20(target));
 			EnemyLollipop script = target.GetComponent<EnemyLollipop>();
 			script.StartAnim();
 		}
 		else if(theHit.transform.gameObject.tag == "EnemyEgg") {
 			GameObject target = theHit.collider.gameObject;
-			StartCoroutine(Plus30());
+			StartCoroutine(Plus30(target));
 			EnemyEgg script = target.GetComponent<EnemyEgg>();
 			script.StartAnim();
 		}
