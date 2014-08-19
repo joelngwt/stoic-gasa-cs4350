@@ -10,7 +10,9 @@ public class MenuTouches : MonoBehaviour {
 	private float effectsVolume = 5.0F;
 	
 	void Start(){
-		loading.enabled = false;
+		if(Application.loadedLevelName == "mainMenu"){
+			loading.enabled = false;
+		}
 		
 		if (PlayerPrefs.HasKey ("effectsVolume")) {
 			effectsVolume = PlayerPrefs.GetInt ("effectsVolume");
