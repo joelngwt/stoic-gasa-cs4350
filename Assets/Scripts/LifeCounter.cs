@@ -10,6 +10,7 @@ public class LifeCounter : MonoBehaviour {
 	public int playerHealth;
 	public InGameScoreScript script;
 	private int loadedHealth;
+	public GUITexture vignette;
 	
 	// Sound variables
 	public AudioClip heartBeat;
@@ -26,6 +27,7 @@ public class LifeCounter : MonoBehaviour {
 			playerHealth = 4;
 			playedTakeDamage = 0;
 			loadedHealth = 4;
+			vignette.guiTexture.enabled = false;
 		}
 		// else, load the current health
 		else{
@@ -42,6 +44,7 @@ public class LifeCounter : MonoBehaviour {
 				playedTakeDamage = 4;
 			}
 		}
+		
 		PlayerPrefs.SetInt ("playerHealth", loadedHealth);
 	}
 
@@ -50,7 +53,7 @@ public class LifeCounter : MonoBehaviour {
 		if (PlayerPrefs.HasKey ("playerHealth")) {
 			playerHealth = PlayerPrefs.GetInt ("playerHealth");
 		}
-		// playerHealth = 3; // god mode
+		// playerHealth = 4; // god mode
 		// If player has 4 lives
 		if(playerHealth >= 4)
 		{
@@ -68,6 +71,7 @@ public class LifeCounter : MonoBehaviour {
 			life1.enabled = true;
 			if(playedTakeDamage == 0 && loadedHealth != 3){
 				StartCoroutine(PlayOuch());
+				StartCoroutine(FlashVignette());
 				playedTakeDamage = 2;
 				#if UNITY_ANDROID
 				Handheld.Vibrate();
@@ -83,6 +87,7 @@ public class LifeCounter : MonoBehaviour {
 			life1.enabled = true;
 			if(playedTakeDamage <= 2 && loadedHealth != 2){
 				StartCoroutine(PlayOuch());
+				StartCoroutine(FlashVignette());
 				playedTakeDamage = 3;
 				#if UNITY_ANDROID
 				Handheld.Vibrate();
@@ -96,6 +101,7 @@ public class LifeCounter : MonoBehaviour {
 			life3.enabled = false;
 			life2.enabled = false;
 			life1.enabled = true;
+			vignette.guiTexture.enabled = true;
 			if(playedTakeDamage <= 3 && loadedHealth != 1){
 				StartCoroutine(PlayOuch());
 				playedTakeDamage = 4;
@@ -120,6 +126,7 @@ public class LifeCounter : MonoBehaviour {
 				#if UNITY_ANDROID
 				Handheld.Vibrate();
 				#endif
+				StartCoroutine(FlashVignette());
 				StartCoroutine(PlayDie ());
 			}
 
@@ -143,5 +150,11 @@ public class LifeCounter : MonoBehaviour {
 		audio.PlayOneShot(takeDamage);
 		yield return new WaitForSeconds(0.5F);
 		yield break;
+	}
+	
+	IEnumerator FlashVignette(){
+		vignette.guiTexture.enabled = true;
+		yield return new WaitForSeconds(0.15F);
+		vignette.guiTexture.enabled = false;
 	}
 }

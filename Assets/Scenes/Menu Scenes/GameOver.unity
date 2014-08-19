@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 101671756}
-  currentScore: {fileID: 0}
+  currentScore: {fileID: 2126675567}
 --- !u!4 &101671759
 Transform:
   m_ObjectHideFlags: 0
