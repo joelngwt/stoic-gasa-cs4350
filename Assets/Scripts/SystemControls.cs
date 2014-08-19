@@ -4,7 +4,7 @@ using System.Collections;
 // Used for backend stuff
 // Functions in this script:
 // 1. Back button
-// 2. Prevent sleep
+// 2. Prevent sleep (not in use)
 // 3. Game pauses when multitasking
 
 // Script is found in:
@@ -22,7 +22,7 @@ public class SystemControls : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// prevent the device from sleeping/dimming
-		Screen.sleepTimeout = SleepTimeout.NeverSleep;
+		// Screen.sleepTimeout = SleepTimeout.NeverSleep;
 		if(Application.loadedLevelName == "mainMenu"){
 			backAgainMessage.enabled = false;
 		}
