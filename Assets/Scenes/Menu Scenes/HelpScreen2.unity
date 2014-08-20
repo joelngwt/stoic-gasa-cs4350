@@ -149,6 +149,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2000000, guid: 77c8f6a42ccf0e5439da0d34a3d8aab1, type: 2}
+      propertyPath: orthographic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 77c8f6a42ccf0e5439da0d34a3d8aab1, type: 2}
   m_RootGameObject: {fileID: 960595101}
@@ -165,6 +169,7 @@ GameObject:
   - 33: {fileID: 126737847}
   - 65: {fileID: 126737846}
   - 23: {fileID: 126737845}
+  - 114: {fileID: 126737849}
   m_Layer: 0
   m_Name: Menu Background (Menu)
   m_TagString: Untagged
@@ -222,10 +227,22 @@ Transform:
   m_GameObject: {fileID: 126737844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: .5}
-  m_LocalScale: {x: 20, y: 13, z: 1}
+  m_LocalScale: {x: 18, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &126737849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 89c0ebe0db0da2c4cbb6ed5ac43c97c2,
+    type: 2}
+  m_PrefabInternal: {fileID: 179644525}
+  m_GameObject: {fileID: 126737844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b813337242a30f94881cf1fc9678e31e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &179644525
 Prefab:
   m_ObjectHideFlags: 0
@@ -356,8 +373,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: .00999999978
   unitsLength: -.200000003
-  pixelHeight: .290999979
-  pixelLength: -10.3500004
+  pixelHeight: .166999996
+  pixelLength: -9.90000057
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -391,8 +408,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: -10.3500004
-    height: .290999979
+    width: -9.90000057
+    height: .166999996
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -404,7 +421,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 344971366}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .800000012, y: .209999993, z: 0}
+  m_LocalPosition: {x: .800000012, y: .25, z: 0}
   m_LocalScale: {x: .0700000003, y: .100000001, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -442,7 +459,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: e188325fe39a31b45befd6376face71b, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 75
+  m_FontSize: 71
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -474,9 +491,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1
   unitsLength: 13.7799997
-  pixelHeight: 29.1000004
-  pixelLength: 713.11499
-  fontNumber: 75
+  pixelHeight: 16.7000008
+  pixelLength: 682.109985
+  fontNumber: 71
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -514,7 +531,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: e188325fe39a31b45befd6376face71b, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 70
+  m_FontSize: 67
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -546,9 +563,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1
   unitsLength: 14.7700005
-  pixelHeight: 29.1000004
-  pixelLength: 764.347534
-  fontNumber: 70
+  pixelHeight: 16.7000008
+  pixelLength: 731.115051
+  fontNumber: 67
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -616,7 +633,7 @@ Camera:
   near clip plane: .300000012
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -857,8 +874,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0
-    height: 0
+    width: -9.90000057
+    height: .166999996
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -870,7 +887,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1975964110}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .200000003, y: .209999993, z: 0}
+  m_LocalPosition: {x: .200000003, y: .25, z: 0}
   m_LocalScale: {x: .0700000003, y: .100000001, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -888,8 +905,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: .00999999978
   unitsLength: -.200000003
-  pixelHeight: 0
-  pixelLength: 0
+  pixelHeight: .166999996
+  pixelLength: -9.90000057
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -1012,7 +1029,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1995894211}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .5, y: .209999993, z: 0}
+  m_LocalPosition: {x: .5, y: .25, z: 0}
   m_LocalScale: {x: .300000012, y: .100000001, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

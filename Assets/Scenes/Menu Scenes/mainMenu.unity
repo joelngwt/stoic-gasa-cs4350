@@ -117,6 +117,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2000000, guid: 77c8f6a42ccf0e5439da0d34a3d8aab1, type: 2}
+      propertyPath: orthographic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 77c8f6a42ccf0e5439da0d34a3d8aab1, type: 2}
   m_RootGameObject: {fileID: 846025193}
@@ -200,7 +204,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 346456756}
-  m_Text: 
+  m_Text: 'Your Score: 3145'
   m_OffsetZ: 0
   m_CharacterSize: .100000001
   m_LineSpacing: 1
@@ -221,7 +225,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 346456756}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.55717051, z: -.100000001}
+  m_LocalPosition: {x: 0, y: 1.10000002, z: -.100000001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -257,6 +261,7 @@ GameObject:
   - 33: {fileID: 524719534}
   - 65: {fileID: 524719533}
   - 23: {fileID: 524719532}
+  - 114: {fileID: 524719536}
   m_Layer: 0
   m_Name: Menu Background (Menu)
   m_TagString: Untagged
@@ -314,10 +319,22 @@ Transform:
   m_GameObject: {fileID: 524719531}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: -4.37113883e-08}
   m_LocalPosition: {x: 0, y: 0, z: .5}
-  m_LocalScale: {x: 20, y: 13, z: 1}
+  m_LocalScale: {x: 18, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &524719536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 89c0ebe0db0da2c4cbb6ed5ac43c97c2,
+    type: 2}
+  m_PrefabInternal: {fileID: 2099334393}
+  m_GameObject: {fileID: 524719531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b813337242a30f94881cf1fc9678e31e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &597276216
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,7 +352,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!102 &597276217
 TextMesh:
   serializedVersion: 3
@@ -464,7 +481,7 @@ Camera:
   near clip plane: .300000012
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -675,6 +692,78 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!1 &1025363564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1025363567}
+  - 132: {fileID: 1025363566}
+  - 114: {fileID: 1025363565}
+  m_Layer: 0
+  m_Name: text_StoicGasa
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1025363565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1025363564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a564e5c96acbb1b48ab9ba7bb67d5d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitsHeight: 1
+  unitsLength: 10
+  pixelHeight: 50.5999985
+  pixelLength: 678
+  fontNumber: 135
+  middleScreenWidth: 0
+  rightOfScreen: 0
+  leftOfScreen: 0
+  editable: 0
+--- !u!132 &1025363566
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1025363564}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: Stoic Gasa
+  m_Anchor: 4
+  m_Alignment: 0
+  m_PixelOffset: {x: 0, y: 0}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 12800000, guid: fc753816c81a3c44687ad9161de86bea, type: 3}
+  m_Material: {fileID: 0}
+  m_FontSize: 135
+  m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_PixelCorrect: 1
+  m_RichText: 1
+--- !u!4 &1025363567
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1025363564}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .5, y: .730000019, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
 --- !u!1 &1111145087
 GameObject:
   m_ObjectHideFlags: 0
@@ -976,6 +1065,7 @@ GameObject:
   - 4: {fileID: 1997300588}
   - 132: {fileID: 1997300587}
   - 114: {fileID: 1997300589}
+  - 114: {fileID: 1997300590}
   m_Layer: 0
   m_Name: text_Loading...
   m_TagString: Untagged
@@ -999,7 +1089,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: e188325fe39a31b45befd6376face71b, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 75
+  m_FontSize: 81
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -1033,6 +1123,26 @@ MonoBehaviour:
   button2: {fileID: 0}
   loading: {fileID: 1997300587}
   menuButton: {fileID: 0}
+--- !u!114 &1997300590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1997300586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a564e5c96acbb1b48ab9ba7bb67d5d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitsHeight: 1
+  unitsLength: 16.5699997
+  pixelHeight: 50.5999985
+  pixelLength: 1123.44592
+  fontNumber: 81
+  middleScreenWidth: 0
+  rightOfScreen: 0
+  leftOfScreen: 0
+  editable: 0
 --- !u!1 &2022901964
 GameObject:
   m_ObjectHideFlags: 0

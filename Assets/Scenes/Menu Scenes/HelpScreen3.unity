@@ -109,6 +109,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2000000, guid: 77c8f6a42ccf0e5439da0d34a3d8aab1, type: 2}
+      propertyPath: orthographic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 77c8f6a42ccf0e5439da0d34a3d8aab1, type: 2}
   m_RootGameObject: {fileID: 298517353}
@@ -384,7 +388,7 @@ Camera:
   near clip plane: .300000012
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -566,7 +570,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 595125482}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .5, y: .209999993, z: 0}
+  m_LocalPosition: {x: .5, y: .25, z: 0}
   m_LocalScale: {x: .300000012, y: .100000001, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -661,8 +665,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: .00999999978
   unitsLength: -.200000003
-  pixelHeight: .384000003
-  pixelLength: -10.2399998
+  pixelHeight: .505999982
+  pixelLength: -19.2000008
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -696,8 +700,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: -10.2399998
-    height: .384000003
+    width: -19.2000008
+    height: .505999982
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -709,7 +713,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1255976480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .200000003, y: .209999993, z: 0}
+  m_LocalPosition: {x: .200000003, y: .25, z: 0}
   m_LocalScale: {x: .0700000003, y: .100000001, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -725,6 +729,7 @@ GameObject:
   - 33: {fileID: 1276267264}
   - 65: {fileID: 1276267263}
   - 23: {fileID: 1276267262}
+  - 114: {fileID: 1276267266}
   m_Layer: 0
   m_Name: Menu Background (Menu)
   m_TagString: Untagged
@@ -782,10 +787,22 @@ Transform:
   m_GameObject: {fileID: 1276267261}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: .5}
-  m_LocalScale: {x: 20, y: 13, z: 1}
+  m_LocalScale: {x: 18, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!114 &1276267266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 89c0ebe0db0da2c4cbb6ed5ac43c97c2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1671179600}
+  m_GameObject: {fileID: 1276267261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b813337242a30f94881cf1fc9678e31e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1671179600
 Prefab:
   m_ObjectHideFlags: 0
@@ -859,7 +876,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: e188325fe39a31b45befd6376face71b, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 62
+  m_FontSize: 116
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -891,9 +908,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1
   unitsLength: 16.5
-  pixelHeight: 38.4000015
-  pixelLength: 844.799988
-  fontNumber: 62
+  pixelHeight: 50.5999985
+  pixelLength: 1584
+  fontNumber: 116
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -978,7 +995,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: e188325fe39a31b45befd6376face71b, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 76
+  m_FontSize: 142
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -1010,9 +1027,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1
   unitsLength: 13.46
-  pixelHeight: 38.4000015
-  pixelLength: 689.151978
-  fontNumber: 76
+  pixelHeight: 50.5999985
+  pixelLength: 1292.16003
+  fontNumber: 142
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
