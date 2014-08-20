@@ -400,7 +400,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b1d1c033f671345999b0e023e83a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backAgainMessage: {fileID: 1544276887}
   pauseButtonscript: {fileID: 0}
 --- !u!1 &846025193
 GameObject:
@@ -935,7 +934,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!131 &1544276887
 GUITexture:
   m_ObjectHideFlags: 0

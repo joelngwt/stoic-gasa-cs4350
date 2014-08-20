@@ -322,6 +322,7 @@ GameObject:
   - 4: {fileID: 235085769}
   - 131: {fileID: 235085768}
   - 114: {fileID: 235085767}
+  - 114: {fileID: 235085771}
   - 82: {fileID: 235085770}
   m_Layer: 0
   m_Name: text_Back
@@ -358,8 +359,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0
-    height: 0
+    width: -44.9749985
+    height: -5.05999994
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -371,7 +372,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 235085766}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .800000012, y: .219999999, z: 0}
+  m_LocalPosition: {x: .769999981, y: .219999999, z: 0}
   m_LocalScale: {x: .150000006, y: .100000001, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -434,6 +435,26 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &235085771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 235085766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a564e5c96acbb1b48ab9ba7bb67d5d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitsHeight: -.100000001
+  unitsLength: -.5
+  pixelHeight: -5.05999994
+  pixelLength: -44.9749985
+  fontNumber: 0
+  middleScreenWidth: 0
+  rightOfScreen: 0
+  leftOfScreen: 0
+  editable: 0
 --- !u!1 &429978341
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,6 +673,7 @@ GameObject:
   - 4: {fileID: 661052032}
   - 131: {fileID: 661052031}
   - 114: {fileID: 661052033}
+  - 114: {fileID: 661052035}
   - 82: {fileID: 661052034}
   m_Layer: 0
   m_Name: EffectsDown
@@ -673,8 +695,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0
-    height: 0
+    width: -.899499953
+    height: -.505999982
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -764,6 +786,26 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &661052035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 661052030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a564e5c96acbb1b48ab9ba7bb67d5d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitsHeight: -.00999999978
+  unitsLength: -.00999999978
+  pixelHeight: -.505999982
+  pixelLength: -.899499953
+  fontNumber: 0
+  middleScreenWidth: 0
+  rightOfScreen: 0
+  leftOfScreen: 0
+  editable: 0
 --- !u!1001 &710417488
 Prefab:
   m_ObjectHideFlags: 0
@@ -1020,6 +1062,7 @@ GameObject:
   - 4: {fileID: 1018786184}
   - 131: {fileID: 1018786183}
   - 114: {fileID: 1018786185}
+  - 114: {fileID: 1018786187}
   - 82: {fileID: 1018786186}
   m_Layer: 0
   m_Name: text_ClearHighscore
@@ -1041,8 +1084,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0
-    height: 0
+    width: -179.899994
+    height: -5.05999994
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -1054,7 +1097,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1018786182}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .289999992, y: .219999999, z: -.100000001}
+  m_LocalPosition: {x: .349999994, y: .219999999, z: -.100000001}
   m_LocalScale: {x: .349999994, y: .100000001, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1132,6 +1175,26 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &1018786187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1018786182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a564e5c96acbb1b48ab9ba7bb67d5d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitsHeight: -.100000001
+  unitsLength: -2
+  pixelHeight: -5.05999994
+  pixelLength: -179.899994
+  fontNumber: 0
+  middleScreenWidth: 0
+  rightOfScreen: 0
+  leftOfScreen: 0
+  editable: 0
 --- !u!1 &1193275256
 GameObject:
   m_ObjectHideFlags: 0
@@ -1328,6 +1391,7 @@ GameObject:
   - 4: {fileID: 1830069001}
   - 131: {fileID: 1830069000}
   - 114: {fileID: 1830069002}
+  - 114: {fileID: 1830069004}
   - 82: {fileID: 1830069003}
   m_Layer: 0
   m_Name: EffectsUp
@@ -1349,8 +1413,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0
-    height: 0
+    width: -.899499953
+    height: -.505999982
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -1440,6 +1504,26 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &1830069004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1830068999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a564e5c96acbb1b48ab9ba7bb67d5d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitsHeight: -.00999999978
+  unitsLength: -.00999999978
+  pixelHeight: -.505999982
+  pixelLength: -.899499953
+  fontNumber: 0
+  middleScreenWidth: 0
+  rightOfScreen: 0
+  leftOfScreen: 0
+  editable: 0
 --- !u!1 &2127095382
 GameObject:
   m_ObjectHideFlags: 0
@@ -1592,5 +1676,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b1d1c033f671345999b0e023e83a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backAgainMessage: {fileID: 0}
   pauseButtonscript: {fileID: 0}

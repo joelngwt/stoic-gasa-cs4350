@@ -15,17 +15,17 @@ using System.Collections;
 public class SystemControls : MonoBehaviour {
 	
 	private bool paused;
-	public GUITexture backAgainMessage;
-	private int backPressCounter = 0;
+	//public GUITexture backAgainMessage;
+	//private int backPressCounter = 0;
 	public PauseButtonScript pauseButtonscript;
 	
 	// Use this for initialization
 	void Start () {
 		// prevent the device from sleeping/dimming
 		// Screen.sleepTimeout = SleepTimeout.NeverSleep;
-		if(Application.loadedLevelName == "mainMenu"){
-			backAgainMessage.enabled = false;
-		}
+		//if(Application.loadedLevelName == "mainMenu"){
+		//	backAgainMessage.enabled = false;
+		//}
 	}
 	
 	// Update is called once per frame
@@ -48,6 +48,7 @@ public class SystemControls : MonoBehaviour {
 					pauseButtonscript.guiTexture.texture = pauseButtonscript.button1;
 					//Application.LoadLevel("mainMenu");
 				}
+				/*
 				else if(Application.loadedLevelName == "mainMenu")
 				{
 					if(backPressCounter == 0)
@@ -60,6 +61,7 @@ public class SystemControls : MonoBehaviour {
 						Application.Quit();
 					}
 				}
+				*/
 				else if(Application.loadedLevelName == "settings")
 				{
 					Application.LoadLevel("mainMenu");
