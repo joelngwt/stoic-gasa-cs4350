@@ -226,8 +226,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b703458f97df1da43a01d5ca771c5e4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button1: {fileID: 2800000, guid: 7ef15118aa26c99418d5069bb4031341, type: 3}
-  button2: {fileID: 2800000, guid: 79a7f874e3aac594290d2c0a6020e21c, type: 3}
+  button1: {fileID: 2800000, guid: 8b6ffcd538a37bc46907fdb68de2a024, type: 3}
+  button2: {fileID: 2800000, guid: 8becaa737dfbd9b46be99c3522534bc4, type: 3}
   loading: {fileID: 0}
   menuButton: {fileID: 8300000, guid: ff12a87a922e9bb488789fa8050b265b, type: 3}
 --- !u!131 &155121382
@@ -237,7 +237,7 @@ GUITexture:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 155121378}
   m_Enabled: 1
-  m_Texture: {fileID: 2800000, guid: 7ef15118aa26c99418d5069bb4031341, type: 3}
+  m_Texture: {fileID: 2800000, guid: 8b6ffcd538a37bc46907fdb68de2a024, type: 3}
   m_Color: {r: .5, g: .5, b: .5, a: .5}
   m_PixelInset:
     serializedVersion: 2
@@ -540,8 +540,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b703458f97df1da43a01d5ca771c5e4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button1: {fileID: 2800000, guid: 726459850ac6872429837ae3727ddfa1, type: 3}
-  button2: {fileID: 2800000, guid: ca12604ee1d51ac48becd4a7190baab3, type: 3}
+  button1: {fileID: 2800000, guid: 062437b7b2d2b494c9eb59b420a599d5, type: 3}
+  button2: {fileID: 2800000, guid: a471230d27550ed44960c1d2865c573c, type: 3}
   loading: {fileID: 0}
   menuButton: {fileID: 8300000, guid: ff12a87a922e9bb488789fa8050b265b, type: 3}
 --- !u!131 &595125485
@@ -551,7 +551,7 @@ GUITexture:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 595125482}
   m_Enabled: 1
-  m_Texture: {fileID: 2800000, guid: 726459850ac6872429837ae3727ddfa1, type: 3}
+  m_Texture: {fileID: 2800000, guid: 062437b7b2d2b494c9eb59b420a599d5, type: 3}
   m_Color: {r: .5, g: .5, b: .5, a: .5}
   m_PixelInset:
     serializedVersion: 2
@@ -571,7 +571,7 @@ Transform:
   m_GameObject: {fileID: 595125482}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .5, y: .25, z: 0}
-  m_LocalScale: {x: .300000012, y: .100000001, z: 1}
+  m_LocalScale: {x: .200000003, y: .119999997, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -665,8 +665,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: .00999999978
   unitsLength: -.200000003
-  pixelHeight: .505999982
-  pixelLength: -19.2000008
+  pixelHeight: .166999996
+  pixelLength: -9.42000008
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -683,8 +683,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b703458f97df1da43a01d5ca771c5e4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button1: {fileID: 2800000, guid: 4a4b9fdc0686055449cf25aa794ddeb2, type: 3}
-  button2: {fileID: 2800000, guid: 449ce048cdd6cca4192c18fa6d71eca4, type: 3}
+  button1: {fileID: 2800000, guid: 2438c1753b4235f48bc36c8261ef96d2, type: 3}
+  button2: {fileID: 2800000, guid: 86c1905ab95e5d2499a3ea5be5886cd7, type: 3}
   loading: {fileID: 0}
   menuButton: {fileID: 8300000, guid: ff12a87a922e9bb488789fa8050b265b, type: 3}
 --- !u!131 &1255976484
@@ -694,14 +694,14 @@ GUITexture:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1255976480}
   m_Enabled: 1
-  m_Texture: {fileID: 2800000, guid: 4a4b9fdc0686055449cf25aa794ddeb2, type: 3}
+  m_Texture: {fileID: 2800000, guid: 2438c1753b4235f48bc36c8261ef96d2, type: 3}
   m_Color: {r: .5, g: .5, b: .5, a: .5}
   m_PixelInset:
     serializedVersion: 2
     x: 0
     y: 0
-    width: -19.2000008
-    height: .505999982
+    width: -9.42000008
+    height: .166999996
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -876,7 +876,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: e188325fe39a31b45befd6376face71b, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 116
+  m_FontSize: 57
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -908,9 +908,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1
   unitsLength: 16.5
-  pixelHeight: 50.5999985
-  pixelLength: 1584
-  fontNumber: 116
+  pixelHeight: 16.7000008
+  pixelLength: 777.150024
+  fontNumber: 57
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -995,7 +995,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: e188325fe39a31b45befd6376face71b, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 142
+  m_FontSize: 69
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -1027,9 +1027,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1
   unitsLength: 13.46
-  pixelHeight: 50.5999985
-  pixelLength: 1292.16003
-  fontNumber: 142
+  pixelHeight: 16.7000008
+  pixelLength: 633.966003
+  fontNumber: 69
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0

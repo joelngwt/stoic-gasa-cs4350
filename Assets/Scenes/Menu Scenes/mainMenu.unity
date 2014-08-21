@@ -335,89 +335,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b813337242a30f94881cf1fc9678e31e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &597276216
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 597276219}
-  - 23: {fileID: 597276218}
-  - 102: {fileID: 597276217}
-  - 114: {fileID: 597276220}
-  m_Layer: 0
-  m_Name: text_StoicGasa
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!102 &597276217
-TextMesh:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 597276216}
-  m_Text: Stoic Gasa
-  m_OffsetZ: 0
-  m_CharacterSize: .100000001
-  m_LineSpacing: 1
-  m_Anchor: 4
-  m_Alignment: 0
-  m_TabSize: 4
-  m_FontSize: 150
-  m_FontStyle: 0
-  m_RichText: 1
-  m_Font: {fileID: 12800000, guid: fc753816c81a3c44687ad9161de86bea, type: 3}
-  m_Color:
-    serializedVersion: 2
-    rgba: 4278190080
---- !u!23 &597276218
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 597276216}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: fc753816c81a3c44687ad9161de86bea, type: 3}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!4 &597276219
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 597276216}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.05463886, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
---- !u!114 &597276220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 597276216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49b1d1c033f671345999b0e023e83a78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseButtonscript: {fileID: 0}
 --- !u!1 &846025193
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,8 +510,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b703458f97df1da43a01d5ca771c5e4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button1: {fileID: 2800000, guid: 4884c3054b173414a8294bd9b1aed0b8, type: 3}
-  button2: {fileID: 2800000, guid: a98d9c3701ec69c4495bb8d9dfc17b96, type: 3}
+  button1: {fileID: 2800000, guid: 075cc35a5f932d542a630a8d993cbdee, type: 3}
+  button2: {fileID: 2800000, guid: bf07a6e58c9c7204c8aa579a7e8f2e59, type: 3}
   loading: {fileID: 1997300587}
   menuButton: {fileID: 8300000, guid: ff12a87a922e9bb488789fa8050b265b, type: 3}
 --- !u!131 &859421923
@@ -604,7 +521,7 @@ GUITexture:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 859421920}
   m_Enabled: 1
-  m_Texture: {fileID: 2800000, guid: 4884c3054b173414a8294bd9b1aed0b8, type: 3}
+  m_Texture: {fileID: 2800000, guid: 075cc35a5f932d542a630a8d993cbdee, type: 3}
   m_Color: {r: .5, g: .5, b: .5, a: .5}
   m_PixelInset:
     serializedVersion: 2
@@ -624,7 +541,7 @@ Transform:
   m_GameObject: {fileID: 859421920}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .349999994, y: .25, z: 0}
-  m_LocalScale: {x: .200000003, y: .100000001, z: 1}
+  m_LocalScale: {x: .200000003, y: .119999997, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -723,8 +640,8 @@ MonoBehaviour:
   unitsHeight: 1
   unitsLength: 10
   pixelHeight: 50.5999985
-  pixelLength: 678
-  fontNumber: 135
+  pixelLength: 899.5
+  fontNumber: 179
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -745,7 +662,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: fc753816c81a3c44687ad9161de86bea, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 135
+  m_FontSize: 179
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -763,7 +680,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
 --- !u!1 &1111145087
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,7 +706,7 @@ GUITexture:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1111145087}
   m_Enabled: 1
-  m_Texture: {fileID: 2800000, guid: 08d83af715ef88f4d8dd751016baf36c, type: 3}
+  m_Texture: {fileID: 2800000, guid: 4f083fa010995fa4aa7f84553c67bd99, type: 3}
   m_Color: {r: .5, g: .5, b: .5, a: .5}
   m_PixelInset:
     serializedVersion: 2
@@ -809,7 +726,7 @@ Transform:
   m_GameObject: {fileID: 1111145087}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .5, y: .401881218, z: 0}
-  m_LocalScale: {x: .200000003, y: .100000001, z: .100000001}
+  m_LocalScale: {x: .200000003, y: .119999997, z: .100000001}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
@@ -824,8 +741,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b703458f97df1da43a01d5ca771c5e4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button1: {fileID: 2800000, guid: 08d83af715ef88f4d8dd751016baf36c, type: 3}
-  button2: {fileID: 2800000, guid: 29fd5d6d21f36dd4d9dd4341a91afcf4, type: 3}
+  button1: {fileID: 2800000, guid: 4f083fa010995fa4aa7f84553c67bd99, type: 3}
+  button2: {fileID: 2800000, guid: 13883452f109f1247a6b480dabb95c6f, type: 3}
   loading: {fileID: 1997300587}
   menuButton: {fileID: 8300000, guid: ff12a87a922e9bb488789fa8050b265b, type: 3}
 --- !u!82 &1111145091
@@ -911,7 +828,7 @@ GUITexture:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1188539947}
   m_Enabled: 1
-  m_Texture: {fileID: 2800000, guid: ae871f6f3a2ef5047b9733a19a1e3ad2, type: 3}
+  m_Texture: {fileID: 2800000, guid: 94895cc8ca3920f4b8d70e70633e90cd, type: 3}
   m_Color: {r: .5, g: .5, b: .5, a: .5}
   m_PixelInset:
     serializedVersion: 2
@@ -931,7 +848,7 @@ Transform:
   m_GameObject: {fileID: 1188539947}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .649999976, y: .25, z: 0}
-  m_LocalScale: {x: .200000003, y: .100000001, z: 1}
+  m_LocalScale: {x: .200000003, y: .119999997, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -946,8 +863,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b703458f97df1da43a01d5ca771c5e4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button1: {fileID: 2800000, guid: ae871f6f3a2ef5047b9733a19a1e3ad2, type: 3}
-  button2: {fileID: 2800000, guid: e2a6ae0bb5f1a1a47a6512dc77acac68, type: 3}
+  button1: {fileID: 2800000, guid: 94895cc8ca3920f4b8d70e70633e90cd, type: 3}
+  button2: {fileID: 2800000, guid: 5d831cc88617fa5409cac62e962f53ff, type: 3}
   loading: {fileID: 1997300587}
   menuButton: {fileID: 8300000, guid: ff12a87a922e9bb488789fa8050b265b, type: 3}
 --- !u!82 &1188539951
@@ -1089,7 +1006,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: e188325fe39a31b45befd6376face71b, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 81
+  m_FontSize: 108
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -1137,8 +1054,8 @@ MonoBehaviour:
   unitsHeight: 1
   unitsLength: 16.5699997
   pixelHeight: 50.5999985
-  pixelLength: 1123.44592
-  fontNumber: 81
+  pixelLength: 1490.47144
+  fontNumber: 108
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
