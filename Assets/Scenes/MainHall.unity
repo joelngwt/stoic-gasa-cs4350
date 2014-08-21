@@ -2331,6 +2331,10 @@ Prefab:
       propertyPath: plus30
       value: 
       objectReference: {fileID: 100000, guid: 1511d2c7a04936c45b0343f47237596e, type: 2}
+    - target: {fileID: 11400002, guid: 50c5bde68e6e15d4c9b1daf9a73a200a, type: 2}
+      propertyPath: pauseButton
+      value: 
+      objectReference: {fileID: 1365599109}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50c5bde68e6e15d4c9b1daf9a73a200a, type: 2}
   m_RootGameObject: {fileID: 1116017051}
@@ -10419,7 +10423,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: e188325fe39a31b45befd6376face71b, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 176
+  m_FontSize: 101
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -10453,9 +10457,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1
   unitsLength: 10.1800003
-  pixelHeight: 50.5999985
-  pixelLength: 915.69104
-  fontNumber: 176
+  pixelHeight: 29.1000004
+  pixelLength: 526.815002
+  fontNumber: 101
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -29847,8 +29851,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: -2581.56519
-    height: -920.920044
+    width: -1485.2251
+    height: -529.619995
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -29877,7 +29881,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b1d1c033f671345999b0e023e83a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backAgainMessage: {fileID: 0}
   pauseButtonscript: {fileID: 1365599108}
 --- !u!82 &1365599112
 AudioSource:
@@ -29952,8 +29955,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: -18.2000008
   unitsLength: -28.7000008
-  pixelHeight: -920.920044
-  pixelLength: -2581.56519
+  pixelHeight: -529.619995
+  pixelLength: -1485.2251
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -38896,6 +38899,7 @@ MonoBehaviour:
   pistolShoot: {fileID: 8300000, guid: aa1c40b7972387245980156888cdee06, type: 3}
   HMGShoot: {fileID: 8300000, guid: aaebd53b32c0a3e43abd03be3cd1f7a4, type: 3}
   shotgunShoot: {fileID: 8300000, guid: be26af417494ad946a7a79764fb88975, type: 3}
+  pauseButton: {fileID: 1365599109}
 --- !u!4 &1757585591
 Transform:
   m_ObjectHideFlags: 0
@@ -41067,8 +41071,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 20
   unitsLength: 25
-  pixelHeight: 1012
-  pixelLength: 2248.75
+  pixelHeight: 582
+  pixelLength: 1293.75
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -41088,8 +41092,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 2248.75
-    height: 1012
+    width: 1293.75
+    height: 582
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -41624,7 +41628,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: e188325fe39a31b45befd6376face71b, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 131
+  m_FontSize: 75
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -41657,9 +41661,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1.74000001
   unitsLength: 13.6999998
-  pixelHeight: 88.0439987
-  pixelLength: 1232.31494
-  fontNumber: 131
+  pixelHeight: 50.6339989
+  pixelLength: 708.974976
+  fontNumber: 75
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
