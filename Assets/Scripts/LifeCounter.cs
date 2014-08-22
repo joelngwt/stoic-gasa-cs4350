@@ -22,6 +22,11 @@ public class LifeCounter : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		playerHealth = 4;
+		vignette.guiTexture.enabled = false;
+		loadedHealth = 4;
+		PlayerPrefs.SetInt ("playerHealth", loadedHealth);
+	/*
 		// initialize to 3 if we are on the first level
 		if(Application.loadedLevelName == "MainHall"){
 			playerHealth = 4;
@@ -46,6 +51,7 @@ public class LifeCounter : MonoBehaviour {
 		}
 		
 		PlayerPrefs.SetInt ("playerHealth", loadedHealth);
+	*/
 	}
 
 	void Update () 
