@@ -52,6 +52,37 @@ public class GunDisplay : MonoBehaviour {
 		reloadTextHMG = false;
 	}
 
+	void Update() {
+		// Scroll up 
+		// Cycle: Pistol --> HMG --> Shotgun --> Pistol
+		if (Input.GetAxis("Mouse ScrollWheel") > 0) {
+			if (currentSelection == "Pistol") {
+				currentSelection = "HMG";
+			}
+			else if (currentSelection == "HMG") {
+				currentSelection = "Shotgun";
+			}
+			else if (currentSelection == "Shotgun") {
+				currentSelection = "Pistol";
+			}
+		}
+		
+		// Scroll down
+		// Cycle: Pistol --> Shotgun --> HMG --> Pistol
+		if (Input.GetAxis("Mouse ScrollWheel") < 0) {
+			if (currentSelection == "Pistol") {
+				currentSelection = "Shotgun";
+			}
+			else if (currentSelection == "Shotgun") {
+				currentSelection = "HMG";
+			}
+			else if (currentSelection == "HMG") {
+				currentSelection = "Pistol";
+			}
+		}
+	
+	}
+	
 	// OnGUI is called every frame
 	void OnGUI()
 	{ 
