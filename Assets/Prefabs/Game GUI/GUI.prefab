@@ -886,6 +886,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseButtonscript: {fileID: 11400006}
+  cursorTexture: {fileID: 2800000, guid: 8cd5e9746a7508c43b787a1b3a7d3d2a, type: 3}
 --- !u!114 &11400016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -923,8 +924,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: -18.2000008
   unitsLength: -28.7000008
-  pixelHeight: -920.920044
-  pixelLength: -2581.56519
+  pixelHeight: -303.940002
+  pixelLength: -1221.18506
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -965,9 +966,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1.74000001
   unitsLength: 13.6999998
-  pixelHeight: 88.0439987
-  pixelLength: 1232.31494
-  fontNumber: 131
+  pixelHeight: 29.0580006
+  pixelLength: 582.934998
+  fontNumber: 62
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -985,9 +986,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1
   unitsLength: 10.1800003
-  pixelHeight: 50.5999985
-  pixelLength: 915.69104
-  fontNumber: 176
+  pixelHeight: 16.7000008
+  pixelLength: 433.159027
+  fontNumber: 83
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -1005,8 +1006,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 20
   unitsLength: 25
-  pixelHeight: 1012
-  pixelLength: 2248.75
+  pixelHeight: 334
+  pixelLength: 1063.75
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -1063,8 +1064,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: -2581.56519
-    height: -920.920044
+    width: -1221.18506
+    height: -303.940002
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -1177,8 +1178,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 2248.75
-    height: 1012
+    width: 1063.75
+    height: 334
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -1222,7 +1223,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: a2cbcadf206e5c6489d3f952f3c7f2c6, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 131
+  m_FontSize: 62
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -1268,7 +1269,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: a2cbcadf206e5c6489d3f952f3c7f2c6, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 176
+  m_FontSize: 83
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
