@@ -22,7 +22,9 @@ public class MenuTouches : MonoBehaviour {
 	
 	void OnMouseUp(){
 		if (this.name == "text_START"){
-			Destroy(GameObject.Find ("Music")); // Stop menu music
+			if (GameObject.Find ("Music") != null) {
+				Destroy(GameObject.Find ("Music")); // Stop menu music
+			}
 			StartCoroutine(LoadMainHall());
 			StartCoroutine(Loading());
 		}

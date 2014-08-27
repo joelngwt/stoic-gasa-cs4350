@@ -1,8 +1,9 @@
 fileFormatVersion: 2
-guid: 076420b402b49fe4fb1a03803c6a779f
+guid: 84c61252960940f4090335d715e053d8
 TextureImporter:
   fileIDToRecycleName:
-    21300000: PauseMenu
+    21300000: MenuButton-Green
+    21300002: LevelSelectButton-Green
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

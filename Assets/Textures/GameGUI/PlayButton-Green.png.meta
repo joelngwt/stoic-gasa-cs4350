@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 076420b402b49fe4fb1a03803c6a779f
+guid: f73c7ce9d71070a47bf9df8cfe7c045c
 TextureImporter:
   fileIDToRecycleName:
-    21300000: PauseMenu
+    21300000: PlayButton-Green
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
