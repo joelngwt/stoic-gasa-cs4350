@@ -314,7 +314,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: fc753816c81a3c44687ad9161de86bea, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 188
+  m_FontSize: 176
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -347,8 +347,8 @@ MonoBehaviour:
   unitsHeight: 1
   unitsLength: 10.1700001
   pixelHeight: 50.5999985
-  pixelLength: 976.320007
-  fontNumber: 188
+  pixelLength: 914.791504
+  fontNumber: 176
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -668,6 +668,7 @@ GameObject:
   - 4: {fileID: 1953127252}
   - 131: {fileID: 1953127251}
   - 114: {fileID: 1953127250}
+  - 114: {fileID: 1953127254}
   - 82: {fileID: 1953127253}
   m_Layer: 0
   m_Name: text_Back
@@ -687,8 +688,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b703458f97df1da43a01d5ca771c5e4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button1: {fileID: 2800000, guid: 15deca1d216a2b7429b93c0ffd2b98cf, type: 3}
-  button2: {fileID: 2800000, guid: 782e162f8b4614845812526f250a8103, type: 3}
+  button1: {fileID: 2800000, guid: 71bef1ad8db202f429faa6ffc473a35f, type: 3}
+  button2: {fileID: 2800000, guid: 413a97e9557d8d442bf5fb27f877e7f1, type: 3}
   loading: {fileID: 0}
   menuButton: {fileID: 8300000, guid: ff12a87a922e9bb488789fa8050b265b, type: 3}
 --- !u!131 &1953127251
@@ -698,14 +699,14 @@ GUITexture:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1953127249}
   m_Enabled: 1
-  m_Texture: {fileID: 2800000, guid: 15deca1d216a2b7429b93c0ffd2b98cf, type: 3}
+  m_Texture: {fileID: 2800000, guid: 71bef1ad8db202f429faa6ffc473a35f, type: 3}
   m_Color: {r: .5, g: .5, b: .5, a: .5}
   m_PixelInset:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0
-    height: 0
+    width: -8.09549999
+    height: 1.01199996
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -717,7 +718,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1953127249}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .5, y: .219999999, z: 0}
+  m_LocalPosition: {x: .5, y: .25, z: 0}
   m_LocalScale: {x: .150000006, y: .100000001, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -780,6 +781,26 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &1953127254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1953127249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a564e5c96acbb1b48ab9ba7bb67d5d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitsHeight: .0199999996
+  unitsLength: -.0900000036
+  pixelHeight: 1.01199996
+  pixelLength: -8.09549999
+  fontNumber: 0
+  middleScreenWidth: 0
+  rightOfScreen: 0
+  leftOfScreen: 0
+  editable: 0
 --- !u!1 &2126675566
 GameObject:
   m_ObjectHideFlags: 0

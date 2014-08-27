@@ -19,6 +19,6 @@ public class MenuHighScore : MonoBehaviour {
 			currentScoreNum = PlayerPrefs.GetInt ("currentScore");
 		}
 		textMesh.text = "Highscore: " + highScore.ToString ();
-		currentScore.text = "Your score: " + currentScoreNum.ToString();
+		currentScore.text = "Your highscore: " + currentScoreNum.ToString();
 	}
 }

@@ -169,8 +169,8 @@ MonoBehaviour:
   unitsHeight: 1
   unitsLength: 10.1700001
   pixelHeight: 50.5999985
-  pixelLength: 976.320007
-  fontNumber: 188
+  pixelLength: 914.791504
+  fontNumber: 176
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -191,7 +191,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: fc753816c81a3c44687ad9161de86bea, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 188
+  m_FontSize: 176
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -588,6 +588,8 @@ GameObject:
   - 4: {fileID: 1231424237}
   - 131: {fileID: 1231424236}
   - 114: {fileID: 1231424235}
+  - 114: {fileID: 1231424239}
+  - 82: {fileID: 1231424238}
   m_Layer: 0
   m_Name: text_Back
   m_TagString: Untagged
@@ -606,10 +608,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b703458f97df1da43a01d5ca771c5e4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button1: {fileID: 2800000, guid: 15deca1d216a2b7429b93c0ffd2b98cf, type: 3}
-  button2: {fileID: 2800000, guid: 782e162f8b4614845812526f250a8103, type: 3}
+  button1: {fileID: 2800000, guid: 71bef1ad8db202f429faa6ffc473a35f, type: 3}
+  button2: {fileID: 2800000, guid: 413a97e9557d8d442bf5fb27f877e7f1, type: 3}
   loading: {fileID: 0}
-  menuButton: {fileID: 0}
+  menuButton: {fileID: 8300000, guid: ff12a87a922e9bb488789fa8050b265b, type: 3}
 --- !u!131 &1231424236
 GUITexture:
   m_ObjectHideFlags: 0
@@ -617,14 +619,14 @@ GUITexture:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1231424234}
   m_Enabled: 1
-  m_Texture: {fileID: 2800000, guid: 15deca1d216a2b7429b93c0ffd2b98cf, type: 3}
+  m_Texture: {fileID: 2800000, guid: 71bef1ad8db202f429faa6ffc473a35f, type: 3}
   m_Color: {r: .5, g: .5, b: .5, a: .5}
   m_PixelInset:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0
-    height: 0
+    width: -5.39699984
+    height: -3.03600001
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -636,11 +638,89 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1231424234}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .5, y: .219999999, z: 0}
+  m_LocalPosition: {x: .5, y: .25, z: 0}
   m_LocalScale: {x: .150000006, y: .100000001, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!82 &1231424238
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1231424234}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!114 &1231424239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1231424234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a564e5c96acbb1b48ab9ba7bb67d5d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitsHeight: -.0599999987
+  unitsLength: -.0599999987
+  pixelHeight: -3.03600001
+  pixelLength: -5.39699984
+  fontNumber: 0
+  middleScreenWidth: 0
+  rightOfScreen: 0
+  leftOfScreen: 0
+  editable: 0
 --- !u!1001 &1472817151
 Prefab:
   m_ObjectHideFlags: 0

@@ -53,55 +53,57 @@ public class PauseMenu : MonoBehaviour {
 			replayButton.enabled = false;	
 		}
 		
+		if (menuBackground.enabled == true) {
 		// Mouse down functions
 		// ----------------
-		if (Input.GetMouseButtonDown(0) && playButton.HitTest(Input.mousePosition)) {
-			playButton.guiTexture.texture = playButtonYellow;
-			audio.PlayOneShot(buttonSound);
-			playPressed = true;
-		}
-		else if (Input.GetMouseButtonDown(0) && menuButton.HitTest(Input.mousePosition)) {
-			menuButton.guiTexture.texture = menuButtonYellow;
-			audio.PlayOneShot(buttonSound);
-			menuPressed = true;
-		}
-		else if (Input.GetMouseButtonDown(0) && replayButton.HitTest(Input.mousePosition)) {
-			replayButton.guiTexture.texture = replayButtonYellow;
-			audio.PlayOneShot(buttonSound);
-			replayPressed = true;
-		}
-		// ----------------
-		
-		// Mouse up functions
-		// !Input.GetMouseButton(0): when left mouse button is not held down
-		// ----------------
-		if (playPressed && !Input.GetMouseButton(0)) {
-			Time.timeScale = 1;
-			playButton.guiTexture.texture = playButtonGreen;
-			playPressed = false;
-		}
-		else if (menuPressed && !Input.GetMouseButton(0)) {
-			Time.timeScale = 1;
-			Application.LoadLevel("mainMenu");
-			menuButton.guiTexture.texture = menuButtonGreen;
-			menuPressed = false;
-		}
-		else if (replayPressed && !Input.GetMouseButton(0)) {
-			Time.timeScale = 1;
-			menuButton.guiTexture.texture = menuButtonGreen;
-			replayPressed = false;
+			if (Input.GetMouseButtonDown(0) && playButton.HitTest(Input.mousePosition)) {
+				playButton.guiTexture.texture = playButtonYellow;
+				audio.PlayOneShot(buttonSound);
+				playPressed = true;
+			}
+			else if (Input.GetMouseButtonDown(0) && menuButton.HitTest(Input.mousePosition)) {
+				menuButton.guiTexture.texture = menuButtonYellow;
+				audio.PlayOneShot(buttonSound);
+				menuPressed = true;
+			}
+			else if (Input.GetMouseButtonDown(0) && replayButton.HitTest(Input.mousePosition)) {
+				replayButton.guiTexture.texture = replayButtonYellow;
+				audio.PlayOneShot(buttonSound);
+				replayPressed = true;
+			}
+			// ----------------
 			
-			if (Application.loadedLevelName == "MainHall") {
-				Application.LoadLevel("MainHall");
+			// Mouse up functions
+			// !Input.GetMouseButton(0): when left mouse button is not held down
+			// ----------------
+			if (playPressed && !Input.GetMouseButton(0)) {
+				Time.timeScale = 1;
+				playButton.guiTexture.texture = playButtonGreen;
+				playPressed = false;
 			}
-			else if (Application.loadedLevelName == "DiningHall") {
-				Application.LoadLevel("DiningHall");
+			else if (menuPressed && !Input.GetMouseButton(0)) {
+				Time.timeScale = 1;
+				Application.LoadLevel("mainMenu");
+				menuButton.guiTexture.texture = menuButtonGreen;
+				menuPressed = false;
 			}
-			else if (Application.loadedLevelName == "BossRoom") {
-				Application.LoadLevel("BossRoom");
+			else if (replayPressed && !Input.GetMouseButton(0)) {
+				Time.timeScale = 1;
+				menuButton.guiTexture.texture = menuButtonGreen;
+				replayPressed = false;
+				
+				if (Application.loadedLevelName == "MainHall") {
+					Application.LoadLevel("MainHall");
+				}
+				else if (Application.loadedLevelName == "DiningHall") {
+					Application.LoadLevel("DiningHall");
+				}
+				else if (Application.loadedLevelName == "BossRoom") {
+					Application.LoadLevel("BossRoom");
+				}
+				
 			}
-			
+			// ----------------
 		}
-		// ----------------
 	}
 }

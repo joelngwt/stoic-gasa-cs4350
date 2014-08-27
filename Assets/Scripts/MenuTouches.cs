@@ -22,11 +22,8 @@ public class MenuTouches : MonoBehaviour {
 	
 	void OnMouseUp(){
 		if (this.name == "text_START"){
-			if (GameObject.Find ("Music") != null) {
-				Destroy(GameObject.Find ("Music")); // Stop menu music
-			}
-			StartCoroutine(LoadMainHall());
-			StartCoroutine(Loading());
+			StartCoroutine(LoadLevelSelect());
+			//StartCoroutine(Loading());
 		}
 		else if (this.name == "text_Settings"){
 			StartCoroutine(LoadSettings ());
@@ -35,7 +32,8 @@ public class MenuTouches : MonoBehaviour {
 			StartCoroutine(LoadMainMenu ());
 		}
 		else if (this.name == "text_ClearHighscore"){
-			PlayerPrefs.DeleteKey ("highScore");
+			PlayerPrefs.SetInt ("highScore", 0);
+			PlayerPrefs.SetInt ("currentScore", 0);
 			guiTexture.texture = button1;
 			audio.PlayOneShot(menuButton);
 		}
@@ -46,52 +44,58 @@ public class MenuTouches : MonoBehaviour {
 			StartCoroutine(LoadHelp1 ());
 		}
 		else if (this.name == "Left_Button"){ // back (help screen)
-			if(Application.loadedLevelName == "HelpScreen2"){
+			if (Application.loadedLevelName == "HelpScreen2") {
 				StartCoroutine(LoadHelp1 ());
 			}
-			else if(Application.loadedLevelName == "HelpScreen3"){
+			else if (Application.loadedLevelName == "HelpScreen3") {
 				StartCoroutine(LoadHelp2 ());
 			}
 		}
-		else if (this.name == "Right_Button"){ // forward (help screen)
-			if(Application.loadedLevelName == "HelpScreen1"){
+		else if (this.name == "Right_Button") { // forward (help screen)
+			if (Application.loadedLevelName == "HelpScreen1") {
 				StartCoroutine(LoadHelp2 ());
 			}
-			else if(Application.loadedLevelName == "HelpScreen2"){
+			else if (Application.loadedLevelName == "HelpScreen2") {
 				StartCoroutine(LoadHelp3 ());
 			}
 		}
-	}
-	
-	void OnMouseDown(){
-		if (guiTexture.name == "text_START")
-			guiTexture.texture = button2;
-		else if (guiTexture.name == "text_Settings")
-			guiTexture.texture = button2;
-		else if (guiTexture.name == "text_Back")
-			guiTexture.texture = button2;
-		else if (guiTexture.name == "text_ClearHighscore"){
-			guiTexture.texture = button2;
+		else if (this.name == "text_One") {
+			if (GameObject.Find ("Music") != null) {
+				Destroy(GameObject.Find ("Music")); // Stop menu music
+			}
+			StartCoroutine(LoadMainHall());
 		}
-		else if (guiTexture.name == "text_Backtomenu"){
-			guiTexture.texture = button2;
+		else if (this.name == "text_Two") {
+			if (GameObject.Find ("Music") != null) {
+				Destroy(GameObject.Find ("Music")); // Stop menu music
+			}
+			StartCoroutine(LoadDiningHall());
 		}
-		else if (guiTexture.name == "text_Help"){
-			guiTexture.texture = button2;
-		}
-		else if (guiTexture.name == "Left_Button"){
-			guiTexture.texture = button2;
-		}
-		else if (guiTexture.name == "Right_Button"){
-			guiTexture.texture = button2;
+		else if (this.name == "text_Three") {
+			if (GameObject.Find ("Music") != null) {
+				Destroy(GameObject.Find ("Music")); // Stop menu music
+			}
+			StartCoroutine(LoadBossRoom());
 		}
 	}
 	
-	IEnumerator Loading(){
+	void OnMouseDown() {
+		if (guiTexture.name == "text_START" || guiTexture.name == "text_Settings" ||
+		    guiTexture.name == "text_Back" || guiTexture.name == "text_ClearHighscore" ||
+		    guiTexture.name == "text_Backtomenu" || guiTexture.name == "text_Help" ||
+		    guiTexture.name == "Left_Button" || guiTexture.name == "Right_Button" ||
+		    guiTexture.name == "text_One" || guiTexture.name == "text_Two" ||
+		    guiTexture.name == "text_Three") {
+		    
+			guiTexture.texture = button2;
+		}
+	}
+	
+	IEnumerator Loading() {
 		loading.enabled = true;
 		yield break;
 	}
-	IEnumerator LoadSettings(){
+	IEnumerator LoadSettings() {
 		audio.PlayOneShot(menuButton);
 		guiTexture.texture = button1;
 		yield return new WaitForSeconds(0.2F);
@@ -99,7 +103,15 @@ public class MenuTouches : MonoBehaviour {
 		yield break;
 	}
 	
-	IEnumerator LoadMainMenu(){
+	IEnumerator LoadLevelSelect() {
+		audio.PlayOneShot(menuButton);
+		guiTexture.texture = button1;
+		yield return new WaitForSeconds(0.2F);
+		Application.LoadLevel ("LevelSelect");
+		yield break;
+	}
+	
+	IEnumerator LoadMainMenu() {
 		audio.PlayOneShot(menuButton);
 		guiTexture.texture = button1;
 		yield return new WaitForSeconds(0.2F);
@@ -107,7 +119,7 @@ public class MenuTouches : MonoBehaviour {
 		yield break;
 	}
 	
-	IEnumerator LoadMainHall(){
+	IEnumerator LoadMainHall() {
 		audio.PlayOneShot(menuButton);
 		guiTexture.texture = button1;
 		yield return new WaitForSeconds(0.2F);
@@ -115,7 +127,23 @@ public class MenuTouches : MonoBehaviour {
 		yield break;
 	}
 	
-	IEnumerator LoadHelp1(){
+	IEnumerator LoadDiningHall() {
+		audio.PlayOneShot(menuButton);
+		guiTexture.texture = button1;
+		yield return new WaitForSeconds(0.2F);
+		Application.LoadLevel ("DiningHall");
+		yield break;
+	}
+	
+	IEnumerator LoadBossRoom() {
+		audio.PlayOneShot(menuButton);
+		guiTexture.texture = button1;
+		yield return new WaitForSeconds(0.2F);
+		Application.LoadLevel ("BossRoom");
+		yield break;
+	}
+	
+	IEnumerator LoadHelp1() {
 		audio.PlayOneShot(menuButton);
 		guiTexture.texture = button1;
 		yield return new WaitForSeconds(0.2F);
@@ -123,14 +151,14 @@ public class MenuTouches : MonoBehaviour {
 		yield break;
 	}
 	
-	IEnumerator LoadHelp2(){
+	IEnumerator LoadHelp2() {
 		audio.PlayOneShot(menuButton);
 		guiTexture.texture = button1;
 		yield return new WaitForSeconds(0.2F);
 		Application.LoadLevel ("HelpScreen2");
 		yield break;
-	}
-	IEnumerator LoadHelp3(){
+	} 
+	IEnumerator LoadHelp3() {
 		audio.PlayOneShot(menuButton);
 		guiTexture.texture = button1;
 		yield return new WaitForSeconds(0.2F);
