@@ -21,6 +21,14 @@ public class Enemy : MonoBehaviour {
 	// Audio
 	public AudioClip getDamaged;
 	public AudioClip getDamaged2;
+	
+	// Constants (in percentages)
+	//[SerializeField] private GlobalConstants constants;
+	
+	// Pickups
+	[SerializeField] private GameObject healthPickup;
+	[SerializeField] private GameObject ammoPickup;
+	[SerializeField] private GameObject boostPickup;
 
 	// Use this for initialization
 	void Start () {
@@ -159,13 +167,15 @@ public class Enemy : MonoBehaviour {
 		}
 		*/
 	}
-
+	
+	// Occurs when the bear dies
 	public void StartAnim()
 	{
 		#if UNITY_EDITOR
 		Debug.Log ("startAnim in bear");
 		#endif
 		
+		// Audio randomization
 		float audioToPlay = Random.Range(0.0F, 1.0F);
 		if(audioToPlay < 0.5){
 			audio.PlayOneShot(getDamaged);
@@ -173,20 +183,22 @@ public class Enemy : MonoBehaviour {
 		else{
 			audio.PlayOneShot(getDamaged2);
 		}
-		if(gameObject.tag == "Enemy"){
-			animation.Play ("Die_Bear");
-			//renderer.material.SetColor("_Color", Color.red);
-			DestroyObject(gameObject, 0.7F); // 0.625 seconds needed for die animation to complete
-		}
-		// You shot the head. Actions have to be performed with respect to its parent
-		else{
-			transform.parent.animation.Play ("Die_Bear");
-			//transform.parent.renderer.material.SetColor("_Color", Color.red);
-			DestroyObject(transform.parent.gameObject, 0.7F); // if the head is shot, destroy the parent (body) as well 
-			// 0.625 seconds needed for die animation to complete
-			
-		}
 		
-	}
+		// Will the bear drop a pickup?
+		float dropPickup = Random.Range(0, 100);
+		if (dropPickup < Constants.DROP_CHANCE_BOOST) {
+			Instantiate(boostPickup, gameObject.transform.position, gameObject.transform.rotation);
+		}
+		else if (dropPickup < Constants.DROP_CHANCE_AMMO) {
+			Instantiate(ammoPickup, gameObject.transform.position, gameObject.transform.rotation);
+		}
+		else if (dropPickup < Constants.DROP_CHANCE_HEALTH) {
+			Instantiate(healthPickup, gameObject.transform.position, gameObject.transform.rotation);
+		}		
 
+		animation.Play ("Die_Bear");
+		gameObject.collider.enabled = false;
+		//renderer.material.SetColor("_Color", Color.red);
+		DestroyObject(gameObject, 0.7F); // 0.625 seconds needed for die animation to complete
+	}
 }

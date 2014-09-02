@@ -5,11 +5,12 @@ using System.Collections;
 
 public class Shield : MonoBehaviour {
 	public GameObject shield;
+	public GunDisplay gunDisplayScript;
+	public GUITexture useShieldButton;
 	private bool shieldIsUp = false;
 	private Vector3 shieldMoveVector = new Vector3(0,0.45F,0); // shield move distance is here
-	public GunDisplay gunDisplayScript;
-	public bool reloading = false;
-	public GUITexture useShieldButton;
+	
+	public bool isReloading = false;
 
 	// Sound variables
 	// -------------
@@ -40,16 +41,19 @@ public class Shield : MonoBehaviour {
 						shield.transform.Translate(shieldMoveVector, Camera.main.transform);
 						
 						if(gunDisplayScript.currentSelection.Equals ("Pistol")){
-							reloading = true; // let the script know that we are reloading
-							StartCoroutine(PistolReload()); // call this method
+							if (isReloading == false) {
+								StartCoroutine(PistolReload()); // call this method
+							}
 						}
 						else if(gunDisplayScript.currentSelection.Equals ("HMG")){
-							reloading = true; // let the script know that we are reloading
-							StartCoroutine(HMGReload()); // call this method
+							if (isReloading == false) {
+								StartCoroutine(HMGReload()); // call this method
+							}
 						}
 						else if(gunDisplayScript.currentSelection.Equals ("Shotgun")){
-							reloading = true; // let the script know that we are reloading
-							StartCoroutine(ShotgunReload()); // call this method
+							if (isReloading == false) {
+								StartCoroutine(ShotgunReload()); // call this method
+							}
 						}
 					}
 				}
@@ -66,16 +70,18 @@ public class Shield : MonoBehaviour {
 
 	// Reloading takes time
 	IEnumerator PistolReload(){
+		isReloading = true;
 		while(gunDisplayScript.ammoCountPistol < 6){
 			gunDisplayScript.ammoCountPistol++;
 			audio.PlayOneShot(pistolReload);
 			yield return new WaitForSeconds(0.1F);
 		}
-		reloading = false;
+		isReloading = false;
 		yield break;
 	}
 	// Reloading takes time
 	IEnumerator ShotgunReload(){
+		isReloading = true;
 		while(gunDisplayScript.ammoCountShotgun < 5){
 			if(gunDisplayScript.ammoCountTotalShotgun > 0){
 				gunDisplayScript.ammoCountTotalShotgun--;
@@ -87,12 +93,13 @@ public class Shield : MonoBehaviour {
 				break;
 			}
 		}
-		reloading = false;
+		isReloading = false;
 		yield break;
 	}
 	
 	// Reloading takes time
 	IEnumerator HMGReload(){
+		isReloading = true;
 		while(gunDisplayScript.ammoCountHMG != 40){
 			if(gunDisplayScript.ammoCountTotalHMG > 0){
 				gunDisplayScript.ammoCountTotalHMG--;
@@ -104,7 +111,7 @@ public class Shield : MonoBehaviour {
 				break;
 			}
 		}
-		reloading = false;
+		isReloading = false;
 		yield break;
 	}
 }

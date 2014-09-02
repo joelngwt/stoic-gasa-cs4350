@@ -9,9 +9,9 @@ public class Shooting : MonoBehaviour {
 	private int ammoCount;
 	public GunDisplay gunDisplayScript;
 	// Rate of fire for the enemy
-	[SerializeField] protected float fireRateHMG = 0.05F;
+	protected float fireRateHMG = 0.05F;
 	protected float nextFireHMG = 0.5F;
-	[SerializeField] protected float fireRateShotgun = 0.1F;
+	protected float fireRateShotgun = 0.1F;
 	protected float nextFireShotgun = 0.5F;
 	private bool shotgunShooting = false;
 	// -------------
@@ -35,6 +35,9 @@ public class Shooting : MonoBehaviour {
 	public AudioClip HMGShoot;
 	public AudioClip shotgunShoot;
 	// -------------
+	
+	// Boost activation
+	private bool isBoosted = false;
 	
 	[SerializeField] private GUITexture pauseButton;
 	
@@ -65,11 +68,13 @@ public class Shooting : MonoBehaviour {
 			{
 				if(!pauseButton.HitTest(Input.mousePosition) && Input.GetMouseButtonDown(0) && GUIUtility.hotControl == 0)
 				{
-					if(Physics.Raycast(myRay,out hit) && shieldScript.reloading == false) {
+					if(Physics.Raycast(myRay,out hit) && shieldScript.isReloading == false) {
 						if(gunDisplayScript.ammoCountPistol > 0 && hit.transform.gameObject.tag != "Shield" && hit.transform.gameObject.tag != "EnemyBullet"){ // prevent shooting the shield or bullet
 							Instantiate(bullethole, hit.point, Quaternion.identity);		
 							Debug.DrawRay(myRay.origin, myRay.direction*hit.distance, Color.red);
-							gunDisplayScript.ammoCountPistol--; // decrease ammo count
+							if (isBoosted == false ) {
+								gunDisplayScript.ammoCountPistol--; // decrease ammo count
+							}
 							audio.PlayOneShot(pistolShoot);
 			
 							hitDetection(hit);
@@ -84,7 +89,7 @@ public class Shooting : MonoBehaviour {
 				if(!pauseButton.HitTest(Input.mousePosition) && Input.GetMouseButton(0) && Time.time - nextFireHMG > fireRateHMG && GUIUtility.hotControl == 0)
 				{
 
-					if(Physics.Raycast(myRay,out hit) && shieldScript.reloading == false) {
+					if(Physics.Raycast(myRay,out hit) && shieldScript.isReloading == false) {
 						if(gunDisplayScript.ammoCountHMG > 0 && hit.transform.gameObject.tag != "Shield" && hit.transform.gameObject.tag != "EnemyBullet"){ // prevent shooting the shield or bullet
 							Instantiate(bullethole, hit.point, Quaternion.identity);		
 							Debug.DrawRay(myRay.origin, myRay.direction*hit.distance, Color.red);
@@ -92,7 +97,9 @@ public class Shooting : MonoBehaviour {
 			
 							hitDetection(hit);
 
-							gunDisplayScript.ammoCountHMG--; // decrease ammo count
+							if (isBoosted == false) {
+								gunDisplayScript.ammoCountHMG--; // decrease ammo count
+							}
 							nextFireHMG = Time.time + fireRateHMG; // shooting delay
 						}
 					}
@@ -101,16 +108,18 @@ public class Shooting : MonoBehaviour {
 			// If gun is shotgun
 			if(gunDisplayScript.currentSelection == "Shotgun")
 			{
-				if(!pauseButton.HitTest(Input.mousePosition) && Input.GetMouseButtonDown(0) && shotgunShooting == false && shieldScript.reloading == false && GUIUtility.hotControl == 0)
+				if(!pauseButton.HitTest(Input.mousePosition) && Input.GetMouseButtonDown(0) && shotgunShooting == false && shieldScript.isReloading == false && GUIUtility.hotControl == 0)
 				{
 									
 					shotgunShooting = true; // let the script know that we are shooting with the shotgun
 					StartCoroutine(ShotgunShooting()); // call this method
 
 					// Bullet/raycast 1
-					if(Physics.Raycast(myRay,out hit) && shieldScript.reloading == false) {
+					if(Physics.Raycast(myRay,out hit) && shieldScript.isReloading == false) {
 						if(gunDisplayScript.ammoCountShotgun > 0 && hit.transform.gameObject.tag != "Shield" && hit.transform.gameObject.tag != "EnemyBullet"){ // prevent shooting the shield or bullet
-							gunDisplayScript.ammoCountShotgun--; // decrease ammo count 
+							if (isBoosted == false) {
+								gunDisplayScript.ammoCountShotgun--; // decrease ammo count 
+							}
 							Instantiate(bullethole, hit.point, Quaternion.identity);		
 							Debug.DrawRay(myRay.origin, myRay.direction*hit.distance, Color.red);
 							audio.PlayOneShot(shotgunShoot);
@@ -120,7 +129,7 @@ public class Shooting : MonoBehaviour {
 					}
 
 					// Bullet/raycast 2
-					if(Physics.Raycast(myRay2,out hit2) && shieldScript.reloading == false) {
+					if(Physics.Raycast(myRay2,out hit2) && shieldScript.isReloading == false) {
 						if(gunDisplayScript.ammoCountShotgun > 0 && hit.transform.gameObject.tag != "Shield" && hit.transform.gameObject.tag != "EnemyBullet"){ // prevent shooting the shield or bullet
 							Instantiate(bullethole, hit2.point, Quaternion.identity);		
 							Debug.DrawRay(myRay2.origin, myRay2.direction*hit2.distance, Color.red);
@@ -131,7 +140,7 @@ public class Shooting : MonoBehaviour {
 					}
 
 					// Bullet/raycast 3
-					if(Physics.Raycast(myRay3, out hit3) && shieldScript.reloading == false) {
+					if(Physics.Raycast(myRay3, out hit3) && shieldScript.isReloading == false) {
 						if(gunDisplayScript.ammoCountShotgun > 0 && hit.transform.gameObject.tag != "Shield" && hit.transform.gameObject.tag != "EnemyBullet"){ // prevent shooting the shield or bullet
 							Instantiate(bullethole, hit3.point, Quaternion.identity);		
 							Debug.DrawRay(myRay3.origin, myRay3.direction*hit3.distance, Color.red);
@@ -142,7 +151,7 @@ public class Shooting : MonoBehaviour {
 					}
 
 					// Bullet/raycast 4
-					if(Physics.Raycast(myRay4, out hit4) && shieldScript.reloading == false) {
+					if(Physics.Raycast(myRay4, out hit4) && shieldScript.isReloading == false) {
 						if(gunDisplayScript.ammoCountShotgun > 0 && hit.transform.gameObject.tag != "Shield" && hit.transform.gameObject.tag != "EnemyBullet"){ // prevent shooting the shield or bullet
 							Instantiate(bullethole, hit4.point, Quaternion.identity);		
 							Debug.DrawRay(myRay4.origin, myRay4.direction*hit4.distance, Color.red);
@@ -152,7 +161,7 @@ public class Shooting : MonoBehaviour {
 					}
 
 					// Bullet/raycast 5
-					if(Physics.Raycast(myRay5,out hit5) && shieldScript.reloading == false) {
+					if(Physics.Raycast(myRay5,out hit5) && shieldScript.isReloading == false) {
 						if(gunDisplayScript.ammoCountShotgun > 0 && hit.transform.gameObject.tag != "Shield" && hit.transform.gameObject.tag != "EnemyBullet"){ // prevent shooting the shield or bullet
 							Instantiate(bullethole, hit5.point, Quaternion.identity);		
 							Debug.DrawRay(myRay5.origin, myRay5.direction*hit5.distance, Color.red);
@@ -179,19 +188,26 @@ public class Shooting : MonoBehaviour {
 		else{
 			Instantiate(plus10, new Vector3(thingHit.transform.position.x,thingHit.transform.position.y+5f,thingHit.transform.position.z), thingHit.transform.rotation); 
 		}
-		scoreScript.currentScore += 10;
+		scoreScript.currentScore += Constants.SCORE_BEAR;
 		yield break;
 	}
 	
 	IEnumerator Plus20(GameObject thingHit){
 		Instantiate(plus20, thingHit.transform.position, thingHit.transform.rotation); 
-		scoreScript.currentScore += 20;
+		scoreScript.currentScore += Constants.SCORE_LOLLIPOP;
 		yield break;
 	}
 	
 	IEnumerator Plus30(GameObject thingHit){
 		Instantiate(plus30, thingHit.transform.position, thingHit.transform.rotation); 
-		scoreScript.currentScore += 30;
+		scoreScript.currentScore += Constants.SCORE_EGG;
+		yield break;
+	}
+	
+	IEnumerator BoostTimer(){
+		isBoosted = true;
+		yield return new WaitForSeconds(Constants.BOOST_TIME);
+		isBoosted = false;
 		yield break;
 	}
 	
@@ -219,6 +235,23 @@ public class Shooting : MonoBehaviour {
 			StartCoroutine(Plus30(target));
 			EnemyEgg script = target.GetComponent<EnemyEgg>();
 			script.StartAnim();
+		}
+		else if (theHit.transform.gameObject.tag == "HealthPickup") {
+			int playerHealth = PlayerPrefs.GetInt("playerHealth");
+			if (playerHealth < 4 && playerHealth > 0) {
+				playerHealth += Constants.HEALTH_PICKUP_GAIN;
+			}
+			PlayerPrefs.SetInt("playerHealth", playerHealth);
+			Destroy (theHit.transform.gameObject);
+		}
+		else if (theHit.transform.gameObject.tag == "AmmoPickup") {
+			gunDisplayScript.ammoCountTotalHMG += Constants.AMMO_PICKUP_HMG;
+			gunDisplayScript.ammoCountTotalShotgun += Constants.AMMO_PICKUP_SHOTGUN;
+			Destroy (theHit.transform.gameObject);
+		}
+		else if (theHit.transform.gameObject.tag == "BoostPickup") {
+			StartCoroutine(BoostTimer());
+			Destroy (theHit.transform.gameObject);
 		}
 	}
 }
