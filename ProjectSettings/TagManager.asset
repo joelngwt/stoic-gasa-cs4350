@@ -10,7 +10,9 @@ TagManager:
   - EnemyEgg
   - Shield
   - EnemyBullet
-  - EnemyHead
+  - HealthPickup
+  - BoostPickup
+  - AmmoPickup
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

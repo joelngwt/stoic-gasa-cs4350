@@ -2339,6 +2339,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 13100000, guid: 50c5bde68e6e15d4c9b1daf9a73a200a, type: 2}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 50c5bde68e6e15d4c9b1daf9a73a200a, type: 2}
+      propertyPath: fireRateShotgun
+      value: .100000001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50c5bde68e6e15d4c9b1daf9a73a200a, type: 2}
   m_RootGameObject: {fileID: 1116017051}
@@ -14239,6 +14247,62 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 13100022, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
+      propertyPath: m_PixelInset.width
+      value: 115.135994
+      objectReference: {fileID: 0}
+    - target: {fileID: 13100022, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
+      propertyPath: m_PixelInset.height
+      value: 106.765991
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200008, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
+      propertyPath: m_FontSize
+      value: 176
+      objectReference: {fileID: 0}
+    - target: {fileID: 13100024, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
+      propertyPath: m_PixelInset.width
+      value: 779.866516
+      objectReference: {fileID: 0}
+    - target: {fileID: 13100024, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
+      propertyPath: m_PixelInset.height
+      value: 278.299988
+      objectReference: {fileID: 0}
+    - target: {fileID: 13100018, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
+      propertyPath: m_PixelInset.width
+      value: 115.135994
+      objectReference: {fileID: 0}
+    - target: {fileID: 13100018, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
+      propertyPath: m_PixelInset.height
+      value: 106.765991
+      objectReference: {fileID: 0}
+    - target: {fileID: 13100004, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
+      propertyPath: m_PixelInset.width
+      value: -2581.56519
+      objectReference: {fileID: 0}
+    - target: {fileID: 13100004, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
+      propertyPath: m_PixelInset.height
+      value: -920.920044
+      objectReference: {fileID: 0}
+    - target: {fileID: 13100020, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
+      propertyPath: m_PixelInset.width
+      value: 115.135994
+      objectReference: {fileID: 0}
+    - target: {fileID: 13100020, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
+      propertyPath: m_PixelInset.height
+      value: 106.765991
+      objectReference: {fileID: 0}
+    - target: {fileID: 13100016, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
+      propertyPath: m_PixelInset.width
+      value: 2248.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 13100016, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
+      propertyPath: m_PixelInset.height
+      value: 1012
+      objectReference: {fileID: 0}
+    - target: {fileID: 13200002, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
+      propertyPath: m_FontSize
+      value: 131
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
   m_RootGameObject: {fileID: 751885665}
@@ -17359,8 +17423,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shield: {fileID: 748844121}
   gunDisplayScript: {fileID: 1926123839}
-  reloading: 0
   useShieldButton: {fileID: 1570150932}
+  isReloading: 0
   pistolReload: {fileID: 8300000, guid: f401a9dd7e7220f42a5788ba92ecf530, type: 3}
   hmgReload: {fileID: 8300000, guid: cb1bb32742234df40a9a8e360cb0349b, type: 3}
   shotgunReload: {fileID: 8300000, guid: 611fb5f11a161f54fb9cad95191c8d34, type: 3}
@@ -39331,7 +39395,7 @@ GUITexture:
   m_PrefabInternal: {fileID: 84232961}
   m_GameObject: {fileID: 1757585588}
   m_Enabled: 1
-  m_Texture: {fileID: 2800000, guid: 51ca0b01bbfe0864f87d4799284b843a, type: 3}
+  m_Texture: {fileID: 0}
   m_Color: {r: .5, g: .5, b: .5, a: .5}
   m_PixelInset:
     serializedVersion: 2
@@ -39357,8 +39421,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullethole: {fileID: 100000, guid: b04c6ebf3898aa640a77c905b351613f, type: 2}
   gunDisplayScript: {fileID: 1926123839}
-  fireRateHMG: .0500000007
-  fireRateShotgun: .00999999978
   shieldScript: {fileID: 748844126}
   scoreScript: {fileID: 123907993}
   plus10: {fileID: 100000, guid: c068bf0a51caf784990db009d3efa920, type: 2}
