@@ -26,8 +26,8 @@ public class LifeCounter : MonoBehaviour {
 		vignette.guiTexture.enabled = false;
 		loadedHealth = 4;
 		PlayerPrefs.SetInt ("playerHealth", loadedHealth);
-	/*
-		// initialize to 3 if we are on the first level
+	/*	// Uncomment this code so that player will bring his current health across levels
+		// initialize to 4 if we are on the first level
 		if(Application.loadedLevelName == "MainHall"){
 			playerHealth = 4;
 			playedTakeDamage = 0;

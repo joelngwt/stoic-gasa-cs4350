@@ -20,7 +20,7 @@ public class Shield : MonoBehaviour {
 	// -------------
 
 	void Start(){
-		PlayerPrefs.SetInt ( "shieldUp", 0);
+		PlayerPrefs.SetInt ("shieldUp", 0);
 	}
 
 	// Update is called once per frame
@@ -37,7 +37,7 @@ public class Shield : MonoBehaviour {
 				if(shieldIsUp == false){
 					if(useShieldButton.name == "UseShield"){
 						shieldIsUp = true;
-						PlayerPrefs.SetInt ( "shieldUp", 1);
+						PlayerPrefs.SetInt ("shieldUp", 1);
 						shield.transform.Translate(shieldMoveVector, Camera.main.transform);
 						
 						if(gunDisplayScript.currentSelection.Equals ("Pistol")){
@@ -61,7 +61,7 @@ public class Shield : MonoBehaviour {
 			else {
 				if(shieldIsUp == true){
 					shieldIsUp = false;
-					PlayerPrefs.SetInt ( "shieldUp", 0);
+					PlayerPrefs.SetInt ("shieldUp", 0);
 					shield.transform.Translate(-shieldMoveVector, Camera.main.transform);
 				}
 			}
@@ -71,10 +71,10 @@ public class Shield : MonoBehaviour {
 	// Reloading takes time
 	IEnumerator PistolReload(){
 		isReloading = true;
-		while(gunDisplayScript.ammoCountPistol < 6){
+		while(gunDisplayScript.ammoCountPistol < Constants.PISTOL_MAGAZINE_SIZE){
 			gunDisplayScript.ammoCountPistol++;
 			audio.PlayOneShot(pistolReload);
-			yield return new WaitForSeconds(0.1F);
+			yield return new WaitForSeconds(Constants.PISTOL_RELOAD_SPEED);
 		}
 		isReloading = false;
 		yield break;
@@ -82,12 +82,12 @@ public class Shield : MonoBehaviour {
 	// Reloading takes time
 	IEnumerator ShotgunReload(){
 		isReloading = true;
-		while(gunDisplayScript.ammoCountShotgun < 5){
+		while(gunDisplayScript.ammoCountShotgun < Constants.SHOTGUN_MAGAZINE_SIZE){
 			if(gunDisplayScript.ammoCountTotalShotgun > 0){
 				gunDisplayScript.ammoCountTotalShotgun--;
 				gunDisplayScript.ammoCountShotgun++;
 				audio.PlayOneShot(shotgunReload);
-				yield return new WaitForSeconds(0.5F);
+				yield return new WaitForSeconds(Constants.SHOTGUN_RELOAD_SPEED);
 			}
 			else{
 				break;
@@ -100,12 +100,12 @@ public class Shield : MonoBehaviour {
 	// Reloading takes time
 	IEnumerator HMGReload(){
 		isReloading = true;
-		while(gunDisplayScript.ammoCountHMG != 40){
+		while(gunDisplayScript.ammoCountHMG != Constants.HMG_MAGAZINE_SIZE){
 			if(gunDisplayScript.ammoCountTotalHMG > 0){
 				gunDisplayScript.ammoCountTotalHMG--;
 				gunDisplayScript.ammoCountHMG++;
 				audio.PlayOneShot(hmgReload);
-				yield return new WaitForSeconds(0.05F);
+				yield return new WaitForSeconds(Constants.HMG_RELOAD_SPEED);
 			}
 			else{
 				break;

@@ -9,10 +9,8 @@ public class Shooting : MonoBehaviour {
 	private int ammoCount;
 	public GunDisplay gunDisplayScript;
 	// Rate of fire for the enemy
-	protected float fireRateHMG = 0.05F;
-	protected float nextFireHMG = 0.5F;
-	protected float fireRateShotgun = 0.1F;
-	protected float nextFireShotgun = 0.5F;
+	protected float fireRateHMG = Constants.HMG_SHOOT_SPEED;
+	protected float nextFireHMG = Constants.HMG_SHOOT_SPEED;
 	private bool shotgunShooting = false;
 	// -------------
 
@@ -47,7 +45,7 @@ public class Shooting : MonoBehaviour {
 		Ray myRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit hit;
 
-		// Multiple raycasts for shotgun
+		// Multiple raycasts for shotgun (fixed, constant bullet spread)
 		// ----------
 		Ray myRay2 = Camera.main.ScreenPointToRay(Input.mousePosition - new Vector3(40,40,40));
 		RaycastHit hit2;
@@ -176,7 +174,7 @@ public class Shooting : MonoBehaviour {
 
 	// Delay for shooting with a shotgun
 	IEnumerator ShotgunShooting(){
-		yield return new WaitForSeconds(0.5F);
+		yield return new WaitForSeconds(Constants.SHOTGUN_SHOOT_SPEED);
 		shotgunShooting = false;
 		yield break;
 	}

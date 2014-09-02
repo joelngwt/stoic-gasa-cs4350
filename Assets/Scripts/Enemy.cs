@@ -22,9 +22,6 @@ public class Enemy : MonoBehaviour {
 	public AudioClip getDamaged;
 	public AudioClip getDamaged2;
 	
-	// Constants (in percentages)
-	//[SerializeField] private GlobalConstants constants;
-	
 	// Pickups
 	[SerializeField] private GameObject healthPickup;
 	[SerializeField] private GameObject ammoPickup;

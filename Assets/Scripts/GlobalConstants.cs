@@ -19,10 +19,19 @@ public static class Constants {
 	public const int SCORE_LOLLIPOP = 20;
 	public const int SCORE_EGG = 30;
 	
-	// Weapon delay between shots and reloading speed
-	//public const float 
+	// Weapon info (rate of fire, reload speed, ammo sizes)
+	public const float SHOTGUN_SHOOT_SPEED = 0.4f;
+	public const float SHOTGUN_RELOAD_SPEED = 0.5f;
+	public const int SHOTGUN_STARTING_AMMO = 10;
+	public const int SHOTGUN_MAGAZINE_SIZE = 5;
+	public const float HMG_SHOOT_SPEED = 0.05f;
+	public const float HMG_RELOAD_SPEED = 0.05f;
+	public const int HMG_STARTING_AMMO = 80;
+	public const int HMG_MAGAZINE_SIZE = 40;
+	public const float PISTOL_RELOAD_SPEED = 0.1f;
+	public const int PISTOL_MAGAZINE_SIZE = 6;
 }
 
 public class GlobalConstants : MonoBehaviour {
-	// Empty class needed for unity to detect this	
+	// Empty class needed for Unity to detect this	
 }

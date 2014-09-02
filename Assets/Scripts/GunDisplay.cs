@@ -26,11 +26,11 @@ public class GunDisplay : MonoBehaviour {
 		//guiTexture.texture = Pistol; 
 		currentSelection = "Pistol";
 		if(Application.loadedLevelName == "MainHall"){
-			ammoCountPistol = 6;
-			ammoCountHMG = 40;
-			ammoCountShotgun = 5;
-			ammoCountTotalHMG = 80;
-			ammoCountTotalShotgun = 10;
+			ammoCountPistol = Constants.PISTOL_MAGAZINE_SIZE;
+			ammoCountHMG = Constants.HMG_MAGAZINE_SIZE;
+			ammoCountShotgun = Constants.SHOTGUN_MAGAZINE_SIZE;
+			ammoCountTotalHMG = Constants.HMG_STARTING_AMMO;
+			ammoCountTotalShotgun = Constants.SHOTGUN_STARTING_AMMO;
 		}
 		else{
 			if (PlayerPrefs.HasKey ("HMGTotalAmmo")) {
@@ -183,6 +183,7 @@ public class GunDisplay : MonoBehaviour {
 		
 	}
 	
+	// Flashing RELOAD word
 	IEnumerator RELOADpistol(){
 		while(ammoCountPistol == 0 && currentSelection == "Pistol"){
 			RELOADtext.enabled = true;
@@ -194,6 +195,7 @@ public class GunDisplay : MonoBehaviour {
 		yield break;
 	}
 	
+	// Flashing RELOAD word
 	IEnumerator RELOADshotgun(){
 		while(ammoCountShotgun == 0 && currentSelection == "Shotgun"){
 			RELOADtext.enabled = true;
@@ -205,6 +207,7 @@ public class GunDisplay : MonoBehaviour {
 		yield break;
 	}
 	
+	// Flashing RELOAD word
 	IEnumerator RELOADHMG(){
 		while(ammoCountHMG == 0 && currentSelection == "HMG"){
 			RELOADtext.enabled = true;
