@@ -12,6 +12,8 @@ public static class Constants {
 	public const int AMMO_PICKUP_SHOTGUN = 5;	// number of bullets
 	public const int HEALTH_PICKUP_GAIN = 1;
 	public const float BOOST_TIME = 5.0f;		// in seconds
+	
+	public const float FLY_TO_PLAYER_SPEED = 3.5f;
 	// ----------------------
 	
 	// Score gain amount when you shoot stuff

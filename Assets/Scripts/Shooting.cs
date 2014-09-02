@@ -37,6 +37,9 @@ public class Shooting : MonoBehaviour {
 	// Boost activation
 	private bool isBoosted = false;
 	
+	// Pickups
+	public PickupBehaviour pickupScript;
+	
 	[SerializeField] private GUITexture pauseButton;
 	
 	// Update is called once per frame
@@ -180,11 +183,11 @@ public class Shooting : MonoBehaviour {
 	}
 	
 	IEnumerator Plus10(GameObject thingHit){
-		if(thingHit.tag == "Enemy" && Application.loadedLevelName == "mainHall"){
-			Instantiate(plus10, new Vector3(thingHit.transform.position.x,thingHit.transform.position.y+15f,thingHit.transform.position.z), thingHit.transform.rotation); 
+		if(thingHit.tag == "Enemy" && Application.loadedLevelName == "MainHall"){
+			Instantiate(plus10, new Vector3(thingHit.transform.position.x, thingHit.transform.position.y+12f, thingHit.transform.position.z), thingHit.transform.rotation); 
 		}
 		else{
-			Instantiate(plus10, new Vector3(thingHit.transform.position.x,thingHit.transform.position.y+5f,thingHit.transform.position.z), thingHit.transform.rotation); 
+			Instantiate(plus10, new Vector3(thingHit.transform.position.x, thingHit.transform.position.y+5f, thingHit.transform.position.z), thingHit.transform.rotation); 
 		}
 		scoreScript.currentScore += Constants.SCORE_BEAR;
 		yield break;
@@ -216,12 +219,6 @@ public class Shooting : MonoBehaviour {
 			Enemy script = target.GetComponent<Enemy>();
 			script.StartAnim();
 		}
-		else if(theHit.transform.gameObject.tag == "EnemyHead") {
-			GameObject target = theHit.collider.gameObject;
-			StartCoroutine(Plus20(target));
-			Enemy script = target.GetComponent<Enemy>();
-			script.StartAnim();
-		}
 		else if(theHit.transform.gameObject.tag == "EnemyLollipop") {
 			GameObject target = theHit.collider.gameObject;
 			StartCoroutine(Plus20(target));
@@ -234,22 +231,19 @@ public class Shooting : MonoBehaviour {
 			EnemyEgg script = target.GetComponent<EnemyEgg>();
 			script.StartAnim();
 		}
-		else if (theHit.transform.gameObject.tag == "HealthPickup") {
-			int playerHealth = PlayerPrefs.GetInt("playerHealth");
-			if (playerHealth < 4 && playerHealth > 0) {
-				playerHealth += Constants.HEALTH_PICKUP_GAIN;
-			}
-			PlayerPrefs.SetInt("playerHealth", playerHealth);
-			Destroy (theHit.transform.gameObject);
-		}
-		else if (theHit.transform.gameObject.tag == "AmmoPickup") {
-			gunDisplayScript.ammoCountTotalHMG += Constants.AMMO_PICKUP_HMG;
-			gunDisplayScript.ammoCountTotalShotgun += Constants.AMMO_PICKUP_SHOTGUN;
-			Destroy (theHit.transform.gameObject);
+		else if (theHit.transform.gameObject.tag == "HealthPickup" || theHit.transform.gameObject.tag == "AmmoPickup") {
+			GameObject pickup = theHit.collider.gameObject;
+			PickupBehaviour script = pickup.GetComponent<PickupBehaviour>();
+			theHit.rigidbody.AddForce(Vector3.up * 5000.0f);
+			script.canMove = true;
 		}
 		else if (theHit.transform.gameObject.tag == "BoostPickup") {
+			GameObject pickup = theHit.collider.gameObject;
+			PickupBehaviour script = pickup.GetComponent<PickupBehaviour>();
+			theHit.rigidbody.AddForce(Vector3.up * 5000.0f);
+			script.canMove = true;
+			
 			StartCoroutine(BoostTimer());
-			Destroy (theHit.transform.gameObject);
 		}
 	}
 }
