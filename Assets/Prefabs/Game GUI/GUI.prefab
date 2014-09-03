@@ -157,7 +157,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &100018
 GameObject:
   m_ObjectHideFlags: 1
@@ -1132,8 +1132,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: -18.2000008
   unitsLength: -28.7000008
-  pixelHeight: -920.920044
-  pixelLength: -2581.56519
+  pixelHeight: -250.250015
+  pixelLength: -579.73999
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -1174,9 +1174,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1.74000001
   unitsLength: 13.6999998
-  pixelHeight: 88.0439987
-  pixelLength: 1232.31494
-  fontNumber: 131
+  pixelHeight: 23.9249992
+  pixelLength: 276.73999
+  fontNumber: 29
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -1194,9 +1194,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1
   unitsLength: 10.1800003
-  pixelHeight: 50.5999985
-  pixelLength: 915.69104
-  fontNumber: 176
+  pixelHeight: 13.75
+  pixelLength: 205.636002
+  fontNumber: 39
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -1214,8 +1214,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 20
   unitsLength: 25
-  pixelHeight: 1012
-  pixelLength: 2248.75
+  pixelHeight: 275
+  pixelLength: 505
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -1234,8 +1234,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 2.1099999
   unitsLength: 1.27999997
-  pixelHeight: 106.765991
-  pixelLength: 115.135994
+  pixelHeight: 29.0124989
+  pixelLength: 25.855999
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -1254,8 +1254,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 2.1099999
   unitsLength: 1.27999997
-  pixelHeight: 106.765991
-  pixelLength: 115.135994
+  pixelHeight: 29.0124989
+  pixelLength: 25.855999
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -1274,8 +1274,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 2.1099999
   unitsLength: 1.27999997
-  pixelHeight: 106.765991
-  pixelLength: 115.135994
+  pixelHeight: 29.0124989
+  pixelLength: 25.855999
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -1316,8 +1316,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 5.5
   unitsLength: 8.67000008
-  pixelHeight: 278.299988
-  pixelLength: 779.866516
+  pixelHeight: 75.625
+  pixelLength: 175.134003
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -1374,8 +1374,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: -2581.56519
-    height: -920.920044
+    width: -579.73999
+    height: -250.250015
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -1488,8 +1488,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 2248.75
-    height: 1012
+    width: 505
+    height: 275
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -1507,8 +1507,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 115.135994
-    height: 106.765991
+    width: 25.855999
+    height: 29.0124989
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -1526,8 +1526,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 115.135994
-    height: 106.765991
+    width: 25.855999
+    height: 29.0124989
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -1545,8 +1545,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 115.135994
-    height: 106.765991
+    width: 25.855999
+    height: 29.0124989
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -1564,8 +1564,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 779.866516
-    height: 278.299988
+    width: 175.134003
+    height: 75.625
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -1609,7 +1609,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: a2cbcadf206e5c6489d3f952f3c7f2c6, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 131
+  m_FontSize: 29
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -1630,7 +1630,7 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 12800000, guid: e188325fe39a31b45befd6376face71b, type: 3}
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   m_Material: {fileID: 0}
   m_FontSize: 75
   m_FontStyle: 0
@@ -1655,7 +1655,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: a2cbcadf206e5c6489d3f952f3c7f2c6, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 176
+  m_FontSize: 39
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
