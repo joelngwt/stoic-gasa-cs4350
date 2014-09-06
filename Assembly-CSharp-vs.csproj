@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\EnemyEgg.cs" />
      <Compile Include="Assets\Scripts\EnemyLollipop.cs" />
      <Compile Include="Assets\Scripts\EnemyShoot.cs" />
+     <Compile Include="Assets\Scripts\EventManager_ActualBossRoom.cs" />
      <Compile Include="Assets\Scripts\EventManager_BossRoom.cs" />
      <Compile Include="Assets\Scripts\EventManager_DiningHall.cs" />
      <Compile Include="Assets\Scripts\EventManager_MainHall.cs" />

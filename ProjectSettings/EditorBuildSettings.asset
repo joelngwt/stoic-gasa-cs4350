@@ -18,6 +18,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BossRoom.unity
   - enabled: 1
+    path: Assets/Scenes/ActualBossRoom.unity
+  - enabled: 1
     path: Assets/Scenes/Menu Scenes/GameOver.unity
   - enabled: 1
     path: Assets/Scenes/Menu Scenes/HelpScreen1.unity

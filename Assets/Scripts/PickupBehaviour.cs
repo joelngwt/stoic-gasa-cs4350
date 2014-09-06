@@ -5,8 +5,8 @@ using System.Collections;
 
 public class PickupBehaviour : MonoBehaviour {
 
-	private float maxUpAndDown = 5.0f;			// Maximum up and down value
-	private float speed = 150.0f;				// Speed of moving
+	private float maxUpAndDown;					// Maximum up and down value
+	private float speed;						// Speed of moving
 	private float angle = -90.0f;				
 	private float toDegrees = Mathf.PI/180.0f;  // Radians to degree
 	private float startHeight;					// Starting height
@@ -23,6 +23,15 @@ public class PickupBehaviour : MonoBehaviour {
 		myTransform = transform;
 		startHeight = myTransform.localPosition.y;
 		canMove = false;
+		
+		if (this.gameObject.tag == "Balloon") {
+			speed = 50.0f;
+			maxUpAndDown = 2.0f;
+		}
+		else {
+			speed = 150.0f;
+			maxUpAndDown = 5.0f;
+		}
 	}
 	
 	void Update () 

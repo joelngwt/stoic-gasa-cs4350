@@ -18,6 +18,9 @@ public class Shield : MonoBehaviour {
 	public AudioClip hmgReload;
 	public AudioClip shotgunReload;
 	// -------------
+	
+	public GameObject mainCamera;
+	public EventManager_ActualBossRoom eventManagerScript;
 
 	void Start(){
 		PlayerPrefs.SetInt ("shieldUp", 0);
@@ -26,7 +29,6 @@ public class Shield : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(Time.timeScale > 0){ // can only shoot if not paused
-			
 			// Shield usage
 			#if UNITY_ANDROID
 			if(Input.GetMouseButton(0) && useShieldButton.HitTest(Input.mousePosition)){
@@ -35,10 +37,15 @@ public class Shield : MonoBehaviour {
 			if(Input.GetKey("space")){
 			#endif
 				if(shieldIsUp == false){
-					if(useShieldButton.name == "UseShield"){
-						shieldIsUp = true;
-						PlayerPrefs.SetInt ("shieldUp", 1);
-						shield.transform.Translate(shieldMoveVector, Camera.main.transform);
+					//if(useShieldButton.name == "UseShield"){
+						if (Application.loadedLevelName == "ActualBossRoom") {
+							Debug.Log ("Continously running");
+						}
+						else {
+							shieldIsUp = true;
+							PlayerPrefs.SetInt ("shieldUp", 1);
+							shield.transform.Translate(shieldMoveVector, Camera.main.transform);
+						}
 						
 						if(gunDisplayScript.currentSelection.Equals ("Pistol")){
 							if (isReloading == false) {
@@ -55,7 +62,7 @@ public class Shield : MonoBehaviour {
 								StartCoroutine(ShotgunReload()); // call this method
 							}
 						}
-					}
+					//}
 				}
 			}
 			else {
@@ -65,7 +72,12 @@ public class Shield : MonoBehaviour {
 					shield.transform.Translate(-shieldMoveVector, Camera.main.transform);
 				}
 			}
+		#if UNITY_ANDROID
 		}
+		#endif
+		#if UNITY_STANDALONE || UNITY_WEBPLAYER
+		}
+		#endif
 	}
 
 	// Reloading takes time

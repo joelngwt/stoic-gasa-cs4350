@@ -6,13 +6,14 @@ TagManager:
   - Enemy
   - MainCharacter
   - EnemyLollipop
-  - 
+  - Balloon
   - EnemyEgg
   - Shield
   - EnemyBullet
   - HealthPickup
   - BoostPickup
   - AmmoPickup
+  - Boss
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
