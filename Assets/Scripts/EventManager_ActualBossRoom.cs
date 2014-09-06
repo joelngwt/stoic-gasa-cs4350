@@ -34,6 +34,9 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 	//public GameObject EggPrefab;
 	private bool reached = false;
 	
+	// Boss AI
+	public BossAI bossAIScript;
+	
 	void Start(){
 		theCamera = Camera.main.gameObject;
 		theCharacter = GameObject.FindWithTag("MainCharacter");
@@ -50,10 +53,10 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 		theCharacter.transform.position = theCamera.transform.position;
 		
 		if (num == 0) { // Walk into room
-			num = TranslateTo( new Vector3(-65.9f, 3.35f, 69.3f), 20f, num);
+			num = TranslateTo( new Vector3(-65.9f, 3.35f, 69.3f), 50f, num);
 		}
 		else if (num == 1) { // Walk to intersection of carpet
-			num = TranslateTo( new Vector3(-65.43f, 3.35f, 0.712f), 20f, num);
+			num = TranslateTo( new Vector3(-65.43f, 3.35f, 0.712f), 50f, num);
 		}
 		else if (num == 2) { // Look at boss
 			num = LookAt( new Vector3(-35.1f, 3.35f, 2.1f), num);
@@ -62,11 +65,17 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 			startStorySequence();
 		}
 		else if (num == 4) { // Walk behind pillar
-			num = TranslateTo( new Vector3(-42.77f, 3.35f, 62.518f), 20f, num);
+			num = TranslateTo( new Vector3(-46.5f, 3.35f, 57.94f), 50f, num);
 		}
 		else if (num == 5) { // Look in the boss direction (prepare for battle!)
-			num = LookAt( new Vector3(-35.1f, 3.35f, 54.7f), num);
+			num = LookAt( new Vector3(17.86f, 3.35f, 2.1f), num);
 			atPillar = 1;
+			// Fight begins
+		}
+		
+		// Boss reaches 80% health
+		if (num == 6 && bossAIScript.percentage < 0.8f) {
+			
 		}
 	}
 	

@@ -245,5 +245,12 @@ public class Shooting : MonoBehaviour {
 			
 			StartCoroutine(BoostTimer());
 		}
+		else if (theHit.transform.gameObject.tag == "Boss") {
+			GameObject target = theHit.collider.gameObject;
+			BossAI script = target.GetComponent<BossAI>();
+			StartCoroutine(Plus30(target));
+			
+			script.getHit();
+		}
 	}
 }

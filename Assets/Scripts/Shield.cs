@@ -21,6 +21,7 @@ public class Shield : MonoBehaviour {
 	
 	public GameObject mainCamera;
 	public EventManager_ActualBossRoom eventManagerScript;
+	public Vector3 directionVector;
 
 	void Start(){
 		PlayerPrefs.SetInt ("shieldUp", 0);
@@ -28,6 +29,7 @@ public class Shield : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		Debug.Log(shieldIsUp);
 		if(Time.timeScale > 0){ // can only shoot if not paused
 			// Shield usage
 			#if UNITY_ANDROID
@@ -39,7 +41,25 @@ public class Shield : MonoBehaviour {
 				if(shieldIsUp == false){
 					//if(useShieldButton.name == "UseShield"){
 						if (Application.loadedLevelName == "ActualBossRoom") {
-							Debug.Log ("Continously running");
+							if(eventManagerScript.atPillar == 1) {
+								// Range and direction to move
+								float range = Vector3.Distance(mainCamera.transform.position, new Vector3(-43.08f, 3.35f, 61.67f));
+								directionVector = (mainCamera.transform.position - new Vector3(-43.08f, 3.35f, 61.67f)).normalized;
+								
+								if (range < 1.0f) {
+									shieldIsUp = true;
+									PlayerPrefs.SetInt ("shieldUp", 1);
+								}
+								else {
+									mainCamera.transform.Translate(directionVector * Time.deltaTime * 20.0f);
+								}
+							}
+							else if(eventManagerScript.atPillar == 2) {
+							}
+							else if(eventManagerScript.atPillar == 3) {
+							}
+							else if(eventManagerScript.atPillar == 4) {
+							} 
 						}
 						else {
 							shieldIsUp = true;
@@ -65,11 +85,54 @@ public class Shield : MonoBehaviour {
 					//}
 				}
 			}
+			// "Space" not pressed
 			else {
 				if(shieldIsUp == true){
-					shieldIsUp = false;
-					PlayerPrefs.SetInt ("shieldUp", 0);
-					shield.transform.Translate(-shieldMoveVector, Camera.main.transform);
+					if (Application.loadedLevelName == "ActualBossRoom") {
+						if(eventManagerScript.atPillar == 1) {
+							// Range and direction to move
+							float range = Vector3.Distance(mainCamera.transform.position, new Vector3(-46.5f, 3.35f, 57.94f));
+							directionVector = (mainCamera.transform.position - new Vector3(-46.5f, 3.35f, 57.94f)).normalized;
+							
+							if (range < 1.0f) {
+								shieldIsUp = false;
+								PlayerPrefs.SetInt ("shieldUp", 0);
+							}
+							else {
+								mainCamera.transform.Translate(directionVector * Time.deltaTime * 20.0f);
+							}
+						}
+						else if(eventManagerScript.atPillar == 2) {
+						}
+						else if(eventManagerScript.atPillar == 3) {
+						}
+						else if(eventManagerScript.atPillar == 4) {
+						} 
+					}
+					else {
+						shieldIsUp = false;
+						PlayerPrefs.SetInt ("shieldUp", 0);
+						shield.transform.Translate(-shieldMoveVector, Camera.main.transform);
+					}
+				}
+				// Player tapped spacebar and did not hide fully,
+				// so move the player back out
+				else if (shieldIsUp == false && Application.loadedLevelName == "ActualBossRoom") {
+					if(eventManagerScript.atPillar == 1) {
+						// Range and direction to move
+						float range = Vector3.Distance(mainCamera.transform.position, new Vector3(-46.5f, 3.35f, 57.94f));
+						directionVector = (mainCamera.transform.position - new Vector3(-46.5f, 3.35f, 57.94f)).normalized;
+						
+						if (range > 0.5f) {
+							mainCamera.transform.Translate(directionVector * Time.deltaTime * 20.0f);
+						}
+					}
+					else if(eventManagerScript.atPillar == 2) {
+					}
+					else if(eventManagerScript.atPillar == 3) {
+					}
+					else if(eventManagerScript.atPillar == 4) {
+					} 
 				}
 			}
 		#if UNITY_ANDROID

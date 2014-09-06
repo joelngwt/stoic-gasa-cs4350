@@ -32,6 +32,9 @@ public static class Constants {
 	public const int HMG_MAGAZINE_SIZE = 40;
 	public const float PISTOL_RELOAD_SPEED = 0.1f;
 	public const int PISTOL_MAGAZINE_SIZE = 6;
+	
+	// Boss stats
+	public const int BOSS_TOTAL_HEALTH = 240;
 }
 
 public class GlobalConstants : MonoBehaviour {
