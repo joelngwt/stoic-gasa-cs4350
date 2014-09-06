@@ -4,7 +4,7 @@ using System.Collections;
 public static class Constants {
 	// Pickups
 	// ----------------------
-	public const int DROP_CHANCE_HEALTH = 30;	// percentage chance
+	public const int DROP_CHANCE_HEALTH = 100;	// percentage chance
 	public const int DROP_CHANCE_AMMO = 20;	// percentage chance
 	public const int DROP_CHANCE_BOOST = 10;		// percentage chance
 	
@@ -34,7 +34,7 @@ public static class Constants {
 	public const int PISTOL_MAGAZINE_SIZE = 6;
 	
 	// Boss stats
-	public const int BOSS_TOTAL_HEALTH = 240;
+	public const float BOSS_TOTAL_HEALTH = 240.0f;
 }
 
 public class GlobalConstants : MonoBehaviour {

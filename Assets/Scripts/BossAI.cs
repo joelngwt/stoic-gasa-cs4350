@@ -3,8 +3,8 @@ using System.Collections;
 
 public class BossAI : MonoBehaviour {
 
-	private int currentHealth;
-	private int totalHealth;
+	private float currentHealth;
+	private float totalHealth;
 	public float percentage;
 	
 	[SerializeField] private GameObject bullet;				// bullet prefab
@@ -15,12 +15,15 @@ public class BossAI : MonoBehaviour {
 	[SerializeField] private float nextFire = 0.1F;
 	
 	[SerializeField] private AudioClip shootSound;
+	
+	public bool fightStart;
 
 	// Use this for initialization
 	void Start () {
 		totalHealth = Constants.BOSS_TOTAL_HEALTH;
 		currentHealth = totalHealth;
 		percentage = currentHealth / totalHealth;
+		fightStart = false;
 		
 		player = GameObject.FindWithTag ("MainCharacter");
 	}
@@ -28,27 +31,29 @@ public class BossAI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		percentage = currentHealth / totalHealth;
-		if (percentage < 1.0f) {
-			phase100();
-		}
-		else if (percentage < 0.8f) {
-			phase80();
-		}
-		else if (percentage < 0.6f) {
-			phase60();
-		}
-		else if (percentage < 0.5f) {
-			phase50();
-		}
-		else if (percentage < 0.4f) {
-			phase40();
+		Debug.Log ("current health = " + currentHealth + " percentage = " + percentage + " total health = " + totalHealth);
+			
+		if (percentage < 0.1f) {
+			phase10();
 		}
 		else if (percentage < 0.2f) {
 			phase20();
 		}
-		else if (percentage < 0.1f) {
-			phase10();
+		else if (percentage < 0.4f) {
+			phase40();
 		}
+		else if (percentage < 0.5f) {
+			phase50();
+		}
+		else if (percentage < 0.6f) {
+			phase60();
+		}
+		else if (percentage < 0.8f) {
+			phase80();
+		}
+		else if (percentage <= 1.0f && fightStart == true) {
+			phase100();
+		}		
 	}
 	
 	public void getHit() {

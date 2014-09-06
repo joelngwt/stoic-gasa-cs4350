@@ -16,10 +16,13 @@ public class PickupBehaviour : MonoBehaviour {
 	
 	Transform myTransform;
 	
+	[SerializeField] private LifeCounter lifeCounterScript;
+	
 	void Awake()
 	{
 		player = GameObject.FindWithTag ("MainCharacter");
 		gunDisplayScript = GameObject.Find ("GunDisplay").GetComponent<GunDisplay>();
+		lifeCounterScript = GameObject.Find ("life1").GetComponent<LifeCounter>();
 		myTransform = transform;
 		startHeight = myTransform.localPosition.y;
 		canMove = false;
@@ -59,11 +62,7 @@ public class PickupBehaviour : MonoBehaviour {
 	void OnTriggerEnter(Collider collidedWith) {
 		if(collidedWith.name == "Character") {
 			if (this.gameObject.tag == "HealthPickup") {
-				int playerHealth = PlayerPrefs.GetInt("playerHealth");
-				if (playerHealth < 4 && playerHealth > 0) {
-					playerHealth += Constants.HEALTH_PICKUP_GAIN;
-				}
-				PlayerPrefs.SetInt("playerHealth", playerHealth);
+				lifeCounterScript.gainHealth();
 				Destroy (this.transform.gameObject);
 			}
 			else if (this.gameObject.tag == "AmmoPickup") {

@@ -144,6 +144,25 @@ public class LifeCounter : MonoBehaviour {
 		}
 	}
 	
+	public void gainHealth() {
+		if (playerHealth < 4 && playerHealth > 0) {
+			playerHealth += Constants.HEALTH_PICKUP_GAIN;
+			PlayerPrefs.SetInt("playerHealth", playerHealth);
+
+			vignette.guiTexture.enabled = false;
+			playedHeartBeat = false;
+			if (playerHealth == 2) {
+				playedTakeDamage = 3;
+			}
+			else if (playerHealth == 3) {
+				playedTakeDamage = 2;
+			}
+			else if (playerHealth == 4) {
+				playedTakeDamage = 0;
+			}
+		}
+	}
+	
 	IEnumerator PlayDie(){
 		audio.PlayOneShot(die);
 		yield return new WaitForSeconds(1.0F);

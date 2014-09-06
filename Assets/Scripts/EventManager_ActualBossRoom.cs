@@ -71,6 +71,7 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 			num = LookAt( new Vector3(17.86f, 3.35f, 2.1f), num);
 			atPillar = 1;
 			// Fight begins
+			bossAIScript.fightStart = true;
 		}
 		
 		// Boss reaches 80% health
