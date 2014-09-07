@@ -35,10 +35,14 @@ public static class Constants {
 	
 	// Boss stats
 	public const float BOSS_TOTAL_HEALTH = 240.0f;
-	public const float BOSS_SPRAY_TIME = 3.0f;
-	public const float BOSS_IDLE_TIME = 3.0f;
-	public const float BOSS_FIRE_RATE = 0.1f;
-	public const float BOSS_BOMB_FUSE_TIME = 10.0f;
+		// First 20%
+		public const float BOSS_SPRAY_TIME = 3.0f;
+		public const float BOSS_IDLE_TIME = 3.0f;
+		public const float BOSS_FIRE_RATE = 0.1f;
+		// Bomb stats
+		public const float BOSS_BOMB_FUSE_TIME = 10.0f;
+		public const float BOSS_BOMB_FAST_BLINK_SPEED = 0.25f;
+		public const float BOSS_BOMB_SLOW_BLINK_SPEED = 0.5f;
 }
 
 public class GlobalConstants : MonoBehaviour {

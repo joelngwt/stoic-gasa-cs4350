@@ -9,6 +9,8 @@ public class JellybeanBomb : MonoBehaviour {
 	private float blinkDuration = 0.5f;
 	private float bombFuseTime = Constants.BOSS_BOMB_FUSE_TIME;
 	[SerializeField] private GameObject explosionParticleEffect;
+	[SerializeField] private EventManager_ActualBossRoom eventManagerActualBossRoom;
+	private int throwBombAt;
 
 	// Use this for initialization
 	void Start () {
@@ -31,16 +33,32 @@ public class JellybeanBomb : MonoBehaviour {
 		}
 
 		// Blinking bomb
-		if (blinkDuration > 0.0f && blinkDuration <= 0.5f) {
-			renderer.material.color = Color.red;
-			blinkDuration -= Time.deltaTime;
+		if (bombFuseTime > 3.0f) {
+			if (blinkDuration > 0.0f && blinkDuration <= 0.5f) {
+				renderer.material.color = Color.red;
+				blinkDuration -= Time.deltaTime;
+			}
+			else if (blinkDuration < 0.0f) {
+				blinkDuration = 1.0f;
+			}
+			if (blinkDuration > 0.5f) {
+				renderer.material.color = Color.yellow;
+				blinkDuration -= Time.deltaTime;
+			}
 		}
-		else if (blinkDuration < 0.0f) {
-			blinkDuration = 1.0f;
-		}
-		if (blinkDuration > 0.5f) {
-			renderer.material.color = Color.yellow;
-			blinkDuration -= Time.deltaTime;
+		// Blink faster if it's going to explode
+		else if (bombFuseTime <= 3.0f) {
+			if (blinkDuration > 0.0f && blinkDuration <= 0.25f) {
+				renderer.material.color = Color.red;
+				blinkDuration -= Time.deltaTime;
+			}
+			else if (blinkDuration < 0.0f) {
+				blinkDuration = 0.5f;
+			}
+			if (blinkDuration > 0.25f) {
+				renderer.material.color = Color.yellow;
+				blinkDuration -= Time.deltaTime;
+			}
 		}
 
 		// Fuse countdown
@@ -48,6 +66,10 @@ public class JellybeanBomb : MonoBehaviour {
 		if (bombFuseTime <= 0.0f) {
 			Instantiate(explosionParticleEffect, this.transform.position, this.transform.rotation);
 			Destroy(this.gameObject);
+
+			if (eventManagerActualBossRoom.atPillar == eventManagerActualBossRoom.bossThrowBombAt) {
+				// TODO player dies
+			}
 		}
 	}
 }
