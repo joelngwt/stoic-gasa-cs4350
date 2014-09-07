@@ -455,8 +455,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 2.1099999
   unitsLength: 1.27999997
-  pixelHeight: 106.765991
-  pixelLength: 115.135994
+  pixelHeight: 67.3089981
+  pixelLength: 72.5759964
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -476,8 +476,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 115.135994
-    height: 106.765991
+    width: 72.5759964
+    height: 67.3089981
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -1251,7 +1251,7 @@ AudioSource:
   m_GameObject: {fileID: 56495518}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: e5c9acc319f38034b84f5f23a3018419, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 50cfb0697965db944bdfb4427aad4a71, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1320,7 +1320,7 @@ MonoBehaviour:
   playerHealth: 0
   script: {fileID: 1190314264}
   vignette: {fileID: 1382695193}
-  heartBeat: {fileID: 8300000, guid: e5c9acc319f38034b84f5f23a3018419, type: 3}
+  heartBeat: {fileID: 8300000, guid: 50cfb0697965db944bdfb4427aad4a71, type: 3}
   takeDamage: {fileID: 8300000, guid: 9afdc981efb32d94bae71f6cda11e129, type: 3}
   playedTakeDamage: 0
   die: {fileID: 8300000, guid: f3293a27a226fe5479d20225f6ab82b7, type: 3}
@@ -1940,8 +1940,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 115.135994
-    height: 106.765991
+    width: 72.5759964
+    height: 67.3089981
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -1960,8 +1960,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 2.1099999
   unitsLength: 1.27999997
-  pixelHeight: 106.765991
-  pixelLength: 115.135994
+  pixelHeight: 67.3089981
+  pixelLength: 72.5759964
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -6286,8 +6286,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 2.1099999
   unitsLength: 1.27999997
-  pixelHeight: 106.765991
-  pixelLength: 115.135994
+  pixelHeight: 67.3089981
+  pixelLength: 72.5759964
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -6307,8 +6307,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 115.135994
-    height: 106.765991
+    width: 72.5759964
+    height: 67.3089981
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -11942,59 +11942,59 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 13200002, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_FontSize
-      value: 131
+      value: 82
       objectReference: {fileID: 0}
     - target: {fileID: 13100020, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: 115.135994
+      value: 72.5759964
       objectReference: {fileID: 0}
     - target: {fileID: 13100020, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: 106.765991
+      value: 67.3089981
       objectReference: {fileID: 0}
     - target: {fileID: 13100004, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: -2581.56519
+      value: -1627.29004
       objectReference: {fileID: 0}
     - target: {fileID: 13100004, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: -920.920044
+      value: -580.580017
       objectReference: {fileID: 0}
     - target: {fileID: 13100018, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: 115.135994
+      value: 72.5759964
       objectReference: {fileID: 0}
     - target: {fileID: 13100018, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: 106.765991
+      value: 67.3089981
       objectReference: {fileID: 0}
     - target: {fileID: 13100024, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: 779.866516
+      value: 491.588989
       objectReference: {fileID: 0}
     - target: {fileID: 13100024, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: 278.299988
+      value: 175.449997
       objectReference: {fileID: 0}
     - target: {fileID: 13200008, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_FontSize
-      value: 176
+      value: 111
       objectReference: {fileID: 0}
     - target: {fileID: 13100022, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: 115.135994
+      value: 72.5759964
       objectReference: {fileID: 0}
     - target: {fileID: 13100022, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: 106.765991
+      value: 67.3089981
       objectReference: {fileID: 0}
     - target: {fileID: 13100016, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: 2248.75
+      value: 1417.5
       objectReference: {fileID: 0}
     - target: {fileID: 13100016, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: 1012
+      value: 638
       objectReference: {fileID: 0}
     - target: {fileID: 8200004, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PlayOnAwake
@@ -13373,10 +13373,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   percentage: 0
   bullet: {fileID: 100000, guid: befba1bbad52c4ab891c79672e2da3ef, type: 2}
-  bulletSpeed: 10
-  fireRate: .100000001
-  nextFire: .100000001
   shootSound: {fileID: 8300000, guid: c4f56b3ae8237f34cab58c2cd29cee82, type: 3}
+  jellybeanBomb: {fileID: 100000, guid: d2598b272ed1ec4479e3c03c98661f6b, type: 2}
   fightStart: 0
 --- !u!1 &695228473
 GameObject:
@@ -14276,7 +14274,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 755333366}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.863018, y: 3.26656342, z: 2.10616684}
+  m_LocalPosition: {x: -38.7320862, y: 1.5, z: 25.3641968}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -23997,8 +23995,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 20
   unitsLength: 25
-  pixelHeight: 1012
-  pixelLength: 2248.75
+  pixelHeight: 638
+  pixelLength: 1417.5
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -24018,8 +24016,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 2248.75
-    height: 1012
+    width: 1417.5
+    height: 638
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -25716,7 +25714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 202bf596c964df040ad50e425190d4bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateInterval: 1
+  updateInterval: .5
 --- !u!132 &1453621551
 GUIText:
   m_ObjectHideFlags: 0
@@ -27891,9 +27889,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1.74000001
   unitsLength: 13.6999998
-  pixelHeight: 88.0439987
-  pixelLength: 1232.31494
-  fontNumber: 131
+  pixelHeight: 55.5060005
+  pixelLength: 776.789978
+  fontNumber: 82
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -27930,7 +27928,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: a2cbcadf206e5c6489d3f952f3c7f2c6, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 131
+  m_FontSize: 82
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -29154,9 +29152,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1
   unitsLength: 10.1800003
-  pixelHeight: 50.5999985
-  pixelLength: 915.69104
-  fontNumber: 176
+  pixelHeight: 31.8999996
+  pixelLength: 577.205994
+  fontNumber: 111
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -29191,7 +29189,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: a2cbcadf206e5c6489d3f952f3c7f2c6, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 176
+  m_FontSize: 111
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -31632,8 +31630,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: -18.2000008
   unitsLength: -28.7000008
-  pixelHeight: -920.920044
-  pixelLength: -2581.56519
+  pixelHeight: -580.580017
+  pixelLength: -1627.29004
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -31743,8 +31741,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: -2581.56519
-    height: -920.920044
+    width: -1627.29004
+    height: -580.580017
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -32759,8 +32757,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 779.866516
-    height: 278.299988
+    width: 491.588989
+    height: 175.449997
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -32779,8 +32777,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 5.5
   unitsLength: 8.67000008
-  pixelHeight: 278.299988
-  pixelLength: 779.866516
+  pixelHeight: 175.449997
+  pixelLength: 491.588989
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -33001,7 +32999,7 @@ AudioSource:
   m_GameObject: {fileID: 1850886191}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: e5c9acc319f38034b84f5f23a3018419, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 50cfb0697965db944bdfb4427aad4a71, type: 3}
   m_PlayOnAwake: 0
   m_Volume: .541000009
   m_Pitch: 1
@@ -33070,7 +33068,7 @@ MonoBehaviour:
   playerHealth: 0
   script: {fileID: 1190314264}
   vignette: {fileID: 1382695193}
-  heartBeat: {fileID: 8300000, guid: e5c9acc319f38034b84f5f23a3018419, type: 3}
+  heartBeat: {fileID: 8300000, guid: 50cfb0697965db944bdfb4427aad4a71, type: 3}
   takeDamage: {fileID: 8300000, guid: 9afdc981efb32d94bae71f6cda11e129, type: 3}
   playedTakeDamage: 0
   die: {fileID: 8300000, guid: f3293a27a226fe5479d20225f6ab82b7, type: 3}
@@ -33368,7 +33366,7 @@ AudioSource:
   m_GameObject: {fileID: 1860775628}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: e5c9acc319f38034b84f5f23a3018419, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 50cfb0697965db944bdfb4427aad4a71, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -33437,7 +33435,7 @@ MonoBehaviour:
   playerHealth: 0
   script: {fileID: 1190314264}
   vignette: {fileID: 1382695193}
-  heartBeat: {fileID: 8300000, guid: e5c9acc319f38034b84f5f23a3018419, type: 3}
+  heartBeat: {fileID: 8300000, guid: 50cfb0697965db944bdfb4427aad4a71, type: 3}
   takeDamage: {fileID: 8300000, guid: 9afdc981efb32d94bae71f6cda11e129, type: 3}
   playedTakeDamage: 0
   die: {fileID: 8300000, guid: f3293a27a226fe5479d20225f6ab82b7, type: 3}
@@ -38247,7 +38245,7 @@ AudioSource:
   m_GameObject: {fileID: 2102227747}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: e5c9acc319f38034b84f5f23a3018419, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 50cfb0697965db944bdfb4427aad4a71, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -38316,7 +38314,7 @@ MonoBehaviour:
   playerHealth: 0
   script: {fileID: 1190314264}
   vignette: {fileID: 1382695193}
-  heartBeat: {fileID: 8300000, guid: e5c9acc319f38034b84f5f23a3018419, type: 3}
+  heartBeat: {fileID: 8300000, guid: 50cfb0697965db944bdfb4427aad4a71, type: 3}
   takeDamage: {fileID: 8300000, guid: 9afdc981efb32d94bae71f6cda11e129, type: 3}
   playedTakeDamage: 0
   die: {fileID: 8300000, guid: f3293a27a226fe5479d20225f6ab82b7, type: 3}

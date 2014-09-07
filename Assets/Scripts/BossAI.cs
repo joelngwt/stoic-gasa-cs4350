@@ -9,12 +9,18 @@ public class BossAI : MonoBehaviour {
 	
 	[SerializeField] private GameObject bullet;				// bullet prefab
 	private GameObject player;								// "mainCharacter"
-	
-	[SerializeField] private float bulletSpeed = 10.0f; 	// bullet speed
-	[SerializeField] private float fireRate = 0.1F; 		// Rate of fire for the enemy
-	[SerializeField] private float nextFire = 0.1F;
-	
+
+	// Phase 100 values
+	private float bulletSpeed = 10.0f; 						// bullet speed
+	private float fireRate = Constants.BOSS_FIRE_RATE; // Rate of fire for the enemy
+	private float nextFire = Constants.BOSS_FIRE_RATE;
+	private float sprayFor = Constants.BOSS_SPRAY_TIME;		// Boss will spray a barrage of bullets 
+	private float idleFor = Constants.BOSS_IDLE_TIME;		// Boss will not do anything
 	[SerializeField] private AudioClip shootSound;
+
+	// Jellybean bomb
+	[SerializeField] private GameObject jellybeanBomb;
+	private bool hasThrown = false;
 	
 	public bool fightStart;
 
@@ -98,13 +104,30 @@ public class BossAI : MonoBehaviour {
 			clone.rigidbody.velocity = ((player.transform.position + randomOffset - transform.position));
 		}
 	}
-	
+
+	// Shoot bullets
 	void phase100() {
-		shootBullets();
+		if (sprayFor > 0) {
+			shootBullets();
+			sprayFor -= Time.deltaTime;
+		}
+		else if (idleFor > 0) {
+			idleFor -= Time.deltaTime;
+		}
+		if (idleFor < 0) {
+			sprayFor = Constants.BOSS_SPRAY_TIME;
+			idleFor = Constants.BOSS_IDLE_TIME;
+		}
+
 	}
-	
+
+	// Throw jellybean bomb
 	void phase80() {
-	
+		Vector3 bossPosition = this.transform.position;
+		if (hasThrown == false) {
+			Instantiate (jellybeanBomb, new Vector3(bossPosition.x-10, bossPosition.y+2, bossPosition.z), this.transform.rotation);
+			hasThrown = true;
+		}
 	}
 	
 	void phase60() {

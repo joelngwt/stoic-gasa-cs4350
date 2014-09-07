@@ -1,0 +1,53 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class JellybeanBomb : MonoBehaviour {
+
+	[SerializeField] private GameObject player;
+	private bool isStopped = false;
+
+	private float blinkDuration = 0.5f;
+	private float bombFuseTime = Constants.BOSS_BOMB_FUSE_TIME;
+	[SerializeField] private GameObject explosionParticleEffect;
+
+	// Use this for initialization
+	void Start () {
+		player = GameObject.FindWithTag ("MainCharacter");
+
+		// if current pillar is 1
+		Vector3 throwDirection = new Vector3(-38.73f, 1.5f, 49.21f) - this.transform.position;
+		this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 15);
+		// 2, 3, 4
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		// Stop the bomb if it gets too close (so it won't fly past the player)
+		float rangeBetweenBombAndPlayer = Vector3.Distance(this.transform.position, player.transform.position );
+		Debug.Log ("range = " + rangeBetweenBombAndPlayer);
+		if (rangeBetweenBombAndPlayer < 13.0f && isStopped == false) {
+			this.rigidbody.velocity = new Vector3(0, 0, 0);
+			isStopped = true;
+		}
+
+		// Blinking bomb
+		if (blinkDuration > 0.0f && blinkDuration <= 0.5f) {
+			renderer.material.color = Color.red;
+			blinkDuration -= Time.deltaTime;
+		}
+		else if (blinkDuration < 0.0f) {
+			blinkDuration = 1.0f;
+		}
+		if (blinkDuration > 0.5f) {
+			renderer.material.color = Color.yellow;
+			blinkDuration -= Time.deltaTime;
+		}
+
+		// Fuse countdown
+		bombFuseTime -= Time.deltaTime;
+		if (bombFuseTime <= 0.0f) {
+			Instantiate(explosionParticleEffect, this.transform.position, this.transform.rotation);
+			Destroy(this.gameObject);
+		}
+	}
+}
