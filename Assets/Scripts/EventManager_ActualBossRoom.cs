@@ -13,6 +13,10 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 	private int num;					// Keep track of movement sequence
 	public GameObject theCharacter;		// Character object
 	public int atPillar; 				// Keep track of what pillar the player is behind
+	public GameObject pillar2Sparkle;
+	public GameObject pillar3Sparkle;
+	public GameObject pillar4Sparkle;
+	public int bossThrowBombAt;
 	
 	// Audio
 	public AudioClip footsteps;
@@ -45,6 +49,11 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 		theCharacter.transform.rotation = theCamera.transform.rotation;
 		count = 1;
 		atPillar = 0;
+		bossThrowBombAt = 0;
+
+		pillar2Sparkle.particleEmitter.enabled = false;
+		pillar3Sparkle.particleEmitter.enabled = false;
+		pillar4Sparkle.particleEmitter.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -76,7 +85,9 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 		
 		// Boss reaches 80% health
 		if (num == 6 && bossAIScript.percentage < 0.8f) {
-			
+			bossThrowBombAt = 1;
+			pillar2Sparkle.particleEmitter.enabled = true;
+			pillar3Sparkle.particleEmitter.enabled = true;
 		}
 	}
 	
