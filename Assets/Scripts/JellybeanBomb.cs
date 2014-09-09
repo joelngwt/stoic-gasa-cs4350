@@ -3,23 +3,40 @@ using System.Collections;
 
 public class JellybeanBomb : MonoBehaviour {
 
-	[SerializeField] private GameObject player;
+	private GameObject player;
 	private bool isStopped = false;
 
 	private float blinkDuration = 0.5f;
 	private float bombFuseTime = Constants.BOSS_BOMB_FUSE_TIME;
 	[SerializeField] private GameObject explosionParticleEffect;
-	[SerializeField] private EventManager_ActualBossRoom eventManagerActualBossRoom;
+	private EventManager_ActualBossRoom eventManagerActualBossRoom;
 	private int throwBombAt;
 
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindWithTag ("MainCharacter");
+		eventManagerActualBossRoom = GameObject.FindWithTag ("MainCamera").GetComponent<EventManager_ActualBossRoom>();
 
 		// if current pillar is 1
-		Vector3 throwDirection = new Vector3(-38.73f, 1.5f, 49.21f) - this.transform.position;
-		this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 15);
-		// 2, 3, 4
+		if (eventManagerActualBossRoom.atPillar == 1) {
+			Vector3 throwDirection = new Vector3(-38.73f, 1.5f, 49.21f) - this.transform.position;
+			this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 15);
+		}
+		// if current pillar is 2
+		else if (eventManagerActualBossRoom.atPillar == 2) {
+			Vector3 throwDirection = new Vector3(-37.7969f, 1.5f, -46.71f) - this.transform.position;
+			this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 15);
+		}
+		// If current pillar is 3
+		else if (eventManagerActualBossRoom.atPillar == 3) {
+			Vector3 throwDirection = new Vector3(11.46f, 1.5f, -37.95f) - this.transform.position;
+			this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 18);
+		}
+		// If current pillar is 4
+		else if (eventManagerActualBossRoom.atPillar == 4) {
+			Vector3 throwDirection = new Vector3(11.6f, 1.5f, 39.8f) - this.transform.position;
+			this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 18.5f);
+		}
 	}
 	
 	// Update is called once per frame

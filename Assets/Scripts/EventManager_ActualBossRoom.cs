@@ -86,8 +86,8 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 		// Boss reaches 80% health
 		if (num == 6 && bossAIScript.percentage < 0.8f) {
 			bossThrowBombAt = 1;
-			pillar2Sparkle.particleEmitter.enabled = true;
-			pillar3Sparkle.particleEmitter.enabled = true;
+			//pillar2Sparkle.particleEmitter.enabled = true;
+			//pillar3Sparkle.particleEmitter.enabled = true;
 		}
 	}
 	
