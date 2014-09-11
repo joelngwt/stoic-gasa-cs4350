@@ -42,6 +42,19 @@ public class Shooting : MonoBehaviour {
 	
 	[SerializeField] private GUITexture pauseButton;
 	
+	// Boss Room variables
+	public bool shotPillar1 = false;
+	public bool shotPillar2 = false;
+	public bool shotPillar3 = false;
+	public bool shotPillar4 = false;
+	public bool haveReached = false;
+	public bool haveLooked = false;
+	private EventManager_ActualBossRoom bossRoomScript;
+	
+	void Start() {
+		bossRoomScript = GameObject.FindWithTag ("MainCamera").GetComponent<EventManager_ActualBossRoom>();
+	}		
+	
 	// Update is called once per frame
 	void Update () {
 	
@@ -251,6 +264,38 @@ public class Shooting : MonoBehaviour {
 			StartCoroutine(Plus30(target));
 			
 			script.getHit();
+		}
+		else if (theHit.transform.gameObject.tag == "Pillar1" && bossRoomScript.atPillar != 1) {
+			shotPillar1 = true;
+			shotPillar2 = false;
+			shotPillar3 = false;
+			shotPillar4 = false;
+			haveReached = false;
+			haveLooked = false;
+		}
+		else if (theHit.transform.gameObject.tag == "Pillar2" && bossRoomScript.atPillar != 2) {
+			shotPillar1 = false;
+			shotPillar2 = true;
+			shotPillar3 = false;
+			shotPillar4 = false;
+			haveReached = false;
+			haveLooked = false;
+		}
+		else if (theHit.transform.gameObject.tag == "Pillar3" && bossRoomScript.atPillar != 3) {
+			shotPillar1 = false;
+			shotPillar2 = false;
+			shotPillar3 = true;
+			shotPillar4 = false;
+			haveReached = false;
+			haveLooked = false;
+		}
+		else if (theHit.transform.gameObject.tag == "Pillar4" && bossRoomScript.atPillar != 4) {
+			shotPillar1 = false;
+			shotPillar2 = false;
+			shotPillar3 = false;
+			shotPillar4 = true;
+			haveReached = false;
+			haveLooked = false;
 		}
 	}
 }

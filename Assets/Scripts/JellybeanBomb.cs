@@ -24,7 +24,7 @@ public class JellybeanBomb : MonoBehaviour {
 		}
 		// if current pillar is 2
 		else if (eventManagerActualBossRoom.atPillar == 2) {
-			Vector3 throwDirection = new Vector3(-37.7969f, 1.5f, -46.71f) - this.transform.position;
+			Vector3 throwDirection = new Vector3(-26.63f, 1.5f, -62.53f) - this.transform.position;
 			this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 15);
 		}
 		// If current pillar is 3

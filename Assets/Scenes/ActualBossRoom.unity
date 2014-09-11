@@ -455,8 +455,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 2.1099999
   unitsLength: 1.27999997
-  pixelHeight: 40.1954994
-  pixelLength: 43.3279991
+  pixelHeight: 106.765991
+  pixelLength: 115.135994
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -476,8 +476,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 43.3279991
-    height: 40.1954994
+    width: 115.135994
+    height: 106.765991
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -1124,7 +1124,7 @@ GameObject:
   - 4: {fileID: 50454924}
   m_Layer: 0
   m_Name: Column3
-  m_TagString: Untagged
+  m_TagString: Pillar3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2061,8 +2061,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 43.3279991
-    height: 40.1954994
+    width: 115.135994
+    height: 106.765991
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -2081,8 +2081,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 2.1099999
   unitsLength: 1.27999997
-  pixelHeight: 40.1954994
-  pixelLength: 43.3279991
+  pixelHeight: 106.765991
+  pixelLength: 115.135994
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -3149,7 +3149,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &140681363
 Renderer:
   m_ObjectHideFlags: 0
@@ -3595,7 +3595,7 @@ GameObject:
   - 65: {fileID: 175189191}
   m_Layer: 0
   m_Name: Column
-  m_TagString: Untagged
+  m_TagString: Pillar2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6476,8 +6476,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 2.1099999
   unitsLength: 1.27999997
-  pixelHeight: 40.1954994
-  pixelLength: 43.3279991
+  pixelHeight: 106.765991
+  pixelLength: 115.135994
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -6497,8 +6497,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 43.3279991
-    height: 40.1954994
+    width: 115.135994
+    height: 106.765991
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -7058,7 +7058,7 @@ GameObject:
   - 4: {fileID: 343106382}
   m_Layer: 0
   m_Name: Column4
-  m_TagString: Untagged
+  m_TagString: Pillar4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12253,59 +12253,59 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 13200002, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_FontSize
-      value: 49
+      value: 131
       objectReference: {fileID: 0}
     - target: {fileID: 13100020, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: 43.3279991
+      value: 115.135994
       objectReference: {fileID: 0}
     - target: {fileID: 13100020, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: 40.1954994
+      value: 106.765991
       objectReference: {fileID: 0}
     - target: {fileID: 13100004, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: -971.495056
+      value: -2581.56519
       objectReference: {fileID: 0}
     - target: {fileID: 13100004, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: -346.710022
+      value: -920.920044
       objectReference: {fileID: 0}
     - target: {fileID: 13100018, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: 43.3279991
+      value: 115.135994
       objectReference: {fileID: 0}
     - target: {fileID: 13100018, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: 40.1954994
+      value: 106.765991
       objectReference: {fileID: 0}
     - target: {fileID: 13100024, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: 293.479492
+      value: 779.866516
       objectReference: {fileID: 0}
     - target: {fileID: 13100024, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: 104.775002
+      value: 278.299988
       objectReference: {fileID: 0}
     - target: {fileID: 13200008, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_FontSize
-      value: 66
+      value: 176
       objectReference: {fileID: 0}
     - target: {fileID: 13100022, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: 43.3279991
+      value: 115.135994
       objectReference: {fileID: 0}
     - target: {fileID: 13100022, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: 40.1954994
+      value: 106.765991
       objectReference: {fileID: 0}
     - target: {fileID: 13100016, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: 846.25
+      value: 2248.75
       objectReference: {fileID: 0}
     - target: {fileID: 13100016, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: 381
+      value: 1012
       objectReference: {fileID: 0}
     - target: {fileID: 8200004, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PlayOnAwake
@@ -12746,7 +12746,7 @@ GameObject:
   - 65: {fileID: 666295543}
   m_Layer: 0
   m_Name: Column
-  m_TagString: Untagged
+  m_TagString: Pillar4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14658,7 +14658,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &755333367
 Renderer:
   m_ObjectHideFlags: 0
@@ -14705,7 +14705,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 755333366}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.6085358, y: 1.5, z: 39.8255234}
+  m_LocalPosition: {x: 25.3210239, y: 1.5, z: -38.4173508}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -19110,6 +19110,10 @@ Prefab:
       propertyPath: m_Name
       value: Pillar2Sparkle
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5692846c5ce8f4ee08ef64bec4aad0bd, type: 2}
+      propertyPath: m_TagString
+      value: Pillar2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5692846c5ce8f4ee08ef64bec4aad0bd, type: 2}
   m_RootGameObject: {fileID: 1387991874}
@@ -19856,9 +19860,6 @@ MonoBehaviour:
   movementSpeed: 25
   theCharacter: {fileID: 100002, guid: 50c5bde68e6e15d4c9b1daf9a73a200a, type: 2}
   atPillar: 0
-  pillar2Sparkle: {fileID: 0}
-  pillar3Sparkle: {fileID: 0}
-  pillar4Sparkle: {fileID: 0}
   bossThrowBombAt: 0
   footsteps: {fileID: 8300000, guid: 5db8ec7099b38334ca4161b7e70edddb, type: 3}
   shootScript: {fileID: 1635228130}
@@ -19933,8 +19934,8 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 3e8413987a9a0e243be38bf4cd952e01, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1056497282}
-  m_LocalRotation: {x: 0, y: .946278155, z: 0, w: .323353738}
-  m_LocalPosition: {x: 11.1744318, y: 3.3499999, z: 50.5125237}
+  m_LocalRotation: {x: 0, y: .570132017, z: 0, w: .821553171}
+  m_LocalPosition: {x: -46.9198151, y: 3.3499999, z: -53.2167015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 140681366}
@@ -22390,6 +22391,10 @@ Prefab:
       propertyPath: m_Name
       value: Pillar3Sparkle
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5692846c5ce8f4ee08ef64bec4aad0bd, type: 2}
+      propertyPath: m_TagString
+      value: Pillar3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5692846c5ce8f4ee08ef64bec4aad0bd, type: 2}
   m_RootGameObject: {fileID: 1560072836}
@@ -24706,6 +24711,10 @@ Prefab:
       propertyPath: m_Name
       value: Pillar1Sparkle
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5692846c5ce8f4ee08ef64bec4aad0bd, type: 2}
+      propertyPath: m_TagString
+      value: Pillar1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5692846c5ce8f4ee08ef64bec4aad0bd, type: 2}
   m_RootGameObject: {fileID: 1810101312}
@@ -24867,8 +24876,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 20
   unitsLength: 25
-  pixelHeight: 381
-  pixelLength: 846.25
+  pixelHeight: 1012
+  pixelLength: 2248.75
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -24888,8 +24897,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 846.25
-    height: 381
+    width: 2248.75
+    height: 1012
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -25078,7 +25087,7 @@ GameObject:
   - 4: {fileID: 1387991875}
   m_Layer: 0
   m_Name: Pillar2Sparkle
-  m_TagString: Untagged
+  m_TagString: Pillar2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28684,7 +28693,7 @@ GameObject:
   - 4: {fileID: 1560072837}
   m_Layer: 0
   m_Name: Pillar3Sparkle
-  m_TagString: Untagged
+  m_TagString: Pillar3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28819,9 +28828,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1.74000001
   unitsLength: 13.6999998
-  pixelHeight: 33.1469994
-  pixelLength: 463.744995
-  fontNumber: 49
+  pixelHeight: 88.0439987
+  pixelLength: 1232.31494
+  fontNumber: 131
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -28858,7 +28867,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: a2cbcadf206e5c6489d3f952f3c7f2c6, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 49
+  m_FontSize: 131
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -28880,7 +28889,7 @@ GameObject:
   - 65: {fileID: 1562437597}
   m_Layer: 0
   m_Name: Column
-  m_TagString: Untagged
+  m_TagString: Pillar3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30202,9 +30211,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1
   unitsLength: 10.1800003
-  pixelHeight: 19.0499992
-  pixelLength: 344.593018
-  fontNumber: 66
+  pixelHeight: 50.5999985
+  pixelLength: 915.69104
+  fontNumber: 176
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -30239,7 +30248,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: a2cbcadf206e5c6489d3f952f3c7f2c6, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 66
+  m_FontSize: 176
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -30421,6 +30430,12 @@ MonoBehaviour:
   shotgunShoot: {fileID: 8300000, guid: be26af417494ad946a7a79764fb88975, type: 3}
   pickupScript: {fileID: 0}
   pauseButton: {fileID: 1766179202}
+  shotPillar1: 0
+  shotPillar2: 0
+  shotPillar3: 0
+  shotPillar4: 0
+  haveReached: 0
+  haveLooked: 0
 --- !u!1 &1641033174
 GameObject:
   m_ObjectHideFlags: 0
@@ -31263,6 +31278,10 @@ Prefab:
       value: 
       objectReference: {fileID: 1056497284}
     - target: {fileID: 2300000, guid: 50c5bde68e6e15d4c9b1daf9a73a200a, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300002, guid: 50c5bde68e6e15d4c9b1daf9a73a200a, type: 2}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -32680,8 +32699,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: -18.2000008
   unitsLength: -28.7000008
-  pixelHeight: -346.710022
-  pixelLength: -971.495056
+  pixelHeight: -920.920044
+  pixelLength: -2581.56519
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -32791,8 +32810,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: -971.495056
-    height: -346.710022
+    width: -2581.56519
+    height: -920.920044
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -33536,7 +33555,7 @@ GameObject:
   - 4: {fileID: 1810101313}
   m_Layer: 0
   m_Name: Pillar1Sparkle
-  m_TagString: Untagged
+  m_TagString: Pillar1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33866,7 +33885,7 @@ GameObject:
   - 4: {fileID: 1824406383}
   m_Layer: 0
   m_Name: Column1
-  m_TagString: Untagged
+  m_TagString: Pillar1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33957,8 +33976,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 293.479492
-    height: 104.775002
+    width: 779.866516
+    height: 278.299988
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -33977,8 +33996,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 5.5
   unitsLength: 8.67000008
-  pixelHeight: 104.775002
-  pixelLength: 293.479492
+  pixelHeight: 278.299988
+  pixelLength: 779.866516
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -35022,7 +35041,7 @@ GameObject:
   - 65: {fileID: 1892052406}
   m_Layer: 0
   m_Name: Column
-  m_TagString: Untagged
+  m_TagString: Pillar1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35206,7 +35225,6 @@ MonoBehaviour:
   shotgunReload: {fileID: 8300000, guid: 611fb5f11a161f54fb9cad95191c8d34, type: 3}
   mainCamera: {fileID: 1056497282}
   eventManagerScript: {fileID: 1056497284}
-  directionVector: {x: 0, y: 0, z: 0}
 --- !u!23 &1895907643
 Renderer:
   m_ObjectHideFlags: 0
@@ -35781,7 +35799,7 @@ GameObject:
   - 4: {fileID: 1931873383}
   m_Layer: 0
   m_Name: Column2
-  m_TagString: Untagged
+  m_TagString: Pillar2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37483,7 +37501,7 @@ Renderer:
     type: 2}
   m_PrefabInternal: {fileID: 1695209378}
   m_GameObject: {fileID: 2004779353}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -39794,7 +39812,7 @@ GameObject:
   - 4: {fileID: 2108684676}
   m_Layer: 0
   m_Name: Pillar4Sparkle
-  m_TagString: Untagged
+  m_TagString: Pillar4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40495,6 +40513,10 @@ Prefab:
     - target: {fileID: 100000, guid: 5692846c5ce8f4ee08ef64bec4aad0bd, type: 2}
       propertyPath: m_Name
       value: Pillar4Sparkle
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5692846c5ce8f4ee08ef64bec4aad0bd, type: 2}
+      propertyPath: m_TagString
+      value: Pillar4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5692846c5ce8f4ee08ef64bec4aad0bd, type: 2}
