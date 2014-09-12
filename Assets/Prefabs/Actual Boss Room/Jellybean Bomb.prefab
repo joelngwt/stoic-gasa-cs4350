@@ -147,6 +147,7 @@ MonoBehaviour:
   explosionParticleEffect: {fileID: 100000, guid: bd943c792514675e464dfc7a8c26d3e0,
     type: 2}
   bombExplosion: {fileID: 8300000, guid: 251a81ecd55ce2e4f99c75e937576ffa, type: 3}
+  brokenPillar: {fileID: 100012, guid: 73515265b29c7e54089549189a90aca7, type: 2}
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1

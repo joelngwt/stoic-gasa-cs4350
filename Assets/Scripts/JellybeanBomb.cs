@@ -14,10 +14,19 @@ public class JellybeanBomb : MonoBehaviour {
 	private int throwBombAt;
 	private bool activated;
 	[SerializeField] private AudioClip bombExplosion;
+	private GameObject pillar1;
+	private GameObject pillar2;
+	private GameObject pillar3;
+	private GameObject pillar4;
+	[SerializeField] private GameObject brokenPillar;
 
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindWithTag ("MainCharacter");
+		pillar1 = GameObject.FindWithTag ("Pillar1");
+		pillar2 = GameObject.FindWithTag ("Pillar2");
+		pillar3 = GameObject.FindWithTag ("Pillar3");
+		pillar4 = GameObject.FindWithTag ("Pillar4");
 		eventManagerActualBossRoomScript = GameObject.FindWithTag("MainCamera").GetComponent<EventManager_ActualBossRoom>();
 		bossAIScript = GameObject.FindWithTag("Boss").GetComponent<BossAI>();
 		activated = false;
@@ -89,10 +98,35 @@ public class JellybeanBomb : MonoBehaviour {
 		// Fuse countdown
 		bombFuseTime -= Time.deltaTime;
 		if (bombFuseTime <= 0.0f) {
-			bossAIScript.currentPhase += 1;
+			
 			if (activated == false) {
 				audio.PlayOneShot(bombExplosion);
+				bossAIScript.currentPhase += 1;
 				Instantiate(explosionParticleEffect, this.transform.position, this.transform.rotation);
+				//Vector3 breakPillarAt = pillar1.transform.position;
+				if (throwBombAt == 1) {
+					pillar1.SetActive(false);
+					Instantiate(brokenPillar, pillar1.transform.position, pillar1.transform.rotation);
+				}
+				else if (throwBombAt == 2) {
+					pillar2.SetActive(false);
+					Instantiate(brokenPillar, pillar2.transform.position, pillar2.transform.rotation);
+				}
+				else if (throwBombAt == 3) {
+					pillar3.SetActive(false);
+					Instantiate(brokenPillar, pillar3.transform.position, pillar3.transform.rotation);
+				}
+				else if (throwBombAt == 4) {
+					pillar2.SetActive(false);
+					Instantiate(brokenPillar, pillar4.transform.position, pillar4.transform.rotation);
+				}
+
+				Collider[] colliders = Physics.OverlapSphere(this.transform.position, 20.0f);
+				foreach (Collider hit in colliders) {
+					if (hit && hit.rigidbody)
+						hit.rigidbody.AddExplosionForce(3000.0f, this.transform.position, 20.0f, 3.0F);
+					
+				}
 				activated = true;
 			}
 			if (eventManagerActualBossRoomScript.atPillar == throwBombAt) {

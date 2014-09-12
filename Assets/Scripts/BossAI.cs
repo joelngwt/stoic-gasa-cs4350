@@ -55,8 +55,16 @@ public class BossAI : MonoBehaviour {
 		else if (percentage < 0.5f) {
 			phase50();
 		}
-		else if (percentage < 0.6f) {
-			phase60();
+		else if (percentage < 0.6f && currentPhase >= 2 && currentPhase <=3) {
+			if (currentPhase == 2) {
+				throwBomb();
+				sprayBullets();
+				// currentPhase += 1 when the bean is destroyed (done in JellybeanBomb.cs)
+			}
+			else if (currentPhase == 3) {
+				hasThrown = false;
+				sprayBullets();
+			}
 		}
 		else if (percentage <= 0.8f && currentPhase >= 1 && currentPhase <= 2) {		// phase 2
 			if (currentPhase == 1) {
