@@ -16,14 +16,14 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 	//public GameObject pillar2Sparkle;
 	//public GameObject pillar3Sparkle;
 	//public GameObject pillar4Sparkle;
-	public int bossThrowBombAt;
+	private bool canMove;				// Whether or not the player can move from pillar to pillar
 	
 	private bool bossInMiddle;
 	private Vector3 movementCenterPoint = new Vector3(-41.13f, 3.35f, -0.77f);
 	private Vector3 movementPillar1BossEdge = new Vector3(-46.5f, 3.35f, 57.94f);
 	private Vector3 movementPillar2BossEdge = new Vector3(-46.91f, 3.35f, -53.21f);
-	private Vector3 movementPillar3BossEdge = new Vector3(8.74f, 3.35f, -52.83f);
-	private Vector3 movementPillar4BossEdge = new Vector3(11.17f, 3.35f, 50.51f);
+	private Vector3 movementPillar3BossEdge = new Vector3(3.78f, 3.35f, -48.79f);
+	private Vector3 movementPillar4BossEdge = new Vector3(8.53f, 3.35f, 47.89f);
 	private Vector3 movementPillar1BossMiddle;
 	private Vector3 movementPillar2BossMiddle;
 	private Vector3 movementPillar3BossMiddle;
@@ -68,7 +68,7 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 		theCharacter.transform.rotation = theCamera.transform.rotation;
 		count = 1;
 		atPillar = 0;
-		bossThrowBombAt = 0;
+		canMove = false;
 
 		//pillar2Sparkle.particleEmitter.enabled = false;
 		//pillar3Sparkle.particleEmitter.enabled = false;
@@ -83,7 +83,7 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 		// character hitbox follows the camera around
 		theCharacter.transform.position = theCamera.transform.position;
 		
-		Debug.Log ("reached = " + shootScript.haveReached + ", At pillar = " + atPillar);
+		// Debug.Log ("reached = " + shootScript.haveReached + ", At pillar = " + atPillar);
 		
 		if (shootScript.shotPillar2 == true && shootScript.haveLooked == false) {
 			//moveToCenter();
@@ -94,10 +94,21 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 				LookAt_Pillar(lookAtPillar2BossEdge);
 			}
 		}
+		else if (shootScript.shotPillar3 == true && shootScript.haveLooked == false) {
+			//moveToCenter();
+			if (shootScript.haveReached == false) {
+				moveToPillar (3);
+				Debug.Log (shootScript.haveReached + " " + shootScript.haveLooked);
+			}
+			if (shootScript.haveReached == true && shootScript.haveLooked == false) {
+				LookAt_Pillar(lookAtPillar4BossEdge);
+			}
+		}
 		else if (shootScript.shotPillar4 == true && shootScript.haveLooked == false) {
 			//moveToCenter();
 			if (shootScript.haveReached == false) {
 				moveToPillar (4);
+				Debug.Log (shootScript.haveReached + " " + shootScript.haveLooked);
 			}
 			if (shootScript.haveReached == true && shootScript.haveLooked == false) {
 				LookAt_Pillar(lookAtPillar4BossEdge);
@@ -127,7 +138,7 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 		}
 		// Boss reaches 80% health
 		else if (num == 6 && bossAIScript.percentage < 0.8f) {
-			bossThrowBombAt = 1;
+			canMove = true;
 			//pillar2Sparkle.particleEmitter.enabled = true;
 			//pillar3Sparkle.particleEmitter.enabled = true;
 		}
@@ -154,11 +165,11 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 			atPillar = 2;
 		}
 		else if (pillarNumber == 3 && bossInMiddle == false) {
-			TranslateTo(movementPillar3BossEdge, 50f, 0);
+			TranslateToPillar(movementPillar3BossEdge, 50f);
 			atPillar = 3;
 		}
 		else if (pillarNumber == 4 && bossInMiddle == false) {
-			TranslateTo(movementPillar4BossEdge, 50f, 0);
+			TranslateToPillar(movementPillar4BossEdge, 50f);
 			atPillar = 4;
 		}
 		else if (pillarNumber == 1 && bossInMiddle == true) {

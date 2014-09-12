@@ -33,7 +33,7 @@ public class EnemyBulletDestroy : MonoBehaviour {
 				AudioSource.PlayClipAtPoint(shieldBlock, transform.position);
 			}
 			#if UNITY_EDITOR
-			Debug.Log ("Health1 = " + playerHealth);
+			//Debug.Log ("Health1 = " + playerHealth);
 			#endif
 			PlayerPrefs.SetInt ("playerHealth", (int)playerHealth);
 

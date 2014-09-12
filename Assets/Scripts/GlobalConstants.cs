@@ -37,7 +37,7 @@ public static class Constants {
 	public const float BOSS_TOTAL_HEALTH = 240.0f;
 		// First 20%
 		public const float BOSS_SPRAY_TIME = 3.0f;
-		public const float BOSS_IDLE_TIME = 3.0f;
+		public const float BOSS_IDLE_TIME = 2.0f;
 		public const float BOSS_FIRE_RATE = 0.1f;
 		// Bomb stats
 		public const float BOSS_BOMB_FUSE_TIME = 10.0f;
