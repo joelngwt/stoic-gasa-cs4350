@@ -10,7 +10,6 @@ public class JellybeanBomb : MonoBehaviour {
 	private float bombFuseTime = Constants.BOSS_BOMB_FUSE_TIME;
 	[SerializeField] private GameObject explosionParticleEffect;
 	private EventManager_ActualBossRoom eventManagerActualBossRoomScript;
-	private BossAI bossAIScript;
 	private int throwBombAt;
 	private bool activated;
 	[SerializeField] private AudioClip bombExplosion;
@@ -28,7 +27,7 @@ public class JellybeanBomb : MonoBehaviour {
 		pillar3 = GameObject.FindWithTag ("Pillar3");
 		pillar4 = GameObject.FindWithTag ("Pillar4");
 		eventManagerActualBossRoomScript = GameObject.FindWithTag("MainCamera").GetComponent<EventManager_ActualBossRoom>();
-		bossAIScript = GameObject.FindWithTag("Boss").GetComponent<BossAI>();
+		//bossAIScript = GameObject.FindWithTag("Boss").GetComponent<BossAI>();
 		activated = false;
 
 		// if current pillar is 1
@@ -101,7 +100,6 @@ public class JellybeanBomb : MonoBehaviour {
 			
 			if (activated == false) {
 				audio.PlayOneShot(bombExplosion);
-				bossAIScript.currentPhase += 1;
 				Instantiate(explosionParticleEffect, this.transform.position, this.transform.rotation);
 				//Vector3 breakPillarAt = pillar1.transform.position;
 				if (throwBombAt == 1) {
