@@ -34,6 +34,13 @@ public class EventManager_MainHall : MonoBehaviour {
 	public GameObject EggPrefab;
 	private bool reached = false;
 
+	public bool trial = false;
+
+	/*
+	 * Helpers
+	 * */
+	public World_Object_Movement_Helper main_character_movement_helper;
+
 	void Start(){
 		theCamera = Camera.main.gameObject;
 		theCharacter = GameObject.FindWithTag("MainCharacter");
@@ -41,12 +48,24 @@ public class EventManager_MainHall : MonoBehaviour {
 		num = 0;
 		theCharacter.transform.rotation = theCamera.transform.rotation;
 		count = 1;
+
+		/*
+		 * Attach a movement helper to the character 
+		 * and the main camera
+		 * */
+		main_character_movement_helper = new World_Object_Movement_Helper(Camera.main.gameObject);
+		main_character_movement_helper.add_associated_world_object(GameObject.FindWithTag("MainCharacter"));
 	}
 
 	// Update is called once per frame
 	void Update () {
 		// character hitbox follows the camera around
-		theCharacter.transform.position = theCamera.transform.position;
+		//theCharacter.transform.position = theCamera.transform.position;
+
+		/*
+		 * Update all the movement helpers
+		 * */
+		main_character_movement_helper.process_update();
 
 		// Position 1, wave 1
 		if(count <= 5){
@@ -82,14 +101,36 @@ public class EventManager_MainHall : MonoBehaviour {
 		
 		// Position 2
 		else if(count > 12 && count <= 23 && !(GameObject.Find ("Target11") || GameObject.Find ("Target12"))){
-			if (num == 0)
-				num = TranslateTo( new Vector3(-65.4f, 8f, 266.1f), num);	
-			else if (num == 1)
-				num = TranslateTo( new Vector3(-64f, 8f, 227.7f), num);
-			else if (num == 2)
-				num = TranslateTo( new Vector3(-51.6f, 8f, 224f), num);
-			else if (num == 3)
-				num = LookAt( new Vector3 (-46f, 12f, 202.5f), num);
+//			if (num == 0)
+//				num = TranslateTo( new Vector3(-65.4f, 8f, 266.1f), num);	
+//			else if (num == 1)
+//				num = TranslateTo( new Vector3(-64f, 8f, 227.7f), num);
+//			else if (num == 2)
+//				num = TranslateTo( new Vector3(-51.6f, 8f, 224f), num);
+//			else if (num == 3)
+//				num = LookAt( new Vector3 (-46f, 12f, 202.5f), num);
+			if(trial == false)
+			{
+				main_character_movement_helper.add_movement_task(new Vector3(-65.4f, 8f, 266.1f), 
+				                                                 World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT);
+
+				main_character_movement_helper.add_movement_task(new Vector3(-64f, 8f, 227.7f), 
+				                                                 World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT);
+
+				main_character_movement_helper.add_movement_task(new Vector3(-51.6f, 8f, 224f), 
+				                                                 World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT);
+
+				main_character_movement_helper.add_lookAt_task(new Vector3 (-46f, 12f, 202.5f), 
+				                                               Vector3.up, 
+				                                               World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_ROTATION_SPEED_DEFAULT);
+
+				main_character_movement_helper.add_movement_and_lookAt_task(new Vector3(-51.6f, 8f, 224f), 
+				                                                            World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT, 
+				                                                            new Vector3 (-46f, 12f, 202.5f), 
+				                                                            Vector3.up, 
+				                                                            World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_ROTATION_SPEED_DEFAULT);
+				trial = true;
+			}
 				
 			if(count > 12 && count <= 16 && reached == true){
 				#if UNITY_EDITOR
