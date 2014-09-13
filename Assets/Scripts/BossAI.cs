@@ -21,6 +21,9 @@ public class BossAI : MonoBehaviour {
 	// Jellybean bomb
 	[SerializeField] private GameObject jellybeanBomb;
 	private bool hasThrown = false;
+	private bool bombHasExploded = false;
+	private float bombExistenceTimer = Constants.BOSS_BOMB_FUSE_TIME;
+	public int currentPhase = 0;
 	
 	public bool fightStart;
 
@@ -38,6 +41,7 @@ public class BossAI : MonoBehaviour {
 	void Update () {
 		percentage = currentHealth / totalHealth;
 		Debug.Log ("current health = " + currentHealth + " percentage = " + percentage + " total health = " + totalHealth);
+		Debug.Log ("current phase = " + currentPhase);
 			
 		if (percentage < 0.1f) {
 			phase10();
@@ -51,15 +55,32 @@ public class BossAI : MonoBehaviour {
 		else if (percentage < 0.5f) {
 			phase50();
 		}
-		else if (percentage < 0.6f) {
-			phase60();
+		else if (percentage < 0.6f && currentPhase >= 2 && currentPhase <=3) {
+			if (currentPhase == 2) {
+				throwBomb();
+				sprayBullets();
+				// currentPhase += 1 when the bean is destroyed (done in JellybeanBomb.cs)
+			}
+			else if (currentPhase == 3) {
+				hasThrown = false;
+				sprayBullets();
+			}
 		}
-		else if (percentage < 0.8f) {
-			phase80();
+		else if (percentage <= 0.8f && currentPhase >= 1 && currentPhase <= 2) {		// phase 2
+			if (currentPhase == 1) {
+				throwBomb();
+				sprayBullets();
+				// currentPhase += 1 when the bean is destroyed (done in JellybeanBomb.cs)
+			}
+			else if (currentPhase == 2) {
+				hasThrown = false;
+				sprayBullets();
+			}
 		}
-		else if (percentage <= 1.0f && fightStart == true) {
-			phase100();
-		}		
+		else if (percentage <= 1.0f && fightStart == true) {	// phase 1
+			currentPhase = 1;
+			sprayBullets();
+		}
 	}
 	
 	public void getHit() {
@@ -106,7 +127,7 @@ public class BossAI : MonoBehaviour {
 	}
 
 	// Shoot bullets
-	void phase100() {
+	void sprayBullets() {
 		if (sprayFor > 0) {
 			shootBullets();
 			sprayFor -= Time.deltaTime;
@@ -122,11 +143,12 @@ public class BossAI : MonoBehaviour {
 	}
 
 	// Throw jellybean bomb
-	void phase80() {
+	void throwBomb() {
 		Vector3 bossPosition = this.transform.position;
 		if (hasThrown == false) {
 			Instantiate (jellybeanBomb, new Vector3(bossPosition.x-10, bossPosition.y+2, bossPosition.z), this.transform.rotation);
 			hasThrown = true;
+			bombHasExploded = false;
 		}
 	}
 	

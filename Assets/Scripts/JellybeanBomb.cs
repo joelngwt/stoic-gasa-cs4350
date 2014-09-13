@@ -9,33 +9,51 @@ public class JellybeanBomb : MonoBehaviour {
 	private float blinkDuration = 0.5f;
 	private float bombFuseTime = Constants.BOSS_BOMB_FUSE_TIME;
 	[SerializeField] private GameObject explosionParticleEffect;
-	private EventManager_ActualBossRoom eventManagerActualBossRoom;
+	private EventManager_ActualBossRoom eventManagerActualBossRoomScript;
+	private BossAI bossAIScript;
 	private int throwBombAt;
+	private bool activated;
+	[SerializeField] private AudioClip bombExplosion;
+	private GameObject pillar1;
+	private GameObject pillar2;
+	private GameObject pillar3;
+	private GameObject pillar4;
+	[SerializeField] private GameObject brokenPillar;
 
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindWithTag ("MainCharacter");
-		eventManagerActualBossRoom = GameObject.FindWithTag ("MainCamera").GetComponent<EventManager_ActualBossRoom>();
+		pillar1 = GameObject.FindWithTag ("Pillar1");
+		pillar2 = GameObject.FindWithTag ("Pillar2");
+		pillar3 = GameObject.FindWithTag ("Pillar3");
+		pillar4 = GameObject.FindWithTag ("Pillar4");
+		eventManagerActualBossRoomScript = GameObject.FindWithTag("MainCamera").GetComponent<EventManager_ActualBossRoom>();
+		bossAIScript = GameObject.FindWithTag("Boss").GetComponent<BossAI>();
+		activated = false;
 
 		// if current pillar is 1
-		if (eventManagerActualBossRoom.atPillar == 1) {
+		if (eventManagerActualBossRoomScript.atPillar == 1) {
 			Vector3 throwDirection = new Vector3(-38.73f, 1.5f, 49.21f) - this.transform.position;
 			this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 15);
+			throwBombAt = 1;
 		}
 		// if current pillar is 2
-		else if (eventManagerActualBossRoom.atPillar == 2) {
-			Vector3 throwDirection = new Vector3(-37.7969f, 1.5f, -46.71f) - this.transform.position;
+		else if (eventManagerActualBossRoomScript.atPillar == 2) {
+			Vector3 throwDirection = new Vector3(-26.63f, 1.5f, -62.53f) - this.transform.position;
 			this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 15);
+			throwBombAt = 2;
 		}
 		// If current pillar is 3
-		else if (eventManagerActualBossRoom.atPillar == 3) {
+		else if (eventManagerActualBossRoomScript.atPillar == 3) {
 			Vector3 throwDirection = new Vector3(11.46f, 1.5f, -37.95f) - this.transform.position;
 			this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 18);
+			throwBombAt = 3;
 		}
 		// If current pillar is 4
-		else if (eventManagerActualBossRoom.atPillar == 4) {
+		else if (eventManagerActualBossRoomScript.atPillar == 4) {
 			Vector3 throwDirection = new Vector3(11.6f, 1.5f, 39.8f) - this.transform.position;
 			this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 18.5f);
+			throwBombAt = 4;
 		}
 	}
 	
@@ -43,7 +61,6 @@ public class JellybeanBomb : MonoBehaviour {
 	void Update () {
 		// Stop the bomb if it gets too close (so it won't fly past the player)
 		float rangeBetweenBombAndPlayer = Vector3.Distance(this.transform.position, player.transform.position );
-		Debug.Log ("range = " + rangeBetweenBombAndPlayer);
 		if (rangeBetweenBombAndPlayer < 13.0f && isStopped == false) {
 			this.rigidbody.velocity = new Vector3(0, 0, 0);
 			isStopped = true;
@@ -81,12 +98,41 @@ public class JellybeanBomb : MonoBehaviour {
 		// Fuse countdown
 		bombFuseTime -= Time.deltaTime;
 		if (bombFuseTime <= 0.0f) {
-			Instantiate(explosionParticleEffect, this.transform.position, this.transform.rotation);
-			Destroy(this.gameObject);
+			
+			if (activated == false) {
+				audio.PlayOneShot(bombExplosion);
+				bossAIScript.currentPhase += 1;
+				Instantiate(explosionParticleEffect, this.transform.position, this.transform.rotation);
+				//Vector3 breakPillarAt = pillar1.transform.position;
+				if (throwBombAt == 1) {
+					pillar1.SetActive(false);
+					Instantiate(brokenPillar, pillar1.transform.position, pillar1.transform.rotation);
+				}
+				else if (throwBombAt == 2) {
+					pillar2.SetActive(false);
+					Instantiate(brokenPillar, pillar2.transform.position, pillar2.transform.rotation);
+				}
+				else if (throwBombAt == 3) {
+					pillar3.SetActive(false);
+					Instantiate(brokenPillar, pillar3.transform.position, pillar3.transform.rotation);
+				}
+				else if (throwBombAt == 4) {
+					pillar2.SetActive(false);
+					Instantiate(brokenPillar, pillar4.transform.position, pillar4.transform.rotation);
+				}
 
-			if (eventManagerActualBossRoom.atPillar == eventManagerActualBossRoom.bossThrowBombAt) {
-				// TODO player dies
+				Collider[] colliders = Physics.OverlapSphere(this.transform.position, 20.0f);
+				foreach (Collider hit in colliders) {
+					if (hit && hit.rigidbody)
+						hit.rigidbody.AddExplosionForce(3000.0f, this.transform.position, 20.0f, 3.0F);
+					
+				}
+				activated = true;
 			}
+			if (eventManagerActualBossRoomScript.atPillar == throwBombAt) {
+				PlayerPrefs.SetInt("playerHealth", 0);
+			}
+			Destroy(this.gameObject, 0.5f);
 		}
 	}
 }

@@ -21,7 +21,7 @@ public class Shield : MonoBehaviour {
 	
 	public GameObject mainCamera;
 	public EventManager_ActualBossRoom eventManagerScript;
-	public Vector3 directionVector;
+	private Vector3 directionVector; 
 
 	void Start(){
 		PlayerPrefs.SetInt ("shieldUp", 0);
@@ -29,7 +29,7 @@ public class Shield : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		Debug.Log(shieldIsUp);
+		// Debug.Log(shieldIsUp);
 		if(Time.timeScale > 0){ // can only shoot if not paused
 			// Shield usage
 			#if UNITY_ANDROID
@@ -51,14 +51,47 @@ public class Shield : MonoBehaviour {
 									PlayerPrefs.SetInt ("shieldUp", 1);
 								}
 								else {
-									mainCamera.transform.Translate(directionVector * Time.deltaTime * 20.0f);
+									mainCamera.transform.Translate(-directionVector * Time.deltaTime * 20.0f, Space.World);
 								}
 							}
 							else if(eventManagerScript.atPillar == 2) {
+								// Range and direction to move
+								float range = Vector3.Distance(mainCamera.transform.position, new Vector3(-41.45f, 3.35f, -62.69f));
+								directionVector = (mainCamera.transform.position - new Vector3(-41.45f, 3.35f, -62.69f)).normalized;
+								
+								if (range < 1.0f) {
+									shieldIsUp = true;
+									PlayerPrefs.SetInt ("shieldUp", 1);
+								}
+								else {
+									mainCamera.transform.Translate(-directionVector * Time.deltaTime * 20.0f, Space.World);
+								}
 							}
 							else if(eventManagerScript.atPillar == 3) {
+								// Range and direction to move
+								float range = Vector3.Distance(mainCamera.transform.position, new Vector3(8.33f, 3.35f, -52.95f));
+								directionVector = (mainCamera.transform.position - new Vector3(8.33f, 3.35f, -52.95f)).normalized;
+								
+								if (range < 1.0f) {
+									shieldIsUp = true;
+									PlayerPrefs.SetInt ("shieldUp", 1);
+								}
+								else {
+									mainCamera.transform.Translate(-directionVector * Time.deltaTime * 20.0f, Space.World);
+								}
 							}
 							else if(eventManagerScript.atPillar == 4) {
+								// Range and direction to move
+								float range = Vector3.Distance(mainCamera.transform.position, new Vector3(12.14f, 3.35f, 51.47f));
+								directionVector = (mainCamera.transform.position - new Vector3(12.14f, 3.35f, 51.47f)).normalized;
+								
+								if (range < 1.0f) {
+									shieldIsUp = true;
+									PlayerPrefs.SetInt ("shieldUp", 1);
+								}
+								else {
+									mainCamera.transform.Translate(-directionVector * Time.deltaTime * 20.0f, Space.World);
+								}
 							} 
 						}
 						else {
@@ -99,14 +132,47 @@ public class Shield : MonoBehaviour {
 								PlayerPrefs.SetInt ("shieldUp", 0);
 							}
 							else {
-								mainCamera.transform.Translate(directionVector * Time.deltaTime * 20.0f);
+								mainCamera.transform.Translate(-directionVector * Time.deltaTime * 20.0f, Space.World);
 							}
 						}
 						else if(eventManagerScript.atPillar == 2) {
+							// Range and direction to move
+							float range = Vector3.Distance(mainCamera.transform.position, new Vector3(-46.91f, 3.35f, -53.21f));
+							directionVector = (mainCamera.transform.position - new Vector3(-46.91f, 3.35f, -53.21f)).normalized;
+							
+							if (range < 1.0f) {
+								shieldIsUp = false;
+								PlayerPrefs.SetInt ("shieldUp", 0);
+							}
+							else {
+								mainCamera.transform.Translate(-directionVector * Time.deltaTime * 20.0f, Space.World);
+							}
 						}
 						else if(eventManagerScript.atPillar == 3) {
+							// Range and direction to move
+							float range = Vector3.Distance(mainCamera.transform.position, new Vector3(3.78f, 3.35f, -48.79f));
+							directionVector = (mainCamera.transform.position - new Vector3(3.78f, 3.35f, -48.79f)).normalized;
+							
+							if (range < 1.0f) {
+								shieldIsUp = false;
+								PlayerPrefs.SetInt ("shieldUp", 0);
+							}
+							else {
+								mainCamera.transform.Translate(-directionVector * Time.deltaTime * 20.0f, Space.World);
+							}
 						}
 						else if(eventManagerScript.atPillar == 4) {
+							// Range and direction to move
+							float range = Vector3.Distance(mainCamera.transform.position, new Vector3(8.53f, 3.35f, 47.89f));
+							directionVector = (mainCamera.transform.position - new Vector3(8.53f, 3.35f, 47.89f)).normalized;
+							
+							if (range < 1.0f) {
+								shieldIsUp = false;
+								PlayerPrefs.SetInt ("shieldUp", 0);
+							}
+							else {
+								mainCamera.transform.Translate(-directionVector * Time.deltaTime * 20.0f, Space.World);
+							}
 						} 
 					}
 					else {
@@ -124,14 +190,35 @@ public class Shield : MonoBehaviour {
 						directionVector = (mainCamera.transform.position - new Vector3(-46.5f, 3.35f, 57.94f)).normalized;
 						
 						if (range > 0.5f) {
-							mainCamera.transform.Translate(directionVector * Time.deltaTime * 20.0f);
+							mainCamera.transform.Translate(-directionVector * Time.deltaTime * 20.0f, Space.World);
 						}
 					}
 					else if(eventManagerScript.atPillar == 2) {
+						// Range and direction to move
+						float range = Vector3.Distance(mainCamera.transform.position, new Vector3(-46.91f, 3.35f, -53.21f));
+						directionVector = (mainCamera.transform.position - new Vector3(-46.91f, 3.35f, -53.21f)).normalized;
+						
+						if (range > 0.5f) {
+							mainCamera.transform.Translate(-directionVector * Time.deltaTime * 20.0f, Space.World);
+						}
 					}
 					else if(eventManagerScript.atPillar == 3) {
+						// Range and direction to move
+						float range = Vector3.Distance(mainCamera.transform.position, new Vector3(3.78f, 3.35f, -48.79f));
+						directionVector = (mainCamera.transform.position - new Vector3(3.78f, 3.35f, -48.79f)).normalized;
+						
+						if (range > 0.5f) {
+							mainCamera.transform.Translate(-directionVector * Time.deltaTime * 20.0f, Space.World);
+						}
 					}
 					else if(eventManagerScript.atPillar == 4) {
+						// Range and direction to move
+						float range = Vector3.Distance(mainCamera.transform.position, new Vector3(8.53f, 3.35f, 47.89f));
+						directionVector = (mainCamera.transform.position - new Vector3(8.53f, 3.35f, 47.89f)).normalized;
+						
+						if (range > 0.5f) {
+							mainCamera.transform.Translate(-directionVector * Time.deltaTime * 20.0f, Space.World);
+						}
 					} 
 				}
 			}
