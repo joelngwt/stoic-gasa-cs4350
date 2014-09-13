@@ -19939,8 +19939,8 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 3e8413987a9a0e243be38bf4cd952e01, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1056497282}
-  m_LocalRotation: {x: 0, y: -.0951586366, z: 0, w: -.995462179}
-  m_LocalPosition: {x: -32.0976791, y: 3.3499999, z: -61.9701042}
+  m_LocalRotation: {x: 0, y: .988111377, z: 0, w: -.153740093}
+  m_LocalPosition: {x: 23.4227066, y: 3.3499999, z: 57.162838}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 140681366}
@@ -31306,6 +31306,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 50c5bde68e6e15d4c9b1daf9a73a200a, type: 2}
+      propertyPath: bossRoomScript
+      value: 
+      objectReference: {fileID: 1056497284}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50c5bde68e6e15d4c9b1daf9a73a200a, type: 2}
   m_RootGameObject: {fileID: 2004779353}
@@ -35245,7 +35249,7 @@ MonoBehaviour:
   hmgReload: {fileID: 8300000, guid: cb1bb32742234df40a9a8e360cb0349b, type: 3}
   shotgunReload: {fileID: 8300000, guid: 611fb5f11a161f54fb9cad95191c8d34, type: 3}
   mainCamera: {fileID: 1056497282}
-  eventManagerScript: {fileID: 1056497284}
+  bossRoomScript: {fileID: 1056497284}
 --- !u!23 &1895907643
 Renderer:
   m_ObjectHideFlags: 0
