@@ -40085,6 +40085,8 @@ MonoBehaviour:
   health: 0
   brokenRoof: {fileID: 100000, guid: 81a0576ae7523ce409b63b61c1c70692, type: 2}
   spawnedBrokenRoof: 0
+  sky: {fileID: 2800000, guid: b9c85a674eb488546a219ac7a1acb010, type: 3}
+  skyLight: {fileID: 100000, guid: 65e079b41a600a748a465cb19501e914, type: 2}
 --- !u!23 &2117820596
 Renderer:
   m_ObjectHideFlags: 0

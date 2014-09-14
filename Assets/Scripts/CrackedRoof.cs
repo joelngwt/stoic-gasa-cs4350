@@ -7,6 +7,8 @@ public class CrackedRoof : MonoBehaviour {
 	[SerializeField] private GameObject brokenRoof;
 	public bool spawnedBrokenRoof;
 	private BossAI bossAIScript;
+	[SerializeField] private Texture sky;
+	[SerializeField] private GameObject skyLight;
 
 	// Use this for initialization
 	void Start () {
@@ -20,9 +22,11 @@ public class CrackedRoof : MonoBehaviour {
 	void Update () {
 		if (health <= 0) {
 			// Remove all rigidbody constraints so that the roof can start falling
-			this.gameObject.SetActive(false);
+			//this.gameObject.SetActive(false);
+			this.renderer.material.mainTexture = sky;
 			if (spawnedBrokenRoof == false) {
 				Instantiate(brokenRoof, this.transform.position, this.transform.rotation);
+				Instantiate(skyLight);
 				spawnedBrokenRoof = true;
 			}
 		}
