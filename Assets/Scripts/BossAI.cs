@@ -29,6 +29,10 @@ public class BossAI : MonoBehaviour {
 	public int bossMovementNumber;
 	public bool spawnMinions;
 	[SerializeField] private EventManager_ActualBossRoom bossRoomScript;
+	public bool canShootRoof;
+	public bool roofHitBoss;
+	private CrackedRoof crackedRoofScript;
+	private bool dieAnimationPlayed;
 
 	// Use this for initialization
 	void Start () {
@@ -39,19 +43,63 @@ public class BossAI : MonoBehaviour {
 		bossMovementNumber = 0;
 		currentPhase = 0;
 		spawnMinions = false;
+		canShootRoof = false;
+		roofHitBoss = false;
+		dieAnimationPlayed = false;
 		
 		player = GameObject.FindWithTag ("MainCharacter");
+		crackedRoofScript = GameObject.FindWithTag ("CrackedRoof").GetComponent<CrackedRoof>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		percentage = currentHealth / totalHealth;
-		//Debug.Log ("current health = " + currentHealth + " percentage = " + percentage + " total health = " + totalHealth);
-		Debug.Log ("current phase = " + currentPhase + ", boss movement number = " + bossMovementNumber);
+		Debug.Log ("current health = " + currentHealth + " percentage = " + percentage + " total health = " + totalHealth);
+		//Debug.Log ("current phase = " + currentPhase + ", boss movement number = " + bossMovementNumber);
 		
 		if (bossRoomScript.bossInMiddle == true && percentage < 0.6f) {
+			LookAt(player.transform.position, 0, 0.2f);
+		}
+		
+		if (crackedRoofScript.spawnedBrokenRoof == true) {
+			if (roofHitBoss == true) {
+				if (dieAnimationPlayed == false) {
+					animation.Play ("Die_Bear");
+					dieAnimationPlayed = true;
+				}
+				Invoke ("winGame", 3f);			// calls winGame() after 3 seconds
+			}
+		}
+		else if (percentage < 0.1f) {
 			sprayBullets();
-			LookAt(player.transform.position, 0); // slow this down by A LOT, so as to let player hit the back 
+			canShootRoof = true;
+		}
+		else if (percentage < 0.2f) {
+			if (currentPhase == 5) {
+				//Debug.Log ("Phase 20-1");
+				throwBomb();
+				currentPhase = 6;
+			}
+			else if (currentPhase == 6) {
+				//Debug.Log ("Phase 20-2");
+				hasThrown = false;
+				sprayBullets();
+			}
+		}
+		else if (percentage < 0.4f) {
+			if (currentPhase == 4) {
+				//Debug.Log ("Phase 40-1");
+				throwBomb();
+				currentPhase = 5;
+			}
+			else if (currentPhase == 5) {
+				//Debug.Log ("Phase 40-2");
+				hasThrown = false;
+				sprayBullets();
+			}
+		}
+		else if (bossRoomScript.bossInMiddle == true && percentage < 0.6f) {
+			sprayBullets();
 		}
 		else if (bossRoomScript.minionsKilled == true) {
 			// boss move to middle of room
@@ -62,6 +110,7 @@ public class BossAI : MonoBehaviour {
 			hideBehindChair();
 			if (currentPhase == 3) {
 				spawnMinions = true;
+				currentPhase = 4;
 			}
 		}
 		else if (percentage <= 0.8f) {
@@ -81,6 +130,10 @@ public class BossAI : MonoBehaviour {
 			currentPhase = 1;
 			sprayBullets();
 		}
+	}
+	
+	void winGame() {
+		Application.LoadLevel("Win");
 	}
 	
 	public void getHit() {
@@ -185,7 +238,7 @@ public class BossAI : MonoBehaviour {
 			bossMovementNumber = TranslateTo(waypointBehindChair, 15.0f, bossMovementNumber);
 		}
 		else if (bossMovementNumber == 3) {
-			bossMovementNumber = LookAt(faceForward, bossMovementNumber);
+			bossMovementNumber = LookAt(faceForward, bossMovementNumber, 15f);
 			currentPhase = 3;
 		}
 	}
@@ -218,7 +271,7 @@ public class BossAI : MonoBehaviour {
 		return num;
 	}
 
-	private int LookAt( Vector3 position , int num) {
+	private int LookAt(Vector3 position, int num, float rotationSpeed) {
 		
 		//find the vector pointing from our position to the target
 		Vector3 _direction = (position - this.transform.position);//.normalized;
@@ -227,7 +280,7 @@ public class BossAI : MonoBehaviour {
 		Quaternion _lookRotation = Quaternion.LookRotation(_direction);
 		
 		//rotate us over time according to speed until we are in the required rotation
-		transform.rotation = Quaternion.Slerp(this.transform.rotation, _lookRotation, Time.deltaTime * 15);
+		transform.rotation = Quaternion.Slerp(this.transform.rotation, _lookRotation, Time.deltaTime * rotationSpeed);
 		
 		if (Mathf.Abs(Mathf.Abs (transform.rotation.y) - Mathf.Abs (_lookRotation.y)) < 0.000001f) {
 			num += 1;

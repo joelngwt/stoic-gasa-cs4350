@@ -9,7 +9,7 @@ public class JellybeanBomb : MonoBehaviour {
 	private float blinkDuration = 0.5f;
 	private float bombFuseTime = Constants.BOSS_BOMB_FUSE_TIME;
 	[SerializeField] private GameObject explosionParticleEffect;
-	private EventManager_ActualBossRoom eventManagerActualBossRoomScript;
+	private EventManager_ActualBossRoom bossRoomScript;
 	private int throwBombAt;
 	private bool activated;
 	[SerializeField] private AudioClip bombExplosion;
@@ -26,32 +26,56 @@ public class JellybeanBomb : MonoBehaviour {
 		pillar2 = GameObject.FindWithTag ("Pillar2");
 		pillar3 = GameObject.FindWithTag ("Pillar3");
 		pillar4 = GameObject.FindWithTag ("Pillar4");
-		eventManagerActualBossRoomScript = GameObject.FindWithTag("MainCamera").GetComponent<EventManager_ActualBossRoom>();
+		bossRoomScript = GameObject.FindWithTag("MainCamera").GetComponent<EventManager_ActualBossRoom>();
 		//bossAIScript = GameObject.FindWithTag("Boss").GetComponent<BossAI>();
 		activated = false;
 
 		// if current pillar is 1
-		if (eventManagerActualBossRoomScript.atPillar == 1) {
-			Vector3 throwDirection = new Vector3(-38.73f, 1.5f, 49.21f) - this.transform.position;
-			this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 15);
+		if (bossRoomScript.atPillar == 1) {
+			if (bossRoomScript.bossInMiddle == false) {
+				Vector3 throwDirection = new Vector3(-38.73f, 1.5f, 49.21f) - this.transform.position;
+				this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 15);
+			}
+			else if (bossRoomScript.bossInMiddle == true) {
+				Vector3 throwDirection = new Vector3(-19.97f, 1.5f, 58.1f) - this.transform.position;
+				this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 15);
+			}
 			throwBombAt = 1;
 		}
 		// if current pillar is 2
-		else if (eventManagerActualBossRoomScript.atPillar == 2) {
-			Vector3 throwDirection = new Vector3(-26.63f, 1.5f, -62.53f) - this.transform.position;
-			this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 15);
+		else if (bossRoomScript.atPillar == 2) {
+			if (bossRoomScript.bossInMiddle == false) {
+				Vector3 throwDirection = new Vector3(-37.64f, 1.5f, -45.56f) - this.transform.position;
+				this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 15);
+			}
+			else if (bossRoomScript.bossInMiddle == true) {
+				Vector3 throwDirection = new Vector3(-22.11f, 1.5f, -55.23f) - this.transform.position;
+				this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 22);
+			}
 			throwBombAt = 2;
 		}
 		// If current pillar is 3
-		else if (eventManagerActualBossRoomScript.atPillar == 3) {
-			Vector3 throwDirection = new Vector3(11.46f, 1.5f, -37.95f) - this.transform.position;
-			this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 18);
+		else if (bossRoomScript.atPillar == 3) {
+			if (bossRoomScript.bossInMiddle == false) {
+				Vector3 throwDirection = new Vector3(11.46f, 1.5f, -37.95f) - this.transform.position;
+				this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 18);
+			}
+			else if (bossRoomScript.bossInMiddle == true) {
+				Vector3 throwDirection = new Vector3(10.71f, 1.5f, -47.75f) - this.transform.position;
+				this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 18);
+			}
 			throwBombAt = 3;
 		}
 		// If current pillar is 4
-		else if (eventManagerActualBossRoomScript.atPillar == 4) {
-			Vector3 throwDirection = new Vector3(11.6f, 1.5f, 39.8f) - this.transform.position;
-			this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 18.5f);
+		else if (bossRoomScript.atPillar == 4) {
+			if (bossRoomScript.bossInMiddle == false) {
+				Vector3 throwDirection = new Vector3(11.6f, 1.5f, 39.8f) - this.transform.position;
+				this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 18.5f);
+			}
+			else if (bossRoomScript.bossInMiddle == true) {
+				Vector3 throwDirection = new Vector3(10.7f, 1.5f, 51f) - this.transform.position;
+				this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 24f);
+			}
 			throwBombAt = 4;
 		}
 	}
@@ -115,7 +139,7 @@ public class JellybeanBomb : MonoBehaviour {
 					Instantiate(brokenPillar, pillar3.transform.position, pillar3.transform.rotation);
 				}
 				else if (throwBombAt == 4) {
-					pillar2.SetActive(false);
+					pillar4.SetActive(false);
 					Instantiate(brokenPillar, pillar4.transform.position, pillar4.transform.rotation);
 				}
 
@@ -127,7 +151,7 @@ public class JellybeanBomb : MonoBehaviour {
 				}
 				activated = true;
 			}
-			if (eventManagerActualBossRoomScript.atPillar == throwBombAt) {
+			if (bossRoomScript.atPillar == throwBombAt) {
 				PlayerPrefs.SetInt("playerHealth", 0);
 			}
 			Destroy(this.gameObject, 0.5f);

@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Stone_Floor_DiningHall
+  m_Name: BossRoofCracks
   m_Shader: {fileID: 7, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
@@ -17,12 +17,12 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 4ae5c171b88682f4da0533bf5b409ab2, type: 3}
-          m_Scale: {x: 10, y: 15}
+          m_Texture: {fileID: 2800000, guid: b802a44eec4973d4ca75beab3c8aceb7, type: 3}
+          m_Scale: {x: 1, y: 2}
           m_Offset: {x: 0, y: 0}
     m_Floats: {}
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: .838235259, g: .746335387, b: .548551023, a: 1}

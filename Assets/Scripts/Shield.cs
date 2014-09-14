@@ -50,8 +50,8 @@ public class Shield : MonoBehaviour {
 								}
 								else if (bossRoomScript.bossInMiddle == true) {
 									// Range and direction to move
-									range = Vector3.Distance(mainCamera.transform.position, new Vector3(-30.22f, 3.35f, 67.8f));
-									directionVector = (mainCamera.transform.position - new Vector3(-30.22f, 3.35f, 67.8f)).normalized;
+									range = Vector3.Distance(mainCamera.transform.position, new Vector3(-33.22f, 3.35f, 66.3f));
+									directionVector = (mainCamera.transform.position - new Vector3(-33.22f, 3.35f, 66.3f)).normalized;
 								}
 								
 								if (range < 1.0f) {

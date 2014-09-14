@@ -17,6 +17,7 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 	//public GameObject pillar3Sparkle;
 	//public GameObject pillar4Sparkle;
 	private bool canMove;				// Whether or not the player can move from pillar to pillar
+	[SerializeField] private GameObject crackedRoof;
 	
 	public bool bossInMiddle;
 	private Vector3 movementCenterPoint = new Vector3(-41.13f, 3.35f, -0.77f);
@@ -32,10 +33,10 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 	private Vector3 lookAtPillar2BossEdge = new Vector3(1.69f, 3.35f, -41.99f);
 	private Vector3 lookAtPillar3BossEdge = new Vector3(47.58f, 3.35f, -0.77f);
 	private Vector3 lookAtPillar4BossEdge = new Vector3(47.58f, 3.35f, -0.77f);
-	private Vector3 lookAtPillar1BossMiddle = new Vector3(-7.23f, 0.24f, 0.76f);
-	private Vector3 lookAtPillar2BossMiddle = new Vector3(-7.23f, 0.24f, 0.76f);
-	private Vector3 lookAtPillar3BossMiddle = new Vector3(-7.23f, 0.24f, 0.76f);
-	private Vector3 lookAtPillar4BossMiddle = new Vector3(-7.23f, 0.24f, 0.76f);
+	private Vector3 lookAtPillar1BossMiddle = new Vector3(-7.23f, 5f, 0.76f);
+	private Vector3 lookAtPillar2BossMiddle = new Vector3(-7.23f, 5f, 0.76f);
+	private Vector3 lookAtPillar3BossMiddle = new Vector3(-7.23f, 5f, 0.76f);
+	private Vector3 lookAtPillar4BossMiddle = new Vector3(-7.23f, 5f, 0.76f);
 	
 	// Audio
 	public AudioClip footsteps;
@@ -72,6 +73,7 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 		reached = false;
 		minionsKilled = false;
 		bossInMiddle = false;
+		crackedRoof.SetActive(false);
 
 		//pillar2Sparkle.particleEmitter.enabled = false;
 		//pillar3Sparkle.particleEmitter.enabled = false;
@@ -89,7 +91,25 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 		Debug.Log ("Count = " + count);
 		// Debug.Log ("reached = " + shootScript.haveReached + ", At pillar = " + atPillar);
 		
-		if (shootScript.shotPillar2 == true && shootScript.haveLooked == false) {
+		
+		if (bossAIScript.canShootRoof == true) {
+			crackedRoof.SetActive(true);
+		}
+		
+		if (shootScript.shotPillar1 == true && shootScript.haveLooked == false) {
+			if (shootScript.haveReached == false) {
+				moveToPillar (1);
+			}
+			if (shootScript.haveReached == true && shootScript.haveLooked == false) {
+				if (bossInMiddle == false) {
+					LookAt_Pillar(lookAtPillar1BossEdge);
+				}
+				else if (bossInMiddle == true) {
+					LookAt_Pillar(lookAtPillar1BossMiddle);
+				}
+			}
+		}
+		else if (shootScript.shotPillar2 == true && shootScript.haveLooked == false) {
 			if (shootScript.haveReached == false) {
 				moveToPillar (2);
 			}
@@ -152,15 +172,15 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 		}
 		else if (num == 6 && bossAIScript.spawnMinions == true) {
 			if(count > 0 && count <= 5){
-				spawnBear (new Vector3(86.24f, 30.52f, 8.68f), 0); // target1
-				spawnBear (new Vector3(86.24f, 30.52f, 2.63f), 0); // target2
+				spawnBear (new Vector3(86.24f, 30.52f, 6.68f), 0); // target1
+				spawnBear (new Vector3(86.24f, 30.52f, 0.63f), 0); // target2
 				spawnBear (new Vector3(86.24f, 30.52f, -6.2f), 0); // target3
 				spawnBear (new Vector3 (72.43f, 3.32f, -9.94f), 0); // target4
 				spawnBear (new Vector3 (72.43f, 3.32f, 8.44f), 0); // target5
 			}
 			else if(count > 5 && count <= 12 && !(GameObject.Find ("Target1") || GameObject.Find ("Target2") || GameObject.Find ("Target3") || GameObject.Find ("Target4") || GameObject.Find ("Target5"))){
-				spawnBear (new Vector3(86.24f, 30.52f, 8.68f), 0); // target6
-				spawnBear (new Vector3(86.24f, 30.52f, 2.63f), 0); // target7
+				spawnBear (new Vector3(86.24f, 30.52f, 6.68f), 0); // target6
+				spawnBear (new Vector3(86.24f, 30.52f, 0.63f), 0); // target7
 				spawnBear (new Vector3(86.24f, 30.52f, -6.2f), 0); // target8
 				spawnBear (new Vector3 (72.43f, 3.32f, -9.94f), 0); // target9
 				spawnBear (new Vector3 (72.43f, 3.32f, 8.44f), 0); // target10
