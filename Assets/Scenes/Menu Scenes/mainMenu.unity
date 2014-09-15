@@ -639,9 +639,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1
   unitsLength: 10
-  pixelHeight: 50.5999985
-  pixelLength: 899.5
-  fontNumber: 179
+  pixelHeight: 13.6000004
+  pixelLength: 239.5
+  fontNumber: 47
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -662,7 +662,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: fc753816c81a3c44687ad9161de86bea, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 179
+  m_FontSize: 47
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -1006,7 +1006,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: e188325fe39a31b45befd6376face71b, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 108
+  m_FontSize: 28
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -1053,9 +1053,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1
   unitsLength: 16.5699997
-  pixelHeight: 50.5999985
-  pixelLength: 1490.47144
-  fontNumber: 108
+  pixelHeight: 13.6000004
+  pixelLength: 396.851501
+  fontNumber: 28
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0

@@ -8,7 +8,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class World_Object_Movement_Helper {
+public class World_Object_Movement_Helper : MonoBehaviour{
 	
 	////////////////////////////////////////////////////
 	//
@@ -53,6 +53,37 @@ public class World_Object_Movement_Helper {
 	//		Custom functions for other scripts
 	//
 	////////////////////////////////////////////////////
+
+	public void Start () 	{
+		
+		/*
+		 * Create the data structures
+		 * */
+//		objective_destination_position_list = new List<Vector3>();
+//		objective_movement_speed_list = new List<float>();
+//		objective_lookAt_position_list = new List<Vector3>();
+//		objective_lookAt_upVector_list = new List<Vector3>();
+//		objective_rotation_speed_list = new List<float>();
+//		
+//		associated_world_object_list = new List<GameObject>();
+		
+		/*
+		 * Attach the given world object to 
+		 * reference
+		 * */
+		attached_world_object = this.gameObject;
+		
+		/*
+		 * By default the task is complete because 
+		 * there is no default task
+		 * */
+		task_complete = true;
+	}
+
+	public void Update () 	{
+
+		process_update();
+	}
 
 	/*
 	 * Constructor
