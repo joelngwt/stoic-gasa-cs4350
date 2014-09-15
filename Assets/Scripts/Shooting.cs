@@ -50,6 +50,7 @@ public class Shooting : MonoBehaviour {
 	public bool haveReached = false;
 	public bool haveLooked = false;
 	private EventManager_ActualBossRoom bossRoomScript;
+	[SerializeField] private CrackedRoof crackedRoofScript;
 	
 	void Start() {
 		bossRoomScript = GameObject.FindWithTag ("MainCamera").GetComponent<EventManager_ActualBossRoom>();
@@ -296,6 +297,9 @@ public class Shooting : MonoBehaviour {
 			shotPillar4 = true;
 			haveReached = false;
 			haveLooked = false;
+		}
+		else if (theHit.transform.gameObject.tag == "CrackedRoof") {
+			crackedRoofScript.health -= 1;
 		}
 	}
 }

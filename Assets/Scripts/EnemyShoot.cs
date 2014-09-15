@@ -48,6 +48,9 @@ public class EnemyShoot : MonoBehaviour
 				else if(Application.loadedLevelName == "MainHall"){
 					clone = Instantiate(m_PrefabBullet, transform.position+new Vector3(7F,11F,6F), transform.rotation) as GameObject;
 				}
+				else if(Application.loadedLevelName == "ActualBossRoom"){
+					clone = Instantiate(m_PrefabBullet, transform.position+new Vector3(-2F,6F,2f), transform.rotation) as GameObject;
+				}
 				else{
 					clone = Instantiate(m_PrefabBullet, transform.position+new Vector3(5F,7F,-4F), transform.rotation) as GameObject;
 				}
@@ -63,7 +66,7 @@ public class EnemyShoot : MonoBehaviour
 				while(offsetValueX < -2.0F && offsetValueX > 2.0F){
 					offsetValueX = Random.Range (-4.0F, 4.0F);
 				}
-				while(offsetValueY < -2.0F && offsetValueY > 2.0F){
+				while (offsetValueY < -2.0F && offsetValueY > 2.0F) {
 					offsetValueY = Random.Range (-4.0F, 4.0F);
 				}
 				
@@ -72,21 +75,24 @@ public class EnemyShoot : MonoBehaviour
 					#if UNITY_EDITOR
 					Debug.Log ("Hit");
 					#endif
-					if(Application.loadedLevelName == "DiningHall"){
+					if (Application.loadedLevelName == "DiningHall") {
 						randomOffset = new Vector3(0.8F,-3.5F,1F);
 					}
-					else if(Application.loadedLevelName == "MainHall"){
+					else if (Application.loadedLevelName == "MainHall") {
 						randomOffset = new Vector3(-7F,-11F,-6F);
 					}
-					else{
+					else if (Application.loadedLevelName == "ActualBossRoom") {
+						randomOffset = new Vector3(0,0,0);
+					}
+					else {
 						randomOffset = new Vector3(-5F,-7F,4F);
 					}
 				}
 				else{ // no hit
-					if(Application.loadedLevelName == "DiningHall"){
+					if (Application.loadedLevelName == "DiningHall"){
 						randomOffset = new Vector3(offsetValueX+0.8F, offsetValueY-3.5F, offsetValueY+1F);
 					}
-					else if(Application.loadedLevelName == "MainHall"){
+					else if (Application.loadedLevelName == "MainHall"){
 						randomOffset = new Vector3(offsetValueX-7F, offsetValueY-11F, offsetValueY-6F);
 					}
 					else{

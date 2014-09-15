@@ -10,7 +10,7 @@ public class BossAI : MonoBehaviour {
 	[SerializeField] private GameObject bullet;				// bullet prefab
 	private GameObject player;								// "mainCharacter"
 
-	// Phase 100 values
+	// Boss shooting values
 	private float bulletSpeed = 10.0f; 						// bullet speed
 	private float fireRate = Constants.BOSS_FIRE_RATE; // Rate of fire for the enemy
 	private float nextFire = Constants.BOSS_FIRE_RATE;
@@ -23,9 +23,16 @@ public class BossAI : MonoBehaviour {
 	private bool hasThrown = false;
 	private bool bombHasExploded = false;
 	private float bombExistenceTimer = Constants.BOSS_BOMB_FUSE_TIME;
-	public int currentPhase = 0;
+	public int currentPhase;
 	
 	public bool fightStart;
+	public int bossMovementNumber;
+	public bool spawnMinions;
+	[SerializeField] private EventManager_ActualBossRoom bossRoomScript;
+	public bool canShootRoof;
+	public bool roofHitBoss;
+	private CrackedRoof crackedRoofScript;
+	private bool dieAnimationPlayed;
 
 	// Use this for initialization
 	void Start () {
@@ -33,46 +40,88 @@ public class BossAI : MonoBehaviour {
 		currentHealth = totalHealth;
 		percentage = currentHealth / totalHealth;
 		fightStart = false;
+		bossMovementNumber = 0;
+		currentPhase = 0;
+		spawnMinions = false;
+		canShootRoof = false;
+		roofHitBoss = false;
+		dieAnimationPlayed = false;
 		
 		player = GameObject.FindWithTag ("MainCharacter");
+		crackedRoofScript = GameObject.FindWithTag ("CrackedRoof").GetComponent<CrackedRoof>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		percentage = currentHealth / totalHealth;
 		Debug.Log ("current health = " + currentHealth + " percentage = " + percentage + " total health = " + totalHealth);
-		Debug.Log ("current phase = " + currentPhase);
-			
-		if (percentage < 0.1f) {
-			phase10();
+		//Debug.Log ("current phase = " + currentPhase + ", boss movement number = " + bossMovementNumber);
+		
+		if (bossRoomScript.bossInMiddle == true && percentage < 0.6f) {
+			LookAt(player.transform.position, 0, 0.2f);
+		}
+		
+		if (crackedRoofScript.spawnedBrokenRoof == true) {
+			if (roofHitBoss == true) {
+				if (dieAnimationPlayed == false) {
+					animation.Play ("Die_Bear");
+					dieAnimationPlayed = true;
+				}
+				Invoke ("winGame", 3f);			// calls winGame() after 3 seconds
+			}
+		}
+		else if (percentage < 0.1f) {
+			sprayBullets();
+			canShootRoof = true;
 		}
 		else if (percentage < 0.2f) {
-			phase20();
-		}
-		else if (percentage < 0.4f) {
-			phase40();
-		}
-		else if (percentage < 0.5f) {
-			phase50();
-		}
-		else if (percentage < 0.6f && currentPhase >= 2 && currentPhase <=3) {
-			if (currentPhase == 2) {
+			if (currentPhase == 5) {
+				//Debug.Log ("Phase 20-1");
 				throwBomb();
-				sprayBullets();
-				// currentPhase += 1 when the bean is destroyed (done in JellybeanBomb.cs)
+				currentPhase = 6;
 			}
-			else if (currentPhase == 3) {
+			else if (currentPhase == 6) {
+				//Debug.Log ("Phase 20-2");
 				hasThrown = false;
 				sprayBullets();
 			}
 		}
-		else if (percentage <= 0.8f && currentPhase >= 1 && currentPhase <= 2) {		// phase 2
-			if (currentPhase == 1) {
+		else if (percentage < 0.4f) {
+			if (currentPhase == 4) {
+				//Debug.Log ("Phase 40-1");
 				throwBomb();
+				currentPhase = 5;
+			}
+			else if (currentPhase == 5) {
+				//Debug.Log ("Phase 40-2");
+				hasThrown = false;
 				sprayBullets();
-				// currentPhase += 1 when the bean is destroyed (done in JellybeanBomb.cs)
+			}
+		}
+		else if (bossRoomScript.bossInMiddle == true && percentage < 0.6f) {
+			sprayBullets();
+		}
+		else if (bossRoomScript.minionsKilled == true) {
+			// boss move to middle of room
+			moveToMiddle();
+		}	
+		else if (percentage < 0.6f) {
+			//Debug.Log ("60% phase");
+			hideBehindChair();
+			if (currentPhase == 3) {
+				spawnMinions = true;
+				currentPhase = 4;
+			}
+		}
+		else if (percentage <= 0.8f) {
+			//Debug.Log ("80% phase");
+			if (currentPhase == 1) {
+				//Debug.Log ("Phase 80-1");
+				throwBomb();
+				currentPhase = 2;
 			}
 			else if (currentPhase == 2) {
+				//Debug.Log ("Phase 80-2");
 				hasThrown = false;
 				sprayBullets();
 			}
@@ -81,6 +130,10 @@ public class BossAI : MonoBehaviour {
 			currentPhase = 1;
 			sprayBullets();
 		}
+	}
+	
+	void winGame() {
+		Application.LoadLevel("Win");
 	}
 	
 	public void getHit() {
@@ -95,8 +148,6 @@ public class BossAI : MonoBehaviour {
 			clone = Instantiate(bullet, this.transform.position+new Vector3(5F, 7F, -4F), this.transform.rotation) as GameObject;
 
 			audio.PlayOneShot(shootSound);
-			//Debug.Log ("Bullet position = " + clone.transform.position.x + " " + clone.transform.position.y + " "+ clone.transform.position.z);
-			//Debug.Log ("Target position = " + (player.transform.position - transform.position).x + " " + (player.transform.position - transform.position).y + " "+ (player.transform.position - transform.position).z);
 			
 			float hitOrNot = Random.Range(0.0F, 1.0F);
 			float offsetValueX = Random.Range (-4.0F, 4.0F);
@@ -112,9 +163,6 @@ public class BossAI : MonoBehaviour {
 			
 			Vector3 randomOffset;
 			if(hitOrNot < 0.08F){ // hit
-				#if UNITY_EDITOR
-				Debug.Log ("Hit");
-				#endif
 				randomOffset = new Vector3(-5F,-7F,4F);
 			}
 			else{ // no hit
@@ -144,6 +192,7 @@ public class BossAI : MonoBehaviour {
 
 	// Throw jellybean bomb
 	void throwBomb() {
+		Debug.Log ("Bomb thrown");
 		Vector3 bossPosition = this.transform.position;
 		if (hasThrown == false) {
 			Instantiate (jellybeanBomb, new Vector3(bossPosition.x-10, bossPosition.y+2, bossPosition.z), this.transform.rotation);
@@ -151,24 +200,93 @@ public class BossAI : MonoBehaviour {
 			bombHasExploded = false;
 		}
 	}
-	
-	void phase60() {
-	
+
+	void moveToMiddle ()
+	{
+		Vector3 waypoint1 = new Vector3(88.19f, 2.4f, 18.4f);
+		Vector3 waypoint2 = new Vector3(70.68f, 2.4f, 17.97f);
+		Vector3 middlePoint = new Vector3(-7.23f, 0.24f, 0.76f);
+		
+		if (bossMovementNumber == 4) {
+			bossMovementNumber = TranslateTo(waypoint1, 20.0f, bossMovementNumber);
+		}
+		else if (bossMovementNumber == 5) {
+			bossMovementNumber = TranslateTo(waypoint2, 20.0f, bossMovementNumber);
+		}
+		else if (bossMovementNumber == 6) {
+			bossMovementNumber = TranslateTo(middlePoint, 20.0f, bossMovementNumber);
+		}
+		else if (bossMovementNumber == 7) {
+			bossRoomScript.bossInMiddle = true;
+			bossMovementNumber = 8;
+		}
 	}
 	
-	void phase50() {
+	void hideBehindChair() {
+		Vector3 waypoint1 = new Vector3(70.68f, 2.4f, 17.97f);
+		Vector3 waypoint2 = new Vector3(88.19f, 2.4f, 18.4f);
+		Vector3 waypointBehindChair = new Vector3(88.57f, 2.4f, 3.12f);
+		Vector3 faceForward = new Vector3(-28.48f, 2.4f, -0.51f);
 	
+		if (bossMovementNumber == 0) {
+			bossMovementNumber = TranslateTo(waypoint1, 15.0f, bossMovementNumber);
+		}
+		else if (bossMovementNumber == 1) {
+			bossMovementNumber = TranslateTo(waypoint2, 15.0f, bossMovementNumber);
+		}
+		else if (bossMovementNumber == 2) {
+			bossMovementNumber = TranslateTo(waypointBehindChair, 15.0f, bossMovementNumber);
+		}
+		else if (bossMovementNumber == 3) {
+			bossMovementNumber = LookAt(faceForward, bossMovementNumber, 15f);
+			currentPhase = 3;
+		}
 	}
 	
-	void phase40() {
+	private int TranslateTo(Vector3 position , float spd, int num) {
+		float range1 = Vector3.Distance(this.transform.position, position );
 	
+		if (range1 > 1.0) {
+			//find the vector pointing from our position to the target
+			Vector3 _direction = (position - this.transform.position).normalized;
+			
+			//create the rotation we need to be in to look at the target
+			Quaternion _lookRotation = Quaternion.LookRotation (_direction);
+			
+			//rotate us over time according to speed until we are in the required rotation
+			this.transform.rotation = Quaternion.Slerp (this.transform.rotation, _lookRotation, Time.deltaTime * 15);
+			
+			// calculate direction and move towards the target
+			Vector3 dir = position - this.transform.position;
+			dir = dir.normalized;
+			
+			//theCharacter.transform.Translate(dir * movementSpeed * Time.deltaTime, Space.World);
+			this.transform.Translate (dir * spd * Time.deltaTime, Space.World);
+			this.transform.rotation = Quaternion.Slerp (transform.rotation, _lookRotation, Time.deltaTime * 15);
+		}	
+		else if (range1 <= 1.0) {
+			num += 1;
+		}
+			
+		return num;
 	}
-	
-	void phase20() {
-	
-	}
-	
-	void phase10() {
-	
+
+	private int LookAt(Vector3 position, int num, float rotationSpeed) {
+		
+		//find the vector pointing from our position to the target
+		Vector3 _direction = (position - this.transform.position);//.normalized;
+		
+		//create the rotation we need to be in to look at the target
+		Quaternion _lookRotation = Quaternion.LookRotation(_direction);
+		
+		//rotate us over time according to speed until we are in the required rotation
+		transform.rotation = Quaternion.Slerp(this.transform.rotation, _lookRotation, Time.deltaTime * rotationSpeed);
+		
+		if (Mathf.Abs(Mathf.Abs (transform.rotation.y) - Mathf.Abs (_lookRotation.y)) < 0.000001f) {
+			num += 1;
+			//reached = true;
+		}
+		
+		return num;
 	}
 }

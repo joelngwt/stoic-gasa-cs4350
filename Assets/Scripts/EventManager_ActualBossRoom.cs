@@ -17,25 +17,26 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 	//public GameObject pillar3Sparkle;
 	//public GameObject pillar4Sparkle;
 	private bool canMove;				// Whether or not the player can move from pillar to pillar
+	[SerializeField] private GameObject crackedRoof;
 	
-	private bool bossInMiddle;
+	public bool bossInMiddle;
 	private Vector3 movementCenterPoint = new Vector3(-41.13f, 3.35f, -0.77f);
 	private Vector3 movementPillar1BossEdge = new Vector3(-46.5f, 3.35f, 57.94f);
 	private Vector3 movementPillar2BossEdge = new Vector3(-46.91f, 3.35f, -53.21f);
 	private Vector3 movementPillar3BossEdge = new Vector3(3.78f, 3.35f, -48.79f);
 	private Vector3 movementPillar4BossEdge = new Vector3(8.53f, 3.35f, 47.89f);
-	private Vector3 movementPillar1BossMiddle;
-	private Vector3 movementPillar2BossMiddle;
-	private Vector3 movementPillar3BossMiddle;
-	private Vector3 movementPillar4BossMiddle;
+	private Vector3 movementPillar1BossMiddle = new Vector3(-22.59f, 3.35f, 67.16f);
+	private Vector3 movementPillar2BossMiddle = new Vector3(-25.3f, 3.35f, -63.28f);
+	private Vector3 movementPillar3BossMiddle = new Vector3(13.51f, 3.35f, -55.73f);
+	private Vector3 movementPillar4BossMiddle = new Vector3(14.4f, 3.35f, 57.2f);
 	private Vector3 lookAtPillar1BossEdge = new Vector3(17.86f, 3.35f, 2.1f);
 	private Vector3 lookAtPillar2BossEdge = new Vector3(1.69f, 3.35f, -41.99f);
-	private Vector3 lookAtPillar3BossEdge = new Vector3(25.32f, 3.35f, -38.41f);
+	private Vector3 lookAtPillar3BossEdge = new Vector3(47.58f, 3.35f, -0.77f);
 	private Vector3 lookAtPillar4BossEdge = new Vector3(47.58f, 3.35f, -0.77f);
-	private Vector3 lookAtPillar1BossMiddle;
-	private Vector3 lookAtPillar2BossMiddle;
-	private Vector3 lookAtPillar3BossMiddle;
-	private Vector3 lookAtPillar4BossMiddle;
+	private Vector3 lookAtPillar1BossMiddle = new Vector3(-7.23f, 5f, 0.76f);
+	private Vector3 lookAtPillar2BossMiddle = new Vector3(-7.23f, 5f, 0.76f);
+	private Vector3 lookAtPillar3BossMiddle = new Vector3(-7.23f, 5f, 0.76f);
+	private Vector3 lookAtPillar4BossMiddle = new Vector3(-7.23f, 5f, 0.76f);
 	
 	// Audio
 	public AudioClip footsteps;
@@ -55,7 +56,8 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 	private int count;
 	public GameObject lollipopPrefab;
 	//public GameObject EggPrefab;
-	private bool reached = false;
+	private bool reached;
+	public bool minionsKilled;
 	
 	// Boss AI
 	public BossAI bossAIScript;
@@ -68,7 +70,10 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 		theCharacter.transform.rotation = theCamera.transform.rotation;
 		count = 1;
 		atPillar = 0;
-		canMove = false;
+		reached = false;
+		minionsKilled = false;
+		bossInMiddle = false;
+		crackedRoof.SetActive(false);
 
 		//pillar2Sparkle.particleEmitter.enabled = false;
 		//pillar3Sparkle.particleEmitter.enabled = false;
@@ -82,36 +87,65 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 	void Update () {
 		// character hitbox follows the camera around
 		theCharacter.transform.position = theCamera.transform.position;
-		
+		Debug.Log ("num = " + num);
+		Debug.Log ("Count = " + count);
 		// Debug.Log ("reached = " + shootScript.haveReached + ", At pillar = " + atPillar);
 		
-		if (shootScript.shotPillar2 == true && shootScript.haveLooked == false) {
-			//moveToCenter();
+		
+		if (bossAIScript.canShootRoof == true) {
+			crackedRoof.SetActive(true);
+		}
+		
+		if (shootScript.shotPillar1 == true && shootScript.haveLooked == false) {
+			if (shootScript.haveReached == false) {
+				moveToPillar (1);
+			}
+			if (shootScript.haveReached == true && shootScript.haveLooked == false) {
+				if (bossInMiddle == false) {
+					LookAt_Pillar(lookAtPillar1BossEdge);
+				}
+				else if (bossInMiddle == true) {
+					LookAt_Pillar(lookAtPillar1BossMiddle);
+				}
+			}
+		}
+		else if (shootScript.shotPillar2 == true && shootScript.haveLooked == false) {
 			if (shootScript.haveReached == false) {
 				moveToPillar (2);
 			}
 			if (shootScript.haveReached == true && shootScript.haveLooked == false) {
-				LookAt_Pillar(lookAtPillar2BossEdge);
+				if (bossInMiddle == false) {
+					LookAt_Pillar(lookAtPillar2BossEdge);
+				}
+				else if (bossInMiddle == true) {
+					LookAt_Pillar(lookAtPillar2BossMiddle);
+				}
 			}
 		}
 		else if (shootScript.shotPillar3 == true && shootScript.haveLooked == false) {
-			//moveToCenter();
 			if (shootScript.haveReached == false) {
 				moveToPillar (3);
-				Debug.Log (shootScript.haveReached + " " + shootScript.haveLooked);
 			}
 			if (shootScript.haveReached == true && shootScript.haveLooked == false) {
-				LookAt_Pillar(lookAtPillar4BossEdge);
+				if (bossInMiddle == false) {
+					LookAt_Pillar(lookAtPillar3BossEdge);
+				}
+				else if (bossInMiddle == true) {
+					LookAt_Pillar(lookAtPillar3BossMiddle);
+				}				
 			}
 		}
 		else if (shootScript.shotPillar4 == true && shootScript.haveLooked == false) {
-			//moveToCenter();
 			if (shootScript.haveReached == false) {
 				moveToPillar (4);
-				Debug.Log (shootScript.haveReached + " " + shootScript.haveLooked);
 			}
 			if (shootScript.haveReached == true && shootScript.haveLooked == false) {
-				LookAt_Pillar(lookAtPillar4BossEdge);
+				if (bossInMiddle == false) {
+					LookAt_Pillar(lookAtPillar4BossEdge);
+				}
+				else if (bossInMiddle == true) {
+					LookAt_Pillar(lookAtPillar4BossMiddle);
+				}			
 			}
 		}
 					
@@ -136,11 +170,31 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 			// Fight begins
 			bossAIScript.fightStart = true;
 		}
-		// Boss reaches 80% health
-		else if (num == 6 && bossAIScript.percentage < 0.8f) {
-			canMove = true;
-			//pillar2Sparkle.particleEmitter.enabled = true;
-			//pillar3Sparkle.particleEmitter.enabled = true;
+		else if (num == 6 && bossAIScript.spawnMinions == true) {
+			if(count > 0 && count <= 5){
+				spawnBear (new Vector3(86.24f, 30.52f, 6.68f), 0); // target1
+				spawnBear (new Vector3(86.24f, 30.52f, 0.63f), 0); // target2
+				spawnBear (new Vector3(86.24f, 30.52f, -6.2f), 0); // target3
+				spawnBear (new Vector3 (72.43f, 3.32f, -9.94f), 0); // target4
+				spawnBear (new Vector3 (72.43f, 3.32f, 8.44f), 0); // target5
+			}
+			else if(count > 5 && count <= 12 && !(GameObject.Find ("Target1") || GameObject.Find ("Target2") || GameObject.Find ("Target3") || GameObject.Find ("Target4") || GameObject.Find ("Target5"))){
+				spawnBear (new Vector3(86.24f, 30.52f, 6.68f), 0); // target6
+				spawnBear (new Vector3(86.24f, 30.52f, 0.63f), 0); // target7
+				spawnBear (new Vector3(86.24f, 30.52f, -6.2f), 0); // target8
+				spawnBear (new Vector3 (72.43f, 3.32f, -9.94f), 0); // target9
+				spawnBear (new Vector3 (72.43f, 3.32f, 8.44f), 0); // target10
+				spawnLollipop (new Vector3 (66f, 6.29f, 63.887f)); // target11
+				spawnLollipop (new Vector3 (66f, 6.29f, -68.92f)); // target12
+			}
+			else if (count > 12 && count <= 13 && !(GameObject.Find ("Target6") || GameObject.Find ("Target7") || GameObject.Find ("Target8") || GameObject.Find ("Target9") || GameObject.Find ("Target10") || GameObject.Find ("Target11") || GameObject.Find ("Target12"))){
+				minionsKilled = true;
+				count = 14;
+				num = 7;
+			}
+		}
+		else if (num == 7) {
+			num = LookAt(lookAtPillar1BossMiddle, num);
 		}
 	}
 	
@@ -156,32 +210,40 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 	}
 	
 	private void moveToPillar(int pillarNumber) {
-		if (pillarNumber == 1 && bossInMiddle == false) {
-			TranslateToPillar(movementPillar1BossEdge, 50f);
+		if (pillarNumber == 1) {
+			if (bossInMiddle == false) {
+				TranslateToPillar(movementPillar1BossEdge, 50f);
+			}
+			else if (bossInMiddle == true) {
+				TranslateToPillar(movementPillar1BossMiddle, 50f);
+			}
 			atPillar = 1;
 		}
-		else if (pillarNumber == 2 && bossInMiddle == false) {
-			TranslateToPillar(movementPillar2BossEdge, 50f);
+		else if (pillarNumber == 2) {
+			if (bossInMiddle == false) {
+				TranslateToPillar(movementPillar2BossEdge, 50f);
+			}
+			else if (bossInMiddle == true) {
+				TranslateToPillar(movementPillar2BossMiddle, 50f);
+			}
 			atPillar = 2;
 		}
-		else if (pillarNumber == 3 && bossInMiddle == false) {
-			TranslateToPillar(movementPillar3BossEdge, 50f);
+		else if (pillarNumber == 3) {
+			if (bossInMiddle == false) {
+				TranslateToPillar(movementPillar3BossEdge, 50f);
+			}
+			else if (bossInMiddle == true) {
+				TranslateToPillar(movementPillar3BossMiddle, 50f);
+			}
 			atPillar = 3;
 		}
-		else if (pillarNumber == 4 && bossInMiddle == false) {
-			TranslateToPillar(movementPillar4BossEdge, 50f);
-			atPillar = 4;
-		}
-		else if (pillarNumber == 1 && bossInMiddle == true) {
-			atPillar = 1;
-		}
-		else if (pillarNumber == 2 && bossInMiddle == true) {
-			atPillar = 2;
-		}
-		else if (pillarNumber == 3 && bossInMiddle == true) {
-			atPillar = 3;
-		}
-		else if (pillarNumber == 4 && bossInMiddle == true) {
+		else if (pillarNumber == 4) {
+			if (bossInMiddle == false) {
+				TranslateToPillar(movementPillar4BossEdge, 50f);
+			}
+			else if (bossInMiddle == true) {
+				TranslateToPillar(movementPillar4BossMiddle, 50f);
+			}
 			atPillar = 4;
 		}
 	}
