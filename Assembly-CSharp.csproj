@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>D:/Games/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>D:/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>D:/Games/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>D:/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -70,6 +70,7 @@
      <Compile Include="Assets\Scripts\FloatingScore.cs" />
      <Compile Include="Assets\Scripts\GlobalConstants.cs" />
      <Compile Include="Assets\Scripts\GunDisplay.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Hit_Token_Bank.cs" />
      <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_1.cs" />
      <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_10.cs" />
      <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_11.cs" />

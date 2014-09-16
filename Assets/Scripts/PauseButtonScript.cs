@@ -37,4 +37,4 @@ public class PauseButtonScript : MonoBehaviour {
 			Time.timeScale = 1; // unpause the game
 		}
 	}
-}
+}

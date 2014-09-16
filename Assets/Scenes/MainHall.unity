@@ -17311,7 +17311,7 @@ MonoBehaviour:
   hmgReload: {fileID: 8300000, guid: cb1bb32742234df40a9a8e360cb0349b, type: 3}
   shotgunReload: {fileID: 8300000, guid: 611fb5f11a161f54fb9cad95191c8d34, type: 3}
   mainCamera: {fileID: 0}
-  eventManagerScript: {fileID: 0}
+  bossRoomScript: {fileID: 0}
 --- !u!82 &748844127
 AudioSource:
   m_ObjectHideFlags: 0
@@ -32407,6 +32407,7 @@ GameObject:
   - 114: {fileID: 1470259269}
   - 82: {fileID: 1470259275}
   - 114: {fileID: 1470259276}
+  - 114: {fileID: 1470259277}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -32589,6 +32590,22 @@ MonoBehaviour:
   objective_rotation_speed_list: []
   associated_world_object_list:
   - {fileID: 1116017051}
+--- !u!114 &1470259277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1470259268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8390adeffe850846b0a14e76a2f9b74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  number_of_hit_tokens_stored: 0
+  max_token_storage_size: 2
+  token_recharge_amount: 1
+  token_recharge_time: 3
+  token_recharge_remaining_timer: 0
 --- !u!1001 &1472165649
 Prefab:
   m_ObjectHideFlags: 0
@@ -39301,6 +39318,7 @@ MonoBehaviour:
   shotPillar4: 0
   haveReached: 0
   haveLooked: 0
+  crackedRoofScript: {fileID: 0}
 --- !u!4 &1757585591
 Transform:
   m_ObjectHideFlags: 0
