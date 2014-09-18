@@ -25,6 +25,11 @@ public class BossAI : MonoBehaviour {
 	private float bombExistenceTimer = Constants.BOSS_BOMB_FUSE_TIME;
 	public int currentPhase;
 	
+	// Kinder Surprise Bomb
+	[SerializeField] private GameObject kinderSurprise;
+	private float throwKinderFor = Constants.BOSS_KINDER_THROW_TIME;
+	private float idleKinderFor = Constants.BOSS_KINDER_IDLE_TIME;
+	
 	public bool fightStart;
 	public int bossMovementNumber;
 	public bool spawnMinions;
@@ -35,6 +40,7 @@ public class BossAI : MonoBehaviour {
 	private bool dieAnimationPlayed;
 	public bool behindChair;
 	public bool movingToMiddle;
+	private int numOfKinderSurpriseThrown;
 
 	// Use this for initialization
 	void Start () {
@@ -50,6 +56,7 @@ public class BossAI : MonoBehaviour {
 		dieAnimationPlayed = false;
 		behindChair = false;
 		movingToMiddle = false;
+		numOfKinderSurpriseThrown = 0;
 		
 		player = GameObject.FindWithTag ("MainCharacter");
 		crackedRoofScript = GameObject.FindWithTag ("CrackedRoof").GetComponent<CrackedRoof>();
@@ -87,7 +94,8 @@ public class BossAI : MonoBehaviour {
 			else if (currentPhase == 6) {
 				//Debug.Log ("Phase 20-2");
 				hasThrown = false;
-				sprayBullets();
+				//sprayBullets();
+				throwKinderSurprise();
 			}
 		}
 		else if (percentage < 0.4f) {
@@ -104,7 +112,8 @@ public class BossAI : MonoBehaviour {
 		}
 		else if (bossRoomScript.bossInMiddle == true && percentage < 0.6f) {
 			movingToMiddle = false;
-			sprayBullets();
+			//sprayBullets();
+			throwKinderSurprise();
 		}
 		else if (bossRoomScript.minionsKilled == true) {
 			// boss move to middle of room
@@ -129,7 +138,8 @@ public class BossAI : MonoBehaviour {
 			else if (currentPhase == 2) {
 				//Debug.Log ("Phase 80-2");
 				hasThrown = false;
-				sprayBullets();
+				//sprayBullets();
+				throwKinderSurprise();
 			}
 		}
 		else if (percentage <= 1.0f && fightStart == true) {	// phase 1
@@ -197,7 +207,6 @@ public class BossAI : MonoBehaviour {
 			sprayFor = Constants.BOSS_SPRAY_TIME;
 			idleFor = Constants.BOSS_IDLE_TIME;
 		}
-
 	}
 
 	// Throw jellybean bomb
@@ -254,6 +263,22 @@ public class BossAI : MonoBehaviour {
 		else if (bossMovementNumber == 3) {
 			bossMovementNumber = LookAt(faceForward, bossMovementNumber, 15f);
 			currentPhase = 3;
+		}
+	}
+	
+	private void throwKinderSurprise() {
+		Vector3 bossPosition = this.transform.position;
+		
+		if (throwKinderFor > 0) {
+			Instantiate(kinderSurprise, new Vector3(bossPosition.x-10, bossPosition.y+2, bossPosition.z), this.transform.rotation);
+			throwKinderFor -= Time.deltaTime;
+		}
+		else if (idleKinderFor > 0) {
+			idleKinderFor -= Time.deltaTime;
+		}
+		if (idleKinderFor < 0) {
+			throwKinderFor = Constants.BOSS_KINDER_THROW_TIME;
+			idleKinderFor = Constants.BOSS_KINDER_IDLE_TIME;
 		}
 	}
 	

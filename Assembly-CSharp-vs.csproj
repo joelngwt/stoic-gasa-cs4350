@@ -96,6 +96,7 @@
      <Compile Include="Assets\Scripts\IngressGlyphSets.cs" />
      <Compile Include="Assets\Scripts\JellybeanBomb.cs" />
      <Compile Include="Assets\Scripts\KeepMusicOverScenes.cs" />
+     <Compile Include="Assets\Scripts\KinderSurpriseBomb.cs" />
      <Compile Include="Assets\Scripts\LifeCounter.cs" />
      <Compile Include="Assets\Scripts\MenuHighScore.cs" />
      <Compile Include="Assets\Scripts\MenuTouches.cs" />

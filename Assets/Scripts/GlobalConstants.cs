@@ -43,6 +43,9 @@ public static class Constants {
 		public const float BOSS_BOMB_FUSE_TIME = 10.0f;
 		public const float BOSS_BOMB_FAST_BLINK_SPEED = 0.25f;
 		public const float BOSS_BOMB_SLOW_BLINK_SPEED = 0.5f;
+		// Kinder Surprise stats
+		public const float BOSS_KINDER_THROW_TIME = 0.05f;
+		public const float BOSS_KINDER_IDLE_TIME = 10.0f;
 		
 	public const int CRACKED_ROOF_HEALTH = 50;
 }

@@ -386,16 +386,14 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 	}
 	
 	private void spawnLollipop(Vector3 position){
-		GameObject lollipop = Instantiate(lollipopPrefab, new Vector3(position.x, position.y, position.z), transform.rotation) as GameObject; // add public GameObject bearPrefab at the top
+		GameObject lollipop = Instantiate(lollipopPrefab, new Vector3(position.x, position.y, position.z), transform.rotation) as GameObject;
 		lollipop.name = string.Concat("Target", count.ToString()); // give them unique numbered names (remember to initialize count)
-		Vector3 direction = camera.transform.position - lollipop.transform.position; // make the instantiated bear face the camera
-		lollipop.transform.rotation = Quaternion.LookRotation(direction);
 		count++;
 	}
 	
 	/*
 	private void spawnEgg(Vector3 position){
-		GameObject egg = Instantiate(EggPrefab, new Vector3(position.x, position.y, position.z), transform.rotation) as GameObject; // add public GameObject bearPrefab at the top
+		GameObject egg = Instantiate(EggPrefab, new Vector3(position.x, position.y, position.z), transform.rotation) as GameObject;
 		egg.name = string.Concat("Target", count.ToString()); // give them unique numbered names (remember to initialize count)
 		Vector3 direction = camera.transform.position - egg.transform.position; // make the instantiated bear face the camera
 		egg.transform.rotation = Quaternion.LookRotation(direction);
