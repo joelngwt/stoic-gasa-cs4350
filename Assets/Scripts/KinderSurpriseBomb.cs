@@ -76,5 +76,7 @@ public class KinderSurpriseBomb : MonoBehaviour {
 	
 	private void spawnLollipop(Vector3 position) {
 		GameObject lollipop = Instantiate(lollipopPrefab, new Vector3(position.x, position.y, position.z), transform.rotation) as GameObject;
+		Vector3 direction = player.transform.position - lollipop.transform.position; // make the instantiated bear face the camera
+		lollipop.transform.rotation = Quaternion.LookRotation(direction);
 	}
 }

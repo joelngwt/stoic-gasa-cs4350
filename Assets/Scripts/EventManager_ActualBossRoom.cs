@@ -388,6 +388,8 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 	private void spawnLollipop(Vector3 position){
 		GameObject lollipop = Instantiate(lollipopPrefab, new Vector3(position.x, position.y, position.z), transform.rotation) as GameObject;
 		lollipop.name = string.Concat("Target", count.ToString()); // give them unique numbered names (remember to initialize count)
+		Vector3 direction = camera.transform.position - lollipop.transform.position; // make the instantiated bear face the camera
+		lollipop.transform.rotation = Quaternion.LookRotation(direction);
 		count++;
 	}
 	
