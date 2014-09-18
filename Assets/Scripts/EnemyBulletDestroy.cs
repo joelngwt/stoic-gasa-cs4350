@@ -8,6 +8,8 @@ public class EnemyBulletDestroy : MonoBehaviour {
 	// Audio
 	public AudioClip shieldBlock;
 	public AudioClip takeDamage;
+
+	public GameObject attached_warning_reticle;
 	
 	// Function is triggered when the object collides with another object
 	void OnTriggerEnter(Collider collider)
@@ -37,6 +39,15 @@ public class EnemyBulletDestroy : MonoBehaviour {
 			#endif
 			PlayerPrefs.SetInt ("playerHealth", (int)playerHealth);
 
+			/*
+			 * Destroy the warning reticle if 
+			 * it exists
+			 * */
+			if(attached_warning_reticle != null)
+			{
+				GameObject.Destroy(attached_warning_reticle);
+			}
+
 			// Destroy the bullet
 			Destroy (gameObject);
 		}
@@ -58,12 +69,31 @@ public class EnemyBulletDestroy : MonoBehaviour {
 				#endif
 				PlayerPrefs.SetInt ("playerHealth", (int)playerHealth);
 				
+				/*
+				 * Destroy the warning reticle if 
+				 * it exists
+				 * */
+				if(attached_warning_reticle != null)
+				{
+					GameObject.Destroy(attached_warning_reticle);
+				}
+				
 				// Destroy the bullet
 				Destroy (gameObject);
 			}
 			// Do not put else statement here, will break the detection
 		}
 		else{
+			
+			/*
+			 * Destroy the warning reticle if 
+			 * it exists
+			 * */
+			if(attached_warning_reticle != null)
+			{
+				GameObject.Destroy(attached_warning_reticle);
+			}
+
 			// Destroy the bullet object if it hits anything else
 			Destroy (gameObject);
 		}	

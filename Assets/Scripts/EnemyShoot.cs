@@ -5,6 +5,7 @@ public class EnemyShoot : MonoBehaviour
 {
 	public GameObject m_PrefabBullet; // Drag the prefab "EnemyBullet" here.
 	public GameObject player; // Drag the character prefab here
+	public GameObject warning_reticle_prefeb;
 	
 	// Ignore this comment below. Just some notes.
 	// Cannot drag the prefab "Character" here. Do this: For each target (not prefab), drag the "Character" game object here.
@@ -72,6 +73,7 @@ public class EnemyShoot : MonoBehaviour
 				
 				Vector3 randomOffset;
 				if(hitOrNot < 0.08F 
+				   && Camera.main != null
 				   && Camera.main.gameObject.GetComponent<Hit_Token_Bank>().request_withdraw_token()){ // hit
 					#if UNITY_EDITOR
 					Debug.Log ("Hit");
@@ -88,6 +90,19 @@ public class EnemyShoot : MonoBehaviour
 					else {
 						randomOffset = new Vector3(-5F,-7F,4F);
 					}
+
+					/*
+					 * Create a warning reticle
+					 * */
+					warning_reticle_prefeb = GameObject.Instantiate(warning_reticle_prefeb, gameObject.transform.position, Quaternion.LookRotation(Camera.main.transform.position - gameObject.transform.position)) as GameObject;
+
+					/*
+					 * Attach the warning reticle to the 
+					 * bullet so that when the bullet is 
+					 * destroyed, the reticle is destroyed 
+					 * with it
+					 * */
+					clone.GetComponent<EnemyBulletDestroy>().attached_warning_reticle = warning_reticle_prefeb;
 				}
 				else{ // no hit
 					if (Application.loadedLevelName == "DiningHall"){

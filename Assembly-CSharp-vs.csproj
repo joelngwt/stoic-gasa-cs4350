@@ -90,6 +90,7 @@
      <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_9.cs" />
      <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_Helper.cs" />
      <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_Reader.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Warning_Reticle_Rotation.cs" />
      <Compile Include="Assets\Scripts\Helpers\World_Object_Movement_Helper.cs" />
      <Compile Include="Assets\Scripts\InGameScoreScript.cs" />
      <Compile Include="Assets\Scripts\IngressGlyphSets.cs" />
