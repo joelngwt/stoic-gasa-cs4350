@@ -33,6 +33,8 @@ public class BossAI : MonoBehaviour {
 	public bool roofHitBoss;
 	private CrackedRoof crackedRoofScript;
 	private bool dieAnimationPlayed;
+	public bool behindChair;
+	public bool movingToMiddle;
 
 	// Use this for initialization
 	void Start () {
@@ -46,6 +48,8 @@ public class BossAI : MonoBehaviour {
 		canShootRoof = false;
 		roofHitBoss = false;
 		dieAnimationPlayed = false;
+		behindChair = false;
+		movingToMiddle = false;
 		
 		player = GameObject.FindWithTag ("MainCharacter");
 		crackedRoofScript = GameObject.FindWithTag ("CrackedRoof").GetComponent<CrackedRoof>();
@@ -58,7 +62,7 @@ public class BossAI : MonoBehaviour {
 		//Debug.Log ("current phase = " + currentPhase + ", boss movement number = " + bossMovementNumber);
 		
 		if (bossRoomScript.bossInMiddle == true && percentage < 0.6f) {
-			LookAt(player.transform.position, 0, 0.2f);
+			LookAt(player.transform.position, 0, 0.1f);
 		}
 		
 		if (crackedRoofScript.spawnedBrokenRoof == true) {
@@ -99,10 +103,12 @@ public class BossAI : MonoBehaviour {
 			}
 		}
 		else if (bossRoomScript.bossInMiddle == true && percentage < 0.6f) {
+			movingToMiddle = false;
 			sprayBullets();
 		}
 		else if (bossRoomScript.minionsKilled == true) {
 			// boss move to middle of room
+			behindChair = false;
 			moveToMiddle();
 		}	
 		else if (percentage < 0.6f) {
@@ -138,6 +144,10 @@ public class BossAI : MonoBehaviour {
 	
 	public void getHit() {
 		currentHealth -= 1;
+	}
+	
+	public void getHitBack() {
+		currentHealth -= 5;
 	}
 	
 	void shootBullets() {
@@ -207,6 +217,8 @@ public class BossAI : MonoBehaviour {
 		Vector3 waypoint2 = new Vector3(70.68f, 2.4f, 17.97f);
 		Vector3 middlePoint = new Vector3(-7.23f, 0.24f, 0.76f);
 		
+		movingToMiddle = true;
+		
 		if (bossMovementNumber == 4) {
 			bossMovementNumber = TranslateTo(waypoint1, 20.0f, bossMovementNumber);
 		}
@@ -227,6 +239,8 @@ public class BossAI : MonoBehaviour {
 		Vector3 waypoint2 = new Vector3(88.19f, 2.4f, 18.4f);
 		Vector3 waypointBehindChair = new Vector3(88.57f, 2.4f, 3.12f);
 		Vector3 faceForward = new Vector3(-28.48f, 2.4f, -0.51f);
+		
+		behindChair = true;
 	
 		if (bossMovementNumber == 0) {
 			bossMovementNumber = TranslateTo(waypoint1, 15.0f, bossMovementNumber);

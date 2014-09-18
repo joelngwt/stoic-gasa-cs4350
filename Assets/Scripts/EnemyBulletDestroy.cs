@@ -14,7 +14,7 @@ public class EnemyBulletDestroy : MonoBehaviour {
 	// Function is triggered when the object collides with another object
 	void OnTriggerEnter(Collider collider)
 	{
-		if(collider.tag == "Enemy" || collider.tag == "EnemyHead" || collider.tag == "Boss"){
+		if(collider.tag == "Enemy" || collider.tag == "EnemyHead" || collider.tag == "Boss" || collider.tag == "BossBack"){
 			// Do nothing. The bullet spawns from the middle of the enemy
 			// If this detection is not done, the bullet will destroy itself
 			// when it exits the enemy.

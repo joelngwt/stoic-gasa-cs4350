@@ -145,9 +145,9 @@ public class JellybeanBomb : MonoBehaviour {
 
 				Collider[] colliders = Physics.OverlapSphere(this.transform.position, 20.0f);
 				foreach (Collider hit in colliders) {
-					if (hit && hit.rigidbody)
+					if (hit && hit.rigidbody) {
 						hit.rigidbody.AddExplosionForce(3000.0f, this.transform.position, 20.0f, 3.0F);
-					
+					}
 				}
 				activated = true;
 			}

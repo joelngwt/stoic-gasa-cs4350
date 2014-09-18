@@ -34,7 +34,7 @@ public static class Constants {
 	public const int PISTOL_MAGAZINE_SIZE = 6;
 	
 	// Boss stats
-	public const float BOSS_TOTAL_HEALTH = 300.0f;
+	public const float BOSS_TOTAL_HEALTH = 30.0f;
 		// First 20%
 		public const float BOSS_SPRAY_TIME = 3.0f;
 		public const float BOSS_IDLE_TIME = 2.0f;

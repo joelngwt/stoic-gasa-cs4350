@@ -51,9 +51,11 @@ public class Shooting : MonoBehaviour {
 	public bool haveLooked = false;
 	private EventManager_ActualBossRoom bossRoomScript;
 	[SerializeField] private CrackedRoof crackedRoofScript;
+	private BossAI bossAIScript;
 	
 	void Start() {
 		bossRoomScript = GameObject.FindWithTag ("MainCamera").GetComponent<EventManager_ActualBossRoom>();
+		bossAIScript = GameObject.FindWithTag ("Boss").GetComponent<BossAI>();
 	}		
 	
 	// Update is called once per frame
@@ -259,12 +261,19 @@ public class Shooting : MonoBehaviour {
 			
 			StartCoroutine(BoostTimer());
 		}
-		else if (theHit.transform.gameObject.tag == "Boss") {
+		else if (theHit.transform.gameObject.tag == "Boss" && bossAIScript.behindChair == false && bossAIScript.movingToMiddle == false) {
 			GameObject target = theHit.collider.gameObject;
 			BossAI script = target.GetComponent<BossAI>();
 			StartCoroutine(Plus30(target));
 			
 			script.getHit();
+		}
+		else if (theHit.transform.gameObject.tag == "BossBack" && bossAIScript.behindChair == false && bossAIScript.movingToMiddle == false) {
+			GameObject target = theHit.collider.gameObject;
+			BossAI script = target.GetComponentInParent<BossAI>();
+			StartCoroutine(Plus30(target));
+			
+			script.getHitBack();
 		}
 		else if (theHit.transform.gameObject.tag == "Pillar1" && bossRoomScript.atPillar != 1) {
 			shotPillar1 = true;

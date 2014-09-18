@@ -59,7 +59,7 @@ public class LifeCounter : MonoBehaviour {
 		if (PlayerPrefs.HasKey ("playerHealth")) {
 			playerHealth = PlayerPrefs.GetInt ("playerHealth");
 		}
-		// playerHealth = 4; // god mode
+		 playerHealth = 4; // god mode
 		// If player has 4 lives
 		if(playerHealth >= 4)
 		{
