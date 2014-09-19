@@ -25,10 +25,10 @@ public class Shield : MonoBehaviour {
 	private Vector3 directionVector;
 	
 	// Player position during usage of pillars in actual boss level
-	private Vector3 movementPillar1BossEdge = new Vector3(-50.7f, 3.35f, 61.88f);
+	private Vector3 movementPillar1BossEdge = new Vector3(-51.95f, 3.35f, 59.71f);
 	private Vector3 movementPillar2BossEdge = new Vector3(-50f, 3.35f, -54.8f);
 	private Vector3 movementPillar3BossEdge = new Vector3(2.11f, 3.35f, -49.65f);
-	private Vector3 movementPillar4BossEdge = new Vector3(-0.27f, 3.35f, 55.3f);
+	private Vector3 movementPillar4BossEdge = new Vector3(-2.29f, 3.35f, 52.61f);
 	private Vector3 movementPillar1BossMiddle = new Vector3(-23.66f, 3.35f, 72.18f);
 	private Vector3 movementPillar2BossMiddle = new Vector3(-25.06f, 3.35f, -71.34f);
 	private Vector3 movementPillar3BossMiddle = new Vector3(13.33f, 3.35f, -62.4f);
@@ -36,7 +36,7 @@ public class Shield : MonoBehaviour {
 	private Vector3 hidingPillar1BossEdge = new Vector3(-48.06f, 3.35f, 63.88f);
 	private Vector3 hidingPillar2BossEdge = new Vector3(-47.44f, 3.35f, -59.71f);
 	private Vector3 hidingPillar3BossEdge = new Vector3(5.25f, 3.35f, -55.66f);
-	private Vector3 hidingPillar4BossEdge = new Vector3(3.3f, 3.35f, 58.3f);
+	private Vector3 hidingPillar4BossEdge = new Vector3(3.34f, 3.35f, 60.07f);
 	private Vector3 hidingPillar1BossMiddle = new Vector3(-32.91f, 3.35f, 71.02f);
 	private Vector3 hidingPillar2BossMiddle = new Vector3(-34.6f, 3.35f, -68.71f);
 	private Vector3 hidingPillar3BossMiddle = new Vector3(25.09f, 3.35f, -60.49f);
