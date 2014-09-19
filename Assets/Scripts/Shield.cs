@@ -12,7 +12,7 @@ public class Shield : MonoBehaviour {
 	private float range = 0f;
 	
 	public bool isReloading = false;
-
+	
 	// Sound variables
 	// -------------
 	public AudioClip pistolReload;
@@ -22,12 +22,30 @@ public class Shield : MonoBehaviour {
 	
 	public GameObject mainCamera;
 	public EventManager_ActualBossRoom bossRoomScript;
-	private Vector3 directionVector; 
-
+	private Vector3 directionVector;
+	
+	// Player position during usage of pillars in actual boss level
+	private Vector3 movementPillar1BossEdge = new Vector3(-50.7f, 3.35f, 61.88f);
+	private Vector3 movementPillar2BossEdge = new Vector3(-50f, 3.35f, -54.8f);
+	private Vector3 movementPillar3BossEdge = new Vector3(2.11f, 3.35f, -49.65f);
+	private Vector3 movementPillar4BossEdge = new Vector3(-0.27f, 3.35f, 55.3f);
+	private Vector3 movementPillar1BossMiddle = new Vector3(-23.66f, 3.35f, 72.18f);
+	private Vector3 movementPillar2BossMiddle = new Vector3(-25.06f, 3.35f, -71.34f);
+	private Vector3 movementPillar3BossMiddle = new Vector3(13.33f, 3.35f, -62.4f);
+	private Vector3 movementPillar4BossMiddle = new Vector3(13.29f, 3.35f, 65.06f);
+	private Vector3 hidingPillar1BossEdge = new Vector3(-48.06f, 3.35f, 63.88f);
+	private Vector3 hidingPillar2BossEdge = new Vector3(-47.44f, 3.35f, -59.71f);
+	private Vector3 hidingPillar3BossEdge = new Vector3(5.25f, 3.35f, -55.66f);
+	private Vector3 hidingPillar4BossEdge = new Vector3(3.3f, 3.35f, 58.3f);
+	private Vector3 hidingPillar1BossMiddle = new Vector3(-32.91f, 3.35f, 71.02f);
+	private Vector3 hidingPillar2BossMiddle = new Vector3(-34.6f, 3.35f, -68.71f);
+	private Vector3 hidingPillar3BossMiddle = new Vector3(25.09f, 3.35f, -60.49f);
+	private Vector3 hidingPillar4BossMiddle = new Vector3(26.89f, 3.35f, 62.39f);
+	
 	void Start(){
 		PlayerPrefs.SetInt ("shieldUp", 0);
 	}
-
+	
 	// Update is called once per frame
 	void Update () {
 		// Debug.Log(shieldIsUp);
@@ -35,23 +53,23 @@ public class Shield : MonoBehaviour {
 			// Shield usage
 			#if UNITY_ANDROID
 			if(Input.GetMouseButton(0) && useShieldButton.HitTest(Input.mousePosition)){
-			#endif
-			#if UNITY_STANDALONE || UNITY_WEBPLAYER
-			if(Input.GetKey("space")){
-			#endif
-				if(shieldIsUp == false){
-					//if(useShieldButton.name == "UseShield"){
+				#endif
+				#if UNITY_STANDALONE || UNITY_WEBPLAYER
+				if(Input.GetKey("space")){
+					#endif
+					if(shieldIsUp == false){
+						//if(useShieldButton.name == "UseShield"){
 						if (Application.loadedLevelName == "ActualBossRoom") {
 							if(bossRoomScript.atPillar == 1) {
 								if (bossRoomScript.bossInMiddle == false) {
 									// Range and direction to move
-									range = Vector3.Distance(mainCamera.transform.position, new Vector3(-43.08f, 3.35f, 61.67f));
-									directionVector = (mainCamera.transform.position - new Vector3(-43.08f, 3.35f, 61.67f)).normalized;
+									range = Vector3.Distance(mainCamera.transform.position, hidingPillar1BossEdge);
+									directionVector = (mainCamera.transform.position - hidingPillar1BossEdge).normalized;
 								}
 								else if (bossRoomScript.bossInMiddle == true) {
 									// Range and direction to move
-									range = Vector3.Distance(mainCamera.transform.position, new Vector3(-33.22f, 3.35f, 66.3f));
-									directionVector = (mainCamera.transform.position - new Vector3(-33.22f, 3.35f, 66.3f)).normalized;
+									range = Vector3.Distance(mainCamera.transform.position, hidingPillar1BossMiddle);
+									directionVector = (mainCamera.transform.position - hidingPillar1BossMiddle).normalized;
 								}
 								
 								if (range < 1.0f) {
@@ -65,13 +83,13 @@ public class Shield : MonoBehaviour {
 							else if(bossRoomScript.atPillar == 2) {
 								if (bossRoomScript.bossInMiddle == false) {
 									// Range and direction to move
-									range = Vector3.Distance(mainCamera.transform.position, new Vector3(-41.45f, 3.35f, -62.69f));
-									directionVector = (mainCamera.transform.position - new Vector3(-41.45f, 3.35f, -62.69f)).normalized;
+									range = Vector3.Distance(mainCamera.transform.position, hidingPillar2BossEdge);
+									directionVector = (mainCamera.transform.position - hidingPillar2BossEdge).normalized;
 								}
 								else if (bossRoomScript.bossInMiddle == true) {
 									// Range and direction to move
-									range = Vector3.Distance(mainCamera.transform.position, new Vector3(-32f, 3.35f, -61.97f));
-									directionVector = (mainCamera.transform.position - new Vector3(-32f, 3.35f, -61.97f)).normalized;
+									range = Vector3.Distance(mainCamera.transform.position, hidingPillar2BossMiddle);
+									directionVector = (mainCamera.transform.position - hidingPillar2BossMiddle).normalized;
 								}
 								
 								if (range < 1.0f) {
@@ -85,13 +103,13 @@ public class Shield : MonoBehaviour {
 							else if(bossRoomScript.atPillar == 3) {
 								if (bossRoomScript.bossInMiddle == false) {
 									// Range and direction to move
-									range = Vector3.Distance(mainCamera.transform.position, new Vector3(8.33f, 3.35f, -52.95f));
-									directionVector = (mainCamera.transform.position - new Vector3(8.33f, 3.35f, -52.95f)).normalized;
+									range = Vector3.Distance(mainCamera.transform.position, hidingPillar3BossEdge);
+									directionVector = (mainCamera.transform.position - hidingPillar3BossEdge).normalized;
 								}
 								else if (bossRoomScript.bossInMiddle == true) {
 									// Range and direction to move
-									range = Vector3.Distance(mainCamera.transform.position, new Vector3(22.8f, 3.35f, -54.66f));
-									directionVector = (mainCamera.transform.position - new Vector3(22.8f, 3.35f, -54.66f)).normalized;
+									range = Vector3.Distance(mainCamera.transform.position, hidingPillar3BossMiddle);
+									directionVector = (mainCamera.transform.position - hidingPillar3BossMiddle).normalized;
 								}
 								
 								if (range < 1.0f) {
@@ -105,13 +123,13 @@ public class Shield : MonoBehaviour {
 							else if(bossRoomScript.atPillar == 4) {
 								if (bossRoomScript.bossInMiddle == false) {
 									// Range and direction to move
-									range = Vector3.Distance(mainCamera.transform.position, new Vector3(12.14f, 3.35f, 51.47f));
-									directionVector = (mainCamera.transform.position - new Vector3(12.14f, 3.35f, 51.47f)).normalized;
+									range = Vector3.Distance(mainCamera.transform.position, hidingPillar4BossEdge);
+									directionVector = (mainCamera.transform.position - hidingPillar4BossEdge).normalized;
 								}
 								else if (bossRoomScript.bossInMiddle == true) {
 									// Range and direction to move
-									range = Vector3.Distance(mainCamera.transform.position, new Vector3(23.43f, 3.35f, 57.17f));
-									directionVector = (mainCamera.transform.position - new Vector3(23.43f, 3.35f, 57.17f)).normalized;
+									range = Vector3.Distance(mainCamera.transform.position, hidingPillar4BossMiddle);
+									directionVector = (mainCamera.transform.position - hidingPillar4BossMiddle).normalized;
 								}
 								
 								if (range < 1.0f) {
@@ -145,174 +163,174 @@ public class Shield : MonoBehaviour {
 								StartCoroutine(ShotgunReload()); // call this method
 							}
 						}
-					//}
+						//}
+					}
 				}
-			}
-			// "Space" not pressed
-			else {
-				if(shieldIsUp == true){
-					if (Application.loadedLevelName == "ActualBossRoom") {
+				// "Space" not pressed
+				else {
+					if(shieldIsUp == true){
+						if (Application.loadedLevelName == "ActualBossRoom") {
+							if(bossRoomScript.atPillar == 1) {
+								if (bossRoomScript.bossInMiddle == false) {
+									// Range and direction to move
+									range = Vector3.Distance(mainCamera.transform.position, movementPillar1BossEdge);
+									directionVector = (mainCamera.transform.position - movementPillar1BossEdge).normalized; // -46.5f, 3.35f, 57.94f
+								}
+								else if (bossRoomScript.bossInMiddle == true) {
+									// Range and direction to move
+									range = Vector3.Distance(mainCamera.transform.position, movementPillar1BossMiddle);
+									directionVector = (mainCamera.transform.position - movementPillar1BossMiddle).normalized;
+								}
+								
+								if (range < 1.0f) {
+									shieldIsUp = false;
+									PlayerPrefs.SetInt ("shieldUp", 0);
+								}
+								else {
+									mainCamera.transform.Translate(-directionVector * Time.deltaTime * 20.0f, Space.World);
+								}
+							}
+							else if(bossRoomScript.atPillar == 2) {
+								if (bossRoomScript.bossInMiddle == false) {
+									// Range and direction to move
+									range = Vector3.Distance(mainCamera.transform.position, movementPillar2BossEdge);
+									directionVector = (mainCamera.transform.position - movementPillar2BossEdge).normalized;
+								}
+								else if (bossRoomScript.bossInMiddle == true) {
+									// Range and direction to move
+									range = Vector3.Distance(mainCamera.transform.position, movementPillar2BossMiddle);
+									directionVector = (mainCamera.transform.position - movementPillar2BossMiddle).normalized;
+								}
+								
+								if (range < 1.0f) {
+									shieldIsUp = false;
+									PlayerPrefs.SetInt ("shieldUp", 0);
+								}
+								else {
+									mainCamera.transform.Translate(-directionVector * Time.deltaTime * 20.0f, Space.World);
+								}
+							}
+							else if(bossRoomScript.atPillar == 3) {
+								if (bossRoomScript.bossInMiddle == false) {
+									// Range and direction to move
+									range = Vector3.Distance(mainCamera.transform.position, movementPillar3BossEdge);
+									directionVector = (mainCamera.transform.position - movementPillar3BossEdge).normalized;
+								}
+								else if (bossRoomScript.bossInMiddle == true) {
+									// Range and direction to move
+									range = Vector3.Distance(mainCamera.transform.position, movementPillar3BossMiddle);
+									directionVector = (mainCamera.transform.position - movementPillar3BossMiddle).normalized;
+								}
+								
+								if (range < 1.0f) {
+									shieldIsUp = false;
+									PlayerPrefs.SetInt ("shieldUp", 0);
+								}
+								else {
+									mainCamera.transform.Translate(-directionVector * Time.deltaTime * 20.0f, Space.World);
+								}
+							}
+							else if(bossRoomScript.atPillar == 4) {
+								if (bossRoomScript.bossInMiddle == false) {
+									// Range and direction to move
+									range = Vector3.Distance(mainCamera.transform.position, movementPillar4BossEdge);
+									directionVector = (mainCamera.transform.position - movementPillar4BossEdge).normalized;
+								}
+								else if (bossRoomScript.bossInMiddle == true) {
+									// Range and direction to move
+									range = Vector3.Distance(mainCamera.transform.position, movementPillar4BossMiddle);
+									directionVector = (mainCamera.transform.position - movementPillar4BossMiddle).normalized;
+								}
+								
+								if (range < 1.0f) {
+									shieldIsUp = false;
+									PlayerPrefs.SetInt ("shieldUp", 0);
+								}
+								else {
+									mainCamera.transform.Translate(-directionVector * Time.deltaTime * 20.0f, Space.World);
+								}
+							} 
+						}
+						else {
+							shieldIsUp = false;
+							PlayerPrefs.SetInt ("shieldUp", 0);
+							shield.transform.Translate(-shieldMoveVector, Camera.main.transform);
+						}
+					}
+					// Player tapped spacebar and did not hide fully,
+					// so move the player back out
+					else if (shieldIsUp == false && Application.loadedLevelName == "ActualBossRoom") {
 						if(bossRoomScript.atPillar == 1) {
 							if (bossRoomScript.bossInMiddle == false) {
 								// Range and direction to move
-								range = Vector3.Distance(mainCamera.transform.position, new Vector3(-46.5f, 3.35f, 57.94f));
-								directionVector = (mainCamera.transform.position - new Vector3(-46.5f, 3.35f, 57.94f)).normalized;
+								range = Vector3.Distance(mainCamera.transform.position, movementPillar1BossEdge);
+								directionVector = (mainCamera.transform.position - movementPillar1BossEdge).normalized;
 							}
 							else if (bossRoomScript.bossInMiddle == true) {
 								// Range and direction to move
-								range = Vector3.Distance(mainCamera.transform.position, new Vector3(-22.59f, 3.35f, 67.16f));
-								directionVector = (mainCamera.transform.position - new Vector3(-22.59f, 3.35f, 67.16f)).normalized;
+								range = Vector3.Distance(mainCamera.transform.position, movementPillar1BossMiddle);
+								directionVector = (mainCamera.transform.position - movementPillar1BossMiddle).normalized;
 							}
 							
-							if (range < 1.0f) {
-								shieldIsUp = false;
-								PlayerPrefs.SetInt ("shieldUp", 0);
-							}
-							else {
+							if (range > 0.5f) {
 								mainCamera.transform.Translate(-directionVector * Time.deltaTime * 20.0f, Space.World);
 							}
 						}
 						else if(bossRoomScript.atPillar == 2) {
 							if (bossRoomScript.bossInMiddle == false) {
 								// Range and direction to move
-								range = Vector3.Distance(mainCamera.transform.position, new Vector3(-46.91f, 3.35f, -53.21f));
-								directionVector = (mainCamera.transform.position - new Vector3(-46.91f, 3.35f, -53.21f)).normalized;
+								range = Vector3.Distance(mainCamera.transform.position, movementPillar2BossEdge);
+								directionVector = (mainCamera.transform.position - movementPillar2BossEdge).normalized;
 							}
 							else if (bossRoomScript.bossInMiddle == true) {
 								// Range and direction to move
-								range = Vector3.Distance(mainCamera.transform.position, new Vector3(-25.3f, 3.35f, -63.28f));
-								directionVector = (mainCamera.transform.position - new Vector3(-25.3f, 3.35f, -63.28f)).normalized;
+								range = Vector3.Distance(mainCamera.transform.position, movementPillar2BossMiddle);
+								directionVector = (mainCamera.transform.position - movementPillar2BossMiddle).normalized;
 							}
-							
-							if (range < 1.0f) {
-								shieldIsUp = false;
-								PlayerPrefs.SetInt ("shieldUp", 0);
-							}
-							else {
+							if (range > 0.5f) {
 								mainCamera.transform.Translate(-directionVector * Time.deltaTime * 20.0f, Space.World);
 							}
 						}
 						else if(bossRoomScript.atPillar == 3) {
 							if (bossRoomScript.bossInMiddle == false) {
 								// Range and direction to move
-								range = Vector3.Distance(mainCamera.transform.position, new Vector3(3.78f, 3.35f, -48.79f));
-								directionVector = (mainCamera.transform.position - new Vector3(3.78f, 3.35f, -48.79f)).normalized;
+								range = Vector3.Distance(mainCamera.transform.position, movementPillar3BossEdge);
+								directionVector = (mainCamera.transform.position - movementPillar3BossEdge).normalized;
 							}
 							else if (bossRoomScript.bossInMiddle == true) {
 								// Range and direction to move
-								range = Vector3.Distance(mainCamera.transform.position, new Vector3(13.51f, 3.35f, -55.73f));
-								directionVector = (mainCamera.transform.position - new Vector3(13.51f, 3.35f, -55.73f)).normalized;
+								range = Vector3.Distance(mainCamera.transform.position, movementPillar3BossMiddle);
+								directionVector = (mainCamera.transform.position - movementPillar3BossMiddle).normalized;
 							}
-								
-							if (range < 1.0f) {
-								shieldIsUp = false;
-								PlayerPrefs.SetInt ("shieldUp", 0);
-							}
-							else {
+							if (range > 0.5f) {
 								mainCamera.transform.Translate(-directionVector * Time.deltaTime * 20.0f, Space.World);
 							}
 						}
 						else if(bossRoomScript.atPillar == 4) {
 							if (bossRoomScript.bossInMiddle == false) {
 								// Range and direction to move
-								range = Vector3.Distance(mainCamera.transform.position, new Vector3(8.53f, 3.35f, 47.89f));
-								directionVector = (mainCamera.transform.position - new Vector3(8.53f, 3.35f, 47.89f)).normalized;
+								range = Vector3.Distance(mainCamera.transform.position, movementPillar4BossEdge);
+								directionVector = (mainCamera.transform.position - movementPillar4BossEdge).normalized;
 							}
 							else if (bossRoomScript.bossInMiddle == true) {
 								// Range and direction to move
-								range = Vector3.Distance(mainCamera.transform.position, new Vector3(14.4f, 3.35f, 57.2f));
-								directionVector = (mainCamera.transform.position - new Vector3(14.4f, 3.35f, 57.2f)).normalized;
+								range = Vector3.Distance(mainCamera.transform.position, movementPillar4BossMiddle);
+								directionVector = (mainCamera.transform.position - movementPillar4BossMiddle).normalized;
 							}
-							
-							if (range < 1.0f) {
-								shieldIsUp = false;
-								PlayerPrefs.SetInt ("shieldUp", 0);
-							}
-							else {
+							if (range > 0.5f) {
 								mainCamera.transform.Translate(-directionVector * Time.deltaTime * 20.0f, Space.World);
 							}
 						} 
 					}
-					else {
-						shieldIsUp = false;
-						PlayerPrefs.SetInt ("shieldUp", 0);
-						shield.transform.Translate(-shieldMoveVector, Camera.main.transform);
-					}
 				}
-				// Player tapped spacebar and did not hide fully,
-				// so move the player back out
-				else if (shieldIsUp == false && Application.loadedLevelName == "ActualBossRoom") {
-					if(bossRoomScript.atPillar == 1) {
-						if (bossRoomScript.bossInMiddle == false) {
-							// Range and direction to move
-							range = Vector3.Distance(mainCamera.transform.position, new Vector3(-46.5f, 3.35f, 57.94f));
-							directionVector = (mainCamera.transform.position - new Vector3(-46.5f, 3.35f, 57.94f)).normalized;
-						}
-						else if (bossRoomScript.bossInMiddle == true) {
-							// Range and direction to move
-							range = Vector3.Distance(mainCamera.transform.position, new Vector3(-22.59f, 3.35f, 67.16f));
-							directionVector = (mainCamera.transform.position - new Vector3(-22.59f, 3.35f, 67.16f)).normalized;
-						}
-						
-						if (range > 0.5f) {
-							mainCamera.transform.Translate(-directionVector * Time.deltaTime * 20.0f, Space.World);
-						}
-					}
-					else if(bossRoomScript.atPillar == 2) {
-						if (bossRoomScript.bossInMiddle == false) {
-							// Range and direction to move
-							range = Vector3.Distance(mainCamera.transform.position, new Vector3(-46.91f, 3.35f, -53.21f));
-							directionVector = (mainCamera.transform.position - new Vector3(-46.91f, 3.35f, -53.21f)).normalized;
-						}
-						else if (bossRoomScript.bossInMiddle == true) {
-							// Range and direction to move
-							range = Vector3.Distance(mainCamera.transform.position, new Vector3(-25.3f, 3.35f, -63.28f));
-							directionVector = (mainCamera.transform.position - new Vector3(-25.3f, 3.35f, -63.28f)).normalized;
-						}
-						if (range > 0.5f) {
-							mainCamera.transform.Translate(-directionVector * Time.deltaTime * 20.0f, Space.World);
-						}
-					}
-					else if(bossRoomScript.atPillar == 3) {
-						if (bossRoomScript.bossInMiddle == false) {
-							// Range and direction to move
-							range = Vector3.Distance(mainCamera.transform.position, new Vector3(3.78f, 3.35f, -48.79f));
-							directionVector = (mainCamera.transform.position - new Vector3(3.78f, 3.35f, -48.79f)).normalized;
-						}
-						else if (bossRoomScript.bossInMiddle == true) {
-							// Range and direction to move
-							range = Vector3.Distance(mainCamera.transform.position, new Vector3(13.51f, 3.35f, -55.73f));
-							directionVector = (mainCamera.transform.position - new Vector3(13.51f, 3.35f, -55.73f)).normalized;
-						}
-						if (range > 0.5f) {
-							mainCamera.transform.Translate(-directionVector * Time.deltaTime * 20.0f, Space.World);
-						}
-					}
-					else if(bossRoomScript.atPillar == 4) {
-						if (bossRoomScript.bossInMiddle == false) {
-							// Range and direction to move
-							range = Vector3.Distance(mainCamera.transform.position, new Vector3(8.53f, 3.35f, 47.89f));
-							directionVector = (mainCamera.transform.position - new Vector3(8.53f, 3.35f, 47.89f)).normalized;
-						}
-						else if (bossRoomScript.bossInMiddle == true) {
-							// Range and direction to move
-							range = Vector3.Distance(mainCamera.transform.position, new Vector3(14.4f, 3.35f, 57.2f));
-							directionVector = (mainCamera.transform.position - new Vector3(14.4f, 3.35f, 57.2f)).normalized;
-						}
-						if (range > 0.5f) {
-							mainCamera.transform.Translate(-directionVector * Time.deltaTime * 20.0f, Space.World);
-						}
-					} 
-				}
+				#if UNITY_ANDROID
 			}
-		#if UNITY_ANDROID
-		}
-		#endif
-		#if UNITY_STANDALONE || UNITY_WEBPLAYER
+			#endif
+			#if UNITY_STANDALONE || UNITY_WEBPLAYER
 		}
 		#endif
 	}
-
+	
 	// Reloading takes time
 	IEnumerator PistolReload(){
 		isReloading = true;

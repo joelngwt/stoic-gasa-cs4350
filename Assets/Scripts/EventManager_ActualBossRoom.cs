@@ -18,25 +18,26 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 	//public GameObject pillar4Sparkle;
 	private bool canMove;				// Whether or not the player can move from pillar to pillar
 	[SerializeField] private GameObject crackedRoof;
+	[SerializeField] private GameObject targetReticle;
 	
 	public bool bossInMiddle;
 	private Vector3 movementCenterPoint = new Vector3(-41.13f, 3.35f, -0.77f);
-	private Vector3 movementPillar1BossEdge = new Vector3(-46.5f, 3.35f, 57.94f);
-	private Vector3 movementPillar2BossEdge = new Vector3(-46.91f, 3.35f, -53.21f);
-	private Vector3 movementPillar3BossEdge = new Vector3(3.78f, 3.35f, -48.79f);
-	private Vector3 movementPillar4BossEdge = new Vector3(8.53f, 3.35f, 47.89f);
-	private Vector3 movementPillar1BossMiddle = new Vector3(-22.59f, 3.35f, 67.16f);
-	private Vector3 movementPillar2BossMiddle = new Vector3(-25.3f, 3.35f, -63.28f);
-	private Vector3 movementPillar3BossMiddle = new Vector3(13.51f, 3.35f, -55.73f);
-	private Vector3 movementPillar4BossMiddle = new Vector3(14.4f, 3.35f, 57.2f);
+	private Vector3 movementPillar1BossEdge = new Vector3(-50.7f, 3.35f, 61.88f);
+	private Vector3 movementPillar2BossEdge = new Vector3(-50f, 3.35f, -54.8f);
+	private Vector3 movementPillar3BossEdge = new Vector3(2.11f, 3.35f, -49.65f);
+	private Vector3 movementPillar4BossEdge = new Vector3(-0.27f, 3.35f, 55.3f);
+	private Vector3 movementPillar1BossMiddle = new Vector3(-23.66f, 3.35f, 72.18f);
+	private Vector3 movementPillar2BossMiddle = new Vector3(-25.06f, 3.35f, -71.34f);
+	private Vector3 movementPillar3BossMiddle = new Vector3(13.33f, 3.35f, -62.4f);
+	private Vector3 movementPillar4BossMiddle = new Vector3(13.29f, 3.35f, 65.06f);
 	private Vector3 lookAtPillar1BossEdge = new Vector3(17.86f, 3.35f, 2.1f);
 	private Vector3 lookAtPillar2BossEdge = new Vector3(1.69f, 3.35f, -41.99f);
 	private Vector3 lookAtPillar3BossEdge = new Vector3(47.58f, 3.35f, -0.77f);
 	private Vector3 lookAtPillar4BossEdge = new Vector3(47.58f, 3.35f, -0.77f);
-	private Vector3 lookAtPillar1BossMiddle = new Vector3(-7.23f, 5f, 0.76f);
-	private Vector3 lookAtPillar2BossMiddle = new Vector3(-7.23f, 5f, 0.76f);
-	private Vector3 lookAtPillar3BossMiddle = new Vector3(-7.23f, 5f, 0.76f);
-	private Vector3 lookAtPillar4BossMiddle = new Vector3(-7.23f, 5f, 0.76f);
+	private Vector3 lookAtPillar1BossMiddle = new Vector3(-7.23f, 8f, 0.76f);
+	private Vector3 lookAtPillar2BossMiddle = new Vector3(-7.23f, 8f, 0.76f);
+	private Vector3 lookAtPillar3BossMiddle = new Vector3(-7.23f, 8f, 0.76f);
+	private Vector3 lookAtPillar4BossMiddle = new Vector3(-7.23f, 8f, 0.76f);
 	
 	// Audio
 	public AudioClip footsteps;
@@ -74,6 +75,7 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 		minionsKilled = false;
 		bossInMiddle = false;
 		crackedRoof.SetActive(false);
+		targetReticle.SetActive(false);
 
 		//pillar2Sparkle.particleEmitter.enabled = false;
 		//pillar3Sparkle.particleEmitter.enabled = false;
@@ -94,6 +96,7 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 		
 		if (bossAIScript.canShootRoof == true) {
 			crackedRoof.SetActive(true);
+			targetReticle.SetActive(true);
 		}
 		
 		if (shootScript.shotPillar1 == true && shootScript.haveLooked == false) {

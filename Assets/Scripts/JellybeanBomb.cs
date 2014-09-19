@@ -29,6 +29,8 @@ public class JellybeanBomb : MonoBehaviour {
 		bossRoomScript = GameObject.FindWithTag("MainCamera").GetComponent<EventManager_ActualBossRoom>();
 		//bossAIScript = GameObject.FindWithTag("Boss").GetComponent<BossAI>();
 		activated = false;
+		
+		Physics.IgnoreLayerCollision(10, 9, true); // ignore collision between this and kinder surprise
 
 		// if current pillar is 1
 		if (bossRoomScript.atPillar == 1) {
