@@ -455,8 +455,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 2.1099999
   unitsLength: 1.27999997
-  pixelHeight: 106.765991
-  pixelLength: 115.135994
+  pixelHeight: 0
+  pixelLength: 0
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -476,8 +476,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 115.135994
-    height: 106.765991
+    width: 0
+    height: 0
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -2061,8 +2061,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 115.135994
-    height: 106.765991
+    width: 0
+    height: 0
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -2081,8 +2081,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 2.1099999
   unitsLength: 1.27999997
-  pixelHeight: 106.765991
-  pixelLength: 115.135994
+  pixelHeight: 0
+  pixelLength: 0
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -2277,7 +2277,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 7d5d9c660cd6fdb40bffac29cf5bbf65, type: 2}
+  - {fileID: 2100000, guid: 40a35027240a6924bae78daf175962c5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2826,7 +2826,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 7d5d9c660cd6fdb40bffac29cf5bbf65, type: 2}
+  - {fileID: 2100000, guid: 40a35027240a6924bae78daf175962c5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -4998,7 +4998,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 7d5d9c660cd6fdb40bffac29cf5bbf65, type: 2}
+  - {fileID: 2100000, guid: 40a35027240a6924bae78daf175962c5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -5914,8 +5914,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 6.0999999
   unitsLength: 13.3900003
-  pixelHeight: 308.660004
-  pixelLength: 1204.43054
+  pixelHeight: 0
+  pixelLength: 0
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -5934,8 +5934,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1204.43054
-    height: 308.660004
+    width: 0
+    height: 0
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -6901,8 +6901,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 2.1099999
   unitsLength: 1.27999997
-  pixelHeight: 106.765991
-  pixelLength: 115.135994
+  pixelHeight: 0
+  pixelLength: 0
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -6922,8 +6922,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 115.135994
-    height: 106.765991
+    width: 0
+    height: 0
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -12196,7 +12196,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 7d5d9c660cd6fdb40bffac29cf5bbf65, type: 2}
+  - {fileID: 2100000, guid: 40a35027240a6924bae78daf175962c5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -13943,7 +13943,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 7d5d9c660cd6fdb40bffac29cf5bbf65, type: 2}
+  - {fileID: 2100000, guid: 40a35027240a6924bae78daf175962c5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -15196,7 +15196,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 7d5d9c660cd6fdb40bffac29cf5bbf65, type: 2}
+  - {fileID: 2100000, guid: 40a35027240a6924bae78daf175962c5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -16172,7 +16172,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 7d5d9c660cd6fdb40bffac29cf5bbf65, type: 2}
+  - {fileID: 2100000, guid: 40a35027240a6924bae78daf175962c5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -16434,7 +16434,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 7d5d9c660cd6fdb40bffac29cf5bbf65, type: 2}
+  - {fileID: 2100000, guid: 40a35027240a6924bae78daf175962c5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -21668,7 +21668,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 7d5d9c660cd6fdb40bffac29cf5bbf65, type: 2}
+  - {fileID: 2100000, guid: 40a35027240a6924bae78daf175962c5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -25320,7 +25320,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 7d5d9c660cd6fdb40bffac29cf5bbf65, type: 2}
+  - {fileID: 2100000, guid: 40a35027240a6924bae78daf175962c5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -25628,8 +25628,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 6.0999999
   unitsLength: 13.3900003
-  pixelHeight: 308.660004
-  pixelLength: 1204.43054
+  pixelHeight: 0
+  pixelLength: 0
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -25648,8 +25648,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1204.43054
-    height: 308.660004
+    width: 0
+    height: 0
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -26368,8 +26368,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 20
   unitsLength: 25
-  pixelHeight: 1012
-  pixelLength: 2248.75
+  pixelHeight: 0
+  pixelLength: 0
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -26389,8 +26389,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 2248.75
-    height: 1012
+    width: 0
+    height: 0
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -29421,8 +29421,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 6.0999999
   unitsLength: 13.3900003
-  pixelHeight: 308.660004
-  pixelLength: 1204.43054
+  pixelHeight: 0
+  pixelLength: 0
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -29441,8 +29441,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1204.43054
-    height: 308.660004
+    width: 0
+    height: 0
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -30436,9 +30436,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1.74000001
   unitsLength: 13.6999998
-  pixelHeight: 88.0439987
-  pixelLength: 1232.31494
-  fontNumber: 131
+  pixelHeight: 0
+  pixelLength: 0
+  fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -30475,7 +30475,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: a2cbcadf206e5c6489d3f952f3c7f2c6, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 131
+  m_FontSize: 0
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -31732,7 +31732,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 7d5d9c660cd6fdb40bffac29cf5bbf65, type: 2}
+  - {fileID: 2100000, guid: 40a35027240a6924bae78daf175962c5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -31906,9 +31906,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1
   unitsLength: 10.1800003
-  pixelHeight: 50.5999985
-  pixelLength: 915.69104
-  fontNumber: 176
+  pixelHeight: 0
+  pixelLength: 0
+  fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -31943,7 +31943,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: a2cbcadf206e5c6489d3f952f3c7f2c6, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 176
+  m_FontSize: 0
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -33978,7 +33978,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 7d5d9c660cd6fdb40bffac29cf5bbf65, type: 2}
+  - {fileID: 2100000, guid: 40a35027240a6924bae78daf175962c5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -34538,8 +34538,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: -18.2000008
   unitsLength: -28.7000008
-  pixelHeight: -920.920044
-  pixelLength: -2581.56519
+  pixelHeight: -0
+  pixelLength: -0
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -34649,8 +34649,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: -2581.56519
-    height: -920.920044
+    width: -0
+    height: -0
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -35418,7 +35418,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 7d5d9c660cd6fdb40bffac29cf5bbf65, type: 2}
+  - {fileID: 2100000, guid: 40a35027240a6924bae78daf175962c5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -35993,8 +35993,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 779.866516
-    height: 278.299988
+    width: 0
+    height: 0
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -36013,8 +36013,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 5.5
   unitsLength: 8.67000008
-  pixelHeight: 278.299988
-  pixelLength: 779.866516
+  pixelHeight: 0
+  pixelLength: 0
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -38281,7 +38281,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 7d5d9c660cd6fdb40bffac29cf5bbf65, type: 2}
+  - {fileID: 2100000, guid: 40a35027240a6924bae78daf175962c5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -38788,7 +38788,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 7d5d9c660cd6fdb40bffac29cf5bbf65, type: 2}
+  - {fileID: 2100000, guid: 40a35027240a6924bae78daf175962c5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -42685,7 +42685,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 7d5d9c660cd6fdb40bffac29cf5bbf65, type: 2}
+  - {fileID: 2100000, guid: 40a35027240a6924bae78daf175962c5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
