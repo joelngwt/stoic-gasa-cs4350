@@ -455,8 +455,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 2.1099999
   unitsLength: 1.27999997
-  pixelHeight: 77.647995
-  pixelLength: 83.711998
+  pixelHeight: 106.765991
+  pixelLength: 115.135994
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -476,8 +476,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 83.711998
-    height: 77.647995
+    width: 115.135994
+    height: 106.765991
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -2061,8 +2061,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 83.711998
-    height: 77.647995
+    width: 115.135994
+    height: 106.765991
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -2081,8 +2081,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 2.1099999
   unitsLength: 1.27999997
-  pixelHeight: 77.647995
-  pixelLength: 83.711998
+  pixelHeight: 106.765991
+  pixelLength: 115.135994
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -5614,6 +5614,74 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1379672259}
   m_GameObject: {fileID: 272019386}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &273356851
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 273356854}
+  - 131: {fileID: 273356853}
+  - 114: {fileID: 273356852}
+  m_Layer: 0
+  m_Name: Boss-Speech3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &273356852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 273356851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a564e5c96acbb1b48ab9ba7bb67d5d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitsHeight: 6.0999999
+  unitsLength: 13.3900003
+  pixelHeight: 308.660004
+  pixelLength: 1204.43054
+  fontNumber: 0
+  middleScreenWidth: 0
+  rightOfScreen: 0
+  leftOfScreen: 0
+  editable: 0
+--- !u!131 &273356853
+GUITexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 273356851}
+  m_Enabled: 1
+  m_Texture: {fileID: 2800000, guid: a43542de10c097549a89f3a23b7de416, type: 3}
+  m_Color: {r: .5, g: .5, b: .5, a: .5}
+  m_PixelInset:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1204.43054
+    height: 308.660004
+  m_LeftBorder: 0
+  m_RightBorder: 0
+  m_TopBorder: 0
+  m_BottomBorder: 0
+--- !u!4 &273356854
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 273356851}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .440000236, y: -3.19999981, z: -55.2999992}
+  m_LocalScale: {x: 0, y: 0, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2058277291}
+  m_RootOrder: 0
 --- !u!1 &274268493
 GameObject:
   m_ObjectHideFlags: 0
@@ -6563,8 +6631,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 2.1099999
   unitsLength: 1.27999997
-  pixelHeight: 77.647995
-  pixelLength: 83.711998
+  pixelHeight: 106.765991
+  pixelLength: 115.135994
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -6584,8 +6652,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 83.711998
-    height: 77.647995
+    width: 115.135994
+    height: 106.765991
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -9101,7 +9169,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &445003832
 Transform:
   m_ObjectHideFlags: 0
@@ -12409,59 +12477,59 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 13200002, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_FontSize
-      value: 95
+      value: 131
       objectReference: {fileID: 0}
     - target: {fileID: 13100020, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: 83.711998
+      value: 115.135994
       objectReference: {fileID: 0}
     - target: {fileID: 13100020, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: 77.647995
+      value: 106.765991
       objectReference: {fileID: 0}
     - target: {fileID: 13100004, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: -1876.9801
+      value: -2581.56519
       objectReference: {fileID: 0}
     - target: {fileID: 13100004, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: -669.76001
+      value: -920.920044
       objectReference: {fileID: 0}
     - target: {fileID: 13100018, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: 83.711998
+      value: 115.135994
       objectReference: {fileID: 0}
     - target: {fileID: 13100018, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: 77.647995
+      value: 106.765991
       objectReference: {fileID: 0}
     - target: {fileID: 13100024, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: 567.018005
+      value: 779.866516
       objectReference: {fileID: 0}
     - target: {fileID: 13100024, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: 202.399994
+      value: 278.299988
       objectReference: {fileID: 0}
     - target: {fileID: 13200008, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_FontSize
-      value: 128
+      value: 176
       objectReference: {fileID: 0}
     - target: {fileID: 13100022, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: 83.711998
+      value: 115.135994
       objectReference: {fileID: 0}
     - target: {fileID: 13100022, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: 77.647995
+      value: 106.765991
       objectReference: {fileID: 0}
     - target: {fileID: 13100016, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: 1635
+      value: 2248.75
       objectReference: {fileID: 0}
     - target: {fileID: 13100016, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: 736
+      value: 1012
       objectReference: {fileID: 0}
     - target: {fileID: 8200004, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PlayOnAwake
@@ -12473,6 +12541,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 8200004, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100022, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -20028,6 +20100,9 @@ MonoBehaviour:
   atPillar: 0
   crackedRoof: {fileID: 2117820593}
   targetReticle: {fileID: 212462871}
+  bossSpeech1: {fileID: 1510723459}
+  bossSpeech2: {fileID: 1319973042}
+  bossSpeech3: {fileID: 273356853}
   bossInMiddle: 0
   footsteps: {fileID: 8300000, guid: 5db8ec7099b38334ca4161b7e70edddb, type: 3}
   shootScript: {fileID: 1635228130}
@@ -24359,6 +24434,74 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1309987921}
   m_GameObject: {fileID: 1318468436}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1319973040
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1319973043}
+  - 131: {fileID: 1319973042}
+  - 114: {fileID: 1319973041}
+  m_Layer: 0
+  m_Name: Boss-Speech2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1319973041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1319973040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a564e5c96acbb1b48ab9ba7bb67d5d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitsHeight: 6.0999999
+  unitsLength: 13.3900003
+  pixelHeight: 308.660004
+  pixelLength: 1204.43054
+  fontNumber: 0
+  middleScreenWidth: 0
+  rightOfScreen: 0
+  leftOfScreen: 0
+  editable: 0
+--- !u!131 &1319973042
+GUITexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1319973040}
+  m_Enabled: 1
+  m_Texture: {fileID: 2800000, guid: 821b23941625b5040910d258ef82aba6, type: 3}
+  m_Color: {r: .5, g: .5, b: .5, a: .5}
+  m_PixelInset:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1204.43054
+    height: 308.660004
+  m_LeftBorder: 0
+  m_RightBorder: 0
+  m_TopBorder: 0
+  m_BottomBorder: 0
+--- !u!4 &1319973043
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1319973040}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .440000236, y: -3.19999981, z: -55.2999992}
+  m_LocalScale: {x: 0, y: 0, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2058277291}
+  m_RootOrder: 1
 --- !u!1 &1322972629
 GameObject:
   m_ObjectHideFlags: 0
@@ -25061,8 +25204,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 20
   unitsLength: 25
-  pixelHeight: 736
-  pixelLength: 1635
+  pixelHeight: 1012
+  pixelLength: 2248.75
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -25082,8 +25225,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1635
-    height: 736
+    width: 2248.75
+    height: 1012
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -28036,6 +28179,74 @@ Transform:
   - {fileID: 940997770}
   m_Father: {fileID: 525362030}
   m_RootOrder: 1
+--- !u!1 &1510723457
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1510723460}
+  - 131: {fileID: 1510723459}
+  - 114: {fileID: 1510723458}
+  m_Layer: 0
+  m_Name: Boss-Speech1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1510723458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1510723457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a564e5c96acbb1b48ab9ba7bb67d5d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitsHeight: 6.0999999
+  unitsLength: 13.3900003
+  pixelHeight: 308.660004
+  pixelLength: 1204.43054
+  fontNumber: 0
+  middleScreenWidth: 0
+  rightOfScreen: 0
+  leftOfScreen: 0
+  editable: 0
+--- !u!131 &1510723459
+GUITexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1510723457}
+  m_Enabled: 1
+  m_Texture: {fileID: 2800000, guid: 3f2c83c9d4c36204c90b4b97793b69fa, type: 3}
+  m_Color: {r: .5, g: .5, b: .5, a: .5}
+  m_PixelInset:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1204.43054
+    height: 308.660004
+  m_LeftBorder: 0
+  m_RightBorder: 0
+  m_TopBorder: 0
+  m_BottomBorder: 0
+--- !u!4 &1510723460
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1510723457}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .440000236, y: -3.19999981, z: -55.2999992}
+  m_LocalScale: {x: 0, y: 0, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2058277291}
+  m_RootOrder: 2
 --- !u!1 &1511073546
 GameObject:
   m_ObjectHideFlags: 0
@@ -29013,9 +29224,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1.74000001
   unitsLength: 13.6999998
-  pixelHeight: 64.0319977
-  pixelLength: 895.97998
-  fontNumber: 95
+  pixelHeight: 88.0439987
+  pixelLength: 1232.31494
+  fontNumber: 131
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -29052,7 +29263,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: a2cbcadf206e5c6489d3f952f3c7f2c6, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 95
+  m_FontSize: 131
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -30396,9 +30607,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1
   unitsLength: 10.1800003
-  pixelHeight: 36.7999992
-  pixelLength: 665.772034
-  fontNumber: 128
+  pixelHeight: 50.5999985
+  pixelLength: 915.69104
+  fontNumber: 176
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -30433,7 +30644,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: a2cbcadf206e5c6489d3f952f3c7f2c6, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 128
+  m_FontSize: 176
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -32894,8 +33105,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: -18.2000008
   unitsLength: -28.7000008
-  pixelHeight: -669.76001
-  pixelLength: -1876.9801
+  pixelHeight: -920.920044
+  pixelLength: -2581.56519
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -33005,8 +33216,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: -1876.9801
-    height: -669.76001
+    width: -2581.56519
+    height: -920.920044
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -34219,8 +34430,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 567.018005
-    height: 202.399994
+    width: 779.866516
+    height: 278.299988
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -34239,8 +34450,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 5.5
   unitsLength: 8.67000008
-  pixelHeight: 202.399994
-  pixelLength: 567.018005
+  pixelHeight: 278.299988
+  pixelLength: 779.866516
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -38982,6 +39193,36 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1309987921}
   m_GameObject: {fileID: 2057437835}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2058277290
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2058277291}
+  m_Layer: 0
+  m_Name: Boss Speech
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2058277291
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2058277290}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.270000219, y: 3.3499999, z: 55.2999992}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 273356854}
+  - {fileID: 1319973043}
+  - {fileID: 1510723460}
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
 --- !u!1 &2060035966
 GameObject:
   m_ObjectHideFlags: 0

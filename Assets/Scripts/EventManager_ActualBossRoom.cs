@@ -11,6 +11,7 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 	private Vector3 _direction;			// Directional vector
 	private GameObject theCamera;		// Game camera
 	private int num;					// Keep track of movement sequence
+	private int speechSequence;			// Keep track of boss speech
 	public GameObject theCharacter;		// Character object
 	public int atPillar; 				// Keep track of what pillar the player is behind
 	//public GameObject pillar2Sparkle;
@@ -19,6 +20,9 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 	private bool canMove;				// Whether or not the player can move from pillar to pillar
 	[SerializeField] private GameObject crackedRoof;
 	[SerializeField] private GameObject targetReticle;
+	[SerializeField] private GUITexture bossSpeech1;
+	[SerializeField] private GUITexture bossSpeech2;
+	[SerializeField] private GUITexture bossSpeech3;
 	
 	public bool bossInMiddle;
 	private Vector3 movementCenterPoint = new Vector3(-41.13f, 3.35f, -0.77f);
@@ -67,7 +71,8 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 		theCamera = Camera.main.gameObject;
 		theCharacter = GameObject.FindWithTag("MainCharacter");
 		audio.clip = footsteps;
-		num = 4;
+		num = 0;
+		speechSequence = 0;
 		theCharacter.transform.rotation = theCamera.transform.rotation;
 		count = 1;
 		atPillar = 0;
@@ -76,6 +81,9 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 		bossInMiddle = false;
 		crackedRoof.SetActive(false);
 		targetReticle.SetActive(false);
+		bossSpeech1.enabled = false;
+		bossSpeech2.enabled = false;
+		bossSpeech3.enabled = false;
 
 		//pillar2Sparkle.particleEmitter.enabled = false;
 		//pillar3Sparkle.particleEmitter.enabled = false;
@@ -203,7 +211,23 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 	
 	// TODO
 	private void startStorySequence() {
-		if(Input.GetMouseButtonDown(0)) {
+		shootScript.enabled = false;
+		bossSpeech1.enabled = true;
+		if(Input.GetMouseButtonDown(0) && speechSequence == 0) {
+			bossSpeech1.enabled = false;
+			bossSpeech2.enabled = true;
+			speechSequence = 1;
+		}
+		else if (Input.GetMouseButtonDown(0) && speechSequence == 1) {
+			bossSpeech2.enabled = false;
+			bossSpeech3.enabled = true;
+			speechSequence = 2;
+		}
+		else if (Input.GetMouseButtonDown(0) && speechSequence == 2) {
+			bossSpeech3.enabled = false;
+			bossSpeech1.enabled = false;
+			bossSpeech2.enabled = false;
+			shootScript.enabled = true;
 			num += 1;
 		}
 	}
