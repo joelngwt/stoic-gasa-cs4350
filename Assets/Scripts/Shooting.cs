@@ -8,9 +8,8 @@ public class Shooting : MonoBehaviour {
 	public GameObject bullethole;
 	private int ammoCount;
 	public GunDisplay gunDisplayScript;
-	// Rate of fire for the enemy
-	protected float fireRateHMG = Constants.HMG_SHOOT_SPEED;
-	protected float nextFireHMG = Constants.HMG_SHOOT_SPEED;
+	protected float fireRateHMG = Constants.HMG_SHOOT_SPEED;	// Rate of fire for the enemy
+	protected float nextFireHMG = Constants.HMG_SHOOT_SPEED;	// Rate of fire for the enemy
 	private bool shotgunShooting = false;
 	// -------------
 
@@ -55,7 +54,9 @@ public class Shooting : MonoBehaviour {
 	
 	void Start() {
 		bossRoomScript = GameObject.FindWithTag ("MainCamera").GetComponent<EventManager_ActualBossRoom>();
-		bossAIScript = GameObject.FindWithTag ("Boss").GetComponent<BossAI>();
+		if (Application.loadedLevelName == "ActualBossRoom") {
+			bossAIScript = GameObject.FindWithTag ("Boss").GetComponent<BossAI>();
+		}
 	}		
 	
 	// Update is called once per frame

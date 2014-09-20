@@ -3,10 +3,6 @@ using System.Collections;
 
 public class KinderSurpriseBomb : MonoBehaviour {
 
-	private GameObject pillar1;
-	private GameObject pillar2;
-	private GameObject pillar3;
-	private GameObject pillar4;
 	private EventManager_ActualBossRoom bossRoomScript;
 	private GameObject player;
 	[SerializeField] private GameObject lollipopPrefab;
@@ -14,10 +10,6 @@ public class KinderSurpriseBomb : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindWithTag ("MainCharacter");
-		pillar1 = GameObject.FindWithTag ("Pillar1");
-		pillar2 = GameObject.FindWithTag ("Pillar2");
-		pillar3 = GameObject.FindWithTag ("Pillar3");
-		pillar4 = GameObject.FindWithTag ("Pillar4");
 		bossRoomScript = GameObject.FindWithTag("MainCamera").GetComponent<EventManager_ActualBossRoom>();
 		
 		// if current pillar is 1

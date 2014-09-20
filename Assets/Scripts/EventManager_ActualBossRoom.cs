@@ -3,10 +3,10 @@ using System.Collections;
 
 public class EventManager_ActualBossRoom : MonoBehaviour {
 
-	public float RotationSpeed = 15;
-	public float movementSpeed = 25;
+	private float RotationSpeed = 15;
+	private float movementSpeed = 25;
 	
-	//values for internal use
+	// Values for internal use
 	private Quaternion _lookRotation;	// Rotational angle
 	private Vector3 _direction;			// Directional vector
 	private GameObject theCamera;		// Game camera
@@ -14,16 +14,39 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 	private int speechSequence;			// Keep track of boss speech
 	public GameObject theCharacter;		// Character object
 	public int atPillar; 				// Keep track of what pillar the player is behind
-	//public GameObject pillar2Sparkle;
-	//public GameObject pillar3Sparkle;
-	//public GameObject pillar4Sparkle;
 	private bool canMove;				// Whether or not the player can move from pillar to pillar
+	
+	// Keep track of which pillars are destroyed
+	public bool isPillar1Destroyed;
+	public bool isPillar2Destroyed;
+	public bool isPillar3Destroyed;
+	public bool isPillar4Destroyed;
+	
+	// Target Reticles for roof and pillars
 	[SerializeField] private GameObject crackedRoof;
-	[SerializeField] private GameObject targetReticle;
+	[SerializeField] private GameObject targetReticleRoof;
+	public GameObject targetReticle1to2Edge;
+	public GameObject targetReticle1to3Edge;
+	public GameObject targetReticle2to1Edge;
+	public GameObject targetReticle2to4Edge;
+	public GameObject targetReticle3to4Edge;
+	public GameObject targetReticle4to3Edge;
+	public GameObject targetReticle1to2Middle;
+	public GameObject targetReticle1to3Middle;
+	public GameObject targetReticle1to4Middle;
+	public GameObject targetReticle2to1Middle;
+	public GameObject targetReticle2to4Middle;
+	public GameObject targetReticle3to1Middle;
+	public GameObject targetReticle3to4Middle;
+	public GameObject targetReticle4to2Middle;
+	public GameObject targetReticle4to3Middle;
+	
+	// Boss speech boxes
 	[SerializeField] private GUITexture bossSpeech1;
 	[SerializeField] private GUITexture bossSpeech2;
 	[SerializeField] private GUITexture bossSpeech3;
 	
+	// Movement and look at rotation
 	public bool bossInMiddle;
 	private Vector3 movementCenterPoint = new Vector3(-41.13f, 3.35f, -0.77f);
 	private Vector3 movementPillar1BossEdge = new Vector3(-50.7f, 3.35f, 61.88f);
@@ -35,7 +58,7 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 	private Vector3 movementPillar3BossMiddle = new Vector3(13.33f, 3.35f, -62.4f);
 	private Vector3 movementPillar4BossMiddle = new Vector3(13.29f, 3.35f, 65.06f);
 	private Vector3 lookAtPillar1BossEdge = new Vector3(17.86f, 3.35f, 2.1f);
-	private Vector3 lookAtPillar2BossEdge = new Vector3(1.69f, 3.35f, -41.99f);
+	private Vector3 lookAtPillar2BossEdge = new Vector3(-17.17f, 3.35f, -23.97f);
 	private Vector3 lookAtPillar3BossEdge = new Vector3(47.58f, 3.35f, -0.77f);
 	private Vector3 lookAtPillar4BossEdge = new Vector3(47.58f, 3.35f, -0.77f);
 	private Vector3 lookAtPillar1BossMiddle = new Vector3(-7.23f, 8f, 0.76f);
@@ -50,7 +73,7 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 	public Shooting shootScript;
 	public Shield shieldScript;
 	
-	// Need to access these scripts to save info
+	// Need to access these scripts to save/load info
 	public InGameScoreScript scoreScript;
 	public GunDisplay gunScript;
 	public LifeCounter lifeScript;
@@ -71,24 +94,41 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 		theCamera = Camera.main.gameObject;
 		theCharacter = GameObject.FindWithTag("MainCharacter");
 		audio.clip = footsteps;
-		num = 0;
-		speechSequence = 0;
+		num = 0;				// Origin = 0
+		speechSequence = 0;		// Origin = 0
 		theCharacter.transform.rotation = theCamera.transform.rotation;
-		count = 1;
-		atPillar = 0;
+		count = 1;				// Origin = 1
+		atPillar = 0;			// Origin = 0
 		reached = false;
 		minionsKilled = false;
 		bossInMiddle = false;
 		crackedRoof.SetActive(false);
-		targetReticle.SetActive(false);
+		targetReticleRoof.SetActive(false);
 		bossSpeech1.enabled = false;
 		bossSpeech2.enabled = false;
 		bossSpeech3.enabled = false;
-
-		//pillar2Sparkle.particleEmitter.enabled = false;
-		//pillar3Sparkle.particleEmitter.enabled = false;
-		//pillar4Sparkle.particleEmitter.enabled = false;
 		
+		targetReticle1to2Edge.SetActive(false);;
+		targetReticle1to3Edge.SetActive(false);
+		targetReticle2to1Edge.SetActive(false);
+		targetReticle2to4Edge.SetActive(false);
+		targetReticle3to4Edge.SetActive(false);
+		targetReticle4to3Edge.SetActive(false);
+		targetReticle1to2Middle.SetActive(false);
+		targetReticle1to3Middle.SetActive(false);
+		targetReticle1to4Middle.SetActive(false);
+		targetReticle2to1Middle.SetActive(false);
+		targetReticle2to4Middle.SetActive(false);
+		targetReticle3to1Middle.SetActive(false);
+		targetReticle3to4Middle.SetActive(false);
+		targetReticle4to2Middle.SetActive(false);
+		targetReticle4to3Middle.SetActive(false);
+		
+		isPillar1Destroyed = false;
+		isPillar2Destroyed = false;
+		isPillar3Destroyed = false;
+		isPillar4Destroyed = false;
+	
 		bossInMiddle = false;
 		shootScript.haveLooked = false;
 	}
@@ -101,10 +141,9 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 		Debug.Log ("Count = " + count);
 		// Debug.Log ("reached = " + shootScript.haveReached + ", At pillar = " + atPillar);
 		
-		
 		if (bossAIScript.canShootRoof == true) {
 			crackedRoof.SetActive(true);
-			targetReticle.SetActive(true);
+			targetReticleRoof.SetActive(true);
 		}
 		
 		if (shootScript.shotPillar1 == true && shootScript.haveLooked == false) {
@@ -209,21 +248,23 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 		}
 	}
 	
-	// TODO
 	private void startStorySequence() {
-		shootScript.enabled = false;
-		bossSpeech1.enabled = true;
-		if(Input.GetMouseButtonDown(0) && speechSequence == 0) {
-			bossSpeech1.enabled = false;
-			bossSpeech2.enabled = true;
+		if(speechSequence == 0) {
+			shootScript.enabled = false;
+			bossSpeech1.enabled = true;
 			speechSequence = 1;
 		}
-		else if (Input.GetMouseButtonDown(0) && speechSequence == 1) {
-			bossSpeech2.enabled = false;
-			bossSpeech3.enabled = true;
+		else if(Input.GetMouseButtonUp(0) && speechSequence == 1) {
+			bossSpeech1.enabled = false;
+			bossSpeech2.enabled = true;
 			speechSequence = 2;
 		}
-		else if (Input.GetMouseButtonDown(0) && speechSequence == 2) {
+		else if (Input.GetMouseButtonUp(0) && speechSequence == 2) {
+			bossSpeech2.enabled = false;
+			bossSpeech3.enabled = true;
+			speechSequence = 3;
+		}
+		else if (Input.GetMouseButtonUp(0) && speechSequence == 3) {
 			bossSpeech3.enabled = false;
 			bossSpeech1.enabled = false;
 			bossSpeech2.enabled = false;
@@ -237,6 +278,22 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 	}
 	
 	private void moveToPillar(int pillarNumber) {
+		targetReticle1to2Edge.SetActive(false);;
+		targetReticle1to3Edge.SetActive(false);
+		targetReticle2to1Edge.SetActive(false);
+		targetReticle2to4Edge.SetActive(false);
+		targetReticle3to4Edge.SetActive(false);
+		targetReticle4to3Edge.SetActive(false);
+		targetReticle1to2Middle.SetActive(false);
+		targetReticle1to3Middle.SetActive(false);
+		targetReticle1to4Middle.SetActive(false);
+		targetReticle2to1Middle.SetActive(false);
+		targetReticle2to4Middle.SetActive(false);
+		targetReticle3to1Middle.SetActive(false);
+		targetReticle3to4Middle.SetActive(false);
+		targetReticle4to2Middle.SetActive(false);
+		targetReticle4to3Middle.SetActive(false);
+		
 		if (pillarNumber == 1) {
 			if (bossInMiddle == false) {
 				TranslateToPillar(movementPillar1BossEdge, 50f);

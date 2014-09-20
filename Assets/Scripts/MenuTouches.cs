@@ -77,6 +77,12 @@ public class MenuTouches : MonoBehaviour {
 			}
 			StartCoroutine(LoadBossRoom());
 		}
+		else if (this.name == "text_Boss") {
+			if (GameObject.Find ("Music") != null) {
+				Destroy(GameObject.Find ("Music")); // Stop menu music
+			}
+			StartCoroutine(LoadActualBossRoom());
+		}
 	}
 	
 	void OnMouseDown() {
@@ -85,7 +91,7 @@ public class MenuTouches : MonoBehaviour {
 		    guiTexture.name == "text_Backtomenu" || guiTexture.name == "text_Help" ||
 		    guiTexture.name == "Left_Button" || guiTexture.name == "Right_Button" ||
 		    guiTexture.name == "text_One" || guiTexture.name == "text_Two" ||
-		    guiTexture.name == "text_Three") {
+		    guiTexture.name == "text_Three" || guiTexture.name == "text_Boss") {
 		    
 			guiTexture.texture = button2;
 		}
@@ -140,6 +146,14 @@ public class MenuTouches : MonoBehaviour {
 		guiTexture.texture = button1;
 		yield return new WaitForSeconds(0.2F);
 		Application.LoadLevel ("BossRoom");
+		yield break;
+	}
+	
+	IEnumerator LoadActualBossRoom() {
+		audio.PlayOneShot(menuButton);
+		guiTexture.texture = button1;
+		yield return new WaitForSeconds(0.2F);
+		Application.LoadLevel ("ActualBossRoom");
 		yield break;
 	}
 	

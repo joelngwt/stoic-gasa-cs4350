@@ -3,21 +3,25 @@ using System.Collections;
 
 public class JellybeanBomb : MonoBehaviour {
 
+	// Values for internal use
 	private GameObject player;
 	private bool isStopped = false;
-
 	private float blinkDuration = 0.5f;
 	private float bombFuseTime = Constants.BOSS_BOMB_FUSE_TIME;
 	[SerializeField] private GameObject explosionParticleEffect;
 	private EventManager_ActualBossRoom bossRoomScript;
 	private int throwBombAt;
 	private bool activated;
+	
+	// Sound clips
 	[SerializeField] private AudioClip bombExplosion;
+	
+	// Pillar objects
+	[SerializeField] private GameObject brokenPillar;
 	private GameObject pillar1;
 	private GameObject pillar2;
 	private GameObject pillar3;
 	private GameObject pillar4;
-	[SerializeField] private GameObject brokenPillar;
 
 	// Use this for initialization
 	void Start () {
@@ -43,6 +47,7 @@ public class JellybeanBomb : MonoBehaviour {
 				this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 15);
 			}
 			throwBombAt = 1;
+			bossRoomScript.isPillar1Destroyed = true;
 		}
 		// if current pillar is 2
 		else if (bossRoomScript.atPillar == 2) {
@@ -55,6 +60,7 @@ public class JellybeanBomb : MonoBehaviour {
 				this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 22);
 			}
 			throwBombAt = 2;
+			bossRoomScript.isPillar2Destroyed = true;
 		}
 		// If current pillar is 3
 		else if (bossRoomScript.atPillar == 3) {
@@ -67,6 +73,7 @@ public class JellybeanBomb : MonoBehaviour {
 				this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 18);
 			}
 			throwBombAt = 3;
+			bossRoomScript.isPillar3Destroyed = true;
 		}
 		// If current pillar is 4
 		else if (bossRoomScript.atPillar == 4) {
@@ -79,6 +86,7 @@ public class JellybeanBomb : MonoBehaviour {
 				this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 24f);
 			}
 			throwBombAt = 4;
+			bossRoomScript.isPillar4Destroyed = true;
 		}
 	}
 	

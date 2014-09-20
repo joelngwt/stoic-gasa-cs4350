@@ -164,8 +164,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1.60000002
   unitsLength: 2.30999994
-  pixelHeight: 58.7999992
-  pixelLength: 150.958496
+  pixelHeight: 80.9599991
+  pixelLength: 207.7845
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -199,8 +199,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 150.958496
-    height: 58.7999992
+    width: 207.7845
+    height: 80.9599991
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -305,6 +305,149 @@ Prefab:
   m_RootGameObject: {fileID: 1889348190}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &881189711
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 881189716}
+  - 131: {fileID: 881189715}
+  - 114: {fileID: 881189714}
+  - 114: {fileID: 881189713}
+  - 82: {fileID: 881189712}
+  m_Layer: 0
+  m_Name: text_Boss
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &881189712
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 881189711}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!114 &881189713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 881189711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b703458f97df1da43a01d5ca771c5e4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button1: {fileID: 2800000, guid: 02939c597565f404c8a92f5b5519e803, type: 3}
+  button2: {fileID: 2800000, guid: c45829d07e603c1429824a5872beb43f, type: 3}
+  loading: {fileID: 0}
+  menuButton: {fileID: 8300000, guid: ff12a87a922e9bb488789fa8050b265b, type: 3}
+--- !u!114 &881189714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 881189711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a564e5c96acbb1b48ab9ba7bb67d5d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitsHeight: 1.60000002
+  unitsLength: 2.30999994
+  pixelHeight: 80.9599991
+  pixelLength: 207.7845
+  fontNumber: 0
+  middleScreenWidth: 0
+  rightOfScreen: 0
+  leftOfScreen: 0
+  editable: 0
+--- !u!131 &881189715
+GUITexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 881189711}
+  m_Enabled: 1
+  m_Texture: {fileID: 2800000, guid: 02939c597565f404c8a92f5b5519e803, type: 3}
+  m_Color: {r: .5, g: .5, b: .5, a: .5}
+  m_PixelInset:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 207.7845
+    height: 80.9599991
+  m_LeftBorder: 0
+  m_RightBorder: 0
+  m_TopBorder: 0
+  m_BottomBorder: 0
+--- !u!4 &881189716
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 881189711}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .444000006, y: .219999999, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
 --- !u!1 &916447494
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,8 +480,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1.60000002
   unitsLength: 2.30999994
-  pixelHeight: 58.7999992
-  pixelLength: 150.958496
+  pixelHeight: 80.9599991
+  pixelLength: 207.7845
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -357,8 +500,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 150.958496
-    height: 58.7999992
+    width: 207.7845
+    height: 80.9599991
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -545,7 +688,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: fc753816c81a3c44687ad9161de86bea, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 86
+  m_FontSize: 118
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -577,9 +720,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 4.01999998
   unitsLength: 15.1700001
-  pixelHeight: 147.735001
-  pixelLength: 991.359497
-  fontNumber: 86
+  pixelHeight: 203.412003
+  pixelLength: 1364.5415
+  fontNumber: 118
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -660,8 +803,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 150.958496
-    height: 58.7999992
+    width: 207.7845
+    height: 80.9599991
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -691,8 +834,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1.60000002
   unitsLength: 2.30999994
-  pixelHeight: 58.7999992
-  pixelLength: 150.958496
+  pixelHeight: 80.9599991
+  pixelLength: 207.7845
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -803,8 +946,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 150.958496
-    height: 58.7999992
+    width: 207.7845
+    height: 80.9599991
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -834,8 +977,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1.60000002
   unitsLength: 2.30999994
-  pixelHeight: 58.7999992
-  pixelLength: 150.958496
+  pixelHeight: 80.9599991
+  pixelLength: 207.7845
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0

@@ -4,13 +4,16 @@ using System.Collections;
 // Handles shield and reloading behaviour
 
 public class Shield : MonoBehaviour {
+	// Values for internal use
 	public GameObject shield;
 	public GunDisplay gunDisplayScript;
 	public GUITexture useShieldButton;
 	private bool shieldIsUp = false;
-	private Vector3 shieldMoveVector = new Vector3(0,0.45F,0); // shield move distance is here
+	private Vector3 shieldMoveVector = new Vector3(0,0.45F,0); // shield up/down move distance
 	private float range = 0f;
-	
+	public GameObject mainCamera;
+	public EventManager_ActualBossRoom bossRoomScript;
+	private Vector3 directionVector;
 	public bool isReloading = false;
 	
 	// Sound variables
@@ -19,11 +22,7 @@ public class Shield : MonoBehaviour {
 	public AudioClip hmgReload;
 	public AudioClip shotgunReload;
 	// -------------
-	
-	public GameObject mainCamera;
-	public EventManager_ActualBossRoom bossRoomScript;
-	private Vector3 directionVector;
-	
+
 	// Player position during usage of pillars in actual boss level
 	private Vector3 movementPillar1BossEdge = new Vector3(-51.95f, 3.35f, 59.71f);
 	private Vector3 movementPillar2BossEdge = new Vector3(-50f, 3.35f, -54.8f);

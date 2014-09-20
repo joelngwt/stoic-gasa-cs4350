@@ -12,7 +12,7 @@ public class BossAI : MonoBehaviour {
 
 	// Boss shooting values
 	private float bulletSpeed = 10.0f; 						// bullet speed
-	private float fireRate = Constants.BOSS_FIRE_RATE; // Rate of fire for the enemy
+	private float fireRate = Constants.BOSS_FIRE_RATE; 		// Rate of fire for the enemy
 	private float nextFire = Constants.BOSS_FIRE_RATE;
 	private float sprayFor = Constants.BOSS_SPRAY_TIME;		// Boss will spray a barrage of bullets 
 	private float idleFor = Constants.BOSS_IDLE_TIME;		// Boss will not do anything
@@ -30,17 +30,16 @@ public class BossAI : MonoBehaviour {
 	private float throwKinderFor = Constants.BOSS_KINDER_THROW_TIME;
 	private float idleKinderFor = Constants.BOSS_KINDER_IDLE_TIME;
 	
-	public bool fightStart;
-	public int bossMovementNumber;
-	public bool spawnMinions;
+	public bool fightStart;								// Has the boss fight started (starts after the story sequence)
+	public int bossMovementNumber;						// Tracker for boss movement
+	public bool spawnMinions;							// Has boss spawned minions?
 	[SerializeField] private EventManager_ActualBossRoom bossRoomScript;
-	public bool canShootRoof;
-	public bool roofHitBoss;
-	private CrackedRoof crackedRoofScript;
-	private bool dieAnimationPlayed;
-	public bool behindChair;
-	public bool movingToMiddle;
-	private int numOfKinderSurpriseThrown;
+	public bool canShootRoof;							// Can the player shoot the roof (yes if boss < 10% hp)
+	public bool roofHitBoss;							// Has the roof hit the boss? (win game if yes)
+	private CrackedRoof crackedRoofScript;				// Script access from the cracked roof
+	private bool dieAnimationPlayed;					// Has the boss dying animation been played (prevent playing again)
+	public bool behindChair;							// Is the boss behind the chair?
+	public bool movingToMiddle;							// Is the boss moving to the middle of the room?
 
 	// Use this for initialization
 	void Start () {
@@ -56,7 +55,6 @@ public class BossAI : MonoBehaviour {
 		dieAnimationPlayed = false;
 		behindChair = false;
 		movingToMiddle = false;
-		numOfKinderSurpriseThrown = 0;
 		
 		player = GameObject.FindWithTag ("MainCharacter");
 		crackedRoofScript = GameObject.FindWithTag ("CrackedRoof").GetComponent<CrackedRoof>();
@@ -212,6 +210,7 @@ public class BossAI : MonoBehaviour {
 	// Throw jellybean bomb
 	void throwBomb() {
 		Debug.Log ("Bomb thrown");
+		activateTargetReticles();
 		Vector3 bossPosition = this.transform.position;
 		if (hasThrown == false) {
 			Instantiate (jellybeanBomb, new Vector3(bossPosition.x-10, bossPosition.y+2, bossPosition.z), this.transform.rotation);
@@ -220,6 +219,70 @@ public class BossAI : MonoBehaviour {
 		}
 	}
 
+	void activateTargetReticles() {
+		if (bossRoomScript.atPillar == 1 && bossRoomScript.bossInMiddle == false) {
+			if (bossRoomScript.isPillar2Destroyed == false) {
+				bossRoomScript.targetReticle1to2Edge.SetActive(true);
+			}
+			if (bossRoomScript.isPillar3Destroyed == false) {
+				bossRoomScript.targetReticle1to3Edge.SetActive(true);
+			}
+		}
+		else if (bossRoomScript.atPillar == 2 && bossRoomScript.bossInMiddle == false) {
+			if (bossRoomScript.isPillar1Destroyed == false) {
+				bossRoomScript.targetReticle2to1Edge.SetActive(true);
+			}
+			if (bossRoomScript.isPillar4Destroyed == false) {
+				bossRoomScript.targetReticle2to4Edge.SetActive(true);	
+			}
+		}
+		else if (bossRoomScript.atPillar == 3 && bossRoomScript.bossInMiddle == false) {
+			if (bossRoomScript.isPillar4Destroyed == false) {
+				bossRoomScript.targetReticle3to4Edge.SetActive(true);
+			}
+		}
+		else if (bossRoomScript.atPillar == 4 && bossRoomScript.bossInMiddle == false) {
+			if (bossRoomScript.isPillar3Destroyed == false) {
+				bossRoomScript.targetReticle4to3Edge.SetActive(true);
+			}
+		}
+		else if (bossRoomScript.atPillar == 1 && bossRoomScript.bossInMiddle == true) {
+			if (bossRoomScript.isPillar2Destroyed == false) {
+				bossRoomScript.targetReticle1to2Middle.SetActive(true);
+			}
+			if (bossRoomScript.isPillar3Destroyed == false) {
+				bossRoomScript.targetReticle1to3Middle.SetActive(true);
+			}
+			if (bossRoomScript.isPillar4Destroyed == false) {
+				bossRoomScript.targetReticle1to4Middle.SetActive(true);
+			}
+		}
+		else if (bossRoomScript.atPillar == 2 && bossRoomScript.bossInMiddle == true) {
+			if (bossRoomScript.isPillar1Destroyed == false) {
+				bossRoomScript.targetReticle2to1Middle.SetActive(true);
+			}
+			if (bossRoomScript.isPillar4Destroyed == false) {
+				bossRoomScript.targetReticle2to4Middle.SetActive(true);
+			}
+		}
+		else if (bossRoomScript.atPillar == 3 && bossRoomScript.bossInMiddle == true) {
+			if (bossRoomScript.isPillar1Destroyed == false) {
+				bossRoomScript.targetReticle3to1Middle.SetActive(true);
+			}
+			if (bossRoomScript.isPillar4Destroyed == false) {
+				bossRoomScript.targetReticle3to4Middle.SetActive(true);
+			}
+		}
+		else if (bossRoomScript.atPillar == 4 && bossRoomScript.bossInMiddle == true) {
+			if (bossRoomScript.isPillar2Destroyed == false) {
+				bossRoomScript.targetReticle4to2Middle.SetActive(true);
+			}
+			if (bossRoomScript.isPillar3Destroyed == false) {
+				bossRoomScript.targetReticle4to3Middle.SetActive(true);
+			}
+		}
+	}
+	
 	void moveToMiddle ()
 	{
 		Vector3 waypoint1 = new Vector3(88.19f, 2.4f, 18.4f);
