@@ -47,7 +47,7 @@ public static class Constants {
 		public const float BOSS_KINDER_THROW_TIME = 0.025f;		// Amount of time the boss spends throwing 
 		public const float BOSS_KINDER_IDLE_TIME = 10.0f;		// Amount of time the boss idles after throwing
 		
-	public const int CRACKED_ROOF_HEALTH = 50;					// Amount of health the roof has
+	public const int CRACKED_ROOF_HEALTH = 30;					// Amount of health the roof has
 }
 
 public class GlobalConstants : MonoBehaviour {
