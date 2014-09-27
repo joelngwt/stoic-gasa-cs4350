@@ -2347,6 +2347,10 @@ Prefab:
       propertyPath: fireRateShotgun
       value: .100000001
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 50c5bde68e6e15d4c9b1daf9a73a200a, type: 2}
+      propertyPath: bullethole
+      value: 
+      objectReference: {fileID: 100000, guid: c994fde8e6848a3771503f184e0c9cb4, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50c5bde68e6e15d4c9b1daf9a73a200a, type: 2}
   m_RootGameObject: {fileID: 1116017051}
@@ -39264,7 +39268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23c96b4b2470c584bbefcac2cfa32e5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullethole: {fileID: 100000, guid: b04c6ebf3898aa640a77c905b351613f, type: 2}
+  bullethole: {fileID: 100000, guid: c994fde8e6848a3771503f184e0c9cb4, type: 2}
   gunDisplayScript: {fileID: 1926123839}
   shieldScript: {fileID: 748844126}
   scoreScript: {fileID: 123907993}

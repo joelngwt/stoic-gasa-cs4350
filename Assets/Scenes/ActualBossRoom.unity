@@ -32160,7 +32160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23c96b4b2470c584bbefcac2cfa32e5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullethole: {fileID: 100000, guid: b04c6ebf3898aa640a77c905b351613f, type: 2}
+  bullethole: {fileID: 100000, guid: c994fde8e6848a3771503f184e0c9cb4, type: 2}
   gunDisplayScript: {fileID: 2027889856}
   shieldScript: {fileID: 1895907642}
   scoreScript: {fileID: 1190314264}
@@ -32170,6 +32170,7 @@ MonoBehaviour:
   pistolShoot: {fileID: 8300000, guid: aa1c40b7972387245980156888cdee06, type: 3}
   HMGShoot: {fileID: 8300000, guid: aaebd53b32c0a3e43abd03be3cd1f7a4, type: 3}
   shotgunShoot: {fileID: 8300000, guid: be26af417494ad946a7a79764fb88975, type: 3}
+  rocketLauncherShoot: {fileID: 0}
   pickupScript: {fileID: 0}
   pauseButton: {fileID: 1766179202}
   shotPillar1: 0
@@ -32988,6 +32989,10 @@ Prefab:
       propertyPath: crackedRoofScript
       value: 
       objectReference: {fileID: 2117820595}
+    - target: {fileID: 11400002, guid: 50c5bde68e6e15d4c9b1daf9a73a200a, type: 2}
+      propertyPath: bullethole
+      value: 
+      objectReference: {fileID: 100000, guid: c994fde8e6848a3771503f184e0c9cb4, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50c5bde68e6e15d4c9b1daf9a73a200a, type: 2}
   m_RootGameObject: {fileID: 2004779353}
@@ -37242,6 +37247,7 @@ MonoBehaviour:
   pistolReload: {fileID: 8300000, guid: f401a9dd7e7220f42a5788ba92ecf530, type: 3}
   hmgReload: {fileID: 8300000, guid: cb1bb32742234df40a9a8e360cb0349b, type: 3}
   shotgunReload: {fileID: 8300000, guid: 611fb5f11a161f54fb9cad95191c8d34, type: 3}
+  rocketLauncherReload: {fileID: 0}
 --- !u!23 &1895907643
 Renderer:
   m_ObjectHideFlags: 0
