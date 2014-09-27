@@ -23,6 +23,9 @@ public class EventManager_BossRoom : MonoBehaviour {
 	
 	// Need to access these scripts to save info
 	public InGameScoreScript scoreScript;
+	public GunDisplay gunScript;
+	public LifeCounter lifeScript;
+	public TimerScript timeScript;
 	
 	// Spawning
 	public GameObject bearPrefab;
@@ -191,7 +194,7 @@ public class EventManager_BossRoom : MonoBehaviour {
 			else if (num == 19)
 				num = TranslateTo( new Vector3 (0f, 4f, -16f), 5f, num);
 			else if (num == 20){
-				saveScore ();
+				saveGame ();
 				Application.LoadLevel ("MiniGameOne-Ingress");
 			}
 		}
@@ -371,8 +374,19 @@ public class EventManager_BossRoom : MonoBehaviour {
 		count++;
 	}
 	
-	private void saveScore(){
+	private void saveGame(){
 		PlayerPrefs.SetInt ("currentScore", (int)scoreScript.currentScore);
-		Debug.Log ("Score saved");
+		PlayerPrefs.SetInt ("HMGTotalAmmo", (int)gunScript.ammoCountTotalHMG);
+		PlayerPrefs.SetInt ("ShotgunTotalAmmo", (int)gunScript.ammoCountTotalShotgun);
+		PlayerPrefs.SetInt ("HMGAmmo", (int)gunScript.ammoCountHMG);
+		PlayerPrefs.SetInt ("ShotgunAmmo", (int)gunScript.ammoCountShotgun);
+		PlayerPrefs.SetInt ("RocketLauncherAmmo", (int)gunScript.ammoCountRocketLauncher);
+		PlayerPrefs.SetInt ("RocketTotalAmmo", (int)gunScript.ammoCountTotalRocketLauncher);
+		PlayerPrefs.SetInt("playedTakeDamage", (int)lifeScript.playedTakeDamage);
+		PlayerPrefs.SetInt("timeLeft", (int)timeScript.seconds);
+		PlayerPrefs.SetInt("playerLoadedHealth", (int)lifeScript.playerHealth);
+		#if UNITY_EDITOR
+		Debug.Log ("Game saved");
+		#endif
 	}
 }

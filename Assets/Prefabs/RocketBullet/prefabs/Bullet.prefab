@@ -272,8 +272,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootingScript: {fileID: 0}
-  explosionEffectLarge: {fileID: 0}
-  explosionEffectSmall: {fileID: 0}
+  explosionEffectLarge: {fileID: 100000, guid: e472e9744059da7428eb87ed977dc242, type: 2}
+  explosionEffectSmall: {fileID: 100000, guid: 799c6542bb2d5bc45b03220cf7416cfa, type: 2}
   explosionSound: {fileID: 8300000, guid: 251a81ecd55ce2e4f99c75e937576ffa, type: 3}
 --- !u!1001 &100100000
 Prefab:

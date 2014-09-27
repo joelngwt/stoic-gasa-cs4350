@@ -308,7 +308,8 @@ MonoBehaviour:
   pistolReload: {fileID: 8300000, guid: f401a9dd7e7220f42a5788ba92ecf530, type: 3}
   hmgReload: {fileID: 8300000, guid: cb1bb32742234df40a9a8e360cb0349b, type: 3}
   shotgunReload: {fileID: 8300000, guid: 611fb5f11a161f54fb9cad95191c8d34, type: 3}
-  rocketLauncherReload: {fileID: 0}
+  rocketLauncherReload: {fileID: 8300000, guid: bc4a81c0abba02343bfa7c07b6ada269,
+    type: 3}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -43,10 +43,10 @@ public class RocketMissile : MonoBehaviour {
 			if (haveExploded == false) {
 				haveExploded = true;
 				if (Application.loadedLevelName == "MainHall" || Application.loadedLevelName == "ActualBossRoom") {
-					//Instantiate(explosionEffectLarge, this.transform.position, this.transform.rotation);
+					Instantiate(explosionEffectLarge, this.transform.position, this.transform.rotation);
 				}
 				else {
-					//Instantiate(explosionEffectSmall, this.transform.position, this.transform.rotation);
+					Instantiate(explosionEffectSmall, this.transform.position, this.transform.rotation);
 				}
 				Debug.Log ("Explode sound");
 				audio.PlayOneShot(explosionSound);
