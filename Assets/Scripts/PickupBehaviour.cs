@@ -13,6 +13,7 @@ public class PickupBehaviour : MonoBehaviour {
 	public bool canMove;
 	private GameObject player;
 	private GunDisplay gunDisplayScript;
+	private float stayFor;						// Amount of time the pickup will stay in the level
 	
 	Transform myTransform;
 	
@@ -26,6 +27,7 @@ public class PickupBehaviour : MonoBehaviour {
 		myTransform = transform;
 		startHeight = myTransform.localPosition.y;
 		canMove = false;
+		stayFor = Constants.STAY_FOR;
 		
 		if (this.gameObject.tag == "Balloon") {
 			speed = 50.0f;
@@ -39,6 +41,11 @@ public class PickupBehaviour : MonoBehaviour {
 	
 	void Update () 
 	{
+		stayFor -= Time.deltaTime;
+		if (stayFor <= 0.0f) {
+			Destroy (this.transform.gameObject);
+		}
+		
 		if (canMove) {
 			this.rigidbody.velocity = Constants.FLY_TO_PLAYER_SPEED * (player.transform.position - this.transform.position);
 		}

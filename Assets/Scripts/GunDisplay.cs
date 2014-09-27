@@ -47,7 +47,7 @@ public class GunDisplay : MonoBehaviour {
 				ammoCountTotalShotgun = PlayerPrefs.GetInt ("ShotgunTotalAmmo");
 			}
 			if (PlayerPrefs.HasKey ("RocketTotalAmmo")) {
-				ammoCountTotalShotgun = PlayerPrefs.GetInt ("RocketTotalAmmo");
+				ammoCountTotalRocketLauncher = PlayerPrefs.GetInt ("RocketTotalAmmo");
 			}
 			if (PlayerPrefs.HasKey ("HMGAmmo")) {
 				ammoCountHMG = PlayerPrefs.GetInt ("HMGAmmo");

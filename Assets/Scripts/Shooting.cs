@@ -5,7 +5,7 @@ public class Shooting : MonoBehaviour {
 
 	// Gun variables
 	// -------------
-	public GameObject bullethole;
+	public GameObject bullethole;			// particle effect
 	private int ammoCount;
 	public GunDisplay gunDisplayScript;
 	protected float fireRateHMG = Constants.HMG_SHOOT_SPEED;	// Rate of fire for the HMG
@@ -13,6 +13,8 @@ public class Shooting : MonoBehaviour {
 	protected float fireRateRocketLauncher = Constants.ROCKET_SHOOT_SPEED;	// Rate of fire for the rocket launcher
 	protected float nextFireRocketLauncher = Constants.ROCKET_SHOOT_SPEED;	// Rate of fire for the rocket launcher
 	private bool shotgunShooting = false;
+	public Vector3 positionShot;			// used for the rocket launcher's missile
+	public GameObject rocketMissile;		// missile prefab that the rocket launcher shoots out
 	// -------------
 
 	// Shield variables
@@ -33,18 +35,22 @@ public class Shooting : MonoBehaviour {
 	public AudioClip pistolShoot;
 	public AudioClip HMGShoot;
 	public AudioClip shotgunShoot;
-	public AudioClip rocketLauncherShoot;
+	public AudioClip rocketLauncherShoot1;
+	public AudioClip rocketLauncherShoot2;
 	// -------------
 	
 	// Boost activation
+	// -------------
 	private bool isBoosted = false;
+	// -------------
 	
 	// Pickups
+	// -------------
 	public PickupBehaviour pickupScript;
-	
-	[SerializeField] private GUITexture pauseButton;
+	// -------------
 	
 	// Boss Room variables
+	// -------------
 	public bool shotPillar1 = false;
 	public bool shotPillar2 = false;
 	public bool shotPillar3 = false;
@@ -54,6 +60,12 @@ public class Shooting : MonoBehaviour {
 	private EventManager_ActualBossRoom bossRoomScript;
 	[SerializeField] private CrackedRoof crackedRoofScript;
 	private BossAI bossAIScript;
+	// -------------
+	
+	// Other
+	// -------------
+	[SerializeField] private GUITexture pauseButton;
+	// -------------
 	
 	void Start() {
 		if (Application.loadedLevelName == "ActualBossRoom") {
@@ -98,7 +110,7 @@ public class Shooting : MonoBehaviour {
 							}
 							audio.PlayOneShot(pistolShoot);
 			
-							hitDetection(hit);
+							hitDetection(hit.transform.gameObject);
 						}
 					}
 				}
@@ -116,7 +128,7 @@ public class Shooting : MonoBehaviour {
 							Debug.DrawRay(myRay.origin, myRay.direction*hit.distance, Color.red);
 							audio.PlayOneShot(HMGShoot);
 			
-							hitDetection(hit);
+							hitDetection(hit.transform.gameObject);
 
 							if (isBoosted == false) {
 								gunDisplayScript.ammoCountHMG--; // decrease ammo count
@@ -145,7 +157,7 @@ public class Shooting : MonoBehaviour {
 							Debug.DrawRay(myRay.origin, myRay.direction*hit.distance, Color.red);
 							audio.PlayOneShot(shotgunShoot);
 			
-							hitDetection(hit);
+							hitDetection(hit.transform.gameObject);
 						}
 					}
 
@@ -156,7 +168,7 @@ public class Shooting : MonoBehaviour {
 							Debug.DrawRay(myRay2.origin, myRay2.direction*hit2.distance, Color.red);
 							audio.PlayOneShot(shotgunShoot);
 							
-							hitDetection(hit2);
+							hitDetection(hit2.transform.gameObject);
 						}
 					}
 
@@ -167,7 +179,7 @@ public class Shooting : MonoBehaviour {
 							Debug.DrawRay(myRay3.origin, myRay3.direction*hit3.distance, Color.red);
 							audio.PlayOneShot(shotgunShoot);
 							
-							hitDetection(hit3);
+							hitDetection(hit3.transform.gameObject);
 						}
 					}
 
@@ -177,7 +189,7 @@ public class Shooting : MonoBehaviour {
 							Instantiate(bullethole, hit4.point, Quaternion.identity);		
 							Debug.DrawRay(myRay4.origin, myRay4.direction*hit4.distance, Color.red);
 							
-							hitDetection(hit4);
+							hitDetection(hit4.transform.gameObject);
 						}
 					}
 
@@ -187,7 +199,7 @@ public class Shooting : MonoBehaviour {
 							Instantiate(bullethole, hit5.point, Quaternion.identity);		
 							Debug.DrawRay(myRay5.origin, myRay5.direction*hit5.distance, Color.red);
 							
-							hitDetection(hit5);
+							hitDetection(hit5.transform.gameObject);
 						}
 					}
 				}
@@ -198,12 +210,15 @@ public class Shooting : MonoBehaviour {
 					
 					if(Physics.Raycast(myRay,out hit) && shieldScript.isReloading == false) {
 						if(gunDisplayScript.ammoCountRocketLauncher > 0 && hit.transform.gameObject.tag != "Shield" && hit.transform.gameObject.tag != "EnemyBullet"){ // prevent shooting the shield or bullet
-							Instantiate(bullethole, hit.point, Quaternion.identity);		
+							positionShot = hit.point;	
+							Instantiate(rocketMissile, this.transform.position, Quaternion.Euler(0f, 0f, 0f));
 							Debug.DrawRay(myRay.origin, myRay.direction*hit.distance, Color.red);
-							audio.PlayOneShot(rocketLauncherShoot);
-							
-							hitDetection(hit);
-							
+							if (Random.Range (0, 100) < 50) {
+								audio.PlayOneShot(rocketLauncherShoot1);
+							}
+							else {
+								audio.PlayOneShot(rocketLauncherShoot2);
+							}
 							if (isBoosted == false) {
 								gunDisplayScript.ammoCountRocketLauncher--; // decrease ammo count
 							}
@@ -252,54 +267,54 @@ public class Shooting : MonoBehaviour {
 		yield break;
 	}
 	
-	void hitDetection(RaycastHit theHit){
-		if(theHit.transform.gameObject.tag == "Enemy") {
-			GameObject target = theHit.collider.gameObject;
+	public void hitDetection(GameObject hitGameObject){
+		if(hitGameObject.tag == "Enemy") {
+			GameObject target = hitGameObject;
 			StartCoroutine(Plus10(target));
 			Enemy script = target.GetComponent<Enemy>();
 			script.StartAnim();
 		}
-		else if(theHit.transform.gameObject.tag == "EnemyLollipop") {
-			GameObject target = theHit.collider.gameObject;
+		else if(hitGameObject.tag == "EnemyLollipop") {
+			GameObject target = hitGameObject;
 			StartCoroutine(Plus20(target));
 			EnemyLollipop script = target.GetComponent<EnemyLollipop>();
 			script.StartAnim();
 		}
-		else if(theHit.transform.gameObject.tag == "EnemyEgg") {
-			GameObject target = theHit.collider.gameObject;
+		else if(hitGameObject.tag == "EnemyEgg") {
+			GameObject target = hitGameObject;
 			StartCoroutine(Plus30(target));
 			EnemyEgg script = target.GetComponent<EnemyEgg>();
 			script.StartAnim();
 		}
-		else if (theHit.transform.gameObject.tag == "HealthPickup" || theHit.transform.gameObject.tag == "AmmoPickup") {
-			GameObject pickup = theHit.collider.gameObject;
+		else if (hitGameObject.tag == "HealthPickup" || hitGameObject.tag == "AmmoPickup") {
+			GameObject pickup = hitGameObject;
 			PickupBehaviour script = pickup.GetComponent<PickupBehaviour>();
-			theHit.rigidbody.AddForce(Vector3.up * 5000.0f);
+			hitGameObject.rigidbody.AddForce(Vector3.up * 5000.0f);
 			script.canMove = true;
 		}
-		else if (theHit.transform.gameObject.tag == "BoostPickup") {
-			GameObject pickup = theHit.collider.gameObject;
+		else if (hitGameObject.tag == "BoostPickup") {
+			GameObject pickup = hitGameObject;
 			PickupBehaviour script = pickup.GetComponent<PickupBehaviour>();
-			theHit.rigidbody.AddForce(Vector3.up * 5000.0f);
+			hitGameObject.rigidbody.AddForce(Vector3.up * 5000.0f);
 			script.canMove = true;
 			
 			StartCoroutine(BoostTimer());
 		}
-		else if (theHit.transform.gameObject.tag == "Boss" && bossAIScript.behindChair == false && bossAIScript.movingToMiddle == false) {
-			GameObject target = theHit.collider.gameObject;
+		else if (hitGameObject.tag == "Boss" && bossAIScript.behindChair == false && bossAIScript.movingToMiddle == false) {
+			GameObject target = hitGameObject;
 			BossAI script = target.GetComponent<BossAI>();
 			StartCoroutine(Plus30(target));
 			
 			script.getHit();
 		}
-		else if (theHit.transform.gameObject.tag == "BossBack" && bossAIScript.behindChair == false && bossAIScript.movingToMiddle == false) {
-			GameObject target = theHit.collider.gameObject;
+		else if (hitGameObject.tag == "BossBack" && bossAIScript.behindChair == false && bossAIScript.movingToMiddle == false) {
+			GameObject target = hitGameObject;
 			BossAI script = target.GetComponentInParent<BossAI>();
 			StartCoroutine(Plus30(target));
 			
 			script.getHitBack();
 		}
-		else if (theHit.transform.gameObject.tag == "Pillar1" && bossRoomScript.atPillar != 1) {
+		else if (hitGameObject.tag == "Pillar1" && bossRoomScript.atPillar != 1) {
 			shotPillar1 = true;
 			shotPillar2 = false;
 			shotPillar3 = false;
@@ -307,7 +322,7 @@ public class Shooting : MonoBehaviour {
 			haveReached = false;
 			haveLooked = false;
 		}
-		else if (theHit.transform.gameObject.tag == "Pillar2" && bossRoomScript.atPillar != 2) {
+		else if (hitGameObject.tag == "Pillar2" && bossRoomScript.atPillar != 2) {
 			shotPillar1 = false;
 			shotPillar2 = true;
 			shotPillar3 = false;
@@ -315,7 +330,7 @@ public class Shooting : MonoBehaviour {
 			haveReached = false;
 			haveLooked = false;
 		}
-		else if (theHit.transform.gameObject.tag == "Pillar3" && bossRoomScript.atPillar != 3) {
+		else if (hitGameObject.tag == "Pillar3" && bossRoomScript.atPillar != 3) {
 			shotPillar1 = false;
 			shotPillar2 = false;
 			shotPillar3 = true;
@@ -323,7 +338,7 @@ public class Shooting : MonoBehaviour {
 			haveReached = false;
 			haveLooked = false;
 		}
-		else if (theHit.transform.gameObject.tag == "Pillar4" && bossRoomScript.atPillar != 4) {
+		else if (hitGameObject.tag == "Pillar4" && bossRoomScript.atPillar != 4) {
 			shotPillar1 = false;
 			shotPillar2 = false;
 			shotPillar3 = false;
@@ -331,7 +346,7 @@ public class Shooting : MonoBehaviour {
 			haveReached = false;
 			haveLooked = false;
 		}
-		else if (theHit.transform.gameObject.tag == "CrackedRoof") {
+		else if (hitGameObject.tag == "CrackedRoof") {
 			crackedRoofScript.health -= 1;
 		}
 	}

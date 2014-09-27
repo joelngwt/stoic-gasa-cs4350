@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.27281094, y: 3.06894875, z: 56.4766006}
+  m_LocalPosition: {x: -14.4568653, y: -1.0410164e-16, z: 304.335815}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,8 +78,8 @@ EllipsoidParticleEmitter:
   serializedVersion: 2
   m_Enabled: 1
   m_Emit: 1
-  minSize: .300000012
-  maxSize: .300000012
+  minSize: 1
+  maxSize: 1
   minEnergy: .800000012
   maxEnergy: .800000012
   minEmission: 50

@@ -12,6 +12,7 @@ public static class Constants {
 	public const int AMMO_PICKUP_SHOTGUN = 5;		// number of shotgun bullets gained from pickup
 	public const int HEALTH_PICKUP_GAIN = 1;		// Amount of health gained from pickup
 	public const float BOOST_TIME = 5.0f;			// in seconds
+	public const float STAY_FOR = 10.0f;			// Amount of time the pickup stays in the level after spawning
 	
 	public const float FLY_TO_PLAYER_SPEED = 3.5f;	// Speed at which the pickup flies towards player
 	// ----------------------
@@ -30,10 +31,12 @@ public static class Constants {
 	public const float HMG_RELOAD_SPEED = 0.05f;		// HMG reload delay between each bullet
 	public const int HMG_STARTING_AMMO = 80;        	// Amount of ammo the HMG starts with in level 1
 	public const int HMG_MAGAZINE_SIZE = 40;			// Amount of shots in 1 HMG magazine
-	public const float ROCKET_SHOOT_SPEED = 0.3f;			// Rocket launcher rate of fire
+	public const float ROCKET_SHOOT_SPEED = 0.3f;		// Rocket launcher rate of fire
 	public const float ROCKET_RELOAD_SPEED = 0.3f;		// Rocket launcher reload delay between each bullet
 	public const int ROCKET_STARTING_AMMO = 15;			// Amount of ammo the rocket launcher starts with in level 1
 	public const int ROCKET_MAGAZINE_SIZE = 3;			// Amount of shots in 1 rocket launcher magazine
+	public const float ROCKET_EXPLOSION_RADIUS = 5.0f;	
+	public const int ROCKET_FLYING_SPEED = 75;			// Speed at which the missile moves
 	public const float PISTOL_RELOAD_SPEED = 0.1f;		// Pistol reload delay between each bullet
 	public const int PISTOL_MAGAZINE_SIZE = 6;			// Amount of shots in 1 pistol magazine
 	
