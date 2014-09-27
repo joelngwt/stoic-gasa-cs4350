@@ -4388,7 +4388,7 @@ Transform:
   m_LocalScale: {x: .666666687, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 751885666}
-  m_RootOrder: 11
+  m_RootOrder: 10
 --- !u!132 &173140050
 GUIText:
   m_ObjectHideFlags: 0
@@ -7925,8 +7925,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 76.5439987
-    height: 63.1944962
+    width: 115.135994
+    height: 106.765991
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -7945,8 +7945,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 2.1099999
   unitsLength: 1.27999997
-  pixelHeight: 63.1944962
-  pixelLength: 76.5439987
+  pixelHeight: 106.765991
+  pixelLength: 115.135994
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -10498,7 +10498,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: a2cbcadf206e5c6489d3f952f3c7f2c6, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 117
+  m_FontSize: 176
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -10532,9 +10532,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1
   unitsLength: 10.1800003
-  pixelHeight: 29.9500008
-  pixelLength: 608.764038
-  fontNumber: 117
+  pixelHeight: 50.5999985
+  pixelLength: 915.69104
+  fontNumber: 176
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -17306,12 +17306,13 @@ MonoBehaviour:
   shield: {fileID: 748844121}
   gunDisplayScript: {fileID: 1926123839}
   useShieldButton: {fileID: 1570150932}
+  mainCamera: {fileID: 0}
+  bossRoomScript: {fileID: 0}
   isReloading: 0
   pistolReload: {fileID: 8300000, guid: f401a9dd7e7220f42a5788ba92ecf530, type: 3}
   hmgReload: {fileID: 8300000, guid: cb1bb32742234df40a9a8e360cb0349b, type: 3}
   shotgunReload: {fileID: 8300000, guid: 611fb5f11a161f54fb9cad95191c8d34, type: 3}
-  mainCamera: {fileID: 0}
-  bossRoomScript: {fileID: 0}
+  rocketLauncherReload: {fileID: 0}
 --- !u!82 &748844127
 AudioSource:
   m_ObjectHideFlags: 0
@@ -17478,7 +17479,6 @@ Transform:
   - {fileID: 1906233637}
   - {fileID: 25951622}
   - {fileID: 440811013}
-  - {fileID: 1667658080}
   - {fileID: 1570150933}
   - {fileID: 173140049}
   - {fileID: 1886078984}
@@ -20976,60 +20976,72 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 13100022, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: 76.5439987
+      value: 115.135994
       objectReference: {fileID: 0}
     - target: {fileID: 13100022, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: 63.1944962
+      value: 106.765991
       objectReference: {fileID: 0}
     - target: {fileID: 13200008, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_FontSize
-      value: 117
+      value: 176
       objectReference: {fileID: 0}
     - target: {fileID: 13100024, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: 518.466003
+      value: 779.866516
       objectReference: {fileID: 0}
     - target: {fileID: 13100024, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: 164.725006
+      value: 278.299988
       objectReference: {fileID: 0}
     - target: {fileID: 13100018, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: 76.5439987
+      value: 115.135994
       objectReference: {fileID: 0}
     - target: {fileID: 13100018, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: 63.1944962
+      value: 106.765991
       objectReference: {fileID: 0}
     - target: {fileID: 13100004, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: -1716.26001
+      value: -2581.56519
       objectReference: {fileID: 0}
     - target: {fileID: 13100004, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: -545.090027
+      value: -920.920044
       objectReference: {fileID: 0}
     - target: {fileID: 13100020, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: 76.5439987
+      value: 115.135994
       objectReference: {fileID: 0}
     - target: {fileID: 13100020, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: 63.1944962
+      value: 106.765991
       objectReference: {fileID: 0}
     - target: {fileID: 13100016, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: 1495
+      value: 2248.75
       objectReference: {fileID: 0}
     - target: {fileID: 13100016, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: 599
+      value: 1012
       objectReference: {fileID: 0}
     - target: {fileID: 13200002, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_FontSize
-      value: 87
+      value: 131
       objectReference: {fileID: 0}
+    - target: {fileID: 11400012, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
+      propertyPath: RocketLauncher
+      value: 
+      objectReference: {fileID: 2800000, guid: a4c3684db431e4a48893df9afe1bc0ba, type: 3}
+    - target: {fileID: 11400012, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
+      propertyPath: rocketAmmo
+      value: 
+      objectReference: {fileID: 2800000, guid: fbf4a6eb5903d4f438ac7051506f2e7b, type: 3}
+    - target: {fileID: 11400012, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
+      propertyPath: marbleBullet
+      value: 
+      objectReference: {fileID: 2800000, guid: bd67d7829e5b1ae45a0247aa8e32393b, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
   m_RootGameObject: {fileID: 751885665}
@@ -22463,8 +22475,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 518.466003
-    height: 164.725006
+    width: 779.866516
+    height: 278.299988
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -22495,8 +22507,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 5.5
   unitsLength: 8.67000008
-  pixelHeight: 164.725006
-  pixelLength: 518.466003
+  pixelHeight: 278.299988
+  pixelLength: 779.866516
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -25897,8 +25909,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 2.1099999
   unitsLength: 1.27999997
-  pixelHeight: 63.1944962
-  pixelLength: 76.5439987
+  pixelHeight: 106.765991
+  pixelLength: 115.135994
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -25918,8 +25930,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 76.5439987
-    height: 63.1944962
+    width: 115.135994
+    height: 106.765991
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -28495,7 +28507,7 @@ Transform:
   - {fileID: 1544010135}
   - {fileID: 1150851345}
   m_Father: {fileID: 751885666}
-  m_RootOrder: 14
+  m_RootOrder: 13
 --- !u!114 &1270765128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30212,8 +30224,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: -1716.26001
-    height: -545.090027
+    width: -2581.56519
+    height: -920.920044
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -30229,7 +30241,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 751885666}
-  m_RootOrder: 13
+  m_RootOrder: 12
 --- !u!114 &1365599111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30317,8 +30329,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: -18.2000008
   unitsLength: -28.7000008
-  pixelHeight: -545.090027
-  pixelLength: -1716.26001
+  pixelHeight: -920.920044
+  pixelLength: -2581.56519
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -34055,8 +34067,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 76.5439987
-    height: 63.1944962
+    width: 115.135994
+    height: 106.765991
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -34087,8 +34099,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 2.1099999
   unitsLength: 1.27999997
-  pixelHeight: 63.1944962
-  pixelLength: 76.5439987
+  pixelHeight: 106.765991
+  pixelLength: 115.135994
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -34848,7 +34860,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!131 &1570150932
 GUITexture:
   m_ObjectHideFlags: 0
@@ -34880,7 +34892,7 @@ Transform:
   m_LocalScale: {x: .150000006, y: .150000006, z: 1}
   m_Children: []
   m_Father: {fileID: 751885666}
-  m_RootOrder: 10
+  m_RootOrder: 9
 --- !u!1 &1572143350
 GameObject:
   m_ObjectHideFlags: 0
@@ -37118,54 +37130,6 @@ Prefab:
   m_RootGameObject: {fileID: 210672645}
   m_IsPrefabParent: 0
   m_IsExploded: 1
---- !u!1 &1667658078
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100024, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
-  m_PrefabInternal: {fileID: 921615920}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1667658080}
-  - 131: {fileID: 1667658079}
-  m_Layer: 0
-  m_Name: TotalAmmoCountBackground
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!131 &1667658079
-GUITexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 13100012, guid: b442f6b4e09f94442a95c3c12cee5993,
-    type: 2}
-  m_PrefabInternal: {fileID: 921615920}
-  m_GameObject: {fileID: 1667658078}
-  m_Enabled: 0
-  m_Texture: {fileID: 2800000, guid: ffdc0206fe26fa044a5b4ba3abbdd78b, type: 3}
-  m_Color: {r: .79411763, g: .79411763, b: .79411763, a: .501960814}
-  m_PixelInset:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  m_LeftBorder: 0
-  m_RightBorder: 0
-  m_TopBorder: 0
-  m_BottomBorder: 0
---- !u!4 &1667658080
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400024, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
-  m_PrefabInternal: {fileID: 921615920}
-  m_GameObject: {fileID: 1667658078}
-  m_LocalRotation: {x: -1.80066628e-08, y: -1, z: 6.52862582e-08, w: 3.47574598e-07}
-  m_LocalPosition: {x: 23.9150009, y: .930000007, z: 263.509308}
-  m_LocalScale: {x: .100000001, y: .129999995, z: 1}
-  m_Children: []
-  m_Father: {fileID: 751885666}
-  m_RootOrder: 9
 --- !u!1 &1670659371
 GameObject:
   m_ObjectHideFlags: 0
@@ -39310,6 +39274,7 @@ MonoBehaviour:
   pistolShoot: {fileID: 8300000, guid: aa1c40b7972387245980156888cdee06, type: 3}
   HMGShoot: {fileID: 8300000, guid: aaebd53b32c0a3e43abd03be3cd1f7a4, type: 3}
   shotgunShoot: {fileID: 8300000, guid: be26af417494ad946a7a79764fb88975, type: 3}
+  rocketLauncherShoot: {fileID: 0}
   pickupScript: {fileID: 0}
   pauseButton: {fileID: 1365599109}
   shotPillar1: 0
@@ -41490,8 +41455,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 20
   unitsLength: 25
-  pixelHeight: 599
-  pixelLength: 1495
+  pixelHeight: 1012
+  pixelLength: 2248.75
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -41511,8 +41476,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1495
-    height: 599
+    width: 2248.75
+    height: 1012
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -41528,7 +41493,7 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 1}
   m_Children: []
   m_Father: {fileID: 751885666}
-  m_RootOrder: 12
+  m_RootOrder: 11
 --- !u!1 &1890255185
 GameObject:
   m_ObjectHideFlags: 0
@@ -42047,7 +42012,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: a2cbcadf206e5c6489d3f952f3c7f2c6, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 87
+  m_FontSize: 131
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -42080,9 +42045,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1.74000001
   unitsLength: 13.6999998
-  pixelHeight: 52.112999
-  pixelLength: 819.26001
-  fontNumber: 87
+  pixelHeight: 88.0439987
+  pixelLength: 1232.31494
+  fontNumber: 131
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -42957,13 +42922,17 @@ MonoBehaviour:
   HMG: {fileID: 2800000, guid: 577298d6ca673de458ecb73416cdb605, type: 3}
   Shotgun: {fileID: 2800000, guid: e57483397ee09dd4a821b0047262b48e, type: 3}
   Pistol: {fileID: 2800000, guid: d528d123b339d7a43ba3b6b3171d4960, type: 3}
+  RocketLauncher: {fileID: 2800000, guid: a4c3684db431e4a48893df9afe1bc0ba, type: 3}
+  marbleBullet: {fileID: 2800000, guid: bd67d7829e5b1ae45a0247aa8e32393b, type: 3}
+  rocketAmmo: {fileID: 2800000, guid: fbf4a6eb5903d4f438ac7051506f2e7b, type: 3}
   currentSelection: 
-  bullet: {fileID: 2800000, guid: bd67d7829e5b1ae45a0247aa8e32393b, type: 3}
   ammoCountPistol: 6
   ammoCountHMG: 40
   ammoCountShotgun: 5
+  ammoCountRocketLauncher: 0
   ammoCountTotalHMG: 80
   ammoCountTotalShotgun: 10
+  ammoCountTotalRocketLauncher: 0
   RELOADtext: {fileID: 173140050}
 --- !u!131 &1926123840
 GUITexture:

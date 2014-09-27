@@ -17,5 +17,8 @@ public class TotalAmmoText : MonoBehaviour {
 		else if(gunDisplayScript.currentSelection == "Shotgun"){
 			guiText.text = gunDisplayScript.ammoCountTotalShotgun.ToString ();
 		}
+		else if(gunDisplayScript.currentSelection == "RocketLauncher"){
+			guiText.text = gunDisplayScript.ammoCountTotalRocketLauncher.ToString ();
+		}
 	}
 }

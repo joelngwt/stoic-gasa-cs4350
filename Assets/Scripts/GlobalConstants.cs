@@ -30,6 +30,10 @@ public static class Constants {
 	public const float HMG_RELOAD_SPEED = 0.05f;		// HMG reload delay between each bullet
 	public const int HMG_STARTING_AMMO = 80;        	// Amount of ammo the HMG starts with in level 1
 	public const int HMG_MAGAZINE_SIZE = 40;			// Amount of shots in 1 HMG magazine
+	public const float ROCKET_SHOOT_SPEED = 0.3f;			// Rocket launcher rate of fire
+	public const float ROCKET_RELOAD_SPEED = 0.3f;		// Rocket launcher reload delay between each bullet
+	public const int ROCKET_STARTING_AMMO = 15;			// Amount of ammo the rocket launcher starts with in level 1
+	public const int ROCKET_MAGAZINE_SIZE = 3;			// Amount of shots in 1 rocket launcher magazine
 	public const float PISTOL_RELOAD_SPEED = 0.1f;		// Pistol reload delay between each bullet
 	public const int PISTOL_MAGAZINE_SIZE = 6;			// Amount of shots in 1 pistol magazine
 	

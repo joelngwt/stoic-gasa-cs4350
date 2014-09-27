@@ -21,6 +21,7 @@ public class Shield : MonoBehaviour {
 	public AudioClip pistolReload;
 	public AudioClip hmgReload;
 	public AudioClip shotgunReload;
+	public AudioClip rocketLauncherReload;
 	// -------------
 
 	// Player position during usage of pillars in actual boss level
@@ -160,6 +161,11 @@ public class Shield : MonoBehaviour {
 						else if(gunDisplayScript.currentSelection.Equals ("Shotgun")){
 							if (isReloading == false) {
 								StartCoroutine(ShotgunReload()); // call this method
+							}
+						}
+						else if(gunDisplayScript.currentSelection.Equals ("RocketLauncher")){
+							if (isReloading == false) {
+								StartCoroutine(RocketLauncherReload()); // call this method
 							}
 						}
 						//}
@@ -368,6 +374,24 @@ public class Shield : MonoBehaviour {
 				gunDisplayScript.ammoCountHMG++;
 				audio.PlayOneShot(hmgReload);
 				yield return new WaitForSeconds(Constants.HMG_RELOAD_SPEED);
+			}
+			else{
+				break;
+			}
+		}
+		isReloading = false;
+		yield break;
+	}
+	
+	// Reloading takes time
+	IEnumerator RocketLauncherReload(){
+		isReloading = true;
+		while(gunDisplayScript.ammoCountRocketLauncher < Constants.ROCKET_MAGAZINE_SIZE){
+			if(gunDisplayScript.ammoCountTotalRocketLauncher > 0){
+				gunDisplayScript.ammoCountTotalRocketLauncher--;
+				gunDisplayScript.ammoCountRocketLauncher++;
+				audio.PlayOneShot(rocketLauncherReload);
+				yield return new WaitForSeconds(Constants.ROCKET_RELOAD_SPEED);
 			}
 			else{
 				break;

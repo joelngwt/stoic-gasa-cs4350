@@ -8,8 +8,10 @@ public class Shooting : MonoBehaviour {
 	public GameObject bullethole;
 	private int ammoCount;
 	public GunDisplay gunDisplayScript;
-	protected float fireRateHMG = Constants.HMG_SHOOT_SPEED;	// Rate of fire for the enemy
-	protected float nextFireHMG = Constants.HMG_SHOOT_SPEED;	// Rate of fire for the enemy
+	protected float fireRateHMG = Constants.HMG_SHOOT_SPEED;	// Rate of fire for the HMG
+	protected float nextFireHMG = Constants.HMG_SHOOT_SPEED;	// Rate of fire for the HMG
+	protected float fireRateRocketLauncher = Constants.ROCKET_SHOOT_SPEED;	// Rate of fire for the rocket launcher
+	protected float nextFireRocketLauncher = Constants.ROCKET_SHOOT_SPEED;	// Rate of fire for the rocket launcher
 	private bool shotgunShooting = false;
 	// -------------
 
@@ -31,6 +33,7 @@ public class Shooting : MonoBehaviour {
 	public AudioClip pistolShoot;
 	public AudioClip HMGShoot;
 	public AudioClip shotgunShoot;
+	public AudioClip rocketLauncherShoot;
 	// -------------
 	
 	// Boost activation
@@ -53,8 +56,8 @@ public class Shooting : MonoBehaviour {
 	private BossAI bossAIScript;
 	
 	void Start() {
-		bossRoomScript = GameObject.FindWithTag ("MainCamera").GetComponent<EventManager_ActualBossRoom>();
 		if (Application.loadedLevelName == "ActualBossRoom") {
+			bossRoomScript = GameObject.FindWithTag ("MainCamera").GetComponent<EventManager_ActualBossRoom>();
 			bossAIScript = GameObject.FindWithTag ("Boss").GetComponent<BossAI>();
 		}
 	}		
@@ -185,6 +188,26 @@ public class Shooting : MonoBehaviour {
 							Debug.DrawRay(myRay5.origin, myRay5.direction*hit5.distance, Color.red);
 							
 							hitDetection(hit5);
+						}
+					}
+				}
+			}
+			else if (gunDisplayScript.currentSelection == "RocketLauncher") {
+				if(!pauseButton.HitTest(Input.mousePosition) && Input.GetMouseButton(0) && Time.time - nextFireRocketLauncher > fireRateRocketLauncher && GUIUtility.hotControl == 0)
+				{
+					
+					if(Physics.Raycast(myRay,out hit) && shieldScript.isReloading == false) {
+						if(gunDisplayScript.ammoCountRocketLauncher > 0 && hit.transform.gameObject.tag != "Shield" && hit.transform.gameObject.tag != "EnemyBullet"){ // prevent shooting the shield or bullet
+							Instantiate(bullethole, hit.point, Quaternion.identity);		
+							Debug.DrawRay(myRay.origin, myRay.direction*hit.distance, Color.red);
+							audio.PlayOneShot(rocketLauncherShoot);
+							
+							hitDetection(hit);
+							
+							if (isBoosted == false) {
+								gunDisplayScript.ammoCountRocketLauncher--; // decrease ammo count
+							}
+							nextFireRocketLauncher = Time.time + fireRateRocketLauncher; // shooting delay
 						}
 					}
 				}
