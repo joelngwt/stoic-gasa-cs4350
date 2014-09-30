@@ -23,6 +23,7 @@ public class World_Object_Movement_Helper : MonoBehaviour{
 
 	public static readonly float PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT = 40.00F;
 	public static readonly float PLAYER_WORLD_OBJECT_ROTATION_SPEED_DEFAULT = 180.00F;
+	public static readonly float PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_POSSESSION = 80.00F;
 	
 	////////////////////////////////////////////////////
 	//

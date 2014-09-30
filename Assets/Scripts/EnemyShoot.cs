@@ -36,6 +36,14 @@ public class EnemyShoot : MonoBehaviour
 		Enemy e = enemy.GetComponent<Enemy>();
 		//only attacks when enemy is in attack state 
 		//if(e.current == Enemy.States.Attack && e.positionOriginal >= e.transform.position.y)
+		if(enemy == null)
+		{
+			Debug.Log("enemy is null");
+		}
+		if(e == null)
+		{
+			Debug.Log("e is null");
+		}
 		if(e.current == Enemy.States.Attack && !(e.animation.isPlaying))
 		{
 

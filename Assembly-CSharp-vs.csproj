@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>D:/Games/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>D:/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>D:/Games/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>D:/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -66,11 +66,13 @@
      <Compile Include="Assets\Scripts\EventManager_BossRoom.cs" />
      <Compile Include="Assets\Scripts\EventManager_DiningHall.cs" />
      <Compile Include="Assets\Scripts\EventManager_MainHall.cs" />
+     <Compile Include="Assets\Scripts\EventManager_Minigame_Skewer.cs" />
      <Compile Include="Assets\Scripts\FPSIndicator.cs" />
      <Compile Include="Assets\Scripts\FloatingScore.cs" />
      <Compile Include="Assets\Scripts\GlobalConstants.cs" />
      <Compile Include="Assets\Scripts\GunDisplay.cs" />
      <Compile Include="Assets\Scripts\Helpers\Hit_Token_Bank.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Possession_Cube.cs" />
      <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_1.cs" />
      <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_10.cs" />
      <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_11.cs" />
@@ -90,6 +92,7 @@
      <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_9.cs" />
      <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_Helper.cs" />
      <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_Reader.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_Skewer_1_1.cs" />
      <Compile Include="Assets\Scripts\Helpers\Warning_Reticle_Rotation.cs" />
      <Compile Include="Assets\Scripts\Helpers\World_Object_Movement_Helper.cs" />
      <Compile Include="Assets\Scripts\InGameScoreScript.cs" />
@@ -133,7 +136,7 @@
      <None Include="Assets\Standard Assets\shader\DifBumpSpecTransp.shader" />
      <None Include="Assets\Textures\Sources.txt" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/user/Desktop/stoic-gasa-cs4350/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>E:/Dropbox/Dropbox/School/CS4350 Game Development Project/Stoic Gasa/stoic-gasa-cs4350/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

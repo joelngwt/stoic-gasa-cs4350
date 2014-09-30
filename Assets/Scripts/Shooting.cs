@@ -349,5 +349,9 @@ public class Shooting : MonoBehaviour {
 		else if (hitGameObject.tag == "CrackedRoof") {
 			crackedRoofScript.health -= 1;
 		}
+		else if(hitGameObject.tag == "Possession_Cube")
+		{
+			hitGameObject.GetComponent<Possession_Cube>().trigger_possession();
+		}
 	}
 }

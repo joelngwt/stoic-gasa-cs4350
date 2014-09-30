@@ -13,6 +13,7 @@ public class Stage_Sequence_Helper {
 	public static readonly string PREFAB_RESOURCE_PATH_BEAR = "Prefabs/Bear/Bear_donePrefab_MainHall";
 	public static readonly string PREFAB_RESOURCE_PATH_LOLLIPOP = "Prefabs/Lollipop/LolliPrefab";
 	public static readonly string PREFAB_RESOURCE_PATH_EGG = "Prefabs/Egg/ChocEggPrefab";
+	public static readonly string PREFAB_RESOURCE_PATH_POSSESSION_CUBE = "Prefabs/Possession_Cube/Possession_Cube";
 	
 	////////////////////////////////////////////////////
 	//
@@ -114,6 +115,22 @@ public class Stage_Sequence_Helper {
 		sequence_spawn_index++;
 		
 		return egg;
+	}
+
+	protected GameObject spawn_possession_cube (Vector3 given_position) 	{
+		GameObject prefab_possession_cube = Resources.Load(PREFAB_RESOURCE_PATH_POSSESSION_CUBE) as GameObject;
+		if(prefab_possession_cube == null)
+		{
+			Debug.Log("prefab is null");
+		}
+		GameObject possession_cube = GameObject.Instantiate(prefab_possession_cube, new Vector3(given_position.x, given_position.y, given_position.z), Quaternion.identity) as GameObject;
+		possession_cube.name = ("Possession_Cube_" + sequence_stage_index.ToString() + "_" + sequence_wave_index.ToString() + "_" + sequence_spawn_index.ToString());
+		Vector3 direction = Camera.main.transform.position - possession_cube.transform.position; // make the instantiated bear face the camera
+		possession_cube.transform.rotation = Quaternion.LookRotation(direction);
+		
+		sequence_spawn_index++;
+		
+		return possession_cube;
 	}
 
 	protected bool check_spawn_list_empty () 	{
