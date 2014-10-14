@@ -102,7 +102,11 @@ public class EnemyShoot : MonoBehaviour
 					/*
 					 * Create a warning reticle
 					 * */
-					warning_reticle_prefeb = GameObject.Instantiate(warning_reticle_prefeb, gameObject.transform.position, Quaternion.LookRotation(Camera.main.transform.position - gameObject.transform.position)) as GameObject;
+					if(Camera.main != null 
+					   && gameObject != null)
+					{
+						warning_reticle_prefeb = GameObject.Instantiate(warning_reticle_prefeb, gameObject.transform.position, Quaternion.LookRotation(Camera.main.transform.position - gameObject.transform.position)) as GameObject;
+					}
 
 					/*
 					 * Attach the warning reticle to the 

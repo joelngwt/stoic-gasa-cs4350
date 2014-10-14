@@ -70,34 +70,30 @@ public class Stage_Sequence_Skewer_1_1 : Stage_Sequence_Helper {
 			/*
 			 * Initialize 
 			 * */
-			spawn_list.Add(spawnBear(new Vector3( -5.5f, 0f, 245f ), 1)); // target1
+			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_and_lookAt_task(new Vector3(-12.0F, 23.0F, -15.0F), 
+			                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_POSSESSION, 
+			                                                                                      new Vector3(-12.0F, 23.0F, -120.0F), 
+			                                                                                      Vector3.up, 
+			                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_ROTATION_SPEED_DEFAULT);
 			
 			sequence_phase_index = 1;
 		}
 		else if(sequence_phase_index == 1)
 		{
-			/*
-			 * Wave is complete if all the spawns are 
-			 * destroyed
-			 * */
-			if(check_spawn_list_empty())
+			if(Vector3.Distance(Camera.main.transform.position, new Vector3(-12.0F, 23.0F, -15.0F)) <= 1.00F)
 			{
 				sequence_phase_index = 2;
 			}
 		}
 		else if(sequence_phase_index == 2)
 		{
-			if(possession_cube != null)
-			{
-				GameObject.Destroy(possession_cube);
-			}
 
 			/*
 			 * Spawn the possession cube
 			 * */
-			possession_cube = spawn_possession_cube(new Vector3( -10.0f, 40f, 223f));
+			possession_cube = spawn_possession_cube(new Vector3( -12.0f, 67f, -123f));
 			possession_cube_script = possession_cube.AddComponent("Possession_Cube") as Possession_Cube;
-			possession_cube_script.lookAt_position = new Vector3( -41.50F, 0.00F, 285.00F);
+			possession_cube_script.lookAt_position = new Vector3( -12.0F, 23.0F, -15.0F);
 			possession_cube_script.up_vector = Vector3.up;
 
 			sequence_phase_index = 3;
@@ -117,9 +113,9 @@ public class Stage_Sequence_Skewer_1_1 : Stage_Sequence_Helper {
 		{
 			GameObject.Destroy(possession_cube);
 			
-			possession_cube = spawn_possession_cube(new Vector3( -7.0f, 9f, 301f));
+			possession_cube = spawn_possession_cube(new Vector3( -12.0F, 23.0F, -15.0F));
 			possession_cube_script = possession_cube.AddComponent("Possession_Cube") as Possession_Cube;
-			possession_cube_script.lookAt_position = new Vector3( -13.50F, 19.50F, 61.00F);
+			possession_cube_script.lookAt_position = new Vector3( -12.0F, 23.0F, -120.0F);
 			possession_cube_script.up_vector = Vector3.up;
 			
 			sequence_phase_index = 5;
@@ -132,8 +128,54 @@ public class Stage_Sequence_Skewer_1_1 : Stage_Sequence_Helper {
 			 * */
 			if(Vector3.Distance(Camera.main.transform.position, possession_cube.transform.position) <= 1.00F)
 			{
-				sequence_phase_index = 2;
+				sequence_phase_index = 6;
 			}
+		}
+		else if(sequence_phase_index == 6)
+		{
+			GameObject.Destroy(possession_cube);
+
+			/*
+			 * Spawn the possession cube
+			 * */
+			possession_cube = spawn_possession_cube(new Vector3( -12.0f, 67f, -123f));
+			possession_cube_script = possession_cube.AddComponent("Possession_Cube") as Possession_Cube;
+			possession_cube_script.lookAt_position = new Vector3( -12.0F, 23.0F, -15.0F);
+			possession_cube_script.up_vector = Vector3.up;
+			
+			sequence_phase_index = 7;
+		}
+		else if(sequence_phase_index == 7)
+		{
+			/*
+			 * Check if the player is in the correct 
+			 * position
+			 * */
+			if(Vector3.Distance(Camera.main.transform.position, possession_cube.transform.position) <= 1.00F)
+			{
+				sequence_phase_index = 8;
+			}
+		}
+		else if(sequence_phase_index == 8)
+		{
+			GameObject.Destroy(possession_cube);
+			
+			Camera.main.GetComponent<World_Object_Movement_Helper>().add_lookAt_task(new Vector3(0.0F, 135.0F, 23.0F), 
+			                                                                         Vector3.up, 
+			                                                                         World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_ROTATION_SPEED_DEFAULT);
+			
+			sequence_phase_index = 9;
+		}
+		else if(sequence_phase_index == 9)
+		{
+			GameObject.Destroy(possession_cube);
+			
+			possession_cube = spawn_possession_cube(new Vector3( 0.0F, 135.0F, 22.0F));
+			possession_cube_script = possession_cube.AddComponent("Possession_Cube") as Possession_Cube;
+			possession_cube_script.lookAt_position = new Vector3( 0.0F, 235.0F, 23.0F);
+			possession_cube_script.up_vector = Vector3.back;
+			
+			sequence_phase_index = 10;
 		}
 
 	}
