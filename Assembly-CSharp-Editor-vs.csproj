@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>D:/Games/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>D:/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>D:/Games/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>D:/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -81,31 +81,13 @@
      <None Include="Assets\FPS_Character Pack\Resources\FPS_CharacterPack_F\List\model_list_f.txt" />
      <None Include="Assets\FPS_Character Pack\Resources\FPS_CharacterPack_F\Shaders\toon_hair.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/Joel/Desktop/Repositories/stoic-gasa-cs4350/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>E:/Dropbox/Dropbox/School/CS4350 Game Development Project/Stoic Gasa/stoic-gasa-cs4350/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="Assembly-UnityScript">
- <HintPath>C:/Users/Joel/Desktop/Repositories/stoic-gasa-cs4350/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ <HintPath>E:/Dropbox/Dropbox/School/CS4350 Game Development Project/Stoic Gasa/stoic-gasa-cs4350/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
  </Reference>
-<<<<<<< HEAD
-=======
- <Reference Include="ProBuilderCore">
- <HintPath>C:/Users/Joel/Desktop/Repositories/stoic-gasa-cs4350/Assets/ProCore/Prototype/Classes/ProBuilderCore.dll</HintPath>
- </Reference>
- <Reference Include="ProBuilderMeshOps">
- <HintPath>C:/Users/Joel/Desktop/Repositories/stoic-gasa-cs4350/Assets/ProCore/Prototype/Classes/ProBuilderMeshOps.dll</HintPath>
- </Reference>
- <Reference Include="ProBuilderEditor">
- <HintPath>C:/Users/Joel/Desktop/Repositories/stoic-gasa-cs4350/Assets/ProCore/Prototype/Editor/ProBuilderEditor.dll</HintPath>
- </Reference>
- <Reference Include="ProCore">
- <HintPath>C:/Users/Joel/Desktop/Repositories/stoic-gasa-cs4350/Assets/ProCore/Shared/Code/ProCore.dll</HintPath>
- </Reference>
- <Reference Include="SixBySeven">
- <HintPath>C:/Users/Joel/Desktop/Repositories/stoic-gasa-cs4350/Assets/ProCore/Shared/Code/SixBySeven.dll</HintPath>
- </Reference>
->>>>>>> origin/master
  <Reference Include="UnityEditor.Graphs">
- <HintPath>D:/Games/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+ <HintPath>D:/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
