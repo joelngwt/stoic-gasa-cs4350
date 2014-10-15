@@ -43,7 +43,9 @@ public class PickupBehaviour : MonoBehaviour {
 	{
 		stayFor -= Time.deltaTime;
 		if (stayFor <= 0.0f) {
-			Destroy (this.transform.gameObject);
+			if (this.gameObject.tag != "Balloon") {
+				Destroy (this.transform.gameObject);
+			}
 		}
 		
 		if (canMove) {

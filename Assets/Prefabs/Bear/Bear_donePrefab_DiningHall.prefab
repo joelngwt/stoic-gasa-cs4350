@@ -663,9 +663,9 @@ MonoBehaviour:
   coverType: 0
   getDamaged: {fileID: 8300000, guid: d507f1e0bd2afe2499377b14f4800496, type: 3}
   getDamaged2: {fileID: 8300000, guid: d9d4ef46f7cc01243bbe2c7997efea06, type: 3}
-  healthPickup: {fileID: 100000, guid: 95fc85b1151b90f49b3bb8bff8cf5c5d, type: 2}
-  ammoPickup: {fileID: 100000, guid: c583183f29642954c92f4d34e7066807, type: 2}
-  boostPickup: {fileID: 100000, guid: 792134364c2d1a04fafd9237d1f3f1a1, type: 2}
+  healthPickup: {fileID: 100006, guid: 357791f1cb5b1ae499d8f9e16e187718, type: 2}
+  ammoPickup: {fileID: 100006, guid: 83fe65c27d90c5340b66ad3df8552cf6, type: 2}
+  boostPickup: {fileID: 100008, guid: b3f8175e02a3b664d8b102d2081d1168, type: 2}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -679,6 +679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PrefabBullet: {fileID: 100000, guid: befba1bbad52c4ab891c79672e2da3ef, type: 2}
   player: {fileID: 100002, guid: 50c5bde68e6e15d4c9b1daf9a73a200a, type: 2}
+  warning_reticle_prefeb: {fileID: 0}
   m_Speed: 10
   fireRate: .5
   bearShoot: {fileID: 8300000, guid: c4f56b3ae8237f34cab58c2cd29cee82, type: 3}

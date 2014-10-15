@@ -289,13 +289,13 @@ public class Shooting : MonoBehaviour {
 		else if (hitGameObject.tag == "HealthPickup" || hitGameObject.tag == "AmmoPickup") {
 			GameObject pickup = hitGameObject;
 			PickupBehaviour script = pickup.GetComponent<PickupBehaviour>();
-			hitGameObject.rigidbody.AddForce(Vector3.up * 5000.0f);
+			//hitGameObject.rigidbody.AddForce(Vector3.up * 5000.0f);
 			script.canMove = true;
 		}
 		else if (hitGameObject.tag == "BoostPickup") {
 			GameObject pickup = hitGameObject;
 			PickupBehaviour script = pickup.GetComponent<PickupBehaviour>();
-			hitGameObject.rigidbody.AddForce(Vector3.up * 5000.0f);
+			//hitGameObject.rigidbody.AddForce(Vector3.up * 5000.0f);
 			script.canMove = true;
 			
 			StartCoroutine(BoostTimer());

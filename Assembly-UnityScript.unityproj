@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>D:/Games/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>D:/Games/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -77,6 +77,21 @@
      <None Include="Assets\Standard Assets\Water (Pro Only)\Water4\Sources\Shaders\FX-Water4.shader" />
      <None Include="Assets\FPS_Character Pack\Resources\FPS_CharacterPack_F\List\model_list_f.txt" />
      <None Include="Assets\FPS_Character Pack\Resources\FPS_CharacterPack_F\Shaders\toon_hair.shader" />
+<<<<<<< HEAD
+=======
+ <Reference Include="ProBuilderCore">
+ <HintPath>C:/Users/Joel/Desktop/Repositories/stoic-gasa-cs4350/Assets/ProCore/Prototype/Classes/ProBuilderCore.dll</HintPath>
+ </Reference>
+ <Reference Include="ProBuilderMeshOps">
+ <HintPath>C:/Users/Joel/Desktop/Repositories/stoic-gasa-cs4350/Assets/ProCore/Prototype/Classes/ProBuilderMeshOps.dll</HintPath>
+ </Reference>
+ <Reference Include="ProCore">
+ <HintPath>C:/Users/Joel/Desktop/Repositories/stoic-gasa-cs4350/Assets/ProCore/Shared/Code/ProCore.dll</HintPath>
+ </Reference>
+ <Reference Include="SixBySeven">
+ <HintPath>C:/Users/Joel/Desktop/Repositories/stoic-gasa-cs4350/Assets/ProCore/Shared/Code/SixBySeven.dll</HintPath>
+ </Reference>
+>>>>>>> origin/master
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
