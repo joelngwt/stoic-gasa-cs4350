@@ -73,7 +73,7 @@ public class BossAI : MonoBehaviour {
 		if (crackedRoofScript.spawnedBrokenRoof == true) {
 			if (roofHitBoss == true) {
 				if (dieAnimationPlayed == false) {
-					animation.Play ("Die_Bear");
+					animation.Play ("Death1");
 					dieAnimationPlayed = true;
 				}
 				Invoke ("winGame", 3f);			// calls winGame() after 3 seconds
@@ -159,36 +159,41 @@ public class BossAI : MonoBehaviour {
 	}
 	
 	void shootBullets() {
-		if(Time.time - nextFire > fireRate){
+		if (Time.time - nextFire > fireRate) {
 			nextFire = Time.time + fireRate;
 			GameObject clone;
 			// Create a clone of the 'Bullet' prefab.
-			clone = Instantiate(bullet, this.transform.position+new Vector3(5F, 7F, -4F), this.transform.rotation) as GameObject;
+			clone = Instantiate (bullet, this.transform.position + new Vector3 (5F, 7F, -4F), this.transform.rotation) as GameObject;
 
-			audio.PlayOneShot(shootSound);
+			//animation.Stop ("Magic Attack3");
+			audio.PlayOneShot (shootSound);
 			
-			float hitOrNot = Random.Range(0.0F, 1.0F);
+			float hitOrNot = Random.Range (0.0F, 1.0F);
 			float offsetValueX = Random.Range (-4.0F, 4.0F);
 			float offsetValueY = Random.Range (-4.0F, 4.0F);
 			
 			// Exclude values where offset is between -1 and 1.
-			while(offsetValueX < -2.0F && offsetValueX > 2.0F){
+			while (offsetValueX < -2.0F && offsetValueX > 2.0F) {
 				offsetValueX = Random.Range (-4.0F, 4.0F);
 			}
-			while(offsetValueY < -2.0F && offsetValueY > 2.0F){
+			while (offsetValueY < -2.0F && offsetValueY > 2.0F) {
 				offsetValueY = Random.Range (-4.0F, 4.0F);
 			}
 			
 			Vector3 randomOffset;
-			if(hitOrNot < 0.08F){ // hit
-				randomOffset = new Vector3(-5F,-7F,4F);
-			}
-			else{ // no hit
-				randomOffset = new Vector3(offsetValueX-5F, offsetValueY-7F, offsetValueY+4F);
+			if (hitOrNot < 0.08F) { // hit
+				randomOffset = new Vector3 (-5F, -7F, 4F);
+			} else { // no hit
+				randomOffset = new Vector3 (offsetValueX - 5F, offsetValueY - 7F, offsetValueY + 4F);
 			}
 			
 			// Adds a force to the bullet so it can move
 			clone.rigidbody.velocity = ((player.transform.position + randomOffset - transform.position));
+		} 
+		else {
+			if (!animation.IsPlaying("Magic Attack3")) {
+				animation.Play ("Magic Attack3");
+			}
 		}
 	}
 
@@ -213,6 +218,9 @@ public class BossAI : MonoBehaviour {
 		activateTargetReticles();
 		Vector3 bossPosition = this.transform.position;
 		if (hasThrown == false) {
+			if (!animation.IsPlaying("Attack")) {
+				animation.Play ("Attack");
+			}
 			Instantiate (jellybeanBomb, new Vector3(bossPosition.x-10, bossPosition.y+2, bossPosition.z), this.transform.rotation);
 			hasThrown = true;
 			bombHasExploded = false;
@@ -333,6 +341,9 @@ public class BossAI : MonoBehaviour {
 		Vector3 bossPosition = this.transform.position;
 		
 		if (throwKinderFor > 0) {
+			if (!animation.IsPlaying("Attack")) {
+				animation.Play ("Attack");
+			}
 			Instantiate(kinderSurprise, new Vector3(bossPosition.x-10, bossPosition.y+2, bossPosition.z), this.transform.rotation);
 			throwKinderFor -= Time.deltaTime;
 		}
@@ -361,12 +372,15 @@ public class BossAI : MonoBehaviour {
 			// calculate direction and move towards the target
 			Vector3 dir = position - this.transform.position;
 			dir = dir.normalized;
+
+			animation.Play("Run");
 			
 			//theCharacter.transform.Translate(dir * movementSpeed * Time.deltaTime, Space.World);
 			this.transform.Translate (dir * spd * Time.deltaTime, Space.World);
 			this.transform.rotation = Quaternion.Slerp (transform.rotation, _lookRotation, Time.deltaTime * 15);
 		}	
 		else if (range1 <= 1.0) {
+			animation.Stop("Run");
 			num += 1;
 		}
 			
@@ -380,11 +394,14 @@ public class BossAI : MonoBehaviour {
 		
 		//create the rotation we need to be in to look at the target
 		Quaternion _lookRotation = Quaternion.LookRotation(_direction);
-		
+
+		animation.Play ("Idle1");
+
 		//rotate us over time according to speed until we are in the required rotation
 		transform.rotation = Quaternion.Slerp(this.transform.rotation, _lookRotation, Time.deltaTime * rotationSpeed);
 		
 		if (Mathf.Abs(Mathf.Abs (transform.rotation.y) - Mathf.Abs (_lookRotation.y)) < 0.000001f) {
+			animation.Stop("Idle1");
 			num += 1;
 			//reached = true;
 		}
