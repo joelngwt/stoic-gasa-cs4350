@@ -103,7 +103,7 @@ public class EnemyLollipop : MonoBehaviour
 				
 				// If the shield is up, or the player is in the 
 				// actual boss room (unblockable in actual boss room), minus 1 HP
-				if(PlayerPrefs.GetInt ("shieldUp") == 0 || Application.loadedLevelName == "ActualBossRoom"){
+				if(PlayerPrefs.GetInt ("shieldUp") == 0){
 					playerHealth -= 1;
 				}
 				// Else, just play the shield block sound
