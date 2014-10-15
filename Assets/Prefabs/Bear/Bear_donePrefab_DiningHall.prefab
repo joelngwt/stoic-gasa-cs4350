@@ -666,6 +666,7 @@ MonoBehaviour:
   healthPickup: {fileID: 100006, guid: 357791f1cb5b1ae499d8f9e16e187718, type: 2}
   ammoPickup: {fileID: 100006, guid: 83fe65c27d90c5340b66ad3df8552cf6, type: 2}
   boostPickup: {fileID: 100008, guid: b3f8175e02a3b664d8b102d2081d1168, type: 2}
+  explosion: {fileID: 100006, guid: 6aea392f353e04156a230db0fba22230, type: 2}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
