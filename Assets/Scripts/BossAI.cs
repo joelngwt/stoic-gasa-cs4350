@@ -122,6 +122,9 @@ public class BossAI : MonoBehaviour {
 			//Debug.Log ("60% phase");
 			hideBehindChair();
 			if (currentPhase == 3) {
+				if (!animation.IsPlaying("Idle1")) {
+					animation.Play ("Idle1");
+				}
 				spawnMinions = true;
 				currentPhase = 4;
 			}
@@ -143,6 +146,11 @@ public class BossAI : MonoBehaviour {
 		else if (percentage <= 1.0f && fightStart == true) {	// phase 1
 			currentPhase = 1;
 			sprayBullets();
+		}
+		else if (percentage == 1.0f) {
+			if (!animation.IsPlaying("Idle1")) {
+				animation.Play ("Idle1");
+			}
 		}
 	}
 	
@@ -334,6 +342,9 @@ public class BossAI : MonoBehaviour {
 		else if (bossMovementNumber == 3) {
 			bossMovementNumber = LookAt(faceForward, bossMovementNumber, 15f);
 			currentPhase = 3;
+			if (!animation.IsPlaying("Idle1")) {
+				animation.Play ("Idle1");
+			}
 		}
 	}
 	
