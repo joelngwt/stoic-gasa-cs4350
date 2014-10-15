@@ -208,7 +208,7 @@ public class GunDisplay : MonoBehaviour {
 			}
 			if(ammoCountRocketLauncher == 0 && reloadTextRocketLauncher == false){
 				reloadTextRocketLauncher = true;
-				StartCoroutine(RELOADshotgun());
+				StartCoroutine(RELOADrocketLauncher());
 			}
 		}
 		else if(currentSelection == "HMG"){
