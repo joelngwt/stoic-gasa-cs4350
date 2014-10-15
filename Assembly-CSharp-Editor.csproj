@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>D:/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>D:/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -51,27 +51,80 @@
      <Compile Include="Assets\Editor\Water (Pro Only)\Water4\SpecularLightingEditor.cs" />
      <Compile Include="Assets\Editor\Water (Pro Only)\Water4\WaterBaseEditor.cs" />
      <Compile Include="Assets\Editor\Water (Pro Only)\Water4\WaterEditorUtility.cs" />
+     <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Actions\ProBuilderizeGameObject.cs" />
+     <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Geometry\ExtrudeFace.cs" />
+     <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Geometry\PivotTool.cs" />
+     <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Repair\CleanUpLeakedMeshes.cs" />
+     <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Repair\ComponentCheck.cs" />
+     <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Repair\DegenerateTris.cs" />
+     <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Repair\FixGameObjectFlags.cs" />
+     <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Repair\FixShaderWantsNormals.cs" />
+     <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Repair\ForceMakeUnique.cs" />
+     <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Repair\ForceMeshRefresh.cs" />
+     <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Repair\RebuildSharedIndices.cs" />
+     <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Repair\RebuildVertexCaches.cs" />
+     <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Selection\EdgeSelection.cs" />
+     <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Selection\ExpandSelection.cs" />
+     <Compile Include="Assets\ProCore\Prototype\Editor\MenuItems\Selection\InvertSelection.cs" />
+     <Compile Include="Assets\ProCore\Prototype\Editor\ProBuilderMenuItems.cs" />
+     <Compile Include="Assets\ProCore\Prototype\Editor\pb_Preferences.cs" />
+     <Compile Include="Assets\ProCore\Shared\About\Editor\pc_AboutWindow.cs" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Background.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Transparent Vertex Color.shader" />
+     <None Include="Assets\ProCore\Prototype\About\changelog.txt" />
+     <None Include="Assets\ProCore\Prototype\Shader\VertexBillboard.shader" />
+     <None Include="Assets\ProCore\Prototype\Shader\DiffuseVertexColor.shader" />
      <None Include="Assets\downloaded\lion2\archibase.net.txt" />
+     <None Include="Assets\FPS_Character Pack\Resources\FPS_CharacterPack_F\List\ani_list.txt" />
+     <None Include="Assets\ProCore\Shared\About\README.txt" />
+     <None Include="Assets\ProCore\Prototype\Shader\DiffuseVertexColorTransparency.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Detail.shader" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\Party Pack\Sounds\Sounds License.txt" />
      <None Include="Assets\Standard Assets\Water (Pro Only)\Water4\Sources\Shaders\FX-SimpleWater4.shader" />
+     <None Include="Assets\FPS_Character Pack\Resources\FPS_CharacterPack_F\List\model_list_Free.txt" />
+     <None Include="Assets\FPS_Character Pack\Resources\FPS_CharacterPack_F\List\ani_list_Free.txt" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Reflective.shader" />
+     <None Include="Assets\ProCore\Prototype\Shader\UnlitColor.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Particles Additive Culled.shader" />
+     <None Include="Assets\Prefabs\New Stuff\Elementals\!Readme.txt" />
+     <None Include="Assets\FPS_Character Pack\Resources\FPS_CharacterPack_F\List\weapon_list.txt" />
+     <None Include="Assets\ProCore\Prototype\About\pc_AboutEntry_ProBuilder.txt" />
+     <None Include="Assets\FPS_Character Pack\Resources\FPS_CharacterPack_F\Shaders\toon_cutoff.shader" />
      <None Include="Assets\Standard Assets\Water (Pro Only)\Sources\Shaders\FX-Water.shader" />
+     <None Include="Assets\FPS_Character Pack\Resources\FPS_CharacterPack_F\List\ani_list_M.txt" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Vertex Colored.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Only.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap AlphaTest.shader" />
-     <None Include="Assets\SHIELDS_square\square_wood_shields_notes.txt" />
+     <None Include="Assets\Prefabs\Bear\SHIELDS_square\square_wood_shields_notes.txt" />
      <None Include="Assets\Standard Assets\shader\DifBumpSpecTransp.shader" />
      <None Include="Assets\Textures\Sources.txt" />
+     <None Include="Assets\SHIELDS_square\square_wood_shields_notes.txt" />
+     <None Include="Assets\ProCore\Prototype\Shader\UnlitColor-Overlay.shader" />
+     <None Include="Assets\ProCore\Prototype\Shader\DiffuseVertexColorEmission.shader" />
      <None Include="Assets\Standard Assets\Water (Pro Only)\Water4\Sources\Shaders\WaterInclude.cginc" />
      <None Include="Assets\Standard Assets\Water (Pro Only)\Water4\Sources\Shaders\FX-Water4.shader" />
+     <None Include="Assets\FPS_Character Pack\Resources\FPS_CharacterPack_F\List\model_list_f.txt" />
+     <None Include="Assets\ProCore\Prototype\About\Credits.txt" />
+     <None Include="Assets\FPS_Character Pack\Resources\FPS_CharacterPack_F\Shaders\toon_hair.shader" />
+ <Reference Include="ProBuilderCore">
+ <HintPath>C:/Users/Ryan/Documents/GitHub/stoic-gasa-cs4350/Assets/ProCore/Prototype/Classes/ProBuilderCore.dll</HintPath>
+ </Reference>
+ <Reference Include="ProBuilderMeshOps">
+ <HintPath>C:/Users/Ryan/Documents/GitHub/stoic-gasa-cs4350/Assets/ProCore/Prototype/Classes/ProBuilderMeshOps.dll</HintPath>
+ </Reference>
+ <Reference Include="ProBuilderEditor">
+ <HintPath>C:/Users/Ryan/Documents/GitHub/stoic-gasa-cs4350/Assets/ProCore/Prototype/Editor/ProBuilderEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="ProCore">
+ <HintPath>C:/Users/Ryan/Documents/GitHub/stoic-gasa-cs4350/Assets/ProCore/Shared/Code/ProCore.dll</HintPath>
+ </Reference>
+ <Reference Include="SixBySeven">
+ <HintPath>C:/Users/Ryan/Documents/GitHub/stoic-gasa-cs4350/Assets/ProCore/Shared/Code/SixBySeven.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.Graphs">
- <HintPath>D:/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
