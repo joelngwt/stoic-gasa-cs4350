@@ -56,7 +56,6 @@
      <Compile Include="Assets\Party Pack\Scripts\TriggerSoundTouch.cs" />
      <Compile Include="Assets\Prefabs\New Stuff\Elementals\Scripts\OrbitCamera.cs" />
      <Compile Include="Assets\Prefabs\New Stuff\Elementals\Scripts\TestParticles.cs" />
-     <Compile Include="Assets\ProCore\Prototype\Scripts\RebuildMeshOnWake.cs" />
      <Compile Include="Assets\Scripts\BossAI.cs" />
      <Compile Include="Assets\Scripts\BulletDestroy.cs" />
      <Compile Include="Assets\Scripts\CameraFade.cs" />
@@ -127,13 +126,8 @@
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Background.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Transparent Vertex Color.shader" />
-     <None Include="Assets\ProCore\Prototype\About\changelog.txt" />
-     <None Include="Assets\ProCore\Prototype\Shader\VertexBillboard.shader" />
-     <None Include="Assets\ProCore\Prototype\Shader\DiffuseVertexColor.shader" />
      <None Include="Assets\downloaded\lion2\archibase.net.txt" />
      <None Include="Assets\FPS_Character Pack\Resources\FPS_CharacterPack_F\List\ani_list.txt" />
-     <None Include="Assets\ProCore\Shared\About\README.txt" />
-     <None Include="Assets\ProCore\Prototype\Shader\DiffuseVertexColorTransparency.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Detail.shader" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\Party Pack\Sounds\Sounds License.txt" />
@@ -141,11 +135,9 @@
      <None Include="Assets\FPS_Character Pack\Resources\FPS_CharacterPack_F\List\model_list_Free.txt" />
      <None Include="Assets\FPS_Character Pack\Resources\FPS_CharacterPack_F\List\ani_list_Free.txt" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Reflective.shader" />
-     <None Include="Assets\ProCore\Prototype\Shader\UnlitColor.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Particles Additive Culled.shader" />
      <None Include="Assets\Prefabs\New Stuff\Elementals\!Readme.txt" />
      <None Include="Assets\FPS_Character Pack\Resources\FPS_CharacterPack_F\List\weapon_list.txt" />
-     <None Include="Assets\ProCore\Prototype\About\pc_AboutEntry_ProBuilder.txt" />
      <None Include="Assets\FPS_Character Pack\Resources\FPS_CharacterPack_F\Shaders\toon_cutoff.shader" />
      <None Include="Assets\Standard Assets\Water (Pro Only)\Sources\Shaders\FX-Water.shader" />
      <None Include="Assets\FPS_Character Pack\Resources\FPS_CharacterPack_F\List\ani_list_M.txt" />
@@ -156,27 +148,12 @@
      <None Include="Assets\Standard Assets\shader\DifBumpSpecTransp.shader" />
      <None Include="Assets\Textures\Sources.txt" />
      <None Include="Assets\SHIELDS_square\square_wood_shields_notes.txt" />
-     <None Include="Assets\ProCore\Prototype\Shader\UnlitColor-Overlay.shader" />
-     <None Include="Assets\ProCore\Prototype\Shader\DiffuseVertexColorEmission.shader" />
      <None Include="Assets\Standard Assets\Water (Pro Only)\Water4\Sources\Shaders\WaterInclude.cginc" />
      <None Include="Assets\Standard Assets\Water (Pro Only)\Water4\Sources\Shaders\FX-Water4.shader" />
      <None Include="Assets\FPS_Character Pack\Resources\FPS_CharacterPack_F\List\model_list_f.txt" />
-     <None Include="Assets\ProCore\Prototype\About\Credits.txt" />
      <None Include="Assets\FPS_Character Pack\Resources\FPS_CharacterPack_F\Shaders\toon_hair.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>C:/Users/Ryan/Documents/GitHub/stoic-gasa-cs4350/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
- </Reference>
- <Reference Include="ProBuilderCore">
- <HintPath>C:/Users/Ryan/Documents/GitHub/stoic-gasa-cs4350/Assets/ProCore/Prototype/Classes/ProBuilderCore.dll</HintPath>
- </Reference>
- <Reference Include="ProBuilderMeshOps">
- <HintPath>C:/Users/Ryan/Documents/GitHub/stoic-gasa-cs4350/Assets/ProCore/Prototype/Classes/ProBuilderMeshOps.dll</HintPath>
- </Reference>
- <Reference Include="ProCore">
- <HintPath>C:/Users/Ryan/Documents/GitHub/stoic-gasa-cs4350/Assets/ProCore/Shared/Code/ProCore.dll</HintPath>
- </Reference>
- <Reference Include="SixBySeven">
- <HintPath>C:/Users/Ryan/Documents/GitHub/stoic-gasa-cs4350/Assets/ProCore/Shared/Code/SixBySeven.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

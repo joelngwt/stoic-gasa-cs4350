@@ -27,6 +27,9 @@ public class Enemy : MonoBehaviour {
 	[SerializeField] private GameObject ammoPickup;
 	[SerializeField] private GameObject boostPickup;
 
+	//explosion
+	public GameObject explosion;
+
 	// Use this for initialization
 	void Start () {
 		attackTimer = 100000.0f;
@@ -180,7 +183,7 @@ public class Enemy : MonoBehaviour {
 		else{
 			audio.PlayOneShot(getDamaged2);
 		}
-		
+		Instantiate (explosion, gameObject.transform.position, gameObject.transform.rotation);
 		// Will the bear drop a pickup?
 		float dropPickup = Random.Range(0, 100);
 		if (dropPickup < Constants.DROP_CHANCE_BOOST) {
@@ -192,6 +195,7 @@ public class Enemy : MonoBehaviour {
 		else if (dropPickup < Constants.DROP_CHANCE_HEALTH) {
 			Instantiate(healthPickup, gameObject.transform.position, gameObject.transform.rotation);
 		}		
+
 
 		animation.Play ("Die_Bear");
 		gameObject.collider.enabled = false;

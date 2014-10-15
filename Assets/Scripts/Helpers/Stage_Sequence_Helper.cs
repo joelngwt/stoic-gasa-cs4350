@@ -76,13 +76,17 @@ public class Stage_Sequence_Helper {
 	////////////////////////////////////////////////////
 	
 	protected GameObject spawnBear (Vector3 position, int cover){
+		Debug.Log ("HI");
 		GameObject prefab_bear = Resources.Load(PREFAB_RESOURCE_PATH_BEAR) as GameObject;
 
 		GameObject bear = GameObject.Instantiate(prefab_bear, new Vector3(position.x, position.y, position.z), Quaternion.identity) as GameObject; // add public GameObject bearPrefab at the top
 		bear.name = ("Bear_" + sequence_stage_index.ToString() + "_" + sequence_wave_index.ToString() + "_" + sequence_spawn_index.ToString()); // give them unique numbered names (remember to initialize count)
 		Vector3 direction = Camera.main.transform.position - bear.transform.position; // make the instantiated bear face the camera
 		bear.transform.rotation = Quaternion.LookRotation(direction);
-		
+
+
+		bear.transform.FindChild ("Cube").GetComponent<SkinnedMeshRenderer>().materials[0].color = new Color(Random.Range(0,1f),Random.Range(0,1f),Random.Range(0,1f),1);
+
 		Enemy e = bear.GetComponent<Enemy>();
 		e.coverType = cover;
 		
