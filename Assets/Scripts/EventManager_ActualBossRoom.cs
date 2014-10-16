@@ -48,23 +48,22 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 	
 	// Movement and look at rotation
 	public bool bossInMiddle;
-	private Vector3 movementCenterPoint = new Vector3(-41.13f, 3.35f, -0.77f);
-	private Vector3 movementPillar1BossEdge = new Vector3(-50.7f, 3.35f, 61.88f);
-	private Vector3 movementPillar2BossEdge = new Vector3(-50f, 3.35f, -54.8f);
+	private Vector3 movementPillar1BossEdge = new Vector3(-50.45f, 3.35f, 45.14f);
+	private Vector3 movementPillar2BossEdge = new Vector3(-53.33f, 3.35f, -46.21f);
 	private Vector3 movementPillar3BossEdge = new Vector3(2.11f, 3.35f, -49.65f);
-	private Vector3 movementPillar4BossEdge = new Vector3(-0.27f, 3.35f, 55.3f);
-	private Vector3 movementPillar1BossMiddle = new Vector3(-23.66f, 3.35f, 72.18f);
-	private Vector3 movementPillar2BossMiddle = new Vector3(-25.06f, 3.35f, -71.34f);
+	private Vector3 movementPillar4BossEdge = new Vector3(-2.29f, 3.35f, 52.61f);
+	private Vector3 movementPillar1BossMiddle = new Vector3(-29.48f, 3.35f, 67.06f);
+	private Vector3 movementPillar2BossMiddle = new Vector3(-28.91f, 3.35f, -63.35f);
 	private Vector3 movementPillar3BossMiddle = new Vector3(13.33f, 3.35f, -62.4f);
-	private Vector3 movementPillar4BossMiddle = new Vector3(13.29f, 3.35f, 65.06f);
+	private Vector3 movementPillar4BossMiddle = new Vector3(17.73f, 3.35f, 62.47f);
 	private Vector3 lookAtPillar1BossEdge = new Vector3(17.86f, 3.35f, 2.1f);
 	private Vector3 lookAtPillar2BossEdge = new Vector3(-17.17f, 3.35f, -23.97f);
 	private Vector3 lookAtPillar3BossEdge = new Vector3(47.58f, 3.35f, -0.77f);
 	private Vector3 lookAtPillar4BossEdge = new Vector3(47.58f, 3.35f, -0.77f);
-	private Vector3 lookAtPillar1BossMiddle = new Vector3(-7.23f, 8f, 0.76f);
-	private Vector3 lookAtPillar2BossMiddle = new Vector3(-7.23f, 8f, 0.76f);
-	private Vector3 lookAtPillar3BossMiddle = new Vector3(-7.23f, 8f, 0.76f);
-	private Vector3 lookAtPillar4BossMiddle = new Vector3(-7.23f, 8f, 0.76f);
+	private Vector3 lookAtPillar1BossMiddle = new Vector3(-15.25f, 8f, 43.62f);
+	private Vector3 lookAtPillar2BossMiddle = new Vector3(58.99f, 8f, 78.45f);//-9.31f, 8f, -25.38f);
+	private Vector3 lookAtPillar3BossMiddle = new Vector3(-42.76f, 8f, 59.89f);
+	private Vector3 lookAtPillar4BossMiddle = new Vector3(-30.78f, 5f, -20.02f);
 	
 	// Audio
 	public AudioClip footsteps;
@@ -243,8 +242,33 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 				num = 7;
 			}
 		}
+		/*else if (num == 7) {
+			if (atPillar == 1) {
+				num = TranslateTo(movementPillar1BossMiddle, 50f, num);
+			}
+			else if (atPillar == 2) {
+				num = TranslateTo(movementPillar2BossMiddle, 50f, num);
+			}
+			else if (atPillar == 3) {
+				num = TranslateTo(movementPillar3BossMiddle, 50f, num);
+			}
+			else if (atPillar == 4) {
+				num = TranslateTo(movementPillar4BossMiddle, 50f, num);
+			}
+		}*/
 		else if (num == 7) {
-			num = LookAt(lookAtPillar1BossMiddle, num);
+			if (atPillar == 1) {
+				num = LookAt(lookAtPillar1BossMiddle, num);
+			}
+			else if (atPillar == 2) {
+				num = LookAt(lookAtPillar2BossMiddle, num);
+			}
+			else if (atPillar == 3) {
+				num = LookAt(lookAtPillar3BossMiddle, num);
+			}
+			else if (atPillar == 4) {
+				num = LookAt(lookAtPillar4BossMiddle, num);
+			}
 		}
 	}
 	
@@ -271,10 +295,6 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 			shootScript.enabled = true;
 			num += 1;
 		}
-	}
-	
-	private void moveToCenter() {
-		TranslateTo(movementCenterPoint, 50f, 0);
 	}
 	
 	private void moveToPillar(int pillarNumber) {

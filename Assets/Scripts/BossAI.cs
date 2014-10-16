@@ -303,7 +303,7 @@ public class BossAI : MonoBehaviour {
 	{
 		Vector3 waypoint1 = new Vector3(88.19f, 2.4f, 18.4f);
 		Vector3 waypoint2 = new Vector3(70.68f, 2.4f, 17.97f);
-		Vector3 middlePoint = new Vector3(-7.23f, 0.24f, 0.76f);
+		Vector3 middlePoint = new Vector3(-7.23f, 0.0f, 0.76f);
 		
 		movingToMiddle = true;
 		
