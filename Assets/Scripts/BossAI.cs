@@ -352,6 +352,9 @@ public class BossAI : MonoBehaviour {
 		Vector3 bossPosition = this.transform.position;
 		
 		if (throwKinderFor > 0) {
+			if (animation.IsPlaying("Idle1")) {
+				animation.Stop("Idle1");
+			}
 			if (!animation.IsPlaying("Attack")) {
 				animation.Play ("Attack");
 			}
@@ -406,7 +409,9 @@ public class BossAI : MonoBehaviour {
 		//create the rotation we need to be in to look at the target
 		Quaternion _lookRotation = Quaternion.LookRotation(_direction);
 
-		animation.Play ("Idle1");
+		if (!animation.IsPlaying("Attack") && !animation.IsPlaying("Idle1")) {
+			animation.Play ("Idle1");
+		}
 
 		//rotate us over time according to speed until we are in the required rotation
 		transform.rotation = Quaternion.Slerp(this.transform.rotation, _lookRotation, Time.deltaTime * rotationSpeed);
