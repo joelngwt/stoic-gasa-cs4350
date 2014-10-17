@@ -10,7 +10,7 @@ public class Stage_Sequence_Helper {
 	//
 	////////////////////////////////////////////////////
 
-	public static readonly string PREFAB_RESOURCE_PATH_BEAR = "Prefabs/Bear/Bear_donePrefab_MainHall";
+	public static readonly string PREFAB_RESOURCE_PATH_BEAR = "Prefabs/Bear/Bear_donePrefab_DiningHall";
 	public static readonly string PREFAB_RESOURCE_PATH_LOLLIPOP = "Prefabs/Lollipop/LolliPrefab";
 	public static readonly string PREFAB_RESOURCE_PATH_EGG = "Prefabs/Egg/ChocEggPrefab";
 	public static readonly string PREFAB_RESOURCE_PATH_POSSESSION_CUBE = "Prefabs/Possession_Cube/Possession_Cube";

@@ -6,7 +6,7 @@ public class EnemyShoot : MonoBehaviour
 	public GameObject m_PrefabBullet; // Drag the prefab "EnemyBullet" here.
 	public GameObject player; // Drag the character prefab here
 	public GameObject warning_reticle_prefeb;
-	
+	public GameObject warning_reticle;
 	// Ignore this comment below. Just some notes.
 	// Cannot drag the prefab "Character" here. Do this: For each target (not prefab), drag the "Character" game object here.
 
@@ -16,7 +16,7 @@ public class EnemyShoot : MonoBehaviour
 	[SerializeField]
 	// Rate of fire for the enemy
 	protected float fireRate = 0.5F;
-	protected float nextFire = 0.5F;
+	protected float nextFire = Random.Range(0.5F,1f);
 	
 	// Audio
 	public AudioClip bearShoot;
@@ -48,15 +48,16 @@ public class EnemyShoot : MonoBehaviour
 		{
 
 			if(Time.time - nextFire > fireRate){
-				nextFire = Time.time + fireRate;
+				nextFire = Time.time + Random.Range(fireRate,fireRate+1f);
 				GameObject clone;
 				// Create a clone of the 'Bullet' prefab. We have multiple offsets because the bears are of different sizes in different scenes.
-				if(Application.loadedLevelName == "DiningHall"){
+				if(Application.loadedLevelName == "DiningHall" || Application.loadedLevelName == "MainHall"){
+					Debug.Log("hey");
 					clone = Instantiate(m_PrefabBullet, transform.position+new Vector3(-0.8F,3.5F,-1F), transform.rotation) as GameObject;
 				}
-				else if(Application.loadedLevelName == "MainHall"){
-					clone = Instantiate(m_PrefabBullet, transform.position+new Vector3(7F,11F,6F), transform.rotation) as GameObject;
-				}
+				//else if(Application.loadedLevelName == "MainHall"){
+				//	clone = Instantiate(m_PrefabBullet, transform.position+new Vector3(-0.8F,3.5F,-1F), transform.rotation) as GameObject;
+				//}
 				else if(Application.loadedLevelName == "ActualBossRoom"){
 					clone = Instantiate(m_PrefabBullet, transform.position+new Vector3(-2F,6F,2f), transform.rotation) as GameObject;
 				}
@@ -80,18 +81,18 @@ public class EnemyShoot : MonoBehaviour
 				}
 				
 				Vector3 randomOffset;
-				if(hitOrNot < 0.08F 
+				if(hitOrNot < 0.8F 
 				   && Camera.main != null
 				   && Camera.main.gameObject.GetComponent<Hit_Token_Bank>().request_withdraw_token()){ // hit
 					#if UNITY_EDITOR
 					Debug.Log ("Hit");
 					#endif
-					if (Application.loadedLevelName == "DiningHall") {
+					if (Application.loadedLevelName == "DiningHall" || Application.loadedLevelName == "MainHall") {
 						randomOffset = new Vector3(0.8F,-3.5F,1F);
 					}
-					else if (Application.loadedLevelName == "MainHall") {
-						randomOffset = new Vector3(-7F,-11F,-6F);
-					}
+					//else if (Application.loadedLevelName == "MainHall") {
+					//	randomOffset = new Vector3(-7F,-11F,-6F);
+					//}
 					else if (Application.loadedLevelName == "ActualBossRoom") {
 						randomOffset = new Vector3(0,0,0);
 					}
@@ -105,7 +106,7 @@ public class EnemyShoot : MonoBehaviour
 					if(Camera.main != null 
 					   && gameObject != null)
 					{
-						warning_reticle_prefeb = GameObject.Instantiate(warning_reticle_prefeb, gameObject.transform.position, Quaternion.LookRotation(Camera.main.transform.position - gameObject.transform.position)) as GameObject;
+						warning_reticle = GameObject.Instantiate(warning_reticle_prefeb, gameObject.transform.position, Quaternion.LookRotation(Camera.main.transform.position - gameObject.transform.position)) as GameObject;
 					}
 
 					/*
@@ -114,15 +115,15 @@ public class EnemyShoot : MonoBehaviour
 					 * destroyed, the reticle is destroyed 
 					 * with it
 					 * */
-					clone.GetComponent<EnemyBulletDestroy>().attached_warning_reticle = warning_reticle_prefeb;
+					clone.GetComponent<EnemyBulletDestroy>().attached_warning_reticle = warning_reticle;
 				}
 				else{ // no hit
-					if (Application.loadedLevelName == "DiningHall"){
+					if (Application.loadedLevelName == "DiningHall" || Application.loadedLevelName == "MainHall"){
 						randomOffset = new Vector3(offsetValueX+0.8F, offsetValueY-3.5F, offsetValueY+1F);
 					}
-					else if (Application.loadedLevelName == "MainHall"){
-						randomOffset = new Vector3(offsetValueX-7F, offsetValueY-11F, offsetValueY-6F);
-					}
+					//else if (Application.loadedLevelName == "MainHall"){
+					//	randomOffset = new Vector3(offsetValueX-7F, offsetValueY-11F, offsetValueY-6F);
+					//}
 					else{
 						randomOffset = new Vector3(offsetValueX-5F, offsetValueY-7F, offsetValueY+4F);
 					}
