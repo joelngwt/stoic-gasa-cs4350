@@ -659,7 +659,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PrefabBullet: {fileID: 100000, guid: befba1bbad52c4ab891c79672e2da3ef, type: 2}
   player: {fileID: 100002, guid: 50c5bde68e6e15d4c9b1daf9a73a200a, type: 2}
-  warning_reticle_prefeb: {fileID: 0}
+  warning_reticle_prefeb: {fileID: 100002, guid: d0cfaf877c73fb9439fcccf99e4e5d1a,
+    type: 2}
   warning_reticle: {fileID: 0}
   m_Speed: 10
   fireRate: .5
