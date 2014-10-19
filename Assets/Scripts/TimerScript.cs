@@ -9,7 +9,8 @@ public class TimerScript: MonoBehaviour {
 	public float miliseconds;
 	
 	void Start(){
-		if(Application.loadedLevelName == "MainHall"){
+		if(Application.loadedLevelName == "MainHall" ||
+		   Application.loadedLevelName == "MainHall_"){
 			minutes = 0;
 			seconds = 1000;
 			miliseconds = 0;

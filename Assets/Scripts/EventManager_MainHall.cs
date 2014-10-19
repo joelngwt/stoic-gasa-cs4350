@@ -53,6 +53,7 @@ public class EventManager_MainHall : MonoBehaviour {
 		attached_sequence_reader = new Stage_Sequence_Reader();
 		attached_sequence_reader.attached_sequence = new Stage_Sequence_1_1(attached_sequence_reader);
 		//attached_sequence_reader.attached_sequence = new Stage_Sequence_Skewer_1_1(attached_sequence_reader);
+		//attached_sequence_reader.attached_sequence = new Stage_Sequence_1_17(attached_sequence_reader);
 
 //		/*
 //		 * Attach a movement helper to the character 
