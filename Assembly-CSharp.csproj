@@ -75,6 +75,7 @@
      <Compile Include="Assets\Scripts\FloatingScore.cs" />
      <Compile Include="Assets\Scripts\GlobalConstants.cs" />
      <Compile Include="Assets\Scripts\GunDisplay.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Button_Trigger.cs" />
      <Compile Include="Assets\Scripts\Helpers\Hit_Token_Bank.cs" />
      <Compile Include="Assets\Scripts\Helpers\Possession_Cube.cs" />
      <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_1.cs" />
@@ -86,6 +87,7 @@
      <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_15.cs" />
      <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_16.cs" />
      <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_17.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_18.cs" />
      <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_2.cs" />
      <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_3.cs" />
      <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_4.cs" />

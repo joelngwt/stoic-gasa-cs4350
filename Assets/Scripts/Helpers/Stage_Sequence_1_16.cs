@@ -118,6 +118,7 @@ public class Stage_Sequence_1_16 : Stage_Sequence_Helper {
 				/*
 				 * Move on to next sequence
 				 * */
+				attached_reader.attached_sequence = new Stage_Sequence_1_17(attached_reader);
 			}
 		}
 	}

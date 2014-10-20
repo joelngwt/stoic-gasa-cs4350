@@ -129,7 +129,7 @@ public class MenuTouches : MonoBehaviour {
 		audio.PlayOneShot(menuButton);
 		guiTexture.texture = button1;
 		yield return new WaitForSeconds(0.2F);
-		Application.LoadLevel ("MainHall");
+		Application.LoadLevel ("MainHall_");
 		yield break;
 	}
 	

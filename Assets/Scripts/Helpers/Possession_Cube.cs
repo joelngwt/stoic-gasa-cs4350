@@ -43,7 +43,7 @@ public class Possession_Cube : MonoBehaviour {
 		 * assume that the movement script 
 		 * is on the main camera
 		 * */
-		Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_and_lookAt_task(transform.position, 
+		Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_and_lookAt_task(transform.parent.transform.position, 
 		                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_POSSESSION, 
 		                                                                                      lookAt_position, 
 		                                                                                      up_vector, 

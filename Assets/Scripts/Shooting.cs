@@ -353,5 +353,13 @@ public class Shooting : MonoBehaviour {
 		{
 			hitGameObject.GetComponent<Possession_Cube>().trigger_possession();
 		}
+		else if(hitGameObject.name.Equals("Equation_Plus"))
+		{
+			hitGameObject.GetComponent<Button_Trigger>().activated = true;
+		}
+		else if(hitGameObject.name.Equals("Equation_Subtract"))
+		{
+			hitGameObject.GetComponent<Button_Trigger>().activated = true;
+		}
 	}
 }

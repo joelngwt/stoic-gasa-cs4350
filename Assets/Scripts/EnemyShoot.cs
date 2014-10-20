@@ -33,6 +33,11 @@ public class EnemyShoot : MonoBehaviour
 		GameObject enemy = GameObject.FindWithTag("Enemy");
 		player = GameObject.FindWithTag ("MainCharacter");
 
+		/*
+		 * Face camera
+		 * */
+		transform.LookAt(Camera.main.transform.position);
+
 		Enemy e = enemy.GetComponent<Enemy>();
 		//only attacks when enemy is in attack state 
 		//if(e.current == Enemy.States.Attack && e.positionOriginal >= e.transform.position.y)
@@ -81,7 +86,7 @@ public class EnemyShoot : MonoBehaviour
 				}
 				
 				Vector3 randomOffset;
-				if(hitOrNot < 0.8F 
+				if(hitOrNot < 0.0008F 
 				   && Camera.main != null
 				   && Camera.main.gameObject.GetComponent<Hit_Token_Bank>().request_withdraw_token()){ // hit
 					#if UNITY_EDITOR

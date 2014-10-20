@@ -13,8 +13,8 @@ public class Enemy : MonoBehaviour {
 	}
 	public States current;
 	public float positionOriginal;
-	private float attackTimer;	//countdown till attack from TakeCoverState
-	private float coverTimer;	//countdown till take cover from AttackState
+	public float attackTimer;	//countdown till attack from TakeCoverState
+	public float coverTimer;	//countdown till take cover from AttackState
 	private bool first = false;	//test if first time entering a statement
 	public int coverType;
 
