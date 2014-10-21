@@ -66,10 +66,10 @@ public class Stage_Sequence_1_12 : Stage_Sequence_Helper {
 			/*
 			 * Initialize 
 			 * */
-			spawn_list.Add(spawnBear(new Vector3( 34f, 21f, 138f ), 0));
-			spawn_list.Add(spawnBear(new Vector3( 64f, 21f, 105f ), 0));
-			spawn_list.Add(spawnBear(new Vector3( 23f, 0f, 169f ), 2));
-			spawn_list.Add(spawnLollipop(new Vector3 ( -55f, 100f, 280f )));
+			spawn_list.Add(spawnBear(new Vector3( 33f, 20f, 136f ), 0));
+			spawn_list.Add(spawnBear(new Vector3( 40f, 21f, 136f ), 0));
+			spawn_list.Add(spawnBear(new Vector3( 45f, 20f, 136f ), 2));
+			spawn_list.Add(spawnLollipop(new Vector3 ( -41f, 72f, 170f )));
 			
 			sequence_phase_index = 1;
 		}
@@ -90,15 +90,11 @@ public class Stage_Sequence_1_12 : Stage_Sequence_Helper {
 			 * All the spawns are dead. Move the main 
 			 * character
 			 * */
-			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_task(new Vector3(38.2f, 8f, 94.8f), 
-			                                                                           World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT);
+
 			
-			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_task(new Vector3(38.2f, 31f, 134.7f), 
-			                                                                           World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT);
-			
-			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_and_lookAt_task(new Vector3(33.1f, 33.8f, 160.6f), 
+			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_and_lookAt_task(new Vector3(37.3f, 26f, 141f), 
 			                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT, 
-			                                                                                      new Vector3(30f, 32f, 170f), 
+			                                                                                      new Vector3(-30f, 21f, 66f), 
 			                                                                                      Vector3.up, 
 			                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_ROTATION_SPEED_DEFAULT);
 			

@@ -66,11 +66,9 @@ public class Stage_Sequence_1_11 : Stage_Sequence_Helper {
 			/*
 			 * Initialize 
 			 * */
-			spawn_list.Add(spawnBear(new Vector3( 64f, 21f, 130f ), 0));
-			spawn_list.Add(spawnBear(new Vector3( 23f, 0f, 169f ), 2));
-			spawn_list.Add(spawnBear(new Vector3( -23f, 0f, 169f ), 1));
-			spawn_list.Add(spawnBear(new Vector3( 70f, 0f, 107f ), 1));
-			spawn_list.Add(spawnLollipop( new Vector3( -55f, 100f, 280f )));
+			spawn_list.Add(spawnBear(new Vector3( 28f, 21f, 157f ), 0));
+			spawn_list.Add(spawnBear(new Vector3( 29f, 21f, 148f  ), 2));
+			spawn_list.Add(spawnBear(new Vector3( 30f, 21f, 140f  ), 1));
 			
 			sequence_phase_index = 1;
 		}
@@ -86,10 +84,21 @@ public class Stage_Sequence_1_11 : Stage_Sequence_Helper {
 			}
 		}
 		else if(sequence_phase_index == 2)
-		{
+		{	
 			/*
 			 * Move on to next sequence
 			 * */
+			Camera.main.GetComponent<World_Object_Movement_Helper>().add_lookAt_task(new Vector3(23,8f, 139f), 
+			                                                                         Vector3.up, 
+			                                                                         World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_ROTATION_SPEED_DEFAULT);
+			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_task(new Vector3(0f, 8f, 141f), 
+			                                                                           World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT);
+			
+			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_and_lookAt_task(new Vector3(37f, 4f, 91f), 
+			                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT, 
+			                                                                                      new Vector3(40,20,134f), 
+			                                                                                      Vector3.up, 
+			                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_ROTATION_SPEED_DEFAULT);
 			attached_reader.attached_sequence = new Stage_Sequence_1_12(attached_reader);
 		}
 	}

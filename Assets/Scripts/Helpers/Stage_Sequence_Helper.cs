@@ -59,6 +59,7 @@ public class Stage_Sequence_Helper {
 	public Stage_Sequence_Helper () 	{
 
 		spawn_list = new List<GameObject>();
+		Debug.Log ("next sequence");
 	}
 
 	/*
@@ -76,7 +77,6 @@ public class Stage_Sequence_Helper {
 	////////////////////////////////////////////////////
 	
 	protected GameObject spawnBear (Vector3 position, int cover){
-		Debug.Log ("HI");
 		GameObject prefab_bear = Resources.Load(PREFAB_RESOURCE_PATH_BEAR) as GameObject;
 
 		GameObject bear = GameObject.Instantiate(prefab_bear, new Vector3(position.x, position.y, position.z), Quaternion.identity) as GameObject; // add public GameObject bearPrefab at the top

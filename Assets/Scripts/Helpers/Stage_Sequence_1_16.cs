@@ -93,15 +93,15 @@ public class Stage_Sequence_1_16 : Stage_Sequence_Helper {
 			 * All the spawns are dead. Move the main 
 			 * character
 			 * */
-			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_task(new Vector3(0f, 35.8f, 60f), 
-			                                                                           World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT);
+		//	Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_task(new Vector3(0f, 35.8f, 60f), 
+		//	                                                                           World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT);
 			
 			Camera.main.GetComponent<World_Object_Movement_Helper>().add_lookAt_task(new Vector3(0f, 35.8f, 42f), 
 			                                                                         Vector3.up, 
 			                                                                         World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_ROTATION_SPEED_DEFAULT);
 			
-			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_task(new Vector3(0f, 35.8f, 42f), 
-			                                                                           World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT);
+		//	Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_task(new Vector3(0f, 35.8f, 42f), 
+		//	                                                                           World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT);
 			
 			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_task(new Vector3(0f, 35.8f, 25.7f), 
 			                                                                           World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT);

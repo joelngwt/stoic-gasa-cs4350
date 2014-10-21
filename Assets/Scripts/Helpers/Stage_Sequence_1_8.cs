@@ -66,11 +66,10 @@ public class Stage_Sequence_1_8 : Stage_Sequence_Helper {
 			/*
 			 * Initialize 
 			 * */
-			spawn_list.Add(spawnBear(new Vector3( -23f, 0f, 93f ), 2));
-			spawn_list.Add(spawnBear(new Vector3( 34f, 21f, 138f ), 0));
-			spawn_list.Add(spawnBear(new Vector3( 49f, 21f, 61f ), 0));
-			spawn_list.Add(spawnBear(new Vector3( 15f, 21f, 61f ), 0));
-			spawn_list.Add(spawnBear(new Vector3( -15f, 21f, 61f ), 0));
+			spawn_list.Add(spawnBear(new Vector3( 3f, 0f, 171f ), 2));
+			spawn_list.Add(spawnBear(new Vector3( -5f, 0f, 172f ), 2));
+			spawn_list.Add(spawnBear(new Vector3( -9f, 3f, 167f ), 2));
+			spawn_list.Add(spawnLollipop(new Vector3( -14f, 24f, 157f )));
 			
 			sequence_phase_index = 1;
 		}
@@ -90,6 +89,10 @@ public class Stage_Sequence_1_8 : Stage_Sequence_Helper {
 			/*
 			 * Move on to next sequence
 			 * */
+			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_task(new Vector3(3f,5f,216f), 
+			                                                                           World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT);
+			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_task(new Vector3(3f,5f,174f), 
+			                                                                           World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT);
 			attached_reader.attached_sequence = new Stage_Sequence_1_9(attached_reader);
 		}
 	}

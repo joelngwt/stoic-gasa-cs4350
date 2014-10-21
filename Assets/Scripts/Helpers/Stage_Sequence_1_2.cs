@@ -66,11 +66,9 @@ public class Stage_Sequence_1_2 : Stage_Sequence_Helper {
 			/*
 			 * Initialize 
 			 * */
-			spawn_list.Add(spawnBear(new Vector3( -60f, 0f, 246f ), 1)); // target6
-			spawn_list.Add(spawnBear(new Vector3( 48f, 0f, 218f ), 1)); // target7
-			spawn_list.Add(spawnBear(new Vector3( -16f, 0f, 173f ), 0)); // target8
-			spawn_list.Add(spawnBear(new Vector3( 34f, 21f, 154f ), 0)); // target9
-			spawn_list.Add(spawnBear(new Vector3( 52f, 21f, 154f ), 0)); // target10
+			spawn_list.Add(spawnBear(new Vector3( 12f,0f,279f), 1)); // target6
+			spawn_list.Add(spawnBear(new Vector3(-39f,0f,290f ), 1)); // target7
+			spawn_list.Add(spawnBear(new Vector3(-17f,0f,264f), 2));
 			
 			sequence_phase_index = 1;
 		}

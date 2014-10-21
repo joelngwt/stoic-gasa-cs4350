@@ -66,9 +66,7 @@ public class Stage_Sequence_1_9 : Stage_Sequence_Helper {
 			/*
 			 * Initialize 
 			 * */
-			spawn_list.Add(spawnBear(new Vector3( -23f, 0f, 93f ), 2));
-			spawn_list.Add(spawnBear(new Vector3( 34f, 21f, 138f ), 0));
-			spawn_list.Add(spawnBear(new Vector3( 49f, 21f, 61f ), 0));
+
 			spawn_list.Add(spawnEgg(new Vector3 ( 0, 0, 70 )));
 			
 			sequence_phase_index = 1;
@@ -89,6 +87,9 @@ public class Stage_Sequence_1_9 : Stage_Sequence_Helper {
 			/*
 			 * Move on to next sequence
 			 * */
+			Camera.main.GetComponent<World_Object_Movement_Helper>().add_lookAt_task(new Vector3(0f, 8f, -32.5f), 
+			                                                                         Vector3.up, 
+			                                                                         World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_ROTATION_SPEED_DEFAULT);
 			attached_reader.attached_sequence = new Stage_Sequence_1_10(attached_reader);
 		}
 	}

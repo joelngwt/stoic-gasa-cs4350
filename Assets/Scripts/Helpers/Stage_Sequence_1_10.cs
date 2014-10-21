@@ -13,7 +13,7 @@ public class Stage_Sequence_1_10 : Stage_Sequence_Helper {
 	//
 	//		Script variables
 	//
-	////////////////////////////////////////////////////
+	////////////////////////////////////////////////////	
 	
 	////////////////////////////////////////////////////
 	//
@@ -66,7 +66,7 @@ public class Stage_Sequence_1_10 : Stage_Sequence_Helper {
 			/*
 			 * Initialize 
 			 * */
-			spawn_list.Add(spawnBear(new Vector3( 34f, 21f, 138f ), 0));
+			spawn_list.Add(spawnBear(new Vector3( 4f, 0f, 133f ), 0));
 			spawn_list.Add(spawnBear(new Vector3( 15f, 21f, 61f ), 0));
 			spawn_list.Add(spawnBear(new Vector3( -15f, 21f, 61f ), 0));
 			spawn_list.Add(spawnEgg(new Vector3 ( 0, 0, 70 )));
@@ -92,10 +92,10 @@ public class Stage_Sequence_1_10 : Stage_Sequence_Helper {
 			 * */
 			
 			
-			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_task(new Vector3(0f, 8f, 68f), 
+			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_task(new Vector3(0f, 8f, 141f), 
 			                                                                           World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT);
 			
-			Camera.main.GetComponent<World_Object_Movement_Helper>().add_lookAt_task(new Vector3(33.8f, 25f, 140.5f), 
+			Camera.main.GetComponent<World_Object_Movement_Helper>().add_lookAt_task(new Vector3(29,20f, 139f), 
 			                                                                         Vector3.up, 
 			                                                                         World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_ROTATION_SPEED_DEFAULT);
 			

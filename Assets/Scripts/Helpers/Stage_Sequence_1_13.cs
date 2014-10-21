@@ -8,7 +8,7 @@ public class Stage_Sequence_1_13 : Stage_Sequence_Helper {
 	//		Constants
 	//
 	////////////////////////////////////////////////////
-	
+		
 	////////////////////////////////////////////////////
 	//
 	//		Script variables
@@ -66,9 +66,11 @@ public class Stage_Sequence_1_13 : Stage_Sequence_Helper {
 			/*
 			 * Initialize 
 			 * */
-			spawn_list.Add(spawnBear(new Vector3( -60f, 0f, 234f ), 2));
-			spawn_list.Add(spawnBear(new Vector3( 38f, 0f, 260f ), 2));
-			spawn_list.Add(spawnLollipop( new Vector3( 55f, 100f, 280f )));
+
+			spawn_list.Add(spawnLollipop( new Vector3( -38f, 26f, 29f )));
+			spawn_list.Add(spawnLollipop( new Vector3(  -38f, 26f, 29f )));
+			spawn_list.Add(spawnLollipop( new Vector3(  -38f, 26f, 29f )));
+
 			
 			sequence_phase_index = 1;
 		}
@@ -80,6 +82,17 @@ public class Stage_Sequence_1_13 : Stage_Sequence_Helper {
 			 * */
 			if(check_spawn_list_empty())
 			{
+
+				Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_and_lookAt_task(new Vector3(62f, 33f, 141f), 
+				                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT, 
+				                                                                                      new Vector3(-65f,21f,105f), 
+				                                                                                      Vector3.up, 
+				                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_ROTATION_SPEED_DEFAULT);
+				Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_and_lookAt_task(new Vector3(29f, 33f, 49f), 
+				                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT, 
+				                                                                                      new Vector3(-33f,21f,139f), 
+				                                                                                      Vector3.up, 
+				                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_ROTATION_SPEED_DEFAULT);
 				sequence_phase_index = 2;
 			}
 		}

@@ -57,7 +57,6 @@ public class EnemyShoot : MonoBehaviour
 				GameObject clone;
 				// Create a clone of the 'Bullet' prefab. We have multiple offsets because the bears are of different sizes in different scenes.
 				if(Application.loadedLevelName == "DiningHall" || Application.loadedLevelName == "MainHall"  || Application.loadedLevelName == "MainHall_"){
-					Debug.Log("HEY");
 					clone = Instantiate(m_PrefabBullet, transform.position+new Vector3(-0.8F,3.5F,-1F), transform.rotation) as GameObject;
 				}
 				//else if(Application.loadedLevelName == "MainHall"){

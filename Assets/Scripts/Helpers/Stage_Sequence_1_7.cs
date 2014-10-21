@@ -66,9 +66,9 @@ public class Stage_Sequence_1_7 : Stage_Sequence_Helper {
 			/*
 			 * Initialize 
 			 * */
-			spawn_list.Add(spawnBear(new Vector3( 34f, 21f, 154f ), 0));
-			spawn_list.Add(spawnBear(new Vector3( -18f, 0f, 156f ), 1));
-			spawn_list.Add(spawnLollipop(new Vector3( -18f, 0f, 156f )));
+			//spawn_list.Add(spawnBear(new Vector3( 34f, 21f, 154f ), 0));
+			//spawn_list.Add(spawnBear(new Vector3( -18f, 0f, 156f ), 1));
+			//spawn_list.Add(spawnLollipop(new Vector3( -18f, 0f, 156f )));
 			
 			sequence_phase_index = 1;
 		}
@@ -90,9 +90,9 @@ public class Stage_Sequence_1_7 : Stage_Sequence_Helper {
 			 * character
 			 * */
 			
-			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_and_lookAt_task(new Vector3(-17.9f, 8f, 176.2f), 
+			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_and_lookAt_task(new Vector3(-6f, 4f, 220f), 
 			                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT, 
-			                                                                                      new Vector3(-10f, 11f, 161f), 
+			                                                                                      new Vector3(-1f, 19f, 168f), 
 			                                                                                      Vector3.up, 
 			                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_ROTATION_SPEED_DEFAULT);
 			

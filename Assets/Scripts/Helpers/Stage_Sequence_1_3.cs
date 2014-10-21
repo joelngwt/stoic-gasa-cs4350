@@ -66,8 +66,8 @@ public class Stage_Sequence_1_3 : Stage_Sequence_Helper {
 			/*
 			 * Initialize 
 			 * */
-			spawn_list.Add(spawnBear(new Vector3( -47f, 0f, 218f ), 2)); // target13
-			spawn_list.Add(spawnBear(new Vector3( 48f, 0f, 218f ), 1)); // target14
+			spawn_list.Add(spawnBear(new Vector3( 7f, 0f, 237f ), 2)); // target13
+			spawn_list.Add(spawnBear(new Vector3( -15f, 0f, 264f ), 1)); // target14
 			
 			sequence_phase_index = 1;
 		}
@@ -88,24 +88,24 @@ public class Stage_Sequence_1_3 : Stage_Sequence_Helper {
 			 * All the spawns are dead. Move the main 
 			 * character
 			 * */
-			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_task(new Vector3(-65.4f, 8f, 266.1f), 
+			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_task(new Vector3(-25.574f, 3.5f, 268.1f), 
 			                                                                           World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT);
 			
-			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_task(new Vector3(-64f, 8f, 227.7f), 
-			                                                                           World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT);
+			//Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_task(new Vector3(-64f, 8f, 227.7f), 
+			//                                                                           World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT);
 			
-			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_task(new Vector3(-51.6f, 8f, 224f), 
-			                                                                           World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT);
+			//Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_task(new Vector3(-51.6f, 8f, 224f), 
+			//                                                                           World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT);
 			
-			Camera.main.GetComponent<World_Object_Movement_Helper>().add_lookAt_task(new Vector3(-46f, 12f, 202.5f), 
+			Camera.main.GetComponent<World_Object_Movement_Helper>().add_lookAt_task(new Vector3(-6f, 8f, 207f), 
 			                                                                         Vector3.up, 
 			                                                                         World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_ROTATION_SPEED_DEFAULT);
 			
-			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_and_lookAt_task(new Vector3(-51.6f, 8f, 224f), 
-			                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT, 
-			                                                                                      new Vector3(-46f, 12f, 202.5f), 
-			                                                                                      Vector3.up, 
-			                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_ROTATION_SPEED_DEFAULT);
+			//Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_and_lookAt_task(new Vector3(-51.6f, 8f, 224f), 
+			 //                                                                                     World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT, 
+			//                                                                                      new Vector3(-46f, 12f, 202.5f), 
+			//                                                                                      Vector3.up, 
+			 //                                                                                     World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_ROTATION_SPEED_DEFAULT);
 			
 			sequence_phase_index = 3;
 		}

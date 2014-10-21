@@ -172,7 +172,7 @@ public class Enemy : MonoBehaviour {
 	public void StartAnim()
 	{
 		#if UNITY_EDITOR
-		Debug.Log ("startAnim in bear");
+		//Debug.Log ("startAnim in bear");
 		#endif
 		
 		// Audio randomization
