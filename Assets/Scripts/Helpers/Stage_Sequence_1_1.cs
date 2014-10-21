@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Stage_Sequence_1_1 : Stage_Sequence_Helper {
@@ -63,7 +63,7 @@ public class Stage_Sequence_1_1 : Stage_Sequence_Helper {
 			/*
 			 * Sequence has not been initizlied
 			 * */
-
+				
 			/*
 			 * Initialize 
 			 * */

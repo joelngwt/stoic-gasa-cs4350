@@ -90,11 +90,11 @@ public class Stage_Sequence_1_7 : Stage_Sequence_Helper {
 			 * character
 			 * */
 			
-			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_and_lookAt_task(new Vector3(-6f, 4f, 220f), 
-			                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT, 
-			                                                                                      new Vector3(-1f, 19f, 168f), 
-			                                                                                      Vector3.up, 
-			                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_ROTATION_SPEED_DEFAULT);
+				Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_and_lookAt_task(new Vector3(-6f, 4f, 220f), 
+				                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT, 
+				                                                                                      new Vector3(-1f, 19f, 168f), 
+				                                                                                      Vector3.up, 
+				                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_ROTATION_SPEED_DEFAULT);
 			
 			sequence_phase_index = 3;
 		}
