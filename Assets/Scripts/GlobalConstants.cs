@@ -41,7 +41,7 @@ public static class Constants {
 	public const int PISTOL_MAGAZINE_SIZE = 6;			// Amount of shots in 1 pistol magazine
 	
 	// Boss stats	
-	public const float BOSS_TOTAL_HEALTH = 300.0f;				// Amount of health the boss has
+	public const float BOSS_TOTAL_HEALTH = 200.0f;				// Amount of health the boss has
 		// First 20% - shooting rate
 		public const float BOSS_SPRAY_TIME = 3.0f;				// Time spent shooting
 		public const float BOSS_IDLE_TIME = 2.0f;				// Time spent idling
@@ -54,7 +54,7 @@ public static class Constants {
 		public const float BOSS_KINDER_THROW_TIME = 0.025f;		// Amount of time the boss spends throwing 
 		public const float BOSS_KINDER_IDLE_TIME = 10.0f;		// Amount of time the boss idles after throwing
 		
-	public const int CRACKED_ROOF_HEALTH = 30;					// Amount of health the roof has
+	public const int CRACKED_ROOF_HEALTH = 25;					// Amount of health the roof has
 }
 
 public class GlobalConstants : MonoBehaviour {
