@@ -14,7 +14,7 @@ public static class Constants {
 	public const float BOOST_TIME = 5.0f;			// in seconds
 	public const float STAY_FOR = 10.0f;			// Amount of time the pickup stays in the level after spawning
 	
-	public const float FLY_TO_PLAYER_SPEED = 3.5f;	// Speed at which the pickup flies towards player
+	public const float FLY_TO_PLAYER_SPEED = 9.5f;	// Speed at which the pickup flies towards player
 	// ----------------------
 	
 	// Score gain amount when you shoot stuff
