@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>D:/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>D:/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -76,6 +76,7 @@
      <Compile Include="Assets\Scripts\GlobalConstants.cs" />
      <Compile Include="Assets\Scripts\GunDisplay.cs" />
      <Compile Include="Assets\Scripts\Helpers\Button_Trigger.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Dice_Script.cs" />
      <Compile Include="Assets\Scripts\Helpers\Hit_Token_Bank.cs" />
      <Compile Include="Assets\Scripts\Helpers\Possession_Cube.cs" />
      <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_1.cs" />
@@ -87,6 +88,7 @@
      <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_15.cs" />
      <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_16.cs" />
      <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_17.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_17_A.cs" />
      <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_18.cs" />
      <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_2.cs" />
      <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_3.cs" />
@@ -99,6 +101,7 @@
      <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_Helper.cs" />
      <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_Reader.cs" />
      <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_Skewer_1_1.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Thumbs_Up_Down_Panel_Script.cs" />
      <Compile Include="Assets\Scripts\Helpers\Warning_Reticle_Rotation.cs" />
      <Compile Include="Assets\Scripts\Helpers\World_Object_Movement_Helper.cs" />
      <Compile Include="Assets\Scripts\InGameScoreScript.cs" />

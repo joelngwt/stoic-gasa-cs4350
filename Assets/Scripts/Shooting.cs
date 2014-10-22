@@ -361,5 +361,11 @@ public class Shooting : MonoBehaviour {
 		{
 			hitGameObject.GetComponent<Button_Trigger>().activated = true;
 		}
+		else if(hitGameObject.name.Equals("Die_1") 
+		        || hitGameObject.name.Equals("Die_2") 
+		        || hitGameObject.name.Equals("Die_3") )
+		{
+			hitGameObject.GetComponent<Dice_Script>().is_shot = true;
+		}
 	}
 }
