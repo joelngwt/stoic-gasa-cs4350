@@ -16,7 +16,7 @@ public class TimerScript: MonoBehaviour {
 			miliseconds = 0;
 		}
 		else{
-			seconds = PlayerPrefs.GetInt("timeLeft");
+			seconds = 1000;//PlayerPrefs.GetInt("timeLeft");
 		}
 	}
 	

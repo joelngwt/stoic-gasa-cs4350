@@ -30,7 +30,7 @@ public class GunDisplay : MonoBehaviour {
 	{
 		//guiTexture.texture = Pistol; 
 		currentSelection = "Pistol";
-		if(Application.loadedLevelName == "MainHall"){
+		//if(Application.loadedLevelName == "MainHall"){
 			ammoCountPistol = Constants.PISTOL_MAGAZINE_SIZE;
 			ammoCountHMG = Constants.HMG_MAGAZINE_SIZE;
 			ammoCountShotgun = Constants.SHOTGUN_MAGAZINE_SIZE;
@@ -38,7 +38,8 @@ public class GunDisplay : MonoBehaviour {
 			ammoCountTotalHMG = Constants.HMG_STARTING_AMMO;
 			ammoCountTotalShotgun = Constants.SHOTGUN_STARTING_AMMO;
 			ammoCountTotalRocketLauncher = Constants.ROCKET_STARTING_AMMO;
-		}
+		//}
+		/*
 		else{
 			if (PlayerPrefs.HasKey ("HMGTotalAmmo")) {
 				ammoCountTotalHMG = PlayerPrefs.GetInt ("HMGTotalAmmo");
@@ -59,6 +60,7 @@ public class GunDisplay : MonoBehaviour {
 				ammoCountHMG = PlayerPrefs.GetInt ("RocketLauncherAmmo");
 			}
 		}
+		*/
 		RELOADtext.enabled = false;
 		reloadTextPistol = false;
 		reloadTextShotgun = false;
