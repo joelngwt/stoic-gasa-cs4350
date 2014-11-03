@@ -258,11 +258,11 @@ public class Stage_Sequence_1_17 : Stage_Sequence_Helper {
 
 			sequence_phase_index = 15;
 		}
-		else if(sequence_phase_index == 5)
+		else if(sequence_phase_index == 15)
 		{
 			if(Vector3.Distance(Camera.main.transform.position, new Vector3(0.0F, 140.0F, 11.0F)) <= 1.00F)
 			{
-				sequence_phase_index = 6;
+				sequence_phase_index = 16;
 			}
 		}
 		else if(sequence_phase_index == 16)
@@ -277,7 +277,7 @@ public class Stage_Sequence_1_17 : Stage_Sequence_Helper {
 			/*
 			 * Move on to next sequence
 			 * */
-			attached_reader.attached_sequence = new Stage_Sequence_1_18(attached_reader);
+			attached_reader.attached_sequence = new Stage_Sequence_1_17_A(attached_reader);
 		}
 
 	}
