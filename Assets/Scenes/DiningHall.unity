@@ -3875,6 +3875,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8450331f6eba0064baf0f01e415a90db, type: 2}
+    - target: {fileID: 400000, guid: e50c072769db23c43901e2eaa43e4c52, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e50c072769db23c43901e2eaa43e4c52, type: 2}
   m_RootGameObject: {fileID: 561603131}
@@ -9111,8 +9115,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 2.1099999
   unitsLength: 1.27999997
-  pixelHeight: 67.3089981
-  pixelLength: 72.5759964
+  pixelHeight: 58.0249977
+  pixelLength: 55.487999
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -9132,8 +9136,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 72.5759964
-    height: 67.3089981
+    width: 55.487999
+    height: 58.0249977
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -10856,8 +10860,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 5.5
   unitsLength: 8.67000008
-  pixelHeight: 175.449997
-  pixelLength: 491.588989
+  pixelHeight: 151.25
+  pixelLength: 375.844513
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -10877,8 +10881,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 491.588989
-    height: 175.449997
+    width: 375.844513
+    height: 151.25
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -11515,7 +11519,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: a2cbcadf206e5c6489d3f952f3c7f2c6, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 82
+  m_FontSize: 63
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -11536,9 +11540,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1.74000001
   unitsLength: 13.6999998
-  pixelHeight: 55.5060005
-  pixelLength: 776.789978
-  fontNumber: 82
+  pixelHeight: 47.8499985
+  pixelLength: 593.89502
+  fontNumber: 63
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -14266,59 +14270,59 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 13100018, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: 72.5759964
+      value: 55.487999
       objectReference: {fileID: 0}
     - target: {fileID: 13100018, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: 67.3089981
+      value: 58.0249977
       objectReference: {fileID: 0}
     - target: {fileID: 13100020, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: 72.5759964
+      value: 55.487999
       objectReference: {fileID: 0}
     - target: {fileID: 13100020, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: 67.3089981
+      value: 58.0249977
       objectReference: {fileID: 0}
     - target: {fileID: 13100022, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: 72.5759964
+      value: 55.487999
       objectReference: {fileID: 0}
     - target: {fileID: 13100022, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: 67.3089981
+      value: 58.0249977
       objectReference: {fileID: 0}
     - target: {fileID: 13100024, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: 491.588989
+      value: 375.844513
       objectReference: {fileID: 0}
     - target: {fileID: 13100024, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: 175.449997
+      value: 151.25
       objectReference: {fileID: 0}
     - target: {fileID: 13200002, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_FontSize
-      value: 82
+      value: 63
       objectReference: {fileID: 0}
     - target: {fileID: 13100016, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: 1417.5
+      value: 1083.75
       objectReference: {fileID: 0}
     - target: {fileID: 13100016, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: 638
+      value: 550
       objectReference: {fileID: 0}
     - target: {fileID: 13200008, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_FontSize
-      value: 111
+      value: 85
       objectReference: {fileID: 0}
     - target: {fileID: 13100004, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: -1627.29004
+      value: -1244.14502
       objectReference: {fileID: 0}
     - target: {fileID: 13100004, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: -580.580017
+      value: -500.500031
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
@@ -16224,6 +16228,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8450331f6eba0064baf0f01e415a90db, type: 2}
+    - target: {fileID: 400000, guid: e50c072769db23c43901e2eaa43e4c52, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e50c072769db23c43901e2eaa43e4c52, type: 2}
   m_RootGameObject: {fileID: 378952729}
@@ -18461,6 +18469,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8450331f6eba0064baf0f01e415a90db, type: 2}
+    - target: {fileID: 400000, guid: e50c072769db23c43901e2eaa43e4c52, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e50c072769db23c43901e2eaa43e4c52, type: 2}
   m_RootGameObject: {fileID: 901135893}
@@ -18740,8 +18752,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 20
   unitsLength: 25
-  pixelHeight: 638
-  pixelLength: 1417.5
+  pixelHeight: 550
+  pixelLength: 1083.75
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -18761,8 +18773,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1417.5
-    height: 638
+    width: 1083.75
+    height: 550
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -21320,6 +21332,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8450331f6eba0064baf0f01e415a90db, type: 2}
+    - target: {fileID: 400000, guid: e50c072769db23c43901e2eaa43e4c52, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e50c072769db23c43901e2eaa43e4c52, type: 2}
   m_RootGameObject: {fileID: 222968644}
@@ -22236,7 +22252,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: a2cbcadf206e5c6489d3f952f3c7f2c6, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 111
+  m_FontSize: 85
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -22257,9 +22273,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1
   unitsLength: 10.1800003
-  pixelHeight: 31.8999996
-  pixelLength: 577.205994
-  fontNumber: 111
+  pixelHeight: 27.5
+  pixelLength: 441.303009
+  fontNumber: 85
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -25032,8 +25048,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: -1627.29004
-    height: -580.580017
+    width: -1244.14502
+    height: -500.500031
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -25052,8 +25068,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: -18.2000008
   unitsLength: -28.7000008
-  pixelHeight: -580.580017
-  pixelLength: -1627.29004
+  pixelHeight: -500.500031
+  pixelLength: -1244.14502
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -26009,8 +26025,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 2.1099999
   unitsLength: 1.27999997
-  pixelHeight: 67.3089981
-  pixelLength: 72.5759964
+  pixelHeight: 58.0249977
+  pixelLength: 55.487999
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -26030,8 +26046,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 72.5759964
-    height: 67.3089981
+    width: 55.487999
+    height: 58.0249977
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -27187,6 +27203,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8450331f6eba0064baf0f01e415a90db, type: 2}
+    - target: {fileID: 400000, guid: e50c072769db23c43901e2eaa43e4c52, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e50c072769db23c43901e2eaa43e4c52, type: 2}
   m_RootGameObject: {fileID: 1567329088}
@@ -27840,6 +27860,8 @@ GameObject:
   - 81: {fileID: 1583184977}
   - 114: {fileID: 1583184976}
   - 82: {fileID: 1583184975}
+  - 114: {fileID: 1583184983}
+  - 114: {fileID: 1583184982}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -27930,6 +27952,8 @@ MonoBehaviour:
   bearPrefab: {fileID: 100036, guid: e94f294e0de62ca408b4614176699346, type: 2}
   lollipopPrefab: {fileID: 100010, guid: 803b8982835142543b97989471038504, type: 2}
   EggPrefab: {fileID: 100022, guid: 1a33a054b10e50143a91e2b094c39da8, type: 2}
+  trial: 0
+  main_character_movement_helper: {fileID: 0}
 --- !u!81 &1583184977
 AudioListener:
   m_ObjectHideFlags: 0
@@ -27999,6 +28023,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!114 &1583184982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1583184974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8390adeffe850846b0a14e76a2f9b74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  number_of_hit_tokens_stored: 0
+  max_token_storage_size: 2
+  token_recharge_amount: 1
+  token_recharge_time: 3
+  token_recharge_remaining_timer: 0
+--- !u!114 &1583184983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1583184974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14ef3ca0c3feee94c93bc49cf16ae154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attached_world_object: {fileID: 0}
+  task_complete: 0
+  objective_destination_position_list: []
+  objective_movement_speed_list: []
+  objective_lookAt_position_list: []
+  objective_lookAt_upVector_list: []
+  objective_rotation_speed_list: []
+  associated_world_object_list: []
 --- !u!1 &1588093417
 GameObject:
   m_ObjectHideFlags: 0
@@ -29603,8 +29662,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 2.1099999
   unitsLength: 1.27999997
-  pixelHeight: 67.3089981
-  pixelLength: 72.5759964
+  pixelHeight: 58.0249977
+  pixelLength: 55.487999
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -29624,8 +29683,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 72.5759964
-    height: 67.3089981
+    width: 55.487999
+    height: 58.0249977
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -32074,6 +32133,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8450331f6eba0064baf0f01e415a90db, type: 2}
+    - target: {fileID: 400000, guid: e50c072769db23c43901e2eaa43e4c52, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e50c072769db23c43901e2eaa43e4c52, type: 2}
   m_RootGameObject: {fileID: 1841878707}
