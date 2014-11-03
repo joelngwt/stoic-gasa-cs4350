@@ -215,8 +215,8 @@ public class Stage_Sequence_1_17 : Stage_Sequence_Helper {
 			spawn_list.Add(spawnBear(new Vector3( 19F, 21f, -13F ), 1));
 			spawn_list.Add(spawnBear(new Vector3( 68F, 21F, -13F ), 1));
 			spawn_list.Add(spawnBear(new Vector3( 5F, 21F, 47F ), 2));
-			spawn_list.Add(spawnBear(new Vector3( -36F, 21f, 144F ), 1));
-			spawn_list.Add(spawnBear(new Vector3( 28F, 21f, 144F ), 1));
+			//spawn_list.Add(spawnBear(new Vector3( -36F, 21f, 144F ), 1));
+			//spawn_list.Add(spawnBear(new Vector3( 28F, 21f, 144F ), 1));
 			
 			sequence_phase_index = 12;
 		}
