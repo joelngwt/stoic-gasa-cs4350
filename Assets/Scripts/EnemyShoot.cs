@@ -85,7 +85,7 @@ public class EnemyShoot : MonoBehaviour
 				}
 				
 				Vector3 randomOffset;
-				if(hitOrNot < 0.0008F 
+				if(hitOrNot < 0.08F 
 				   && Camera.main != null
 				   && Camera.main.gameObject.GetComponent<Hit_Token_Bank>().request_withdraw_token()){ // hit
 					#if UNITY_EDITOR

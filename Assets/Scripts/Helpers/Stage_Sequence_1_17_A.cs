@@ -133,7 +133,8 @@ public class Stage_Sequence_1_17_A : Stage_Sequence_Helper {
 			whiteboard = GameObject.CreatePrimitive(PrimitiveType.Cube) as GameObject;
 			whiteboard.name = "Whiteboard";
 			whiteboard.transform.position = new Vector3(0F, 160F, -100F);
-			whiteboard.transform.localScale = new Vector3(150F, 50F, 1F);
+			whiteboard.transform.localScale = new Vector3(175F, 50F, 1F);
+			whiteboard.transform.GetComponent<MeshRenderer>().material.mainTexture = Resources.Load("Dice/dice_background") as Texture2D;
 
 			die_1 = GameObject.CreatePrimitive(PrimitiveType.Cube) as GameObject;
 			die_1.name = "Die_1";
@@ -154,13 +155,13 @@ public class Stage_Sequence_1_17_A : Stage_Sequence_Helper {
 			die_3_script = die_3.AddComponent<Dice_Script>();
 
 			die_game_text_mesh_gameObject = GameObject.Instantiate(Resources.Load(TEXT_MESH_CUBE_RESOURCE_PATH) as GameObject, 
-			                                                       new Vector3(68F, 170F, -90F), 
+			                                                       new Vector3(60F, 170F, -90F), 
 			                                                       Quaternion.Euler(new Vector3(0F, -180F, 0F))) as GameObject;
 			die_game_text_mesh_gameObject.name = "Die game instruction";
 			die_game_text_mesh = die_game_text_mesh_gameObject.GetComponent<TextMesh>();
 			die_game_text_mesh.text = "Shoot the largest die! [ " + number_of_answers_scored.ToString() + " / " + number_of_answers_needed.ToString() + " ]";
 			die_game_text_mesh.characterSize = 1;
-			die_game_text_mesh.fontSize = 100;
+			die_game_text_mesh.fontSize = 90;
 			die_game_text_mesh.color = Color.black;
 
 			thumbs_up_down_panel_gameObject = GameObject.CreatePrimitive(PrimitiveType.Cube) as GameObject;

@@ -12,6 +12,8 @@ public class Thumbs_Up_Down_Panel_Script : MonoBehaviour {
 	public float timer_default = 0.25F;
 	public float timer = 0.00F;
 
+	public int playerHealth;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -51,5 +53,22 @@ public class Thumbs_Up_Down_Panel_Script : MonoBehaviour {
 		
 		gameObject.GetComponent<MeshRenderer>().enabled = true;
 		gameObject.GetComponent<MeshRenderer>().material.mainTexture = thumbs_down_texture;
+
+		/*
+		 * Damage the player
+		 * */
+		
+		// Get and update the health of the player
+		if (PlayerPrefs.HasKey ("playerHealth")) {
+			playerHealth = PlayerPrefs.GetInt ("playerHealth");
+		}
+		if(PlayerPrefs.GetInt ("shieldUp") == 0){
+			playerHealth -= 1;
+		}
+		#if UNITY_EDITOR
+		//Debug.Log ("Health1 = " + playerHealth);
+		#endif
+		PlayerPrefs.SetInt ("playerHealth", (int)playerHealth);
+
 	}
 }
