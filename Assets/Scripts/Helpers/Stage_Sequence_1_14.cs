@@ -90,18 +90,13 @@ public class Stage_Sequence_1_14 : Stage_Sequence_Helper {
 			 * character
 			 * */
 			
-			/*Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_and_lookAt_task(new Vector3(65.1f, 33.8f, 136.6f), 
-			                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT, 
+			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_and_lookAt_task(new Vector3(65.1f, 33.8f, 136.6f), 
+			                                                                                      0.5f*World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT, 
 			                                                                                      new Vector3(31.5f, 33f, 81f), 
 			                                                                                      Vector3.up, 
 			                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_ROTATION_SPEED_DEFAULT);
 			
-			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_task(new Vector3(65.1f, 33.8f, 55.9f), 
-			                                                                           World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT);
-			
-			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_task(new Vector3(49f, 35.8f, 64.9f), 
-			                                                                           World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT);*/
-			
+
 			sequence_phase_index = 3;
 		}
 		else if(sequence_phase_index == 3)
@@ -111,6 +106,7 @@ public class Stage_Sequence_1_14 : Stage_Sequence_Helper {
 			 * */
 			if(Camera.main.GetComponent<World_Object_Movement_Helper>().task_complete)
 			{
+				Debug.Log(this.ToString() + "complete");
 				/*
 				 * Move on to next sequence
 				 * */

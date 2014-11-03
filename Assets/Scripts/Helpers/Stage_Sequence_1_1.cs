@@ -64,6 +64,11 @@ public class Stage_Sequence_1_1 : Stage_Sequence_Helper {
 			 * Sequence has not been initizlied
 			 * */
 				
+			/*Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_and_lookAt_task(new Vector3(-25.574f, 3.5f, 268.1f), 
+			                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT,new Vector3(-6f, 8f, 207f), 
+			                                                                                      Vector3.up, 
+			                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_ROTATION_SPEED_DEFAULT);
+			*/
 			/*
 			 * Initialize 
 			 * */

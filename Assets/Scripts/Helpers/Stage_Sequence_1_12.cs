@@ -91,13 +91,12 @@ public class Stage_Sequence_1_12 : Stage_Sequence_Helper {
 			 * character
 			 * */
 
-			
 			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_and_lookAt_task(new Vector3(37.3f, 26f, 141f), 
-			                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT, 
+			                                                                                      0.5f*World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT, 
 			                                                                                      new Vector3(-30f, 21f, 66f), 
-			                                                                                      Vector3.up, 
+			                                                                                     Vector3.up, 
 			                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_ROTATION_SPEED_DEFAULT);
-			
+
 			sequence_phase_index = 3;
 		}
 		else if(sequence_phase_index == 3)

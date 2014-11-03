@@ -71,7 +71,7 @@ public class Stage_Sequence_1_16 : Stage_Sequence_Helper {
 			spawn_list.Add(spawnBear(new Vector3( -66f, 0f, 107f ), 2));
 			spawn_list.Add(spawnBear(new Vector3( -64f, 21f, 69f ), 0));
 			spawn_list.Add(spawnBear(new Vector3( -64f, 21f, 138f ), 0));
-			spawn_list.Add(spawnBear(new Vector3( 17f, 0f, 112f ), 2));
+			spawn_list.Add(spawnBear(new Vector3( -2f, 0f, 142f ), 2));
 			spawn_list.Add(spawnLollipop(new Vector3( 55f, 100f, 280f )));
 			
 			sequence_phase_index = 1;

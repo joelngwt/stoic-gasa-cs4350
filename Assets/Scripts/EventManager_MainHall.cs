@@ -51,9 +51,9 @@ public class EventManager_MainHall : MonoBehaviour {
 		count = 1;
 
 		attached_sequence_reader = new Stage_Sequence_Reader();
-		//attached_sequence_reader.attached_sequence = new Stage_Sequence_1_1(attached_sequence_reader);
+		attached_sequence_reader.attached_sequence = new Stage_Sequence_1_11(attached_sequence_reader);
 		//attached_sequence_reader.attached_sequence = new Stage_Sequence_Skewer_1_1(attached_sequence_reader);
-		attached_sequence_reader.attached_sequence = new Stage_Sequence_1_17_A(attached_sequence_reader);
+		//attached_sequence_reader.attached_sequence = new Stage_Sequence_1_17_A(attached_sequence_reader);
 		//attached_sequence_reader.attached_sequence = new Stage_Sequence_1_17(attached_sequence_reader);
 
 //		/*

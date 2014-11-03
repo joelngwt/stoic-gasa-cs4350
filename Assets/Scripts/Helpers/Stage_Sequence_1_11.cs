@@ -62,7 +62,12 @@ public class Stage_Sequence_1_11 : Stage_Sequence_Helper {
 			/*
 			 * Sequence has not been initizlied
 			 * */
+			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_task(new Vector3(0f, 4f, 141f), 
+			                                                                           World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT);
 			
+			Camera.main.GetComponent<World_Object_Movement_Helper>().add_lookAt_task(new Vector3(29,20f, 139f), 
+			                                                                         Vector3.up, 
+			                                                                         World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_ROTATION_SPEED_DEFAULT);
 			/*
 			 * Initialize 
 			 * */
@@ -92,7 +97,7 @@ public class Stage_Sequence_1_11 : Stage_Sequence_Helper {
 			                                                                         Vector3.up, 
 			                                                                         World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_ROTATION_SPEED_DEFAULT);
 			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_task(new Vector3(0f, 8f, 141f), 
-			                                                                           World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT);
+			                                                                          World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT);
 			
 			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_and_lookAt_task(new Vector3(37f, 4f, 91f), 
 			                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT, 

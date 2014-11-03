@@ -83,17 +83,7 @@ public class Stage_Sequence_1_13 : Stage_Sequence_Helper {
 			if(check_spawn_list_empty())
 			{
 
-				Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_and_lookAt_task(new Vector3(62f, 33f, 141f), 
-				                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT, 
-				                                                                                      new Vector3(-65f,21f,105f), 
-				                                                                                      Vector3.up, 
-				                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_ROTATION_SPEED_DEFAULT);
-				Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_and_lookAt_task(new Vector3(29f, 33f, 49f), 
-				                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT, 
-				                                                                                      new Vector3(-33f,21f,139f), 
-				                                                                                      Vector3.up, 
-				                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_ROTATION_SPEED_DEFAULT);
-				sequence_phase_index = 2;
+					sequence_phase_index = 2;
 			}
 		}
 		else if(sequence_phase_index == 2)
@@ -101,7 +91,32 @@ public class Stage_Sequence_1_13 : Stage_Sequence_Helper {
 			/*
 			 * Move on to next sequence
 			 * */
-			attached_reader.attached_sequence = new Stage_Sequence_1_14(attached_reader);
+			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_and_lookAt_task(new Vector3(62f, 33f, 141f),
+			                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_ROTATION_SPEED_DEFAULT,
+			                                                                                      new Vector3(-65f,21f,105f), 
+			                                                                                      Vector3.up, 
+			                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_ROTATION_SPEED_DEFAULT);
+			
+			/*Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_and_lookAt_task(new Vector3(29f, 33f, 49f), 
+			                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_ROTATION_SPEED_DEFAULT,
+			                                                                                      new Vector3(-33f,21f,139f), 
+			                                                                                      Vector3.up, 
+			                                                                                      World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_ROTATION_SPEED_DEFAULT);
+*/
+			sequence_phase_index = 3;
+		}
+		else if(sequence_phase_index == 3)
+		{
+			/*
+			 * Waiting for character to reach destination
+			 * */
+			if(Camera.main.GetComponent<World_Object_Movement_Helper>().task_complete)
+			{
+				/*
+				 * Move on to next sequence
+				 * */
+				attached_reader.attached_sequence = new Stage_Sequence_1_14(attached_reader);
+			}
 		}
 	}
 	

@@ -59,7 +59,7 @@ public class Stage_Sequence_Helper {
 	public Stage_Sequence_Helper () 	{
 
 		spawn_list = new List<GameObject>();
-		Debug.Log ("next sequence");
+		Debug.Log (this.ToString());
 	}
 
 	/*

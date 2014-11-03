@@ -92,7 +92,7 @@ public class Stage_Sequence_1_10 : Stage_Sequence_Helper {
 			 * */
 			
 			
-			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_task(new Vector3(0f, 8f, 141f), 
+			Camera.main.GetComponent<World_Object_Movement_Helper>().add_movement_task(new Vector3(0f, 4f, 141f), 
 			                                                                           World_Object_Movement_Helper.PLAYER_WORLD_OBJECT_MOVEMENT_SPEED_DEFAULT);
 			
 			Camera.main.GetComponent<World_Object_Movement_Helper>().add_lookAt_task(new Vector3(29,20f, 139f), 

@@ -152,6 +152,8 @@ public class World_Object_Movement_Helper : MonoBehaviour{
 	 * */
 	public void add_movement_task (Vector3 given_destination_position, 
 	                               float given_movement_speed) 	{
+
+		Debug.Log (given_movement_speed);
 		
 		Vector3 chosen_destination_position;
 		float chosen_movement_speed;
@@ -218,7 +220,8 @@ public class World_Object_Movement_Helper : MonoBehaviour{
 		objective_destination_position_list.Add(new Vector3(given_destination_position.x, 
 		                                                    given_destination_position.y, 
 		                                                    given_destination_position.z));
-		objective_movement_speed_list.Add(given_movement_speed);
+		objective_movement_speed_list.Add (given_movement_speed);
+		Debug.Log (given_movement_speed);
 		
 		/*
 		 * New objectives received. Mark the 
@@ -406,94 +409,91 @@ public class World_Object_Movement_Helper : MonoBehaviour{
 		 * Check if the task has previously 
 		 * been completed
 		 * */
-		if(task_complete == false)
-		{
-			/*
+		if (task_complete == false) {
+						/*
 			 * The task is incomplete; there 
 			 * is at least one iteam left on 
 			 * the objective collections
 			 * */
 
-			/*
+						/*
 			 * Retrieve the objectives first
 			 * */
-			chosen_objective_destination = objective_destination_position_list[0];
-			chosen_movement_speed = objective_movement_speed_list[0];
+						chosen_objective_destination = objective_destination_position_list [0];
+						chosen_movement_speed = objective_movement_speed_list [0];
 
-			chosen_objective_lookAt_position = objective_lookAt_position_list[0];
-			chosen_objective_lookAt_upVector = objective_lookAt_upVector_list[0];
-			chosen_rotation_speed = objective_rotation_speed_list[0];
+						chosen_objective_lookAt_position = objective_lookAt_position_list [0];
+						chosen_objective_lookAt_upVector = objective_lookAt_upVector_list [0];
+						chosen_rotation_speed = objective_rotation_speed_list [0];
 
 
-			/*
+						/*
 			 * Move the attached object towards the 
 			 * destination while looking at the 
 			 * lookAt position
 			 * */
 
-			/*
+						/*
 			 * Find the delta vector
 			 * */
-			current_object_position = attached_world_object.transform.position;
-			chosen_objective_destination_delta_vector = new Vector3(chosen_objective_destination.x - current_object_position.x, 
+						current_object_position = attached_world_object.transform.position;
+						chosen_objective_destination_delta_vector = new Vector3 (chosen_objective_destination.x - current_object_position.x, 
 			                                                          chosen_objective_destination.y - current_object_position.y, 
 			                                                          chosen_objective_destination.z - current_object_position.z).normalized;
 
-			/*
+						/*
 			 * Clamp the distance that can be 
 			 * traveled
 			 * */
-			chosen_objective_destination_delta_distance = Vector3.Distance(current_object_position, chosen_objective_destination);
-			chosen_objective_destination_delta_distance = Mathf.Min(Time.deltaTime * chosen_movement_speed, chosen_objective_destination_delta_distance);
+						chosen_objective_destination_delta_distance = Vector3.Distance (current_object_position, chosen_objective_destination);
+						chosen_objective_destination_delta_distance = Mathf.Min (Time.deltaTime * chosen_movement_speed, chosen_objective_destination_delta_distance);
 
-			/*
+						/*
 			 * Translate the attached world 
 			 * object
 			 * */
-			attached_world_object.transform.Translate(chosen_objective_destination_delta_vector.x * chosen_objective_destination_delta_distance, 
+						attached_world_object.transform.Translate (chosen_objective_destination_delta_vector.x * chosen_objective_destination_delta_distance, 
 			                                          chosen_objective_destination_delta_vector.y * chosen_objective_destination_delta_distance, 
 			                                          chosen_objective_destination_delta_vector.z * chosen_objective_destination_delta_distance, 
 			                                          Space.World);
 
-			/*
+						/*
 			 * Find the final quaternion
 			 * */
-			chosen_objective_lookAt_quaternion = Quaternion.LookRotation((chosen_objective_lookAt_position - current_object_position).normalized, chosen_objective_lookAt_upVector);
+						chosen_objective_lookAt_quaternion = Quaternion.LookRotation ((chosen_objective_lookAt_position - current_object_position).normalized, chosen_objective_lookAt_upVector);
 
-			/*
+						/*
 			 * Find the angle between the two 
 			 * quaternions to determine how much to 
 			 * rotate
 			 * */
-			chosen_objective_lookAt_delta_angle = Mathf.Abs(Quaternion.Angle(attached_world_object.transform.rotation, chosen_objective_lookAt_quaternion));
-			chosen_slerp_coefficient = chosen_rotation_speed / chosen_objective_lookAt_delta_angle;
+						chosen_objective_lookAt_delta_angle = Mathf.Abs (Quaternion.Angle (attached_world_object.transform.rotation, chosen_objective_lookAt_quaternion));
+						chosen_slerp_coefficient = chosen_rotation_speed / chosen_objective_lookAt_delta_angle;
 
-			/*
+						/*
 			 * Slerp the rotation 
 			 * */
-			attached_world_object.transform.rotation = Quaternion.Slerp(attached_world_object.transform.rotation, chosen_objective_lookAt_quaternion, 
+						attached_world_object.transform.rotation = Quaternion.Slerp (attached_world_object.transform.rotation, chosen_objective_lookAt_quaternion, 
 			                                                            Time.deltaTime * chosen_slerp_coefficient);
 
-			/*
+						/*
 			 * All associated objects will copy the current 
 			 * position and rotation
 			 * */
-			foreach(GameObject chosen_gameObject_inLoop in associated_world_object_list)
-			{
-				chosen_gameObject_inLoop.transform.position = attached_world_object.transform.position;
-				chosen_gameObject_inLoop.transform.rotation = attached_world_object.transform.rotation;
-			}
+						foreach (GameObject chosen_gameObject_inLoop in associated_world_object_list) {
+								chosen_gameObject_inLoop.transform.position = attached_world_object.transform.position;
+								chosen_gameObject_inLoop.transform.rotation = attached_world_object.transform.rotation;
+						}
 
-			/*
+						/*
 			 * Check if the task is complete
 			 * */
-			distance_from_objective = Vector3.Distance(attached_world_object.transform.position, chosen_objective_destination);
-			angle_from_objective = Quaternion.Angle(Quaternion.LookRotation(attached_world_object.transform.forward), chosen_objective_lookAt_quaternion);
+						distance_from_objective = Vector3.Distance (attached_world_object.transform.position, chosen_objective_destination);
+						angle_from_objective = Quaternion.Angle (Quaternion.LookRotation (attached_world_object.transform.forward), chosen_objective_lookAt_quaternion);
 
-			if(Vector3.Distance(attached_world_object.transform.position, chosen_objective_destination) <= MOVEMENT_COMPLETION_DISTANCE_THRESHOLD 
-			   && angle_from_objective <= LOOKAT_COMPLETION_ANGLE_THRESHOLD)
-			{
-				/*
+						if (Vector3.Distance (attached_world_object.transform.position, chosen_objective_destination) <= MOVEMENT_COMPLETION_DISTANCE_THRESHOLD 
+								&& angle_from_objective <= LOOKAT_COMPLETION_ANGLE_THRESHOLD) {
+								/*
 				 * The object has moved within the threshold for 
 				 * completion. Snap the object to the position and 
 				 * mark the task as complete
@@ -501,23 +501,31 @@ public class World_Object_Movement_Helper : MonoBehaviour{
 //				attached_world_object.transform.position = chosen_objective_destination;
 //				attached_world_object.transform.LookAt(chosen_objective_lookAt_position);
 
-				/*
+								/*
 				 * Remove the first element from both lists
 				 * */
-				objective_destination_position_list.RemoveAt(0);
-				objective_lookAt_position_list.RemoveAt(0);
+				objective_destination_position_list.RemoveAt (0);
+				objective_lookAt_position_list.RemoveAt (0);
 
-				/*
+				objective_movement_speed_list.RemoveAt (0);
+				objective_lookAt_upVector_list.RemoveAt (0);
+				objective_rotation_speed_list.RemoveAt (0);
+								
+
+								/*
 				 * Task is complete if both lists 
 				 * are empty
 				 * */
-				if(objective_destination_position_list.Count == 0 
-				   && objective_lookAt_position_list.Count == 0)
-				{
-					task_complete = true;
-				}
-			}
-		}
+								if (objective_destination_position_list.Count == 0 
+										&& objective_lookAt_position_list.Count == 0) {
+
+										//objective_movement_speed_list.Clear();
+										//objective_lookAt_upVector_list.Clear();
+										//objective_rotation_speed_list.Clear();
+										task_complete = true;
+								}
+						}
+				} 
 	}
 	
 	////////////////////////////////////////////////////
