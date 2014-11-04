@@ -150,11 +150,11 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 				moveToPillar (1);
 			}
 			if (shootScript.haveReached == true && shootScript.haveLooked == false) {
-				if (bossInMiddle == false) {
-					LookAt_Pillar(lookAtPillar1BossEdge);
-				}
-				else if (bossInMiddle == true) {
+				if (bossInMiddle == true || bossAIScript.movingToMiddle == true) {
 					LookAt_Pillar(lookAtPillar1BossMiddle);
+				}
+				else if (bossInMiddle == false) {
+					LookAt_Pillar(lookAtPillar1BossEdge);
 				}
 			}
 		}
@@ -163,11 +163,11 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 				moveToPillar (2);
 			}
 			if (shootScript.haveReached == true && shootScript.haveLooked == false) {
-				if (bossInMiddle == false) {
-					LookAt_Pillar(lookAtPillar2BossEdge);
-				}
-				else if (bossInMiddle == true) {
+				if (bossInMiddle == true || bossAIScript.movingToMiddle == true) {
 					LookAt_Pillar(lookAtPillar2BossMiddle);
+				}
+				else if (bossInMiddle == false) {
+					LookAt_Pillar(lookAtPillar2BossEdge);
 				}
 			}
 		}
@@ -176,12 +176,12 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 				moveToPillar (3);
 			}
 			if (shootScript.haveReached == true && shootScript.haveLooked == false) {
-				if (bossInMiddle == false) {
-					LookAt_Pillar(lookAtPillar3BossEdge);
-				}
-				else if (bossInMiddle == true) {
+				if (bossInMiddle == true || bossAIScript.movingToMiddle == true) {
 					LookAt_Pillar(lookAtPillar3BossMiddle);
-				}				
+				}	
+				else if (bossInMiddle == false) {
+					LookAt_Pillar(lookAtPillar3BossEdge);
+				}	
 			}
 		}
 		else if (shootScript.shotPillar4 == true && shootScript.haveLooked == false) {
@@ -189,12 +189,12 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 				moveToPillar (4);
 			}
 			if (shootScript.haveReached == true && shootScript.haveLooked == false) {
-				if (bossInMiddle == false) {
+				if (bossInMiddle == true || bossAIScript.movingToMiddle == true) {
+					LookAt_Pillar(lookAtPillar4BossMiddle);
+				}	
+				else if (bossInMiddle == false) {
 					LookAt_Pillar(lookAtPillar4BossEdge);
 				}
-				else if (bossInMiddle == true) {
-					LookAt_Pillar(lookAtPillar4BossMiddle);
-				}			
 			}
 		}
 					
