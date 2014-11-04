@@ -8,7 +8,7 @@ public class InGameScoreScript : MonoBehaviour {
 	//public LifeCounter lifecounterScript;
 
 	void Start(){
-		if(Application.loadedLevelName == "MainHall"){
+		if(Application.loadedLevelName == "MainHall_" || Application.loadedLevelName == "MainHall"){
 			currentScore = 0;
 		}
 		else if (PlayerPrefs.HasKey ("currentScore")) {

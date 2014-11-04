@@ -137,6 +137,7 @@ public class MenuTouches : MonoBehaviour {
 		audio.PlayOneShot(menuButton);
 		guiTexture.texture = button1;
 		yield return new WaitForSeconds(0.2F);
+		PlayerPrefs.SetInt ("currentScore", 0);
 		Application.LoadLevel ("DiningHall");
 		yield break;
 	}
@@ -145,6 +146,7 @@ public class MenuTouches : MonoBehaviour {
 		audio.PlayOneShot(menuButton);
 		guiTexture.texture = button1;
 		yield return new WaitForSeconds(0.2F);
+		PlayerPrefs.SetInt ("currentScore", 0);
 		Application.LoadLevel ("BossRoom");
 		yield break;
 	}
@@ -153,6 +155,7 @@ public class MenuTouches : MonoBehaviour {
 		audio.PlayOneShot(menuButton);
 		guiTexture.texture = button1;
 		yield return new WaitForSeconds(0.2F);
+		PlayerPrefs.SetInt ("currentScore", 0);
 		Application.LoadLevel ("ActualBossRoom");
 		yield break;
 	}
