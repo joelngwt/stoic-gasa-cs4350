@@ -373,8 +373,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: .00999999978
   unitsLength: -.200000003
-  pixelHeight: .166999996
-  pixelLength: -9.42000008
+  pixelHeight: .505999982
+  pixelLength: -17.9899998
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -408,8 +408,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: -9.42000008
-    height: .166999996
+    width: -17.9899998
+    height: .505999982
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -451,7 +451,7 @@ GUIText:
   m_GameObject: {fileID: 669961892}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: Press               to reload!
+  m_Text: Press space to reload!
   m_Anchor: 4
   m_Alignment: 0
   m_PixelOffset: {x: 0, y: 0}
@@ -459,7 +459,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: e188325fe39a31b45befd6376face71b, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 68
+  m_FontSize: 130
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -491,9 +491,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1
   unitsLength: 13.7799997
-  pixelHeight: 16.7000008
-  pixelLength: 649.037964
-  fontNumber: 68
+  pixelHeight: 50.5999985
+  pixelLength: 1239.51099
+  fontNumber: 130
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -531,7 +531,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: e188325fe39a31b45befd6376face71b, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 63
+  m_FontSize: 121
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -563,9 +563,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1
   unitsLength: 14.7700005
-  pixelHeight: 16.7000008
-  pixelLength: 695.666992
-  fontNumber: 63
+  pixelHeight: 50.5999985
+  pixelLength: 1328.56152
+  fontNumber: 121
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -737,7 +737,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!131 &1871084942
 GUITexture:
   m_ObjectHideFlags: 0
@@ -874,8 +874,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: -9.42000008
-    height: .166999996
+    width: -17.9899998
+    height: .505999982
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -905,8 +905,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: .00999999978
   unitsLength: -.200000003
-  pixelHeight: .166999996
-  pixelLength: -9.42000008
+  pixelHeight: .505999982
+  pixelLength: -17.9899998
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0

@@ -665,8 +665,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: .00999999978
   unitsLength: -.200000003
-  pixelHeight: .166999996
-  pixelLength: -9.42000008
+  pixelHeight: .505999982
+  pixelLength: -17.9899998
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -700,8 +700,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: -9.42000008
-    height: .166999996
+    width: -17.9899998
+    height: .505999982
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -876,7 +876,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: e188325fe39a31b45befd6376face71b, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 57
+  m_FontSize: 109
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -908,9 +908,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1
   unitsLength: 16.5
-  pixelHeight: 16.7000008
-  pixelLength: 777.150024
-  fontNumber: 57
+  pixelHeight: 50.5999985
+  pixelLength: 1484.17505
+  fontNumber: 109
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -930,7 +930,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!131 &2034886756
 GUITexture:
   m_ObjectHideFlags: 0
@@ -987,7 +987,7 @@ GUIText:
   m_GameObject: {fileID: 2107829891}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: Press               to block!
+  m_Text: Press space to block!
   m_Anchor: 4
   m_Alignment: 0
   m_PixelOffset: {x: 0, y: 0}
@@ -995,7 +995,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: e188325fe39a31b45befd6376face71b, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 69
+  m_FontSize: 133
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -1027,9 +1027,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1
   unitsLength: 13.46
-  pixelHeight: 16.7000008
-  pixelLength: 633.966003
-  fontNumber: 69
+  pixelHeight: 50.5999985
+  pixelLength: 1210.72705
+  fontNumber: 133
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
