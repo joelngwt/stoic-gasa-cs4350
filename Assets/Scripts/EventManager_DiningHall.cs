@@ -50,15 +50,15 @@ public class EventManager_DiningHall : MonoBehaviour {
 		theCharacter.transform.rotation = theCamera.transform.rotation;
 		count = 1;
 
-		attached_sequence_reader = new Stage_Sequence_Reader();
-		attached_sequence_reader.attached_sequence = new Stage_Sequence_2_1(attached_sequence_reader);
+		//attached_sequence_reader = new Stage_Sequence_Reader();
+		//attached_sequence_reader.attached_sequence = new Stage_Sequence_2_1(attached_sequence_reader);
 	}
 
 	// Update is called once per frame
 	void Update () {
 
 		attached_sequence_reader.process_update();
-		/*
+		
 		// character hitbox follows the camera around
 		theCharacter.transform.position = theCamera.transform.position;
 
@@ -280,7 +280,7 @@ public class EventManager_DiningHall : MonoBehaviour {
 				saveGame ();
 				Application.LoadLevel ("BossRoom");
 			}
-		}*/
+		}
 	}
 	
 	
