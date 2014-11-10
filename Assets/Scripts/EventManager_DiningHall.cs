@@ -34,13 +34,13 @@ public class EventManager_DiningHall : MonoBehaviour {
 	public GameObject EggPrefab;
 	private bool reached = false;
 
-	public Stage_Sequence_Reader attached_sequence_reader;
-	public bool trial = false;
+	//public Stage_Sequence_Reader attached_sequence_reader;
+	//public bool trial = false;
 
 	/*
 	 * Helpers
 	 * */
-	public World_Object_Movement_Helper main_character_movement_helper;
+	//public World_Object_Movement_Helper main_character_movement_helper;
 	
 	void Start(){
 		theCamera = Camera.main.gameObject;
@@ -57,7 +57,7 @@ public class EventManager_DiningHall : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		attached_sequence_reader.process_update();
+		//attached_sequence_reader.process_update();
 		
 		// character hitbox follows the camera around
 		theCharacter.transform.position = theCamera.transform.position;
