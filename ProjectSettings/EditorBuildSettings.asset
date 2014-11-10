@@ -31,3 +31,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MiniGameOne-Ingress.unity
   - enabled: 1
     path: Assets/Scenes/Menu Scenes/Win.unity
+  - enabled: 1
+    path: Assets/Scenes/MainHall_.unity
+  - enabled: 1
+    path: Assets/Scenes/MainHall_DemoMove.unity
+  - enabled: 1
+    path: Assets/Scenes/MainHall_DemoPuzzle.unity

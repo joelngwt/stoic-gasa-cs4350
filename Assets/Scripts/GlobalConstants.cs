@@ -37,8 +37,8 @@ public static class Constants {
 	public const int ROCKET_MAGAZINE_SIZE = 3;			// Amount of shots in 1 rocket launcher magazine
 	public const float ROCKET_EXPLOSION_RADIUS = 8.0f;	
 	public const int ROCKET_FLYING_SPEED = 75;			// Speed at which the missile moves
-	public const float PISTOL_RELOAD_SPEED = 0.06f;		// Pistol reload delay between each bullet
-	public const int PISTOL_MAGAZINE_SIZE = 6;			// Amount of shots in 1 pistol magazine
+	public const float PISTOL_RELOAD_SPEED = 0.05f;		// Pistol reload delay between each bullet
+	public const int PISTOL_MAGAZINE_SIZE = 10;			// Amount of shots in 1 pistol magazine
 	
 	// Boss stats	
 	public const float BOSS_TOTAL_HEALTH = 200.0f;				// Amount of health the boss has

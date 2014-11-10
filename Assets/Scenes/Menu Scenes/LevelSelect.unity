@@ -74,6 +74,149 @@ NavMeshSettings:
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
   m_NavMesh: {fileID: 0}
+--- !u!1 &276926502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 276926507}
+  - 131: {fileID: 276926506}
+  - 114: {fileID: 276926505}
+  - 114: {fileID: 276926504}
+  - 82: {fileID: 276926503}
+  m_Layer: 0
+  m_Name: text_Moving
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &276926503
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 276926502}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!114 &276926504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 276926502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b703458f97df1da43a01d5ca771c5e4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button1: {fileID: 2800000, guid: df758ff946c92ea47a69e2c53d89c406, type: 3}
+  button2: {fileID: 2800000, guid: 02bbadc5eb462cd498e67043e7c1880d, type: 3}
+  loading: {fileID: 0}
+  menuButton: {fileID: 8300000, guid: ff12a87a922e9bb488789fa8050b265b, type: 3}
+--- !u!114 &276926505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 276926502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a564e5c96acbb1b48ab9ba7bb67d5d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitsHeight: 1.60000002
+  unitsLength: 2.30999994
+  pixelHeight: 51.0400009
+  pixelLength: 130.97699
+  fontNumber: 0
+  middleScreenWidth: 0
+  rightOfScreen: 0
+  leftOfScreen: 0
+  editable: 0
+--- !u!131 &276926506
+GUITexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 276926502}
+  m_Enabled: 1
+  m_Texture: {fileID: 2800000, guid: df758ff946c92ea47a69e2c53d89c406, type: 3}
+  m_Color: {r: .5, g: .5, b: .5, a: .5}
+  m_PixelInset:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 130.97699
+    height: 51.0400009
+  m_LeftBorder: 0
+  m_RightBorder: 0
+  m_TopBorder: 0
+  m_BottomBorder: 0
+--- !u!4 &276926507
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 276926502}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .61439538, y: .550000012, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
 --- !u!1 &309453139
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,8 +307,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1.60000002
   unitsLength: 2.30999994
-  pixelHeight: 80.9599991
-  pixelLength: 207.7845
+  pixelHeight: 51.0400009
+  pixelLength: 130.97699
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -199,8 +342,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 207.7845
-    height: 80.9599991
+    width: 130.97699
+    height: 51.0400009
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -410,8 +553,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1.60000002
   unitsLength: 2.30999994
-  pixelHeight: 80.9599991
-  pixelLength: 207.7845
+  pixelHeight: 51.0400009
+  pixelLength: 130.97699
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -430,8 +573,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 207.7845
-    height: 80.9599991
+    width: 130.97699
+    height: 51.0400009
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -480,8 +623,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1.60000002
   unitsLength: 2.30999994
-  pixelHeight: 80.9599991
-  pixelLength: 207.7845
+  pixelHeight: 51.0400009
+  pixelLength: 130.97699
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -500,8 +643,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 207.7845
-    height: 80.9599991
+    width: 130.97699
+    height: 51.0400009
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -688,7 +831,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: fc753816c81a3c44687ad9161de86bea, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 118
+  m_FontSize: 74
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -720,13 +863,156 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 4.01999998
   unitsLength: 15.1700001
-  pixelHeight: 203.412003
-  pixelLength: 1364.5415
-  fontNumber: 118
+  pixelHeight: 128.238007
+  pixelLength: 860.138977
+  fontNumber: 74
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
   editable: 0
+--- !u!1 &1350442508
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1350442513}
+  - 131: {fileID: 1350442512}
+  - 114: {fileID: 1350442511}
+  - 114: {fileID: 1350442510}
+  - 82: {fileID: 1350442509}
+  m_Layer: 0
+  m_Name: text_Puzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1350442509
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1350442508}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!114 &1350442510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1350442508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b703458f97df1da43a01d5ca771c5e4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button1: {fileID: 2800000, guid: df758ff946c92ea47a69e2c53d89c406, type: 3}
+  button2: {fileID: 2800000, guid: 02bbadc5eb462cd498e67043e7c1880d, type: 3}
+  loading: {fileID: 0}
+  menuButton: {fileID: 8300000, guid: ff12a87a922e9bb488789fa8050b265b, type: 3}
+--- !u!114 &1350442511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1350442508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a564e5c96acbb1b48ab9ba7bb67d5d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitsHeight: 1.60000002
+  unitsLength: 2.30999994
+  pixelHeight: 51.0400009
+  pixelLength: 130.97699
+  fontNumber: 0
+  middleScreenWidth: 0
+  rightOfScreen: 0
+  leftOfScreen: 0
+  editable: 0
+--- !u!131 &1350442512
+GUITexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1350442508}
+  m_Enabled: 1
+  m_Texture: {fileID: 2800000, guid: df758ff946c92ea47a69e2c53d89c406, type: 3}
+  m_Color: {r: .5, g: .5, b: .5, a: .5}
+  m_PixelInset:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 130.97699
+    height: 51.0400009
+  m_LeftBorder: 0
+  m_RightBorder: 0
+  m_TopBorder: 0
+  m_BottomBorder: 0
+--- !u!4 &1350442513
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1350442508}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .756263494, y: .550000012, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
 --- !u!1001 &1484970213
 Prefab:
   m_ObjectHideFlags: 0
@@ -803,8 +1089,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 207.7845
-    height: 80.9599991
+    width: 130.97699
+    height: 51.0400009
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -834,8 +1120,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1.60000002
   unitsLength: 2.30999994
-  pixelHeight: 80.9599991
-  pixelLength: 207.7845
+  pixelHeight: 51.0400009
+  pixelLength: 130.97699
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -946,8 +1232,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 207.7845
-    height: 80.9599991
+    width: 130.97699
+    height: 51.0400009
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -977,8 +1263,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1.60000002
   unitsLength: 2.30999994
-  pixelHeight: 80.9599991
-  pixelLength: 207.7845
+  pixelHeight: 51.0400009
+  pixelLength: 130.97699
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0

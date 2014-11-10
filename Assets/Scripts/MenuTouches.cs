@@ -83,6 +83,18 @@ public class MenuTouches : MonoBehaviour {
 			}
 			StartCoroutine(LoadActualBossRoom());
 		}
+		else if (this.name == "text_Moving") {
+			if (GameObject.Find ("Music") != null) {
+				Destroy(GameObject.Find ("Music")); // Stop menu music
+			}
+			StartCoroutine(LoadMainHallMoving());
+		}
+		else if (this.name == "text_Puzzle") {
+			if (GameObject.Find ("Music") != null) {
+				Destroy(GameObject.Find ("Music")); // Stop menu music
+			}
+			StartCoroutine(LoadMainHallPuzzle());
+		}
 	}
 	
 	void OnMouseDown() {
@@ -180,6 +192,22 @@ public class MenuTouches : MonoBehaviour {
 		guiTexture.texture = button1;
 		yield return new WaitForSeconds(0.2F);
 		Application.LoadLevel ("HelpScreen3");
+		yield break;
+	}
+
+	IEnumerator LoadMainHallMoving() {
+		audio.PlayOneShot(menuButton);
+		guiTexture.texture = button1;
+		yield return new WaitForSeconds(0.2F);
+		Application.LoadLevel ("MainHall_DemoMove");
+		yield break;
+	}
+
+	IEnumerator LoadMainHallPuzzle() {
+		audio.PlayOneShot(menuButton);
+		guiTexture.texture = button1;
+		yield return new WaitForSeconds(0.2F);
+		Application.LoadLevel ("MainHall_DemoPuzzle");
 		yield break;
 	}
 }
