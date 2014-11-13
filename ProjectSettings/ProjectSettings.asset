@@ -106,6 +106,22 @@ PlayerSettings:
     m_Icons:
     - m_Icon: {fileID: 2800000, guid: 38567904f7ae35948aa157b7ee5f3c4a, type: 3}
       m_Size: 128
+  - m_BuildTarget: Standalone
+    m_Icons:
+    - m_Icon: {fileID: 2800000, guid: 38567904f7ae35948aa157b7ee5f3c4a, type: 3}
+      m_Size: 1024
+    - m_Icon: {fileID: 2800000, guid: 38567904f7ae35948aa157b7ee5f3c4a, type: 3}
+      m_Size: 512
+    - m_Icon: {fileID: 2800000, guid: 38567904f7ae35948aa157b7ee5f3c4a, type: 3}
+      m_Size: 256
+    - m_Icon: {fileID: 2800000, guid: 38567904f7ae35948aa157b7ee5f3c4a, type: 3}
+      m_Size: 128
+    - m_Icon: {fileID: 2800000, guid: 38567904f7ae35948aa157b7ee5f3c4a, type: 3}
+      m_Size: 48
+    - m_Icon: {fileID: 2800000, guid: 38567904f7ae35948aa157b7ee5f3c4a, type: 3}
+      m_Size: 32
+    - m_Icon: {fileID: 2800000, guid: 38567904f7ae35948aa157b7ee5f3c4a, type: 3}
+      m_Size: 16
   m_BuildTargetBatching:
   - m_BuildTarget: Standalone
     m_StaticBatching: 1

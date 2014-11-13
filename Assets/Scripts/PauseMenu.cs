@@ -95,11 +95,17 @@ public class PauseMenu : MonoBehaviour {
 				if (Application.loadedLevelName == "MainHall") {
 					Application.LoadLevel("MainHall");
 				}
+				else if (Application.loadedLevelName == "MainHall_") {
+					Application.LoadLevel("MainHall_");
+				}
 				else if (Application.loadedLevelName == "DiningHall") {
 					Application.LoadLevel("DiningHall");
 				}
 				else if (Application.loadedLevelName == "BossRoom") {
 					Application.LoadLevel("BossRoom");
+				}
+				else if (Application.loadedLevelName == "ActualBossRoom") {
+					Application.LoadLevel("ActualBossRoom");
 				}
 				
 			}
