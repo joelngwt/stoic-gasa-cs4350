@@ -53,11 +53,20 @@ public class RocketMissile : MonoBehaviour {
 			}
 			
 			// The levels have different scales
-			if (Application.loadedLevelName == "MainHall" || Application.loadedLevelName == "ActualBossRoom") {
-				colliders = Physics.OverlapSphere(this.transform.position, Constants.ROCKET_EXPLOSION_RADIUS * 4f);
+			if (Application.loadedLevelName == "MainHall_") {
+				colliders = Physics.OverlapSphere(this.transform.position, 
+				                                  Constants.ROCKET_EXPLOSION_RADIUS * 
+				                                  Constants.ROCKET_EXPLOSION_RADIUS_MAINHALL_MULTIPLIER);
 			}
 			else if (Application.loadedLevelName == "BossRoom") {
-				colliders = Physics.OverlapSphere(this.transform.position, Constants.ROCKET_EXPLOSION_RADIUS * 2.5f);
+				colliders = Physics.OverlapSphere(this.transform.position, 
+				                                  Constants.ROCKET_EXPLOSION_RADIUS * 
+				                                  Constants.ROCKET_EXPLOSION_RADIUS_BOSSROOM_MULTIPLIER);
+			}
+			else if (Application.loadedLevelName == "ActualBossRoom") {
+				colliders = Physics.OverlapSphere(this.transform.position, 
+				                                  Constants.ROCKET_EXPLOSION_RADIUS * 
+				                                  Constants.ROCKET_EXPLOSION_RADIUS_ACTUALBOSSROOM_MULTIPLIER);
 			}
 			else {
 				colliders = Physics.OverlapSphere(this.transform.position, Constants.ROCKET_EXPLOSION_RADIUS);
