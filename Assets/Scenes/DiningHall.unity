@@ -9115,8 +9115,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 2.1099999
   unitsLength: 1.27999997
-  pixelHeight: 43.149498
-  pixelLength: 70.0159988
+  pixelHeight: 28.590498
+  pixelLength: 34.8159981
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -9136,8 +9136,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 70.0159988
-    height: 43.149498
+    width: 34.8159981
+    height: 28.590498
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -10860,8 +10860,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 5.5
   unitsLength: 8.67000008
-  pixelHeight: 112.474998
-  pixelLength: 474.248993
+  pixelHeight: 74.5250015
+  pixelLength: 235.824005
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -10881,8 +10881,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 474.248993
-    height: 112.474998
+    width: 235.824005
+    height: 74.5250015
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -11519,7 +11519,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: a2cbcadf206e5c6489d3f952f3c7f2c6, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 79
+  m_FontSize: 39
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -11540,9 +11540,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1.74000001
   unitsLength: 13.6999998
-  pixelHeight: 35.5830002
-  pixelLength: 749.390015
-  fontNumber: 79
+  pixelHeight: 23.5769997
+  pixelLength: 372.639984
+  fontNumber: 39
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -14270,59 +14270,59 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 13100018, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: 70.0159988
+      value: 34.8159981
       objectReference: {fileID: 0}
     - target: {fileID: 13100018, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: 43.149498
+      value: 28.590498
       objectReference: {fileID: 0}
     - target: {fileID: 13100020, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: 70.0159988
+      value: 34.8159981
       objectReference: {fileID: 0}
     - target: {fileID: 13100020, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: 43.149498
+      value: 28.590498
       objectReference: {fileID: 0}
     - target: {fileID: 13100022, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: 70.0159988
+      value: 34.8159981
       objectReference: {fileID: 0}
     - target: {fileID: 13100022, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: 43.149498
+      value: 28.590498
       objectReference: {fileID: 0}
     - target: {fileID: 13100024, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: 474.248993
+      value: 235.824005
       objectReference: {fileID: 0}
     - target: {fileID: 13100024, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: 112.474998
+      value: 74.5250015
       objectReference: {fileID: 0}
     - target: {fileID: 13200002, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_FontSize
-      value: 79
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 13100016, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: 1367.5
+      value: 680
       objectReference: {fileID: 0}
     - target: {fileID: 13100016, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: 409
+      value: 271
       objectReference: {fileID: 0}
     - target: {fileID: 13200008, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_FontSize
-      value: 107
+      value: 53
       objectReference: {fileID: 0}
     - target: {fileID: 13100004, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.width
-      value: -1569.89001
+      value: -780.640015
       objectReference: {fileID: 0}
     - target: {fileID: 13100004, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_PixelInset.height
-      value: -372.190002
+      value: -246.610016
       objectReference: {fileID: 0}
     - target: {fileID: 100016, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
       propertyPath: m_IsActive
@@ -18756,8 +18756,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 20
   unitsLength: 25
-  pixelHeight: 409
-  pixelLength: 1367.5
+  pixelHeight: 271
+  pixelLength: 680
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -18777,8 +18777,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1367.5
-    height: 409
+    width: 680
+    height: 271
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -22256,7 +22256,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: a2cbcadf206e5c6489d3f952f3c7f2c6, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 107
+  m_FontSize: 53
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -22277,9 +22277,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1
   unitsLength: 10.1800003
-  pixelHeight: 20.4500008
-  pixelLength: 556.846008
-  fontNumber: 107
+  pixelHeight: 13.5500002
+  pixelLength: 276.895996
+  fontNumber: 53
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -25052,8 +25052,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: -1569.89001
-    height: -372.190002
+    width: -780.640015
+    height: -246.610016
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -25072,8 +25072,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: -18.2000008
   unitsLength: -28.7000008
-  pixelHeight: -372.190002
-  pixelLength: -1569.89001
+  pixelHeight: -246.610016
+  pixelLength: -780.640015
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -26029,8 +26029,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 2.1099999
   unitsLength: 1.27999997
-  pixelHeight: 43.149498
-  pixelLength: 70.0159988
+  pixelHeight: 28.590498
+  pixelLength: 34.8159981
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -26050,8 +26050,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 70.0159988
-    height: 43.149498
+    width: 34.8159981
+    height: 28.590498
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
@@ -27956,8 +27956,6 @@ MonoBehaviour:
   bearPrefab: {fileID: 100036, guid: e94f294e0de62ca408b4614176699346, type: 2}
   lollipopPrefab: {fileID: 100010, guid: 803b8982835142543b97989471038504, type: 2}
   EggPrefab: {fileID: 100022, guid: 1a33a054b10e50143a91e2b094c39da8, type: 2}
-  trial: 0
-  main_character_movement_helper: {fileID: 0}
 --- !u!81 &1583184977
 AudioListener:
   m_ObjectHideFlags: 0
@@ -29666,8 +29664,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 2.1099999
   unitsLength: 1.27999997
-  pixelHeight: 43.149498
-  pixelLength: 70.0159988
+  pixelHeight: 28.590498
+  pixelLength: 34.8159981
   fontNumber: 0
   middleScreenWidth: 0
   rightOfScreen: 0
@@ -29687,8 +29685,8 @@ GUITexture:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 70.0159988
-    height: 43.149498
+    width: 34.8159981
+    height: 28.590498
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
