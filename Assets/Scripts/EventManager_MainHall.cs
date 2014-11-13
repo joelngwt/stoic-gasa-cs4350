@@ -53,17 +53,11 @@ public class EventManager_MainHall : MonoBehaviour {
 		attached_sequence_reader = new Stage_Sequence_Reader();
 
 		// Start
-		if (Application.loadedLevelName == "MainHall_") {
-			attached_sequence_reader.attached_sequence = new Stage_Sequence_1_1(attached_sequence_reader);
-		}
-		else if (Application.loadedLevelName == "MainHall_DemoMove") {
-			// Moving while shooting
-			attached_sequence_reader.attached_sequence = new Stage_Sequence_1_13(attached_sequence_reader);
-		}
-		else if (Application.loadedLevelName == "MainHall_DemoPuzzle" ) {
-			// Minigame
-			attached_sequence_reader.attached_sequence = new Stage_Sequence_1_17_A(attached_sequence_reader);
-		}
+		attached_sequence_reader.attached_sequence = new Stage_Sequence_1_1(attached_sequence_reader);
+		// Moving while shooting
+		//attached_sequence_reader.attached_sequence = new Stage_Sequence_1_13(attached_sequence_reader);
+		// Minigame
+		//attached_sequence_reader.attached_sequence = new Stage_Sequence_1_17_A(attached_sequence_reader);
 
 		//attached_sequence_reader.attached_sequence = new Stage_Sequence_Skewer_1_1(attached_sequence_reader);
 		//attached_sequence_reader.attached_sequence = new Stage_Sequence_1_17(attached_sequence_reader);
