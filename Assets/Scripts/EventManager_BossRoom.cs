@@ -158,7 +158,7 @@ public class EventManager_BossRoom : MonoBehaviour {
 				spawnBear (new Vector3(   -25f, 15f, 64.5f ), 0); // target33
 				spawnBear (new Vector3( 29f, 5f, 47.5f  ),  0); // target34
 				spawnBear (new Vector3(  67f, 60f, 59f ),  2); // target35
-				spawnBear (new Vector3 ( -54f, 60f, 135f  ), 1); // target36
+				spawnBear (new Vector3 ( -47f, 60f, 135f  ), 1); // target36
 				spawnLollipop (new Vector3 ( -40f, 140f, 180f )); // target37
 				spawnLollipop (new Vector3 ( 76f, 90f, 190f )); // target38
 				reached = false;
