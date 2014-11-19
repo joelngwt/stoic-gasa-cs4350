@@ -6,7 +6,7 @@ public class BossAI : MonoBehaviour {
 	private float currentHealth;
 	private float totalHealth;
 	public float percentage;
-	
+
 	[SerializeField] private GameObject bullet;				// bullet prefab
 	private GameObject player;								// "mainCharacter"
 
@@ -41,6 +41,8 @@ public class BossAI : MonoBehaviour {
 	public bool behindChair;							// Is the boss behind the chair?
 	public bool movingToMiddle;							// Is the boss moving to the middle of the room?
 
+	public InGameScoreScript script;
+
 	// Use this for initialization
 	void Start () {
 		totalHealth = Constants.BOSS_TOTAL_HEALTH;
@@ -72,8 +74,9 @@ public class BossAI : MonoBehaviour {
 		
 		if (crackedRoofScript.spawnedBrokenRoof == true) {
 			if (roofHitBoss == true) {
-				if (dieAnimationPlayed == false) {
-					animation.Play ("Death1");
+				if(!animation.IsPlaying("Death2")){
+					animation.Play ("Death2");
+					Debug.Log(animation.clip.name);
 					dieAnimationPlayed = true;
 				}
 				Invoke ("winGame", 3f);			// calls winGame() after 3 seconds
@@ -155,6 +158,10 @@ public class BossAI : MonoBehaviour {
 	}
 	
 	void winGame() {
+		if(script.highScore < script.currentScore){
+			PlayerPrefs.SetInt ("highScore", (int)script.currentScore);
+		}
+		PlayerPrefs.SetInt ("currentScore", (int)script.currentScore);
 		Application.LoadLevel("Win");
 	}
 	
