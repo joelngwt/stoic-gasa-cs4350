@@ -351,7 +351,8 @@ public class EventManager_BossRoom : MonoBehaviour {
 		bear.name = string.Concat("Target", count.ToString()); // give them unique numbered names (remember to initialize count)
 		Vector3 direction = camera.transform.position - bear.transform.position; // make the instantiated bear face the camera
 		bear.transform.rotation = Quaternion.LookRotation(direction);
-		
+		bear.transform.FindChild ("Cube").GetComponent<SkinnedMeshRenderer>().materials[0].color = new Color(Random.Range(0,1f),Random.Range(0,1f),Random.Range(0,1f),1);
+
 		Enemy e = bear.GetComponent<Enemy>();
 		e.coverType = cover;
 		
