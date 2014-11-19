@@ -258,7 +258,7 @@ public class EventManager_ActualBossRoom : MonoBehaviour {
 		}*/
 		else if (num == 7) {
 			if (atPillar == 1) {
-				num = LookAt(lookAtPillar1BossMiddle, num);
+				num = LookAt(new Vector3(-21.5f, 4.2f, -0.9f), num);
 			}
 			else if (atPillar == 2) {
 				num = LookAt(lookAtPillar2BossMiddle, num);
