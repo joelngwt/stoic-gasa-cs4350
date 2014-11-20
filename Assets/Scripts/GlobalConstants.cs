@@ -11,7 +11,7 @@ public static class Constants {
 	public const int AMMO_PICKUP_HMG = 30;			// number of HMG bullets gained from pickup
 	public const int AMMO_PICKUP_SHOTGUN = 5;		// number of shotgun bullets gained from pickup
 	public const int HEALTH_PICKUP_GAIN = 1;		// Amount of health gained from pickup
-	public const float BOOST_TIME = 5.0f;			// in seconds
+	public const float BOOST_TIME = 10.0f;			// in seconds
 	public const float STAY_FOR = 10.0f;			// Amount of time the pickup stays in the level after spawning
 	
 	public const float FLY_TO_PLAYER_SPEED = 9.5f;	// Speed at which the pickup flies towards player
