@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 346456758}
-  currentScore: {fileID: 346456758}
+  currentScore: {fileID: 0}
 --- !u!102 &346456758
 TextMesh:
   serializedVersion: 3
@@ -639,9 +639,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1
   unitsLength: 10
-  pixelHeight: 13.6000004
-  pixelLength: 239.5
-  fontNumber: 47
+  pixelHeight: 31.8999996
+  pixelLength: 567
+  fontNumber: 113
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
@@ -662,7 +662,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: fc753816c81a3c44687ad9161de86bea, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 47
+  m_FontSize: 113
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -1006,7 +1006,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: e188325fe39a31b45befd6376face71b, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 28
+  m_FontSize: 68
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -1053,9 +1053,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsHeight: 1
   unitsLength: 16.5699997
-  pixelHeight: 13.6000004
-  pixelLength: 396.851501
-  fontNumber: 28
+  pixelHeight: 31.8999996
+  pixelLength: 939.518982
+  fontNumber: 68
   middleScreenWidth: 0
   rightOfScreen: 0
   leftOfScreen: 0
