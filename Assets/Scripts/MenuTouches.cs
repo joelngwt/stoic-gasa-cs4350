@@ -95,6 +95,9 @@ public class MenuTouches : MonoBehaviour {
 			}
 			StartCoroutine(LoadMainHallPuzzle());
 		}
+		else if (this.name == "CloseButton") {
+			Application.Quit();
+		}
 	}
 	
 	void OnMouseDown() {
