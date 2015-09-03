@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 23c96b4b2470c584bbefcac2cfa32e5f
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - bullethole: {instanceID: 0}
+  - gunDisplayScript: {instanceID: 0}
+  - shieldScript: {instanceID: 0}
+  - scoreScript: {instanceID: 0}
+  - plus10: {fileID: 13200006, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
+  - plus20: {fileID: 13200010, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
+  - plus30: {fileID: 13200012, guid: b442f6b4e09f94442a95c3c12cee5993, type: 2}
+  - pistolShoot: {instanceID: 0}
+  - HMGShoot: {instanceID: 0}
+  - shotgunShoot: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

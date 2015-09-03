@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{9012FA70-549C-8D52-90BF-DC7B23F97244}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_5_3;UNITY_4_5;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\FPS_Character Pack\Script\ModelChanger01.cs" />
+     <Compile Include="Assets\IngressInstructionScript.cs" />
+     <Compile Include="Assets\Magical Box Examples\Scripts\EditorEvents.cs" />
+     <Compile Include="Assets\Magical Box Examples\Scripts\SpawnOnFire.cs" />
+     <Compile Include="Assets\Magical Box Examples\Scripts\StageController.cs" />
+     <Compile Include="Assets\Magical Box\Base\MBAnchor.cs" />
+     <Compile Include="Assets\Magical Box\Base\MBEditorEnabledScript.cs" />
+     <Compile Include="Assets\Magical Box\Base\MBEmitter.cs" />
+     <Compile Include="Assets\Magical Box\Base\MBEmitterType.cs" />
+     <Compile Include="Assets\Magical Box\Base\MBEvent.cs" />
+     <Compile Include="Assets\Magical Box\Base\MBLayer.cs" />
+     <Compile Include="Assets\Magical Box\Base\MBObject.cs" />
+     <Compile Include="Assets\Magical Box\Base\MBParameter.cs" />
+     <Compile Include="Assets\Magical Box\Base\MBParticle.cs" />
+     <Compile Include="Assets\Magical Box\Base\MBParticleSystem.cs" />
+     <Compile Include="Assets\Magical Box\Base\MBUtility.cs" />
+     <Compile Include="Assets\Magical Box\EmitterTypes\MBBoxEmitter.cs" />
+     <Compile Include="Assets\Magical Box\EmitterTypes\MBCircleEmitter.cs" />
+     <Compile Include="Assets\Magical Box\EmitterTypes\MBHollowBoxEmitter.cs" />
+     <Compile Include="Assets\Magical Box\EmitterTypes\MBHollowRectEmitter.cs" />
+     <Compile Include="Assets\Magical Box\EmitterTypes\MBImageEmitter.cs" />
+     <Compile Include="Assets\Magical Box\EmitterTypes\MBLineEmitter.cs" />
+     <Compile Include="Assets\Magical Box\EmitterTypes\MBMeshEdgeEmitter.cs" />
+     <Compile Include="Assets\Magical Box\EmitterTypes\MBMeshSurfaceEmitter.cs" />
+     <Compile Include="Assets\Magical Box\EmitterTypes\MBMeshVertexEmitter.cs" />
+     <Compile Include="Assets\Magical Box\EmitterTypes\MBPolygonEmitter.cs" />
+     <Compile Include="Assets\Magical Box\EmitterTypes\MBRectEmitter.cs" />
+     <Compile Include="Assets\Magical Box\EmitterTypes\MBSphereEmitter.cs" />
+     <Compile Include="Assets\Magical Box\Parameters\Color\MBParticleColorBase.cs" />
+     <Compile Include="Assets\Magical Box\Parameters\Color\MBParticleColorFixed.cs" />
+     <Compile Include="Assets\Magical Box\Parameters\Color\MBParticleColorTimeline.cs" />
+     <Compile Include="Assets\Magical Box\Parameters\Connectors\MBParticleSize3.cs" />
+     <Compile Include="Assets\Magical Box\Parameters\Connectors\MBParticleTransformConnector.cs" />
+     <Compile Include="Assets\Magical Box\Parameters\MBParticleImageAnimation.cs" />
+     <Compile Include="Assets\Magical Box\Parameters\MBParticleLifetime.cs" />
+     <Compile Include="Assets\Magical Box\Parameters\MBParticleOrientation.cs" />
+     <Compile Include="Assets\Magical Box\Parameters\MBParticleRotation.cs" />
+     <Compile Include="Assets\Magical Box\Parameters\MBParticleSize.cs" />
+     <Compile Include="Assets\Magical Box\Parameters\MBParticleVelocity.cs" />
+     <Compile Include="Assets\Magical Box\Parameters\Physics\MBParticleAcceleration.cs" />
+     <Compile Include="Assets\Magical Box\Parameters\Physics\MBParticleCollider.cs" />
+     <Compile Include="Assets\Magical Box\Parameters\Physics\MBParticleFriction.cs" />
+     <Compile Include="Assets\Magical Box\Parameters\Physics\MBParticleGravity.cs" />
+     <Compile Include="Assets\Magical Box\Parameters\Physics\MBParticleHeading.cs" />
+     <Compile Include="Assets\Magical Box\Parameters\Physics\MBParticleMass.cs" />
+     <Compile Include="Assets\Magical Box\Parameters\Special\MBParticleLightning.cs" />
+     <Compile Include="Assets\Magical Box\Parameters\Special\MBParticleMathOperator.cs" />
+     <Compile Include="Assets\Magical Box\Parameters\Zones\MBParticleRadialForce.cs" />
+     <Compile Include="Assets\Magical Box\Parameters\Zones\MBParticleRectForce.cs" />
+     <Compile Include="Assets\Magical Box\Parameters\Zones\MBParticleSphericalForce.cs" />
+     <Compile Include="Assets\Magical Box\Parameters\Zones\MBParticleZoneBase.cs" />
+     <Compile Include="Assets\Magical Box\Scripts\EmitterEventTrigger.cs" />
+     <Compile Include="Assets\Magical Box\Scripts\MBRotateAxis.cs" />
+     <Compile Include="Assets\Magical Box\Scripts\MBSyncToCursor2D.cs" />
+     <Compile Include="Assets\Party Pack\Scripts\CandleLight.cs" />
+     <Compile Include="Assets\Party Pack\Scripts\CycleCookiesTimer.cs" />
+     <Compile Include="Assets\Party Pack\Scripts\Rotate.cs" />
+     <Compile Include="Assets\Party Pack\Scripts\TriggerParticlesTimer.cs" />
+     <Compile Include="Assets\Party Pack\Scripts\TriggerParticlesTouch.cs" />
+     <Compile Include="Assets\Party Pack\Scripts\TriggerSoundTouch.cs" />
+     <Compile Include="Assets\Prefabs\New Stuff\Elementals\Scripts\OrbitCamera.cs" />
+     <Compile Include="Assets\Prefabs\New Stuff\Elementals\Scripts\TestParticles.cs" />
+     <Compile Include="Assets\Scripts\BigBangDestroy.cs" />
+     <Compile Include="Assets\Scripts\BossAI.cs" />
+     <Compile Include="Assets\Scripts\BulletDestroy.cs" />
+     <Compile Include="Assets\Scripts\CameraFade.cs" />
+     <Compile Include="Assets\Scripts\CrackedRoof.cs" />
+     <Compile Include="Assets\Scripts\Enemy.cs" />
+     <Compile Include="Assets\Scripts\EnemyBulletDestroy.cs" />
+     <Compile Include="Assets\Scripts\EnemyEgg.cs" />
+     <Compile Include="Assets\Scripts\EnemyLollipop.cs" />
+     <Compile Include="Assets\Scripts\EnemyShoot.cs" />
+     <Compile Include="Assets\Scripts\EventManager_ActualBossRoom.cs" />
+     <Compile Include="Assets\Scripts\EventManager_BossRoom.cs" />
+     <Compile Include="Assets\Scripts\EventManager_DiningHall.cs" />
+     <Compile Include="Assets\Scripts\EventManager_MainHall.cs" />
+     <Compile Include="Assets\Scripts\EventManager_Minigame_Skewer.cs" />
+     <Compile Include="Assets\Scripts\FPSIndicator.cs" />
+     <Compile Include="Assets\Scripts\FloatingScore.cs" />
+     <Compile Include="Assets\Scripts\GlobalConstants.cs" />
+     <Compile Include="Assets\Scripts\GunDisplay.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Button_Trigger.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Dice_Script.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Hit_Token_Bank.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Possession_Cube.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_1.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_10.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_11.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_12.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_13.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_14.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_15.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_16.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_17.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_17_A.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_18.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_2.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_3.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_4.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_5.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_6.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_7.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_8.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_1_9.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_2_1.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_2_2.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_2_3.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_2_4.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_2_5.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_Helper.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_Reader.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Stage_Sequence_Skewer_1_1.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Thumbs_Up_Down_Panel_Script.cs" />
+     <Compile Include="Assets\Scripts\Helpers\Warning_Reticle_Rotation.cs" />
+     <Compile Include="Assets\Scripts\Helpers\World_Object_Movement_Helper.cs" />
+     <Compile Include="Assets\Scripts\InGameScoreScript.cs" />
+     <Compile Include="Assets\Scripts\IngressGlyphSets.cs" />
+     <Compile Include="Assets\Scripts\JellybeanBomb.cs" />
+     <Compile Include="Assets\Scripts\KeepMusicOverScenes.cs" />
+     <Compile Include="Assets\Scripts\KinderSurpriseBomb.cs" />
+     <Compile Include="Assets\Scripts\LifeCounter.cs" />
+     <Compile Include="Assets\Scripts\MenuHighScore.cs" />
+     <Compile Include="Assets\Scripts\MenuTouches.cs" />
+     <Compile Include="Assets\Scripts\PauseButtonScript.cs" />
+     <Compile Include="Assets\Scripts\PauseMenu.cs" />
+     <Compile Include="Assets\Scripts\PickupBehaviour.cs" />
+     <Compile Include="Assets\Scripts\RocketMissile.cs" />
+     <Compile Include="Assets\Scripts\Shield.cs" />
+     <Compile Include="Assets\Scripts\Shooting.cs" />
+     <Compile Include="Assets\Scripts\SystemControls.cs" />
+     <Compile Include="Assets\Scripts\TestCommitPush.cs" />
+     <Compile Include="Assets\Scripts\TimerForIngress.cs" />
+     <Compile Include="Assets\Scripts\TimerScript.cs" />
+     <Compile Include="Assets\Scripts\TotalAmmoText.cs" />
+     <Compile Include="Assets\Scripts\UIScaling.cs" />
+     <Compile Include="Assets\Scripts\UIScalingTextMesh.cs" />
+     <Compile Include="Assets\Scripts\VerticeBehavior.cs" />
+     <Compile Include="Assets\Scripts\VolumeButtons.cs" />
+     <Compile Include="Assets\Scripts\playIngressGlyph.cs" />
+     <Compile Include="Assets\screen.cs" />
+     <None Include="Assets\Magical Box\Base\_EditorEnabledScriptTemplate.txt" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Background.shader" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Transparent Vertex Color.shader" />
+     <None Include="Assets\Magical Box\EmitterTypes\_EditorTemplate.txt" />
+     <None Include="Assets\downloaded\lion2\archibase.net.txt" />
+     <None Include="Assets\FPS_Character Pack\Resources\FPS_CharacterPack_F\List\ani_list.txt" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Detail.shader" />
+     <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
+     <None Include="Assets\Party Pack\Sounds\Sounds License.txt" />
+     <None Include="Assets\Standard Assets\Water (Pro Only)\Water4\Sources\Shaders\FX-SimpleWater4.shader" />
+     <None Include="Assets\FPS_Character Pack\Resources\FPS_CharacterPack_F\List\model_list_Free.txt" />
+     <None Include="Assets\FPS_Character Pack\Resources\FPS_CharacterPack_F\List\ani_list_Free.txt" />
+     <None Include="Assets\KY_magicEffectsFree\ReadMe.txt" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Reflective.shader" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Particles Additive Culled.shader" />
+     <None Include="Assets\Prefabs\New Stuff\Elementals\!Readme.txt" />
+     <None Include="Assets\Magical Box\Parameters\_EditorTemplate.txt" />
+     <None Include="Assets\Magical Box\EmitterTypes\_Template.txt" />
+     <None Include="Assets\FPS_Character Pack\Resources\FPS_CharacterPack_F\List\weapon_list.txt" />
+     <None Include="Assets\FPS_Character Pack\Resources\FPS_CharacterPack_F\Shaders\toon_cutoff.shader" />
+     <None Include="Assets\Standard Assets\Water (Pro Only)\Sources\Shaders\FX-Water.shader" />
+     <None Include="Assets\FPS_Character Pack\Resources\FPS_CharacterPack_F\List\ani_list_M.txt" />
+     <None Include="Assets\Magical Box Examples\Single Tests\README.txt" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Vertex Colored.shader" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Only.shader" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap AlphaTest.shader" />
+     <None Include="Assets\Prefabs\Bear\SHIELDS_square\square_wood_shields_notes.txt" />
+     <None Include="Assets\Standard Assets\shader\DifBumpSpecTransp.shader" />
+     <None Include="Assets\Textures\Sources.txt" />
+     <None Include="Assets\SHIELDS_square\square_wood_shields_notes.txt" />
+     <None Include="Assets\Standard Assets\Water (Pro Only)\Water4\Sources\Shaders\WaterInclude.cginc" />
+     <None Include="Assets\Standard Assets\Water (Pro Only)\Water4\Sources\Shaders\FX-Water4.shader" />
+     <None Include="Assets\Magical Box\readme.txt" />
+     <None Include="Assets\Magical Box\Parameters\_Template.txt" />
+     <None Include="Assets\FPS_Character Pack\Resources\FPS_CharacterPack_F\List\model_list_f.txt" />
+     <None Include="Assets\FPS_Character Pack\Resources\FPS_CharacterPack_F\Shaders\toon_hair.shader" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{E371E0EA-77BD-3580-AAF9-9C4FD6FFE54D}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
+      <Project>{1B59B5FB-5288-796E-5CFC-FDE4F5DB5842}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
