@@ -54,7 +54,7 @@ public class Shield : MonoBehaviour {
 			#if UNITY_ANDROID
 			if(Input.GetMouseButton(0) && useShieldButton.HitTest(Input.mousePosition)){
 				#endif
-				#if UNITY_STANDALONE || UNITY_WEBPLAYER
+				#if UNITY_STANDALONE || UNITY_WEBPLAYER || UNITY_WEBGL
 				if(Input.GetKey("space")){
 					#endif
 					if(shieldIsUp == false){
@@ -331,7 +331,7 @@ public class Shield : MonoBehaviour {
 				#if UNITY_ANDROID
 			}
 			#endif
-			#if UNITY_STANDALONE || UNITY_WEBPLAYER
+			#if UNITY_STANDALONE || UNITY_WEBPLAYER || UNITY_WEBGL
 		}
 		#endif
 	}
