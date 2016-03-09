@@ -288,7 +288,7 @@ public class MBUtility
             Texture2D t = new Texture2D(tex.width, tex.height);
             t.SetPixels(tex.GetPixels());
             t.Apply();
-#if UNITY_EDITOR && !UNITY_ANDROID && !UNITY_IPHONE && !UNITY_WEBPLAYER
+#if UNITY_EDITOR && !UNITY_ANDROID && !UNITY_IPHONE && !UNITY_WEBPLAYER && !UNITY_WEBGL
             System.IO.File.WriteAllBytes(path, t.EncodeToPNG());
 #endif
             return t;
