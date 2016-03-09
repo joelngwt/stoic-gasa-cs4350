@@ -34,8 +34,8 @@ public class MenuTouches : MonoBehaviour {
 		else if (this.name == "text_ClearHighscore"){
 			PlayerPrefs.SetInt ("highScore", 0);
 			PlayerPrefs.SetInt ("currentScore", 0);
-			guiTexture.texture = button1;
-			audio.PlayOneShot(menuButton);
+			GetComponent<GUITexture>().texture = button1;
+			GetComponent<AudioSource>().PlayOneShot(menuButton);
 		}
 		else if (this.name == "text_Backtomenu"){
 			StartCoroutine(LoadMainMenu ());
@@ -101,14 +101,14 @@ public class MenuTouches : MonoBehaviour {
 	}
 	
 	void OnMouseDown() {
-		if (guiTexture.name == "text_START" || guiTexture.name == "text_Settings" ||
-		    guiTexture.name == "text_Back" || guiTexture.name == "text_ClearHighscore" ||
-		    guiTexture.name == "text_Backtomenu" || guiTexture.name == "text_Help" ||
-		    guiTexture.name == "Left_Button" || guiTexture.name == "Right_Button" ||
-		    guiTexture.name == "text_One" || guiTexture.name == "text_Two" ||
-		    guiTexture.name == "text_Three" || guiTexture.name == "text_Boss") {
+		if (GetComponent<GUITexture>().name == "text_START" || GetComponent<GUITexture>().name == "text_Settings" ||
+		    GetComponent<GUITexture>().name == "text_Back" || GetComponent<GUITexture>().name == "text_ClearHighscore" ||
+		    GetComponent<GUITexture>().name == "text_Backtomenu" || GetComponent<GUITexture>().name == "text_Help" ||
+		    GetComponent<GUITexture>().name == "Left_Button" || GetComponent<GUITexture>().name == "Right_Button" ||
+		    GetComponent<GUITexture>().name == "text_One" || GetComponent<GUITexture>().name == "text_Two" ||
+		    GetComponent<GUITexture>().name == "text_Three" || GetComponent<GUITexture>().name == "text_Boss") {
 		    
-			guiTexture.texture = button2;
+			GetComponent<GUITexture>().texture = button2;
 		}
 	}
 	
@@ -117,40 +117,40 @@ public class MenuTouches : MonoBehaviour {
 		yield break;
 	}
 	IEnumerator LoadSettings() {
-		audio.PlayOneShot(menuButton);
-		guiTexture.texture = button1;
+		GetComponent<AudioSource>().PlayOneShot(menuButton);
+		GetComponent<GUITexture>().texture = button1;
 		yield return new WaitForSeconds(0.2F);
 		Application.LoadLevel ("settings");
 		yield break;
 	}
 	
 	IEnumerator LoadLevelSelect() {
-		audio.PlayOneShot(menuButton);
-		guiTexture.texture = button1;
+		GetComponent<AudioSource>().PlayOneShot(menuButton);
+		GetComponent<GUITexture>().texture = button1;
 		yield return new WaitForSeconds(0.2F);
 		Application.LoadLevel ("LevelSelect");
 		yield break;
 	}
 	
 	IEnumerator LoadMainMenu() {
-		audio.PlayOneShot(menuButton);
-		guiTexture.texture = button1;
+		GetComponent<AudioSource>().PlayOneShot(menuButton);
+		GetComponent<GUITexture>().texture = button1;
 		yield return new WaitForSeconds(0.2F);
 		Application.LoadLevel ("mainMenu");
 		yield break;
 	}
 	
 	IEnumerator LoadMainHall() {
-		audio.PlayOneShot(menuButton);
-		guiTexture.texture = button1;
+		GetComponent<AudioSource>().PlayOneShot(menuButton);
+		GetComponent<GUITexture>().texture = button1;
 		yield return new WaitForSeconds(0.2F);
 		Application.LoadLevel ("MainHall_");
 		yield break;
 	}
 	
 	IEnumerator LoadDiningHall() {
-		audio.PlayOneShot(menuButton);
-		guiTexture.texture = button1;
+		GetComponent<AudioSource>().PlayOneShot(menuButton);
+		GetComponent<GUITexture>().texture = button1;
 		yield return new WaitForSeconds(0.2F);
 		PlayerPrefs.SetInt ("currentScore", 0);
 		Application.LoadLevel ("DiningHall");
@@ -158,8 +158,8 @@ public class MenuTouches : MonoBehaviour {
 	}
 	
 	IEnumerator LoadBossRoom() {
-		audio.PlayOneShot(menuButton);
-		guiTexture.texture = button1;
+		GetComponent<AudioSource>().PlayOneShot(menuButton);
+		GetComponent<GUITexture>().texture = button1;
 		yield return new WaitForSeconds(0.2F);
 		PlayerPrefs.SetInt ("currentScore", 0);
 		Application.LoadLevel ("BossRoom");
@@ -167,8 +167,8 @@ public class MenuTouches : MonoBehaviour {
 	}
 	
 	IEnumerator LoadActualBossRoom() {
-		audio.PlayOneShot(menuButton);
-		guiTexture.texture = button1;
+		GetComponent<AudioSource>().PlayOneShot(menuButton);
+		GetComponent<GUITexture>().texture = button1;
 		yield return new WaitForSeconds(0.2F);
 		PlayerPrefs.SetInt ("currentScore", 0);
 		Application.LoadLevel ("ActualBossRoom");
@@ -176,39 +176,39 @@ public class MenuTouches : MonoBehaviour {
 	}
 	
 	IEnumerator LoadHelp1() {
-		audio.PlayOneShot(menuButton);
-		guiTexture.texture = button1;
+		GetComponent<AudioSource>().PlayOneShot(menuButton);
+		GetComponent<GUITexture>().texture = button1;
 		yield return new WaitForSeconds(0.2F);
 		Application.LoadLevel ("HelpScreen1");
 		yield break;
 	}
 	
 	IEnumerator LoadHelp2() {
-		audio.PlayOneShot(menuButton);
-		guiTexture.texture = button1;
+		GetComponent<AudioSource>().PlayOneShot(menuButton);
+		GetComponent<GUITexture>().texture = button1;
 		yield return new WaitForSeconds(0.2F);
 		Application.LoadLevel ("HelpScreen2");
 		yield break;
 	} 
 	IEnumerator LoadHelp3() {
-		audio.PlayOneShot(menuButton);
-		guiTexture.texture = button1;
+		GetComponent<AudioSource>().PlayOneShot(menuButton);
+		GetComponent<GUITexture>().texture = button1;
 		yield return new WaitForSeconds(0.2F);
 		Application.LoadLevel ("HelpScreen3");
 		yield break;
 	}
 
 	IEnumerator LoadMainHallMoving() {
-		audio.PlayOneShot(menuButton);
-		guiTexture.texture = button1;
+		GetComponent<AudioSource>().PlayOneShot(menuButton);
+		GetComponent<GUITexture>().texture = button1;
 		yield return new WaitForSeconds(0.2F);
 		Application.LoadLevel ("MainHall_DemoMove");
 		yield break;
 	}
 
 	IEnumerator LoadMainHallPuzzle() {
-		audio.PlayOneShot(menuButton);
-		guiTexture.texture = button1;
+		GetComponent<AudioSource>().PlayOneShot(menuButton);
+		GetComponent<GUITexture>().texture = button1;
 		yield return new WaitForSeconds(0.2F);
 		Application.LoadLevel ("MainHall_DemoPuzzle");
 		yield break;

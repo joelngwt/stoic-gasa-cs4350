@@ -94,12 +94,12 @@ public class Stage_Sequence_1_17 : Stage_Sequence_Helper {
 		{
 
 			possession_cube_1 = spawn_possession_cube(new Vector3( 0.0F, 64.0F, -121.0F));
-			possession_cube_script_1 = possession_cube_1.transform.FindChild("3D_Model").gameObject.AddComponent("Possession_Cube") as Possession_Cube;
+			possession_cube_script_1 = possession_cube_1.transform.FindChild("3D_Model").gameObject.AddComponent<Possession_Cube>() as Possession_Cube;
 			possession_cube_script_1.lookAt_position = new Vector3( 0.0F, 22.0F, -15.0F);
 			possession_cube_script_1.up_vector = Vector3.up;
 			
 			possession_cube_2 = spawn_possession_cube(new Vector3( 0.0F, 22.0F, -15.0F));
-			possession_cube_script_2 = possession_cube_2.transform.FindChild("3D_Model").gameObject.AddComponent("Possession_Cube") as Possession_Cube;
+			possession_cube_script_2 = possession_cube_2.transform.FindChild("3D_Model").gameObject.AddComponent<Possession_Cube>() as Possession_Cube;
 			possession_cube_script_2.lookAt_position = new Vector3( 0.0F, 40.0F, -121.0F);
 			possession_cube_script_2.up_vector = Vector3.up;
 			
@@ -251,7 +251,7 @@ public class Stage_Sequence_1_17 : Stage_Sequence_Helper {
 			
 			
 			possession_cube_3 = spawn_possession_cube(new Vector3( 0.0F, 140.0F, 11.0F));
-			possession_cube_script_3 = possession_cube_3.transform.FindChild("3D_Model").gameObject.AddComponent("Possession_Cube") as Possession_Cube;
+			possession_cube_script_3 = possession_cube_3.transform.FindChild("3D_Model").gameObject.AddComponent<Possession_Cube>() as Possession_Cube;
 			possession_cube_script_3.lookAt_position = new Vector3( 0.0F, 137.0F, -120.0F);
 			possession_cube_script_3.up_vector = Vector3.up;
 

@@ -23,7 +23,7 @@ public class LifeCounter : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		playerHealth = 4;
-		vignette.guiTexture.enabled = false;
+		vignette.GetComponent<GUITexture>().enabled = false;
 		loadedHealth = 4;
 		PlayerPrefs.SetInt ("playerHealth", loadedHealth);
 	/*	// Uncomment this code so that player will bring his current health across levels
@@ -107,7 +107,7 @@ public class LifeCounter : MonoBehaviour {
 			life3.enabled = false;
 			life2.enabled = false;
 			life1.enabled = true;
-			vignette.guiTexture.enabled = true;
+			vignette.GetComponent<GUITexture>().enabled = true;
 			if(playedTakeDamage <= 3 && loadedHealth != 1){
 				StartCoroutine(PlayOuch());
 				playedTakeDamage = 4;
@@ -116,7 +116,7 @@ public class LifeCounter : MonoBehaviour {
 				#endif
 			}
 			if(playedHeartBeat == false){
-				audio.PlayOneShot(heartBeat);
+				GetComponent<AudioSource>().PlayOneShot(heartBeat);
 				playedHeartBeat = true;
 			}
 		}
@@ -149,7 +149,7 @@ public class LifeCounter : MonoBehaviour {
 			playerHealth += Constants.HEALTH_PICKUP_GAIN;
 			PlayerPrefs.SetInt("playerHealth", playerHealth);
 
-			vignette.guiTexture.enabled = false;
+			vignette.GetComponent<GUITexture>().enabled = false;
 			playedHeartBeat = false;
 			if (playerHealth == 2) {
 				playedTakeDamage = 3;
@@ -164,7 +164,7 @@ public class LifeCounter : MonoBehaviour {
 	}
 	
 	IEnumerator PlayDie(){
-		audio.PlayOneShot(die);
+		GetComponent<AudioSource>().PlayOneShot(die);
 		yield return new WaitForSeconds(1.0F);
 		Application.LoadLevel ("GameOver");
 		yield break;
@@ -172,14 +172,14 @@ public class LifeCounter : MonoBehaviour {
 	
 	IEnumerator PlayOuch(){
 		yield return new WaitForSeconds(0.5F);
-		audio.PlayOneShot(takeDamage);
+		GetComponent<AudioSource>().PlayOneShot(takeDamage);
 		yield return new WaitForSeconds(0.5F);
 		yield break;
 	}
 	
 	IEnumerator FlashVignette(){
-		vignette.guiTexture.enabled = true;
+		vignette.GetComponent<GUITexture>().enabled = true;
 		yield return new WaitForSeconds(0.15F);
-		vignette.guiTexture.enabled = false;
+		vignette.GetComponent<GUITexture>().enabled = false;
 	}
 }

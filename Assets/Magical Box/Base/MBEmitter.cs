@@ -354,8 +354,8 @@ public class MBEmitter : MBObject
     {
         GameObject go = new GameObject(className);
         go.transform.parent = Transform;
-        MBParameter param = go.AddComponent(className) as MBParameter;
-        param.Reset();
+		MBParameter param = go.AddComponent<MBParameter>();
+		param.Reset();
         Parameters.Add(param);
         mbSortParameters();
         return param;

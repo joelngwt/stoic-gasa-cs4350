@@ -14,6 +14,6 @@ public class TriggerSoundTouch : MonoBehaviour {
 	}
 	
 	void OnMouseDown() {
-		if (gameObject.audio != null) gameObject.audio.Play();
+		if (gameObject.GetComponent<AudioSource>() != null) gameObject.GetComponent<AudioSource>().Play();
     }
 }

@@ -74,9 +74,9 @@ public class BossAI : MonoBehaviour {
 		
 		if (crackedRoofScript.spawnedBrokenRoof == true) {
 			if (roofHitBoss == true) {
-				if(!animation.IsPlaying("Death2")){
-					animation.Play ("Death2");
-					Debug.Log(animation.clip.name);
+				if(!GetComponent<Animation>().IsPlaying("Death2")){
+					GetComponent<Animation>().Play ("Death2");
+					Debug.Log(GetComponent<Animation>().clip.name);
 					dieAnimationPlayed = true;
 				}
 				Invoke ("winGame", 3f);			// calls winGame() after 3 seconds
@@ -125,8 +125,8 @@ public class BossAI : MonoBehaviour {
 			//Debug.Log ("60% phase");
 			hideBehindChair();
 			if (currentPhase == 3) {
-				if (!animation.IsPlaying("Idle1")) {
-					animation.Play ("Idle1");
+				if (!GetComponent<Animation>().IsPlaying("Idle1")) {
+					GetComponent<Animation>().Play ("Idle1");
 				}
 				spawnMinions = true;
 				currentPhase = 4;
@@ -151,8 +151,8 @@ public class BossAI : MonoBehaviour {
 			sprayBullets();
 		}
 		else if (percentage == 1.0f) {
-			if (!animation.IsPlaying("Idle1")) {
-				animation.Play ("Idle1");
+			if (!GetComponent<Animation>().IsPlaying("Idle1")) {
+				GetComponent<Animation>().Play ("Idle1");
 			}
 		}
 	}
@@ -181,7 +181,7 @@ public class BossAI : MonoBehaviour {
 			clone = Instantiate (bullet, this.transform.position + new Vector3 (5F, 7F, -4F), this.transform.rotation) as GameObject;
 
 			//animation.Stop ("Magic Attack3");
-			audio.PlayOneShot (shootSound);
+			GetComponent<AudioSource>().PlayOneShot (shootSound);
 			
 			float hitOrNot = Random.Range (0.0F, 1.0F);
 			float offsetValueX = Random.Range (-4.0F, 4.0F);
@@ -203,11 +203,11 @@ public class BossAI : MonoBehaviour {
 			}
 			
 			// Adds a force to the bullet so it can move
-			clone.rigidbody.velocity = ((player.transform.position + randomOffset - transform.position));
+			clone.GetComponent<Rigidbody>().velocity = ((player.transform.position + randomOffset - transform.position));
 		} 
 		else {
-			if (!animation.IsPlaying("Magic Attack3")) {
-				animation.Play ("Magic Attack3");
+			if (!GetComponent<Animation>().IsPlaying("Magic Attack3")) {
+				GetComponent<Animation>().Play ("Magic Attack3");
 			}
 		}
 	}
@@ -233,8 +233,8 @@ public class BossAI : MonoBehaviour {
 		activateTargetReticles();
 		Vector3 bossPosition = this.transform.position;
 		if (hasThrown == false) {
-			if (!animation.IsPlaying("Attack")) {
-				animation.Play ("Attack");
+			if (!GetComponent<Animation>().IsPlaying("Attack")) {
+				GetComponent<Animation>().Play ("Attack");
 			}
 			Instantiate (jellybeanBomb, new Vector3(bossPosition.x-10, bossPosition.y+2, bossPosition.z), this.transform.rotation);
 			hasThrown = true;
@@ -349,8 +349,8 @@ public class BossAI : MonoBehaviour {
 		else if (bossMovementNumber == 3) {
 			bossMovementNumber = LookAt(faceForward, bossMovementNumber, 15f);
 			currentPhase = 3;
-			if (!animation.IsPlaying("Idle1")) {
-				animation.Play ("Idle1");
+			if (!GetComponent<Animation>().IsPlaying("Idle1")) {
+				GetComponent<Animation>().Play ("Idle1");
 			}
 		}
 	}
@@ -359,11 +359,11 @@ public class BossAI : MonoBehaviour {
 		Vector3 bossPosition = this.transform.position;
 		
 		if (throwKinderFor > 0) {
-			if (animation.IsPlaying("Idle1")) {
-				animation.Stop("Idle1");
+			if (GetComponent<Animation>().IsPlaying("Idle1")) {
+				GetComponent<Animation>().Stop("Idle1");
 			}
-			if (!animation.IsPlaying("Attack")) {
-				animation.Play ("Attack");
+			if (!GetComponent<Animation>().IsPlaying("Attack")) {
+				GetComponent<Animation>().Play ("Attack");
 			}
 			Instantiate(kinderSurprise, new Vector3(bossPosition.x-10, bossPosition.y+2, bossPosition.z), this.transform.rotation);
 			throwKinderFor -= Time.deltaTime;
@@ -394,14 +394,14 @@ public class BossAI : MonoBehaviour {
 			Vector3 dir = position - this.transform.position;
 			dir = dir.normalized;
 
-			animation.Play("Run");
+			GetComponent<Animation>().Play("Run");
 			
 			//theCharacter.transform.Translate(dir * movementSpeed * Time.deltaTime, Space.World);
 			this.transform.Translate (dir * spd * Time.deltaTime, Space.World);
 			this.transform.rotation = Quaternion.Slerp (transform.rotation, _lookRotation, Time.deltaTime * 15);
 		}	
 		else if (range1 <= 1.0) {
-			animation.Stop("Run");
+			GetComponent<Animation>().Stop("Run");
 			num += 1;
 		}
 			
@@ -416,15 +416,15 @@ public class BossAI : MonoBehaviour {
 		//create the rotation we need to be in to look at the target
 		Quaternion _lookRotation = Quaternion.LookRotation(_direction);
 
-		if (!animation.IsPlaying("Attack") && !animation.IsPlaying("Idle1")) {
-			animation.Play ("Idle1");
+		if (!GetComponent<Animation>().IsPlaying("Attack") && !GetComponent<Animation>().IsPlaying("Idle1")) {
+			GetComponent<Animation>().Play ("Idle1");
 		}
 
 		//rotate us over time according to speed until we are in the required rotation
 		transform.rotation = Quaternion.Slerp(this.transform.rotation, _lookRotation, Time.deltaTime * rotationSpeed);
 		
 		if (Mathf.Abs(Mathf.Abs (transform.rotation.y) - Mathf.Abs (_lookRotation.y)) < 0.000001f) {
-			animation.Stop("Idle1");
+			GetComponent<Animation>().Stop("Idle1");
 			num += 1;
 			//reached = true;
 		}

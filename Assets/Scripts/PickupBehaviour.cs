@@ -49,7 +49,7 @@ public class PickupBehaviour : MonoBehaviour {
 		}
 		
 		if (canMove) {
-			this.rigidbody.velocity = Constants.FLY_TO_PLAYER_SPEED * (player.transform.position - this.transform.position);
+			this.GetComponent<Rigidbody>().velocity = Constants.FLY_TO_PLAYER_SPEED * (player.transform.position - this.transform.position);
 
 		}
 		else {

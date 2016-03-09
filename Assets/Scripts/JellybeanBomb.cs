@@ -40,11 +40,11 @@ public class JellybeanBomb : MonoBehaviour {
 		if (bossRoomScript.atPillar == 1) {
 			if (bossRoomScript.bossInMiddle == false) {
 				Vector3 throwDirection = new Vector3(-38.73f, 1.5f, 49.21f) - this.transform.position;
-				this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 15);
+				this.GetComponent<Rigidbody>().AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 15);
 			}
 			else if (bossRoomScript.bossInMiddle == true) {
 				Vector3 throwDirection = new Vector3(-19.97f, 1.5f, 58.1f) - this.transform.position;
-				this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 15);
+				this.GetComponent<Rigidbody>().AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 15);
 			}
 			throwBombAt = 1;
 			bossRoomScript.isPillar1Destroyed = true;
@@ -53,11 +53,11 @@ public class JellybeanBomb : MonoBehaviour {
 		else if (bossRoomScript.atPillar == 2) {
 			if (bossRoomScript.bossInMiddle == false) {
 				Vector3 throwDirection = new Vector3(-37.64f, 1.5f, -45.56f) - this.transform.position;
-				this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 15);
+				this.GetComponent<Rigidbody>().AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 15);
 			}
 			else if (bossRoomScript.bossInMiddle == true) {
 				Vector3 throwDirection = new Vector3(-22.11f, 1.5f, -55.23f) - this.transform.position;
-				this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 22);
+				this.GetComponent<Rigidbody>().AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 22);
 			}
 			throwBombAt = 2;
 			bossRoomScript.isPillar2Destroyed = true;
@@ -66,11 +66,11 @@ public class JellybeanBomb : MonoBehaviour {
 		else if (bossRoomScript.atPillar == 3) {
 			if (bossRoomScript.bossInMiddle == false) {
 				Vector3 throwDirection = new Vector3(11.46f, 1.5f, -37.95f) - this.transform.position;
-				this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 18);
+				this.GetComponent<Rigidbody>().AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 18);
 			}
 			else if (bossRoomScript.bossInMiddle == true) {
 				Vector3 throwDirection = new Vector3(10.71f, 1.5f, -47.75f) - this.transform.position;
-				this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 18);
+				this.GetComponent<Rigidbody>().AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 18);
 			}
 			throwBombAt = 3;
 			bossRoomScript.isPillar3Destroyed = true;
@@ -79,11 +79,11 @@ public class JellybeanBomb : MonoBehaviour {
 		else if (bossRoomScript.atPillar == 4) {
 			if (bossRoomScript.bossInMiddle == false) {
 				Vector3 throwDirection = new Vector3(11.6f, 1.5f, 39.8f) - this.transform.position;
-				this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 18.5f);
+				this.GetComponent<Rigidbody>().AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 18.5f);
 			}
 			else if (bossRoomScript.bossInMiddle == true) {
 				Vector3 throwDirection = new Vector3(10.7f, 1.5f, 51f) - this.transform.position;
-				this.rigidbody.AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 24f);
+				this.GetComponent<Rigidbody>().AddForce(new Vector3(throwDirection.x, throwDirection.y+10, throwDirection.z) * 24f);
 			}
 			throwBombAt = 4;
 			bossRoomScript.isPillar4Destroyed = true;
@@ -95,35 +95,35 @@ public class JellybeanBomb : MonoBehaviour {
 		// Stop the bomb if it gets too close (so it won't fly past the player)
 		float rangeBetweenBombAndPlayer = Vector3.Distance(this.transform.position, player.transform.position );
 		if (rangeBetweenBombAndPlayer < 13.0f && isStopped == false) {
-			this.rigidbody.velocity = new Vector3(0, 0, 0);
+			this.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
 			isStopped = true;
 		}
 
 		// Blinking bomb
 		if (bombFuseTime > 3.0f) {
 			if (blinkDuration > 0.0f && blinkDuration <= 0.5f) {
-				renderer.material.color = Color.red;
+				GetComponent<Renderer>().material.color = Color.red;
 				blinkDuration -= Time.deltaTime;
 			}
 			else if (blinkDuration < 0.0f) {
 				blinkDuration = 1.0f;
 			}
 			if (blinkDuration > 0.5f) {
-				renderer.material.color = Color.yellow;
+				GetComponent<Renderer>().material.color = Color.yellow;
 				blinkDuration -= Time.deltaTime;
 			}
 		}
 		// Blink faster if it's going to explode
 		else if (bombFuseTime <= 3.0f) {
 			if (blinkDuration > 0.0f && blinkDuration <= 0.25f) {
-				renderer.material.color = Color.red;
+				GetComponent<Renderer>().material.color = Color.red;
 				blinkDuration -= Time.deltaTime;
 			}
 			else if (blinkDuration < 0.0f) {
 				blinkDuration = 0.5f;
 			}
 			if (blinkDuration > 0.25f) {
-				renderer.material.color = Color.yellow;
+				GetComponent<Renderer>().material.color = Color.yellow;
 				blinkDuration -= Time.deltaTime;
 			}
 		}
@@ -133,7 +133,7 @@ public class JellybeanBomb : MonoBehaviour {
 		if (bombFuseTime <= 0.0f) {
 			
 			if (activated == false) {
-				audio.PlayOneShot(bombExplosion);
+				GetComponent<AudioSource>().PlayOneShot(bombExplosion);
 				Instantiate(explosionParticleEffect, this.transform.position, this.transform.rotation);
 				//Vector3 breakPillarAt = pillar1.transform.position;
 				if (throwBombAt == 1) {
@@ -155,8 +155,8 @@ public class JellybeanBomb : MonoBehaviour {
 
 				Collider[] colliders = Physics.OverlapSphere(this.transform.position, 20.0f);
 				foreach (Collider hit in colliders) {
-					if (hit && hit.rigidbody) {
-						hit.rigidbody.AddExplosionForce(3000.0f, this.transform.position, 20.0f, 3.0F);
+					if (hit && hit.GetComponent<Rigidbody>()) {
+						hit.GetComponent<Rigidbody>().AddExplosionForce(3000.0f, this.transform.position, 20.0f, 3.0F);
 					}
 				}
 				activated = true;

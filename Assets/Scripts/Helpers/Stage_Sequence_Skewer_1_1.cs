@@ -92,7 +92,7 @@ public class Stage_Sequence_Skewer_1_1 : Stage_Sequence_Helper {
 			 * Spawn the possession cube
 			 * */
 			possession_cube = spawn_possession_cube(new Vector3( 0.0F, 64.0F, -121.0F));
-			possession_cube_script = possession_cube.AddComponent("Possession_Cube") as Possession_Cube;
+			possession_cube_script = possession_cube.AddComponent<Possession_Cube>() as Possession_Cube;
 			possession_cube_script.lookAt_position = new Vector3( 0.0F, 22.0F, -15.0F);
 			possession_cube_script.up_vector = Vector3.up;
 
@@ -114,7 +114,7 @@ public class Stage_Sequence_Skewer_1_1 : Stage_Sequence_Helper {
 			GameObject.Destroy(possession_cube);
 			
 			possession_cube = spawn_possession_cube(new Vector3( 0.0F, 22.0F, -15.0F));
-			possession_cube_script = possession_cube.AddComponent("Possession_Cube") as Possession_Cube;
+			possession_cube_script = possession_cube.AddComponent<Possession_Cube>() as Possession_Cube;
 			possession_cube_script.lookAt_position = new Vector3( 0.0F, 40.0F, -121.0F);
 			possession_cube_script.up_vector = Vector3.up;
 			
@@ -139,7 +139,7 @@ public class Stage_Sequence_Skewer_1_1 : Stage_Sequence_Helper {
 			 * Spawn the possession cube
 			 * */
 			possession_cube = spawn_possession_cube(new Vector3( 0.0F, 64.0F, -121.0F));
-			possession_cube_script = possession_cube.AddComponent("Possession_Cube") as Possession_Cube;
+			possession_cube_script = possession_cube.AddComponent<Possession_Cube>() as Possession_Cube;
 			possession_cube_script.lookAt_position = new Vector3( 0.0F, 22.0F, -15.0F);
 			possession_cube_script.up_vector = Vector3.up;
 			
@@ -171,7 +171,7 @@ public class Stage_Sequence_Skewer_1_1 : Stage_Sequence_Helper {
 			GameObject.Destroy(possession_cube);
 			
 			possession_cube = spawn_possession_cube(new Vector3( 0.0F, 140.0F, 11.0F));
-			possession_cube_script = possession_cube.AddComponent("Possession_Cube") as Possession_Cube;
+			possession_cube_script = possession_cube.AddComponent<Possession_Cube>() as Possession_Cube;
 			possession_cube_script.lookAt_position = new Vector3( 0.0F, 137.0F, -120.0F);
 			possession_cube_script.up_vector = Vector3.up;
 			

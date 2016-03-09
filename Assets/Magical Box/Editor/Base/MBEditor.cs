@@ -179,22 +179,22 @@ public class MBEditor : EditorWindow {
         mAutoSelect=EditorPrefs.GetBool("MagicalBox_AutoSelect");
         mEditorUpdateInterval = EditorPrefs.GetFloat("MagicalBox_EditorUpdateInterval");
         mParametersAutoToggleSelected = EditorPrefs.GetBool("MagicalBox_AutoToggleParams");
-        mTexLifeAnimated = Resources.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/LifeAnim.png", typeof(Texture)) as Texture;
-        mTexBirthAnimated = Resources.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/BirthAnim.png", typeof(Texture)) as Texture;
-        mTexClose = Resources.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/Close.png", typeof(Texture)) as Texture;
-        mTexPlay = Resources.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/Play.png", typeof(Texture)) as Texture;
-        mTexStop = Resources.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/Stop.png", typeof(Texture)) as Texture;
-        mTexHalt = Resources.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/Halt.png", typeof(Texture)) as Texture;
-        mTexSynchronize = Resources.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/Synchronize.png", typeof(Texture)) as Texture;
-        mTexToggleZoom = Resources.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/ToggleZoom.png", typeof(Texture)) as Texture;
-        mTexEMTrail = Resources.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/MBEmitterTrail.png", typeof(Texture)) as Texture;
-        mTexMuted = Resources.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/Mute.png", typeof(Texture)) as Texture;
-        mTexUnMuted = Resources.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/UnMute.png", typeof(Texture)) as Texture;
-        mTexHourglass = Resources.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/Hourglass.png", typeof(Texture)) as Texture;
-        mTexAutoSelect = Resources.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/AutoSelect.png", typeof(Texture)) as Texture;
-        mTexUpdateInterval = Resources.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/UpdateInterval.png", typeof(Texture)) as Texture;
-        mTexParamOrderUp = Resources.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/ParamOrderUp.png", typeof(Texture)) as Texture;
-        mTexParamOrderDown = Resources.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/ParamOrderDown.png", typeof(Texture)) as Texture;
+        mTexLifeAnimated = AssetDatabase.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/LifeAnim.png", typeof(Texture)) as Texture;
+        mTexBirthAnimated = AssetDatabase.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/BirthAnim.png", typeof(Texture)) as Texture;
+        mTexClose = AssetDatabase.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/Close.png", typeof(Texture)) as Texture;
+        mTexPlay = AssetDatabase.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/Play.png", typeof(Texture)) as Texture;
+        mTexStop = AssetDatabase.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/Stop.png", typeof(Texture)) as Texture;
+        mTexHalt = AssetDatabase.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/Halt.png", typeof(Texture)) as Texture;
+        mTexSynchronize = AssetDatabase.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/Synchronize.png", typeof(Texture)) as Texture;
+        mTexToggleZoom = AssetDatabase.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/ToggleZoom.png", typeof(Texture)) as Texture;
+        mTexEMTrail = AssetDatabase.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/MBEmitterTrail.png", typeof(Texture)) as Texture;
+        mTexMuted = AssetDatabase.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/Mute.png", typeof(Texture)) as Texture;
+        mTexUnMuted = AssetDatabase.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/UnMute.png", typeof(Texture)) as Texture;
+        mTexHourglass = AssetDatabase.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/Hourglass.png", typeof(Texture)) as Texture;
+        mTexAutoSelect = AssetDatabase.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/AutoSelect.png", typeof(Texture)) as Texture;
+        mTexUpdateInterval = AssetDatabase.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/UpdateInterval.png", typeof(Texture)) as Texture;
+        mTexParamOrderUp = AssetDatabase.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/ParamOrderUp.png", typeof(Texture)) as Texture;
+        mTexParamOrderDown = AssetDatabase.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/ParamOrderDown.png", typeof(Texture)) as Texture;
 
         // Get a list of classes that derive from MBObject
         Assembly asm = Assembly.GetAssembly(typeof(MBParameter));
@@ -202,7 +202,7 @@ public class MBEditor : EditorWindow {
 
         foreach (System.Type T in types) {
             if (T.BaseType == typeof(MBObject)) {
-                Texture tex = Resources.LoadAssetAtPath("Assets/Gizmos/" + T.Name + ".png", typeof(Texture)) as Texture;
+                Texture tex = AssetDatabase.LoadAssetAtPath("Assets/Gizmos/" + T.Name + ".png", typeof(Texture)) as Texture;
                 if (tex)
                     mObjectIcons.Add(T, tex);
             }

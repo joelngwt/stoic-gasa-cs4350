@@ -43,7 +43,7 @@ public class Enemy : MonoBehaviour {
 		else
 			positionOriginal = transform.position.x;
 		if(gameObject.tag == "Enemy"){
-			animation.Play ("Cover_Down_out");
+			GetComponent<Animation>().Play ("Cover_Down_out");
 		}
 	}
 
@@ -69,8 +69,8 @@ public class Enemy : MonoBehaviour {
 			if(coverType == 0 && first == true) // move down to take cover
 			{
 				if(gameObject.tag == "Enemy"){
-					animation.Stop ("Run"); // stop running animation
-					animation.Play ("Cover_Down_in"); // take cover down
+					GetComponent<Animation>().Stop ("Run"); // stop running animation
+					GetComponent<Animation>().Play ("Cover_Down_in"); // take cover down
 				}
 				//if(temp.y >= positionOriginal - 2.0f)
 				//	temp.y -= 0.1f;
@@ -80,8 +80,8 @@ public class Enemy : MonoBehaviour {
 			else if(coverType == 1) //move right to take cover
 			{
 				if(gameObject.tag == "Enemy"){
-					animation.Stop ("Run"); // stop running animation
-					animation.Play ("Cover_SideL_in"); // take cover
+					GetComponent<Animation>().Stop ("Run"); // stop running animation
+					GetComponent<Animation>().Play ("Cover_SideL_in"); // take cover
 				}
 				//if(temp.x <= positionOriginal + 1.0f)
 				//	temp.x += 0.1f;
@@ -91,8 +91,8 @@ public class Enemy : MonoBehaviour {
 			else if(coverType == 2) //move left to take cover
 			{
 				if(gameObject.tag == "Enemy"){
-					animation.Stop ("Run"); // stop running animation
-					animation.Play ("Cover_SideR_in"); // take cover
+					GetComponent<Animation>().Stop ("Run"); // stop running animation
+					GetComponent<Animation>().Play ("Cover_SideR_in"); // take cover
 				}
 				//if(temp.x >= positionOriginal - 1.0f)
 				//	temp.x -= 0.1f;
@@ -120,7 +120,7 @@ public class Enemy : MonoBehaviour {
 			if(coverType == 0 && first == true)
 			{
 				if(gameObject.tag == "Enemy"){
-					animation.Play ("Cover_Down_out");
+					GetComponent<Animation>().Play ("Cover_Down_out");
 				}
 				//if(temp.y <= positionOriginal)
 				//	temp.y += 0.2f;
@@ -130,7 +130,7 @@ public class Enemy : MonoBehaviour {
 			else if(coverType == 1)
 			{
 				if(gameObject.tag == "Enemy"){
-					animation.Play ("Cover_SideL_out");
+					GetComponent<Animation>().Play ("Cover_SideL_out");
 				}
 				//if(temp.x >= positionOriginal)
 				//	temp.x -= 0.2f;
@@ -140,7 +140,7 @@ public class Enemy : MonoBehaviour {
 			else if(coverType == 2)
 			{
 				if(gameObject.tag == "Enemy"){
-					animation.Play ("Cover_SideR_out");
+					GetComponent<Animation>().Play ("Cover_SideR_out");
 				}
 				//if(temp.x <= positionOriginal)
 				//	temp.x += 0.2f;
@@ -178,10 +178,10 @@ public class Enemy : MonoBehaviour {
 		// Audio randomization
 		float audioToPlay = Random.Range(0.0F, 1.0F);
 		if(audioToPlay < 0.5){
-			audio.PlayOneShot(getDamaged);
+			GetComponent<AudioSource>().PlayOneShot(getDamaged);
 		}
 		else{
-			audio.PlayOneShot(getDamaged2);
+			GetComponent<AudioSource>().PlayOneShot(getDamaged2);
 		}
 		Instantiate (explosion, gameObject.transform.position, gameObject.transform.rotation);
 		// Will the bear drop a pickup?
@@ -197,8 +197,8 @@ public class Enemy : MonoBehaviour {
 		}		
 
 
-		animation.Play ("Die_Bear");
-		gameObject.collider.enabled = false;
+		GetComponent<Animation>().Play ("Die_Bear");
+		gameObject.GetComponent<Collider>().enabled = false;
 		//renderer.material.SetColor("_Color", Color.red);
 		DestroyObject(gameObject, 0.7F); // 0.625 seconds needed for die animation to complete
 	}

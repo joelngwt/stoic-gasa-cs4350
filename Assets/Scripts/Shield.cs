@@ -341,7 +341,7 @@ public class Shield : MonoBehaviour {
 		isReloading = true;
 		while(gunDisplayScript.ammoCountPistol < Constants.PISTOL_MAGAZINE_SIZE){
 			gunDisplayScript.ammoCountPistol++;
-			audio.PlayOneShot(pistolReload);
+			GetComponent<AudioSource>().PlayOneShot(pistolReload);
 			yield return new WaitForSeconds(Constants.PISTOL_RELOAD_SPEED);
 		}
 		isReloading = false;
@@ -354,7 +354,7 @@ public class Shield : MonoBehaviour {
 			if(gunDisplayScript.ammoCountTotalShotgun > 0){
 				gunDisplayScript.ammoCountTotalShotgun--;
 				gunDisplayScript.ammoCountShotgun++;
-				audio.PlayOneShot(shotgunReload);
+				GetComponent<AudioSource>().PlayOneShot(shotgunReload);
 				yield return new WaitForSeconds(Constants.SHOTGUN_RELOAD_SPEED);
 			}
 			else{
@@ -372,7 +372,7 @@ public class Shield : MonoBehaviour {
 			if(gunDisplayScript.ammoCountTotalHMG > 0){
 				gunDisplayScript.ammoCountTotalHMG--;
 				gunDisplayScript.ammoCountHMG++;
-				audio.PlayOneShot(hmgReload);
+				GetComponent<AudioSource>().PlayOneShot(hmgReload);
 				yield return new WaitForSeconds(Constants.HMG_RELOAD_SPEED);
 			}
 			else{
@@ -390,7 +390,7 @@ public class Shield : MonoBehaviour {
 			if(gunDisplayScript.ammoCountTotalRocketLauncher > 0){
 				gunDisplayScript.ammoCountTotalRocketLauncher--;
 				gunDisplayScript.ammoCountRocketLauncher++;
-				audio.PlayOneShot(rocketLauncherReload);
+				GetComponent<AudioSource>().PlayOneShot(rocketLauncherReload);
 				yield return new WaitForSeconds(Constants.ROCKET_RELOAD_SPEED);
 			}
 			else{

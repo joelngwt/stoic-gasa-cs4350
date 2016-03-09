@@ -24,12 +24,12 @@ public class UIScaling : MonoBehaviour
 	{
 		pixelHeight = (Screen.height/20f) * unitsHeight;
 		pixelLength = (Screen.width/20f) * unitsLength;
-		if (gameObject.guiTexture != null)
+		if (gameObject.GetComponent<GUITexture>() != null)
 		{
 			textureScaling = true;
 			GUIPositions();
 		}
-		else if (gameObject.guiText != null)
+		else if (gameObject.GetComponent<GUIText>() != null)
 		{
 			textScaling = true;
 			GUITextPos();
@@ -70,19 +70,19 @@ public class UIScaling : MonoBehaviour
 	{
 		if (middleScreenWidth)
 		{
-			guiTexture.pixelInset = new Rect(Screen.width/2 - pixelLength/2, 0, pixelLength, pixelHeight);
+			GetComponent<GUITexture>().pixelInset = new Rect(Screen.width/2 - pixelLength/2, 0, pixelLength, pixelHeight);
 		}
 		else if (rightOfScreen)
 		{
-			guiTexture.pixelInset = new Rect(Screen.width - (pixelLength + (Screen.width/20f)), 0, pixelLength, pixelHeight);
+			GetComponent<GUITexture>().pixelInset = new Rect(Screen.width - (pixelLength + (Screen.width/20f)), 0, pixelLength, pixelHeight);
 		}
 		else if (leftOfScreen)
 		{
-			guiTexture.pixelInset = new Rect((Screen.width/20f), 0, pixelLength, pixelHeight);
+			GetComponent<GUITexture>().pixelInset = new Rect((Screen.width/20f), 0, pixelLength, pixelHeight);
 		}
 		else
 		{
-			guiTexture.pixelInset = new Rect(0, 0, pixelLength, pixelHeight);
+			GetComponent<GUITexture>().pixelInset = new Rect(0, 0, pixelLength, pixelHeight);
 		}
 	}
 
@@ -90,6 +90,6 @@ public class UIScaling : MonoBehaviour
 	void GUITextPos()
 	{
 		fontNumber = (int)(Screen.width/unitsLength);
-		guiText.fontSize = fontNumber;
+		GetComponent<GUIText>().fontSize = fontNumber;
 	}
 }

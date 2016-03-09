@@ -26,7 +26,7 @@ public class TimerScript: MonoBehaviour {
 		
 		if (seconds > 0)
 		{
-			guiText.text = seconds.ToString("F0");
+			GetComponent<GUIText>().text = seconds.ToString("F0");
 		}
 		else{
 			Application.LoadLevel ("GameOver");

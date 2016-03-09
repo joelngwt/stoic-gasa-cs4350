@@ -103,8 +103,8 @@ public class ModelChanger01 : MonoBehaviour {
 			for ( int j = 0; j < aniList.Length; j++ ) {
 				
 				GameObject nClip = Resources.Load( pathAni + aniModelName + "@" + aniList[j] ) as GameObject;
-				nClip.animation.clip.wrapMode = WrapMode.Loop;
-				model.animation.AddClip( nClip.animation.clip, aniList[j] );
+				nClip.GetComponent<Animation>().clip.wrapMode = WrapMode.Loop;
+				model.GetComponent<Animation>().AddClip( nClip.GetComponent<Animation>().clip, aniList[j] );
 				
 			}
 			
@@ -128,7 +128,7 @@ public class ModelChanger01 : MonoBehaviour {
 		
 		HideAllModels();
 		modelObjectList[currentModelNum].SetActive( true );
-		modelObjectList[currentModelNum].animation.Play( aniList[currentAniNum] );
+		modelObjectList[currentModelNum].GetComponent<Animation>().Play( aniList[currentAniNum] );
 		
 		txtModelName.text = modelList[currentModelNum];
 		txtAniName.text = aniList[currentAniNum];

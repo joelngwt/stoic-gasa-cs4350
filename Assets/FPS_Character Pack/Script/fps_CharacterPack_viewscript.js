@@ -111,7 +111,7 @@ function TargetMove(_x:float,_y:float){
     var movY = -_y* movSpeed * 0.055* Time.deltaTime;
     
     var camMove:Vector3 = Vector3(movX,movY);
-    camMove = camera.cameraToWorldMatrix.MultiplyVector(camMove);
+    camMove = GetComponent.<Camera>().cameraToWorldMatrix.MultiplyVector(camMove);
     target.Translate(camMove);
 }
 

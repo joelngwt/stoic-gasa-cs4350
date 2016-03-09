@@ -13,27 +13,27 @@ public class PauseButtonScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// initialize button to white
-		guiTexture.texture = greenButton; 
+		GetComponent<GUITexture>().texture = greenButton; 
 		
 		if(Application.loadedLevelName == "MainHall" || Application.loadedLevelName == "DiningHall" || Application.loadedLevelName == "BossRoom" || Application.loadedLevelName == "ActualBossRoom"){
-			audio.clip = music;
-			audio.Play ();
+			GetComponent<AudioSource>().clip = music;
+			GetComponent<AudioSource>().Play ();
 		}
 	}
 	
 	void OnMouseDown() {
-		if (guiTexture.name == "Pause Button"){
-			guiTexture.texture = yellowButton;
+		if (GetComponent<GUITexture>().name == "Pause Button"){
+			GetComponent<GUITexture>().texture = yellowButton;
 		}
 	}
 
 	void OnMouseUp() {
-		guiTexture.texture = greenButton;
+		GetComponent<GUITexture>().texture = greenButton;
 		
-		if(guiTexture.name == "Pause Button" && Time.timeScale == 1) { // game is running
+		if(GetComponent<GUITexture>().name == "Pause Button" && Time.timeScale == 1) { // game is running
 			Time.timeScale = 0; // pause the game
 		}
-		else if(guiTexture.name == "Pause Button" && Time.timeScale == 0) { // game is paused
+		else if(GetComponent<GUITexture>().name == "Pause Button" && Time.timeScale == 0) { // game is paused
 			Time.timeScale = 1; // unpause the game
 		}
 	}

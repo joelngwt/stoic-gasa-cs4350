@@ -14,7 +14,7 @@ public class SpawnOnFire : MonoBehaviour {
 	void Update () {
         // Fire emitter?
         if (Pool && Input.GetButtonDown("Fire1")) {
-            Ray r = Camera.mainCamera.ScreenPointToRay(Input.mousePosition);
+            Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             Debug.DrawRay(r.origin, r.direction);
             if (Physics.Raycast(r, out hit, Mathf.Infinity)) {

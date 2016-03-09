@@ -85,7 +85,7 @@ public class EnemyLollipop : MonoBehaviour
 			//fly towards player
 			if(lPos != pPos)
 			{
-				rigidbody.velocity = (pPos - lPos) * 5.0f;
+				GetComponent<Rigidbody>().velocity = (pPos - lPos) * 5.0f;
 				//print ("attack!!!");
 			}
 
@@ -93,7 +93,7 @@ public class EnemyLollipop : MonoBehaviour
 			if (Mathf.Abs(lPos.x - pPos.x) < 2.0f && Mathf.Abs(lPos.y - pPos.y) < 2.0f
 			         && Mathf.Abs(lPos.z - pPos.z) < 2.0f)
 			{
-				audio.PlayOneShot(attack); // attack sound
+				GetComponent<AudioSource>().PlayOneShot(attack); // attack sound
 				current = States.Retreat;
 
 				// Get and update the health of the player
@@ -108,7 +108,7 @@ public class EnemyLollipop : MonoBehaviour
 				}
 				// Else, just play the shield block sound
 				else{
-					audio.PlayOneShot(shieldBlock); // shield block sound
+					GetComponent<AudioSource>().PlayOneShot(shieldBlock); // shield block sound
 				}
 				Debug.Log ("Health1 = " + playerHealth);
 				PlayerPrefs.SetInt ("playerHealth", (int)playerHealth);
@@ -123,13 +123,13 @@ public class EnemyLollipop : MonoBehaviour
 			//action while in Retreat state
 			if(transform.position != player.transform.position)
 			{
-				rigidbody.velocity = ((transform.position - player.transform.position)) * 5.0f;
+				GetComponent<Rigidbody>().velocity = ((transform.position - player.transform.position)) * 5.0f;
 			}
 			//transition from Retreat state back to history state
 			if (Mathf.Abs(lPos.x - tempPos.x) < 2.0f && Mathf.Abs(lPos.y - tempPos.y) < 2.0f
 			    && Mathf.Abs(lPos.z - tempPos.z) < 2.0f)
 			{
-				rigidbody.velocity = new Vector3(0.0f, 0.0f, 0.0f);
+				GetComponent<Rigidbody>().velocity = new Vector3(0.0f, 0.0f, 0.0f);
 				//reset timer
 				attackTimer = 10.0f;
 				current = history;
@@ -160,7 +160,7 @@ public class EnemyLollipop : MonoBehaviour
 
 			//action in FlyLeftState 
 			//print ("p = " +p);
-			rigidbody.velocity = (p - transform.position) * speed;
+			GetComponent<Rigidbody>().velocity = (p - transform.position) * speed;
 		}
 		
 		//FlyRight State
@@ -186,7 +186,7 @@ public class EnemyLollipop : MonoBehaviour
 
 			//action in FlyRightState 
 			//print ("p = " +p);
-			rigidbody.velocity = (p - transform.position) * speed;
+			GetComponent<Rigidbody>().velocity = (p - transform.position) * speed;
 		}
 
 		//Faster State
@@ -205,10 +205,10 @@ public class EnemyLollipop : MonoBehaviour
 	public void StartAnim()
 	{
 		lifeLollipop--;
-		audio.PlayOneShot(getDamaged);
+		GetComponent<AudioSource>().PlayOneShot(getDamaged);
 		if(lifeLollipop == 0)
 		{
-			animation.Play ("Die_Lolli");
+			GetComponent<Animation>().Play ("Die_Lolli");
 			DestroyObject(gameObject, 0.7F);
 			colourTimer = 0.5f;
 		}

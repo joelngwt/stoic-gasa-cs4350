@@ -45,7 +45,7 @@ public class EventManager_DiningHall : MonoBehaviour {
 	void Start(){
 		theCamera = Camera.main.gameObject;
 		theCharacter = GameObject.FindWithTag("MainCharacter");
-		audio.clip = footsteps;
+		GetComponent<AudioSource>().clip = footsteps;
 		num = 0;
 		theCharacter.transform.rotation = theCamera.transform.rotation;
 		count = 1;
@@ -329,12 +329,12 @@ public class EventManager_DiningHall : MonoBehaviour {
 			Vector3 dir = position - theCamera.transform.position;
 			dir = dir.normalized;
 			
-			if(!audio.isPlaying && Time.timeScale == 1){
-				audio.Play ();
+			if(!GetComponent<AudioSource>().isPlaying && Time.timeScale == 1){
+				GetComponent<AudioSource>().Play ();
 			}
 			// Stop playing the footsteps if paused
-			else if(audio.isPlaying && Time.timeScale == 0){
-				audio.Stop();
+			else if(GetComponent<AudioSource>().isPlaying && Time.timeScale == 0){
+				GetComponent<AudioSource>().Stop();
 			}
 			
 			//theCharacter.transform.Translate(dir * movementSpeed * Time.deltaTime, Space.World);
@@ -346,7 +346,7 @@ public class EventManager_DiningHall : MonoBehaviour {
 			shootScript.enabled = true;
 			shieldScript.enabled = true;
 			
-			audio.Stop ();
+			GetComponent<AudioSource>().Stop ();
 			num += 1;
 
 		}
@@ -356,7 +356,7 @@ public class EventManager_DiningHall : MonoBehaviour {
 	private void spawnBear(Vector3 position, int cover){
 		GameObject bear = Instantiate(bearPrefab, new Vector3(position.x, position.y, position.z), transform.rotation) as GameObject; // add public GameObject bearPrefab at the top
 		bear.name = string.Concat("Target", count.ToString()); // give them unique numbered names (remember to initialize count)
-		Vector3 direction = camera.transform.position - bear.transform.position; // make the instantiated bear face the camera
+		Vector3 direction = GetComponent<Camera>().transform.position - bear.transform.position; // make the instantiated bear face the camera
 		bear.transform.rotation = Quaternion.LookRotation(direction);
 		bear.transform.FindChild ("Cube").GetComponent<SkinnedMeshRenderer>().materials[0].color = new Color(Random.Range(0,1f),Random.Range(0,1f),Random.Range(0,1f),1);
 
@@ -369,7 +369,7 @@ public class EventManager_DiningHall : MonoBehaviour {
 	private void spawnLollipop(Vector3 position){
 		GameObject lollipop = Instantiate(lollipopPrefab, new Vector3(position.x, position.y, position.z), transform.rotation) as GameObject; // add public GameObject bearPrefab at the top
 		lollipop.name = string.Concat("Target", count.ToString()); // give them unique numbered names (remember to initialize count)
-		Vector3 direction = camera.transform.position - lollipop.transform.position; // make the instantiated bear face the camera
+		Vector3 direction = GetComponent<Camera>().transform.position - lollipop.transform.position; // make the instantiated bear face the camera
 		lollipop.transform.rotation = Quaternion.LookRotation(direction);
 		count++;
 	}
@@ -377,7 +377,7 @@ public class EventManager_DiningHall : MonoBehaviour {
 	private void spawnEgg(Vector3 position){
 		GameObject egg = Instantiate(EggPrefab, new Vector3(position.x, position.y, position.z), transform.rotation) as GameObject; // add public GameObject bearPrefab at the top
 		egg.name = string.Concat("Target", count.ToString()); // give them unique numbered names (remember to initialize count)
-		Vector3 direction = camera.transform.position - egg.transform.position; // make the instantiated bear face the camera
+		Vector3 direction = GetComponent<Camera>().transform.position - egg.transform.position; // make the instantiated bear face the camera
 		egg.transform.rotation = Quaternion.LookRotation(direction);
 		count++;
 	}

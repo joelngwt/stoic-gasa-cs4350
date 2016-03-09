@@ -327,8 +327,10 @@ public class MBParticleSystem : MBObject
         if (!PersistentAtlas)
             GenerateTextureMap(true);
         else {
-            TextureAtlas = Resources.LoadAssetAtPath(TextureAtlasPath, typeof(Texture2D)) as Texture2D;
-            mbBuildDictionary(false);
+			#if UNITY_EDITOR
+            TextureAtlas = UnityEditor.AssetDatabase.LoadAssetAtPath(TextureAtlasPath, typeof(Texture2D)) as Texture2D;
+			#endif
+			mbBuildDictionary(false);
         }
 
         // Get storyboard timing        

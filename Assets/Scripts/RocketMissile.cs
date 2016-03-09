@@ -24,10 +24,10 @@ public class RocketMissile : MonoBehaviour {
 		if (range > 1.0f) {			// still flying
 			if (Application.loadedLevelName == "MainHall" ) {
 				// The main hall has a bigger level scale than the others
-				this.rigidbody.velocity = ((flyTo - this.transform.position)).normalized * Constants.ROCKET_FLYING_SPEED;
+				this.GetComponent<Rigidbody>().velocity = ((flyTo - this.transform.position)).normalized * Constants.ROCKET_FLYING_SPEED;
 			}
 			else {
-				this.rigidbody.velocity = ((flyTo - this.transform.position)).normalized * Constants.ROCKET_FLYING_SPEED * 0.75f;
+				this.GetComponent<Rigidbody>().velocity = ((flyTo - this.transform.position)).normalized * Constants.ROCKET_FLYING_SPEED * 0.75f;
 			}
 			
 			//find the vector pointing from our position to the target
@@ -49,7 +49,7 @@ public class RocketMissile : MonoBehaviour {
 					Instantiate(explosionEffectSmall, this.transform.position, this.transform.rotation);
 				}
 				Debug.Log ("Explode sound");
-				audio.PlayOneShot(explosionSound);
+				GetComponent<AudioSource>().PlayOneShot(explosionSound);
 			}
 			
 			// The levels have different scales

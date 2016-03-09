@@ -156,7 +156,7 @@ public class MBEditorCommands
         MBEditor.SnapshotScene("Add Emitter");
         MBObject obj = MBEditor.SelectedObject;
         MBEmitter em=obj.ParticleSystem.AddEmitter(obj);
-        Texture2D deftex = Resources.LoadAssetAtPath("Assets/Magical Box/Base/default.png", typeof(Texture2D)) as Texture2D;
+        Texture2D deftex = AssetDatabase.LoadAssetAtPath("Assets/Magical Box/Base/default.png", typeof(Texture2D)) as Texture2D;
         if (em && deftex) {
             em.SetTexture(deftex);
         }
@@ -493,7 +493,7 @@ public class MBEditorCommands
             sys.AddLayer(mat);
             // Add a default emitter
             MBEmitter em=sys.AddEmitter();
-            Texture2D deftex=Resources.LoadAssetAtPath("Assets/Magical Box/Base/default.png",typeof(Texture2D)) as Texture2D;
+            Texture2D deftex=AssetDatabase.LoadAssetAtPath("Assets/Magical Box/Base/default.png",typeof(Texture2D)) as Texture2D;
             if (em && deftex) {
                 em.SetTexture(deftex);
             }

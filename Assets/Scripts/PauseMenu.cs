@@ -23,9 +23,9 @@ public class PauseMenu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		playButton.guiTexture.texture = playButtonGreen;
-		menuButton.guiTexture.texture = menuButtonGreen;
-		replayButton.guiTexture.texture = replayButtonGreen;
+		playButton.GetComponent<GUITexture>().texture = playButtonGreen;
+		menuButton.GetComponent<GUITexture>().texture = menuButtonGreen;
+		replayButton.GetComponent<GUITexture>().texture = replayButtonGreen;
 	
 		menuBackground.enabled = false;
 		playButton.enabled = false;
@@ -57,18 +57,18 @@ public class PauseMenu : MonoBehaviour {
 		// Mouse down functions
 		// ----------------
 			if (Input.GetMouseButtonDown(0) && playButton.HitTest(Input.mousePosition)) {
-				playButton.guiTexture.texture = playButtonYellow;
-				audio.PlayOneShot(buttonSound);
+				playButton.GetComponent<GUITexture>().texture = playButtonYellow;
+				GetComponent<AudioSource>().PlayOneShot(buttonSound);
 				playPressed = true;
 			}
 			else if (Input.GetMouseButtonDown(0) && menuButton.HitTest(Input.mousePosition)) {
-				menuButton.guiTexture.texture = menuButtonYellow;
-				audio.PlayOneShot(buttonSound);
+				menuButton.GetComponent<GUITexture>().texture = menuButtonYellow;
+				GetComponent<AudioSource>().PlayOneShot(buttonSound);
 				menuPressed = true;
 			}
 			else if (Input.GetMouseButtonDown(0) && replayButton.HitTest(Input.mousePosition)) {
-				replayButton.guiTexture.texture = replayButtonYellow;
-				audio.PlayOneShot(buttonSound);
+				replayButton.GetComponent<GUITexture>().texture = replayButtonYellow;
+				GetComponent<AudioSource>().PlayOneShot(buttonSound);
 				replayPressed = true;
 			}
 			// ----------------
@@ -78,18 +78,18 @@ public class PauseMenu : MonoBehaviour {
 			// ----------------
 			if (playPressed && !Input.GetMouseButton(0)) {
 				Time.timeScale = 1;
-				playButton.guiTexture.texture = playButtonGreen;
+				playButton.GetComponent<GUITexture>().texture = playButtonGreen;
 				playPressed = false;
 			}
 			else if (menuPressed && !Input.GetMouseButton(0)) {
 				Time.timeScale = 1;
 				Application.LoadLevel("mainMenu");
-				menuButton.guiTexture.texture = menuButtonGreen;
+				menuButton.GetComponent<GUITexture>().texture = menuButtonGreen;
 				menuPressed = false;
 			}
 			else if (replayPressed && !Input.GetMouseButton(0)) {
 				Time.timeScale = 1;
-				menuButton.guiTexture.texture = menuButtonGreen;
+				menuButton.GetComponent<GUITexture>().texture = menuButtonGreen;
 				replayPressed = false;
 				
 				if (Application.loadedLevelName == "MainHall") {

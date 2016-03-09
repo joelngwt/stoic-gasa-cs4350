@@ -24,7 +24,7 @@ public class CrackedRoof : MonoBehaviour {
 		if (health <= 0) {
 			// Remove all rigidbody constraints so that the roof can start falling
 			//this.gameObject.SetActive(false);
-			this.renderer.material.mainTexture = sky;
+			this.GetComponent<Renderer>().material.mainTexture = sky;
 			targetReticle.SetActive(false);
 			if (spawnedBrokenRoof == false) {
 				Instantiate(brokenRoof, this.transform.position, this.transform.rotation);

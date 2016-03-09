@@ -22,7 +22,7 @@ public class InGameScoreScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		guiText.text = "Score: " + currentScore.ToString("F0");
+		GetComponent<GUIText>().text = "Score: " + currentScore.ToString("F0");
 		
 		if(highScore < currentScore){
 			PlayerPrefs.SetInt ("highScore", (int)currentScore);

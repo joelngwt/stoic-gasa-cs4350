@@ -11,7 +11,7 @@ public class CycleCookiesTimer : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		gameObject.light.cookie = cookies[0];
+		gameObject.GetComponent<Light>().cookie = cookies[0];
 		t = interval;
 	}
 	
@@ -21,7 +21,7 @@ public class CycleCookiesTimer : MonoBehaviour {
 		if (t > 0.0f) return;
 		i++;
 		if (i >= cookies.Length) i = 0;
-		gameObject.light.cookie = cookies[i];
+		gameObject.GetComponent<Light>().cookie = cookies[i];
 		t = interval;
     }
 }

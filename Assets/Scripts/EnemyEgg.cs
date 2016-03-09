@@ -42,7 +42,7 @@ public class EnemyEgg : MonoBehaviour
 		//Charge State
 		if(current == States.Charge)
 		{
-			animation.Play ("Run");
+			GetComponent<Animation>().Play ("Run");
 			ePos = transform.position;
 			pPos = player.transform.position;
 			//transition from Attack state to Retreat state
@@ -57,7 +57,7 @@ public class EnemyEgg : MonoBehaviour
 			}
 			else //charge towards player
 			{
-				rigidbody.velocity = (pPos - ePos);
+				GetComponent<Rigidbody>().velocity = (pPos - ePos);
 			}
 		}
 
@@ -68,8 +68,8 @@ public class EnemyEgg : MonoBehaviour
 			current = States.Wait;
 			attackTimer = 5.0f;
 			
-			animation.Stop (); // stop the running animation
-			audio.PlayOneShot(attack); // attack sound
+			GetComponent<Animation>().Stop (); // stop the running animation
+			GetComponent<AudioSource>().PlayOneShot(attack); // attack sound
 			// Get and update the health of the player
 			if (PlayerPrefs.HasKey ("playerHealth")) {
 				playerHealth = PlayerPrefs.GetInt ("playerHealth");
@@ -78,7 +78,7 @@ public class EnemyEgg : MonoBehaviour
 				playerHealth -= 1;
 			}
 			else{
-				audio.PlayOneShot(shieldBlock); // shield block sound
+				GetComponent<AudioSource>().PlayOneShot(shieldBlock); // shield block sound
 			}
 			Debug.Log ("Health1 = " + playerHealth);
 			PlayerPrefs.SetInt ("playerHealth", (int)playerHealth);
@@ -87,7 +87,7 @@ public class EnemyEgg : MonoBehaviour
 
 		if(current == States.Wait)
 		{
-			rigidbody.velocity = new Vector3(0.0f, 0.0f, 0.0f);
+			GetComponent<Rigidbody>().velocity = new Vector3(0.0f, 0.0f, 0.0f);
 			if(attackTimer <= 0.0f)
 				current = States.Attack;
 		}
@@ -97,11 +97,11 @@ public class EnemyEgg : MonoBehaviour
 	public void StartAnim()
 	{
 		lifeEgg--;
-		audio.PlayOneShot(takeDamage);
+		GetComponent<AudioSource>().PlayOneShot(takeDamage);
 		//renderer.material.SetColor("_Color", Color.red);
 		if(lifeEgg == 0)
 		{
-			animation.Play ("Die_Egg");
+			GetComponent<Animation>().Play ("Die_Egg");
 			DestroyObject(gameObject, 0.7F);
 			colourTimer = 0.5f;
 		}

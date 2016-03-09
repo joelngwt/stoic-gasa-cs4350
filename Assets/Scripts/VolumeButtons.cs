@@ -21,8 +21,8 @@ public class VolumeButtons : MonoBehaviour {
 
 	void OnMouseUp(){
 		if (this.name == "EffectsUp"){
-			guiTexture.texture = button1;
-			audio.PlayOneShot(menuButton);
+			GetComponent<GUITexture>().texture = button1;
+			GetComponent<AudioSource>().PlayOneShot(menuButton);
 			if(effectsVolume < 10)
 			{	
 				effectsVolume+=1;
@@ -37,8 +37,8 @@ public class VolumeButtons : MonoBehaviour {
 			}
 		}
 		else if (this.name == "EffectsDown"){
-			guiTexture.texture = button1;
-			audio.PlayOneShot(menuButton);
+			GetComponent<GUITexture>().texture = button1;
+			GetComponent<AudioSource>().PlayOneShot(menuButton);
 			if(effectsVolume > 0)
 			{
 				effectsVolume-=1;
@@ -55,10 +55,10 @@ public class VolumeButtons : MonoBehaviour {
 	}
 	
 	void OnMouseDown(){
-		if (guiTexture.name == "EffectsUp")
-			guiTexture.texture = button2;
-		else if (guiTexture.name == "EffectsDown")
-			guiTexture.texture = button2;
+		if (GetComponent<GUITexture>().name == "EffectsUp")
+			GetComponent<GUITexture>().texture = button2;
+		else if (GetComponent<GUITexture>().name == "EffectsDown")
+			GetComponent<GUITexture>().texture = button2;
 	}
 	
 	void Update()

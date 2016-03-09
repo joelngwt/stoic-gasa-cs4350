@@ -7,7 +7,7 @@ public class screen : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		renderer.material.SetColor("_Color", Color.black);
+		GetComponent<Renderer>().material.SetColor("_Color", Color.black);
 	}
 	
 	// Update is called once per frame

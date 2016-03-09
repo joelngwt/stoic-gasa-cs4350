@@ -9,16 +9,16 @@ public class TotalAmmoText : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (gunDisplayScript.currentSelection == "Pistol") {
-			guiText.text = "∞";
+			GetComponent<GUIText>().text = "∞";
 		}
 		else if (gunDisplayScript.currentSelection == "HMG") {
-			guiText.text = gunDisplayScript.ammoCountTotalHMG.ToString ();
+			GetComponent<GUIText>().text = gunDisplayScript.ammoCountTotalHMG.ToString ();
 		}
 		else if(gunDisplayScript.currentSelection == "Shotgun"){
-			guiText.text = gunDisplayScript.ammoCountTotalShotgun.ToString ();
+			GetComponent<GUIText>().text = gunDisplayScript.ammoCountTotalShotgun.ToString ();
 		}
 		else if(gunDisplayScript.currentSelection == "RocketLauncher"){
-			guiText.text = gunDisplayScript.ammoCountTotalRocketLauncher.ToString ();
+			GetComponent<GUIText>().text = gunDisplayScript.ammoCountTotalRocketLauncher.ToString ();
 		}
 	}
 }

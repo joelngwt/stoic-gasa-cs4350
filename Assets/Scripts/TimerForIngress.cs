@@ -15,7 +15,7 @@ public class TimerForIngress: MonoBehaviour {
 	void Update(){
 		if(seconds<0) {
 			stopTimer();
-			guiText.text = "00:00";
+			GetComponent<GUIText>().text = "00:00";
 		}
 
 		if(runTimer){
@@ -30,7 +30,7 @@ public class TimerForIngress: MonoBehaviour {
 			miliseconds -= Time.deltaTime * 100;
 			
 //			guiText.text = string.Format("{0} : {1}", seconds, (int)miliseconds);
-			guiText.text = ToString();
+			GetComponent<GUIText>().text = ToString();
 
 		}	
 	}

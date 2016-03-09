@@ -15,7 +15,7 @@ public class CandleLight : MonoBehaviour {
 		delay -= Time.deltaTime;
 		if (delay > 0.0f) return; 
 		
-		light.color = new Color(1.0f, 0.7f + Mathf.Sin(Time.time*10.0f)*0.15f+0.15f, 0.35f);
+		GetComponent<Light>().color = new Color(1.0f, 0.7f + Mathf.Sin(Time.time*10.0f)*0.15f+0.15f, 0.35f);
 		
 		delay = 0.05f;
 	}

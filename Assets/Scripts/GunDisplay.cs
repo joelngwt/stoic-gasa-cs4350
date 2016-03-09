@@ -136,22 +136,22 @@ public class GunDisplay : MonoBehaviour {
 			
 			// Pop up choices
 			if (/*currentSelection != "HMG" &&*/ GUI.Button (new Rect (Screen.width*(float)0.81, Screen.height*(float)0.67, Screen.width*(float)0.15, Screen.height*(float)0.15), HMG)) { // bottom
-				guiTexture.texture = HMG;
+				GetComponent<GUITexture>().texture = HMG;
 				currentSelection = "HMG";
 				selectionOpen = false;
 			}
 			else if(/*currentSelection != "Shotgun" &&*/ GUI.Button (new Rect (Screen.width*(float)0.81, Screen.height*(float)0.51, Screen.width*(float)0.15, Screen.height*(float)0.15), Shotgun)) { // middle bottom
-				guiTexture.texture = Shotgun;
+				GetComponent<GUITexture>().texture = Shotgun;
 				currentSelection = "Shotgun";
 				selectionOpen = false;
 			}
 			else if(/*currentSelection != "Pistol" &&*/ GUI.Button (new Rect (Screen.width*(float)0.81, Screen.height*(float)0.35, Screen.width*(float)0.15, Screen.height*(float)0.15), RocketLauncher)) { // middle top
-				guiTexture.texture = RocketLauncher;
+				GetComponent<GUITexture>().texture = RocketLauncher;
 				currentSelection = "RocketLauncher";
 				selectionOpen = false;
 			}
 			else if(/*currentSelection != "Pistol" &&*/ GUI.Button (new Rect (Screen.width*(float)0.81, Screen.height*(float)0.19, Screen.width*(float)0.15, Screen.height*(float)0.15), Pistol)) { // top
-				guiTexture.texture = Pistol;
+				GetComponent<GUITexture>().texture = Pistol;
 				currentSelection = "Pistol";
 				selectionOpen = false;
 			}

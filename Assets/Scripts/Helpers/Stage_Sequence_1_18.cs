@@ -205,7 +205,7 @@ public class Stage_Sequence_1_18 : Stage_Sequence_Helper {
 		{
 			
 			possession_cube_1 = spawn_possession_cube(new Vector3( 1.0F, 135.0F, -90.0F));
-			possession_cube_script_1 = possession_cube_1.transform.FindChild("3D_Model").gameObject.AddComponent("Possession_Cube") as Possession_Cube;
+			possession_cube_script_1 = possession_cube_1.transform.FindChild("3D_Model").gameObject.AddComponent<Possession_Cube>() as Possession_Cube;
 			possession_cube_script_1.lookAt_position = new Vector3( 1.0F, 135.0F, -160.0F);
 			possession_cube_script_1.up_vector = Vector3.up;
 

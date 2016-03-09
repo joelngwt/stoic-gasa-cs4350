@@ -22,7 +22,7 @@ public class MBEditorAbout : EditorWindow {
   
     void OnEnable()
     {
-        mTexLogo=Resources.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/Logo.png",typeof(Texture2D)) as Texture2D;
+        mTexLogo=AssetDatabase.LoadAssetAtPath("Assets/Magical Box/Editor/Resources/Logo.png",typeof(Texture2D)) as Texture2D;
     }
  
     void OnGUI()

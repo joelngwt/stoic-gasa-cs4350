@@ -8,7 +8,7 @@ public class VerticeBehavior : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		renderer.material.SetColor("_Color", Color.gray);
+		GetComponent<Renderer>().material.SetColor("_Color", Color.gray);
 
 	}
 	
@@ -16,7 +16,7 @@ public class VerticeBehavior : MonoBehaviour {
 	void Update () {
 		if(!gameManagerScript.getGameIsEnding()){
 			if(!gameManagerScript.getIsMouseDown()){
-				renderer.material.SetColor("_Color", Color.gray);	
+				GetComponent<Renderer>().material.SetColor("_Color", Color.gray);	
 			}
 		}
 	}
@@ -37,7 +37,7 @@ public class VerticeBehavior : MonoBehaviour {
 //			Debug.Log("Mouse Activated.");
 			gameManagerScript.touchedVertice(objName);
 //			Handheld.Vibrate();
-			renderer.material.SetColor("_Color", Color.red);
+			GetComponent<Renderer>().material.SetColor("_Color", Color.red);
 		}
 	}
 
@@ -45,6 +45,6 @@ public class VerticeBehavior : MonoBehaviour {
 		if(gameManagerScript.getIsMouseDown() && gameManagerScript.getIsMainGameInitialised()){
 			gameManagerScript.finishedAttempt();
 		}
-		renderer.material.SetColor("_Color", Color.gray);
+		GetComponent<Renderer>().material.SetColor("_Color", Color.gray);
 	}
 }

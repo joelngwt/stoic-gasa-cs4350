@@ -17,9 +17,9 @@ public class TriggerParticlesTimer : MonoBehaviour {
 	void Update () {
 		t -= Time.deltaTime;
 		if (t > 0.0f) return; 
-		gameObject.particleSystem.Stop();
-		gameObject.particleSystem.Play();
-		if (gameObject.audio != null) gameObject.audio.Play();
+		gameObject.GetComponent<ParticleSystem>().Stop();
+		gameObject.GetComponent<ParticleSystem>().Play();
+		if (gameObject.GetComponent<AudioSource>() != null) gameObject.GetComponent<AudioSource>().Play();
 		t = interval;
     }
 }
