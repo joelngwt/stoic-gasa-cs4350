@@ -16,17 +16,17 @@ public class EnemyShoot : MonoBehaviour
 	[SerializeField]
 	// Rate of fire for the enemy
 	protected float fireRate = 0.5F;
-	protected float nextFire = Random.Range(0.5F,1f);
+	protected float nextFire;
 	
 	// Audio
 	public AudioClip bearShoot;
 
-	/*
+	
 	void Start(){
-		Debug.Log ("Player position = " + player.transform.position.x + " " + player.transform.position.y + " "+ player.transform.position.z);
-		
+		//Debug.Log ("Player position = " + player.transform.position.x + " " + player.transform.position.y + " "+ player.transform.position.z);
+		nextFire = Random.Range(0.5F,1f)
 	}
-	*/
+	
 	// Update is called once per frame
 	void Update ()
 	{
